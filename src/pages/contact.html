@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Imboxsoft Contact Us</title>
+
+        <link rel="stylesheet" href="/dist/static/styles/styles.css" />
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+
+    <body class="flex flex-col min-h-screen">
+        <header>
+        </header>
+        
+        <main>
+        </main>
+
+        <footer class="mt-auto bg-white dark:bg-gray-900">
+        </footer>
+        
+        <script src="/dist/static/js/bundle.js"></script>
+        <script>
+            [
+                {
+                    component: "../components/header.html",
+                    parent: "header",
+                },
+                {
+                    component: "./src/components/footer.html",
+                    parent: "footer",
+                },
+            ].forEach((obj) => {
+                window.loadComponent(
+                    document.getElementsByTagName(obj.parent)[0],
+                    obj.component
+                );
+            });
+        </script>
+    </body>
+</html>
