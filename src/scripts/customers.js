@@ -1,6 +1,6 @@
 import { Carousel } from "./carousel.js";
 
-$(function() {
+$(function () {
     const customers = [
         {
             name: "GTSS",
@@ -23,12 +23,12 @@ $(function() {
             logo: "",
         },
         {
-            name: "Clinica Lotus",
+            name: "Verso Radioguide",
             website: "https://lotuslife.ro/",
             logo: "",
         },
         {
-            name: "Clinica Lotus",
+            name: "Tec-Trac Inc.",
             website: "https://lotuslife.ro/",
             logo: "",
         },
@@ -60,13 +60,19 @@ $(function() {
     ];
     let customersContainer = $("#customers-carousel-container");
 
-    for(let customer of customers) {
-        customersContainer.children('.carousel-inner').append(`
+    for (let customer of customers) {
+        customersContainer.children(".carousel-inner").append(`
             <div class="carousel-item">
                 ${customer.name}
             </div>
         `);
     }
 
-    let customersCarousel = Carousel.init("#customers-carousel-container", ".carousel-inner", ".carousel-item", ".prev", ".next");
+    let customersCarousel = Carousel.init(
+        "#customers-carousel-container",
+        ".carousel-inner",
+        ".carousel-item",
+        ".prev",
+        ".next"
+    );
 });

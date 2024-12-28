@@ -64,7 +64,7 @@ export let ImboxScrolling = (function () {
                     if (e.type === "wheel") {
                         scrolling = true;
 
-                        if (e.originalEvent.deltaY > 0) {
+                        if (e.originalEvent.deltaY >= 0) {
                             scrollToSection("next");
                         } else {
                             scrollToSection("prev");
@@ -79,7 +79,7 @@ export let ImboxScrolling = (function () {
                 }
             });
 
-            $('body').on('touchmove', function (e) {
+            $("body").on("touchmove", function (e) {
                 e.preventDefault();
 
                 if (!scrolling) {
@@ -88,11 +88,11 @@ export let ImboxScrolling = (function () {
                     scrolling = true;
 
                     if (currentY > startY) {
-                        scrollToSection('prev');
+                        scrollToSection("prev");
                     } else if (currentY < startY) {
-                        scrollToSection('next');
+                        scrollToSection("next");
                     }
-                    
+
                     setTimeout(function () {
                         scrolling = false;
                     }, 800);
@@ -104,8 +104,13 @@ export let ImboxScrolling = (function () {
     }
 
     return {
-        init: function (toObserve, scrollShowClass, _scrollSection, _currentScroll) {
-            scrollSection = _scrollSection; 
+        init: function (
+            toObserve,
+            scrollShowClass,
+            _scrollSection,
+            _currentScroll
+        ) {
+            scrollSection = _scrollSection;
             currentScroll = _currentScroll;
             let imboxScrolling = new ImboxScrolling(toObserve, scrollShowClass);
         },
