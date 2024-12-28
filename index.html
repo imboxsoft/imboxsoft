@@ -20,11 +20,11 @@
     </head>
 
     <body class="flex flex-col min-h-screen">
-        <header></header>
+        <header class="fixed top-0 left-0 z-50 w-full"></header>
 
         <main>
-            <div class="relative block min-h-screen">
-                <canvas id="particles-canvas" class="absolute w-full h-full -z-10 block top-0 left-0 bg-orange-400">
+            <section class="scroll-section current-scroll relative block min-h-screen -z-20">
+                <canvas id="particles-canvas" class="absolute w-full h-full -z-10 block top-0 left-0">
                 </canvas>
                 <div class="absolute block px-24 h-full w-full z-10">
                     <div
@@ -64,98 +64,105 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <div
-                class="pt-32 [&>*:nth-child(even)]:bg-slate-100 [&>*]:px-10 [&>*]:py-32"
+                class="[&>*:nth-child(even)]:bg-slate-100 [&>*]:px-10 [&>*]:py-20"
             >
-                <div>
-                    <div class="max-w-screen-xl m-auto">
-                        <h1 class="mb-24 text-5xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">Welcome to Imboxsoft: <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">Pioneering Innovation in Technology</span></h1>
+                <section class="scroll-section min-h-screen flex items-center">
+                    <div class="w-full max-w-screen-xl m-auto">
+                        <div class="scroll-hidden">
+                            <h1 class="text-center mb-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">Welcome to <span class="text-blue-600">Imboxsoft</span>
+                            <h2 class="text-center mb-24 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-none tracking-tight text-gray-900 dark:text-white"><span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">Pioneering Innovation in Technology</span></h2>
+                        </div>
 
-                        <p class="mb-6 text-gray-800 dark:text-gray-400">
-                            Your trusted partner in cutting-edge technology solutions. With a relentless passion for innovation, we specialize in delivering tailored software development solutions and comprehensive IT consulting services. Our team of distinguished experts transforms ideas into reality, crafting intuitive software applications that drive efficiency and growth for businesses of all sizes. From custom software development to strategic IT consulting, we are dedicated to empowering our clients with the tools they need to succeed in today's dynamic digital landscape. Partner with us to harness the power of technology and propel your business forward.
-                        </p>
-
-                        <p class="mb-6 text-gray-800 dark:text-gray-400">
-                            At Imboxsoft, we are committed to pushing the boundaries of technology. Our team of dedicated professionals strives to deliver cutting-edge solutions that redefine industry standards. With a focus on creativity, innovation, and excellence, we aim to leave a lasting impact on the tech landscape.
-                        </p>
-
-                        <p class="mb-6 text-gray-800 dark:text-gray-400">
-                            As we embark on this exciting journey, we invite you to explore our website and discover the transformative products and services that define Imboxsoft. Join us in shaping the future of technology, where opportunities abound, and possibilities are limitless.
-                        </p>
-
-                        <p class="text-gray-800 dark:text-gray-400">
-                            Welcome to Imboxsoft – where innovation meets opportunity.
-                        </p>
+                        <div class="scroll-hidden">
+                            <p class="mb-6 text-gray-800 dark:text-gray-400">
+                                Your trusted partner in cutting-edge technology solutions. With a relentless passion for innovation, we specialize in delivering tailored software development solutions and comprehensive IT consulting services. Our team of distinguished experts transforms ideas into reality, crafting intuitive software applications that drive efficiency and growth for businesses of all sizes. From custom software development to strategic IT consulting, we are dedicated to empowering our clients with the tools they need to succeed in today's dynamic digital landscape. Partner with us to harness the power of technology and propel your business forward.
+                            </p>
+    
+                            <p class="mb-6 text-gray-800 dark:text-gray-400">
+                                At Imboxsoft, we are committed to pushing the boundaries of technology. Our team of dedicated professionals strives to deliver cutting-edge solutions that redefine industry standards. With a focus on creativity, innovation, and excellence, we aim to leave a lasting impact on the tech landscape.
+                            </p>
+    
+                            <p class="mb-6 text-gray-800 dark:text-gray-400">
+                                As we embark on this exciting journey, we invite you to explore our website and discover the transformative products and services that define Imboxsoft. Join us in shaping the future of technology, where opportunities abound, and possibilities are limitless.
+                            </p>
+    
+                            <p class="text-gray-800 dark:text-gray-400">
+                                Welcome to Imboxsoft – where innovation meets opportunity.
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </section>
 
-                <div>
-                    <div class="max-w-screen-xl m-auto">
+                <section class="scroll-section min-h-screen flex items-center">
+                    <div class="w-full max-w-screen-xl m-auto">
                         <div
-                            class="inline-flex items-center justify-center w-full mb-10"
+                            class="scroll-hidden inline-flex items-center justify-center w-full mb-10"
                         >
                             <hr
-                                class="w-72 h-px my-8 bg-gray-400 border-0 dark:bg-gray-700"
+                                class="w-80 h-[2px] my-8 bg-blue-600 border-0 dark:bg-blue-600"
                             />
                             <h3
-                                class="text-3xl font-bold absolute px-3 text-gray-900 -translate-x-1/2 bg-slate-100 left-1/2 dark:bg-gray-900 dark:text-white text-center"
+                                class="text-4xl font-bold absolute px-3 text-gray-900 -translate-x-1/2 bg-slate-100 left-1/2 dark:bg-gray-900 dark:text-white text-center"
                             >
-                                How it started
+                                How <span class="text-blue-600">it</span> started
                             </h3>
                         </div>
 
-                        <p class="mb-6 text-gray-800 dark:text-gray-400">
-                            Founded in 2022 by two ambitious young developers with a proven track record in the IT industry, Imboxsoft is a cutting-edge tech startup that has emerged as a beacon of opportunity and innovation. Our journey began with a solid foundation in freelance work, and today, we stand as a testament to the power of passion, expertise, and entrepreneurial spirit.
-                        </p>
-
-                        <p class="mb-6 text-gray-800 dark:text-gray-400">
-                            Fueling our vision is the success achieved through the European Funds Competition in May 2022, where Imboxsoft secured a substantial grant of 40,000 euros. This financial boost has been strategically allocated to not only enhance our product offerings but also to create new job opportunities, contributing to the growth of the market and fostering a dynamic work environment.
-                        </p>
-
-                        <p class="text-gray-800 dark:text-gray-400">
-                            Fueling our vision is the success achieved through the European Funds Competition in May 2022, where Imboxsoft secured a substantial grant of 40,000 euros. This financial boost has been strategically allocated to not only enhance our product offerings but also to create new job opportunities, contributing to the growth of the market and fostering a dynamic work environment.
-                        </p>
+                        <div class="scroll-hidden">
+                            <p class="mb-6 text-gray-800 dark:text-gray-400">
+                                Founded in 2022 by two ambitious young developers with a proven track record in the IT industry, Imboxsoft is a cutting-edge tech startup that has emerged as a beacon of opportunity and innovation. Our journey began with a solid foundation in freelance work, and today, we stand as a testament to the power of passion, expertise, and entrepreneurial spirit.
+                            </p>
+    
+                            <p class="mb-6 text-gray-800 dark:text-gray-400">
+                                Fueling our vision is the success achieved through the European Funds Competition in May 2022, where Imboxsoft secured a substantial grant of 40,000 euros. This financial boost has been strategically allocated to not only enhance our product offerings but also to create new job opportunities, contributing to the growth of the market and fostering a dynamic work environment.
+                            </p>
+    
+                            <p class="text-gray-800 dark:text-gray-400">
+                                Fueling our vision is the success achieved through the European Funds Competition in May 2022, where Imboxsoft secured a substantial grant of 40,000 euros. This financial boost has been strategically allocated to not only enhance our product offerings but also to create new job opportunities, contributing to the growth of the market and fostering a dynamic work environment.
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </section>
 
-                <div>
-                    <div class="max-w-screen-xl m-auto">
+                <section class="scroll-section min-h-screen flex items-center">
+                    <div class="w-full max-w-screen-xl m-auto">
                         <div
-                            class="inline-flex items-center justify-center w-full mb-10"
+                            class="scroll-hidden inline-flex items-center justify-center w-full mb-10"
                         >
                             <hr
-                                class="w-72 h-px my-8 bg-gray-400 border-0 dark:bg-gray-700"
+                                class="w-80 h-[2px] my-8 bg-blue-600 border-0 dark:bg-blue-600"
                             />
                             <h3
-                                class="text-3xl font-bold absolute px-3 text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900 dark:text-white text-center"
+                                class="text-4xl font-bold absolute px-3 text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900 dark:text-white text-center"
                             >
                                 Expertise
                             </h3>
                         </div>
 
                         <div class="flex flex-row flex-wrap gap-10 mb-10 justify-between">
-                            <p class="w-1/2 text-gray-800 dark:text-gray-400">
+                            <p class="scroll-hidden w-1/2 text-gray-800 dark:text-gray-400">
                                 Imboxsoft specializes in a diverse array of technologies and systems, ensuring that we stay at the forefront of innovation to meet the evolving needs of our clients. Our core competencies include:
                             </p>
 
-                            <div class="flex-1 h-60 flex justify-end">
+                            <div class="scroll-hidden flex-1 h-60 flex justify-end">
                                 <div id="expertise-cards-container" class="relative w-48 [&>*]:bg-slate-50 [&>*]:w-48 [&>*]:h-60 [&>*]:shadow [&>*]:p-6 [&>*]:absolute">
-                                    <div class="cursor-pointer expertise-card duration-300 z-10">
-                                        <span>Web development</span>
-                                    </div>
                                     <div class="cursor-pointer expertise-card duration-300 z-10">
                                         <span>Graphic Design</span>
                                     </div>
                                     <div class="cursor-pointer expertise-card duration-300 z-10">
                                         <span>IT Consulting</span>
                                     </div>
+                                    <div class="cursor-pointer expertise-card duration-300 z-10">
+                                        <span>Web development</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div>
+                        <div class="scroll-hidden">
                             <ul class="flex flex-row flex-wrap gap-x-4 gap-y-3" x-data="{ technologies: [
                                 'React', 'Next.js', 'Angular', 'Vue.js', 'Alpinejs', 'Jquery', 'Django', 'Nodejs', 'Laravel', '.NET', 'SQL', 'MongoDB', 'Linux/Windows/Macos Systems', 'Docker', 'AWS', 'Google Cloud', 'Shopify', 'Bigcommerce', 'Stripe', 'Paypal'
                             ] }">
@@ -167,17 +174,77 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </section>
+
+                <section class="scroll-section min-h-screen flex items-center">
+                    <div class="w-full max-w-screen-xl m-auto overflow-x-hidden">
+                        <div
+                            class="scroll-hidden inline-flex items-center justify-center w-full mb-10"
+                        >
+                            <hr
+                                class="w-80 h-[2px] my-8 bg-blue-600 border-0 dark:bg-blue-600"
+                            />
+                            <h3
+                                class="text-4xl font-bold absolute px-3 text-gray-900 -translate-x-1/2 bg-slate-100 left-1/2 dark:bg-gray-900 dark:text-white text-center"
+                            >
+                                Clients
+                            </h3>
+                        </div>
+
+                        <p class="scroll-hidden text-gray-800 dark:text-gray-400 text-center mb-16">
+                            Below, you can find some of our past customers who we had the pleasure to work with:
+                        </p>
+
+                        <div id="customers-carousel-container" class="scroll-hidden">
+                            <div class="carousel-inner">
+                            </div>
+                            <div class="carousel-controls">
+                                <a href="#" class="prev">&lt;</a>
+                                <a href="#" class="next">&gt;</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="scroll-section min-h-screen flex items-center">
+                    <div class="w-full max-w-screen-xl m-auto">
+                        <div
+                            class="scroll-hidden inline-flex items-center justify-center w-full mb-10"
+                        >
+                            <hr
+                                class="w-80 h-[2px] my-8 bg-blue-600 border-0 dark:bg-blue-600"
+                            />
+                            <h3
+                                class="text-4xl font-bold absolute px-3 text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900 dark:text-white text-center"
+                            >
+                                Our products
+                            </h3>
+                        </div>
+
+                        <p class="scroll-hidden text-gray-800 dark:text-gray-400 text-center mb-16">
+                            Check our own line of products:
+                        </p>
+
+                        <div id="customers-carousel-container" class="scroll-hidden">
+                            <div class="carousel-inner">
+                            </div>
+                            <div class="carousel-controls">
+                                <a href="#" class="prev">&lt;</a>
+                                <a href="#" class="next">&gt;</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>
 
-        <footer class="mt-auto bg-white dark:bg-gray-900"></footer>
+        <footer class="scroll-section mt-auto bg-white dark:bg-gray-900"></footer>
 
         <script src="/dist/static/js/bundle.js"></script>
         <script>
             [
                 {
-                    component: "/src/components/header.html",
+                    component: "/src/components/navbar.html",
                     parent: document.getElementsByTagName("header")[0],
                 },
                 {
@@ -191,6 +258,6 @@
                 );
             });
         </script>
-        <script src="/src/scripts/particles.js"></script>
+        <script src="/src/scripts/home.js" type="module"></script>
     </body>
 </html>

@@ -8,5 +8,3 @@ module.exports = {
     autoprefixer: {},
   },
 }
-
-console.log('PostCSS Configuration:', module.exports.plugins);

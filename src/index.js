@@ -1,5 +1,5 @@
-import { init } from './scripts/app';
+import { initGlobal } from './scripts/app';
 
-(() => {
-    init();
-})();
+$(function() {
+    initGlobal();
+});
