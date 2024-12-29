@@ -43,6 +43,7 @@
                 <li>
                     <a
                         href="/"
+                        onclick="window.appNavigate(event, 'home')"
                         class="block py-2 pl-3 pr-4 text-gray-900 hover:text-white lg:hover:text-blue-700 hover:bg-blue-700 lg:hover:bg-transparent"
                         aria-current="page"
                         >Home</a
@@ -50,38 +51,36 @@
                 </li>
                 <li>
                     <a
-                        href="about"
+                        href="#about"
+                        onclick="window.appNavigate(event, 'home')"
                         class="block py-2 pl-3 pr-4 text-gray-900 hover:text-white lg:hover:text-blue-700 hover:bg-blue-700 lg:hover:bg-transparent"
                         >About</a
                     >
                 </li>
                 <li>
                     <a
-                        href="services"
+                        href="#expertise"
+                        onclick="window.appNavigate(event, 'home')"
                         class="block py-2 pl-3 pr-4 text-gray-900 hover:text-white lg:hover:text-blue-700 hover:bg-blue-700 lg:hover:bg-transparent"
-                        >Services</a
+                        >Expertise</a
                     >
                 </li>
                 <li>
                     <a
-                        href="projects"
+                        href="#clients"
+                        onclick="window.appNavigate(event, 'home')"
                         class="block py-2 pl-3 pr-4 text-gray-900 hover:text-white lg:hover:text-blue-700 hover:bg-blue-700 lg:hover:bg-transparent"
-                        >Projects</a
+                        >Clients</a
                     >
                 </li>
                 <li>
                     <a
-                        href="products"
+                        href="/contact"
+                        onclick="window.appNavigate(event, 'contact')"
                         class="block py-2 pl-3 pr-4 text-gray-900 hover:text-white lg:hover:text-blue-700 hover:bg-blue-700 lg:hover:bg-transparent"
-                        >Products</a
                     >
-                </li>
-                <li>
-                    <a
-                        href="/src/pages/contact.html"
-                        class="block py-2 pl-3 pr-4 text-gray-900 hover:text-white lg:hover:text-blue-700 hover:bg-blue-700 lg:hover:bg-transparent"
-                        >Contact</a
-                    >
+                        Contact
+                    </a>
                 </li>
             </ul>
         </div>

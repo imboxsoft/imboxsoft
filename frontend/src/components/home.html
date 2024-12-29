@@ -1,44 +1,40 @@
 <div
-    class="relative [&>*]:px-10 [&>*]:py-20"
+    class="relative [&>*]:px-10 [&>*]:py-10"
 >
-    <section class="scroll-section current-scroll relative block min-h-screen">
-        <div class="absolute block px-24 h-full w-full z-10">
-            <div
-                class="flex flex-col justify-center items-center h-full"
+    <section class="flex flex-col scroll-section current-scroll min-h-screen">
+        <div class="flex-1 flex flex-col justify-center items-center">
+            <h1
+                class="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl"
             >
-                <h1
-                    class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+                IT Services and Consulting
+            </h1>
+            <p
+                class="text-center mb-6 font-normal text-gray-500 sm:px-16 xl:px-48 dark:text-gray-400"
+            >
+                Empowering businesses through tech innovation with
+                software solutions & strategic IT consulting.
+            </p>
+            <a
+                href="#about"
+                class="inline-flex items-center justify-center px-5 py-3 font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+            >
+                Learn more
+                <svg
+                    class="w-3.5 h-3.5 ml-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
                 >
-                    IT Services and IT Consulting
-                </h1>
-                <p
-                    class="mb-6 font-normal text-gray-500 sm:px-16 xl:px-48 dark:text-gray-400"
-                >
-                    Empowering businesses through tech innovation with
-                    software solutions & strategic IT consulting.
-                </p>
-                <a
-                    href="#"
-                    class="inline-flex items-center justify-center px-5 py-3 font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
-                >
-                    Learn more
-                    <svg
-                        class="w-3.5 h-3.5 ml-2"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 14 10"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M1 5h12m0 0L9 1m4 4L9 9"
-                        />
-                    </svg>
-                </a>
-            </div>
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                </svg>
+            </a>
         </div>
     </section>
 
@@ -58,10 +54,6 @@
                     At Imboxsoft, we are committed to pushing the boundaries of technology. Our team of dedicated professionals strives to deliver cutting-edge solutions that redefine industry standards. With a focus on creativity, innovation, and excellence, we aim to leave a lasting impact on the tech landscape.
                 </p>
 
-                <p class="mb-6 text-gray-800 dark:text-gray-400">
-                    As we embark on this exciting journey, we invite you to explore our website and discover the transformative products and services that define Imboxsoft. Join us in shaping the future of technology, where opportunities abound, and possibilities are limitless.
-                </p>
-
                 <p class="text-gray-800 dark:text-gray-400">
                     Welcome to Imboxsoft – where innovation meets opportunity.
                 </p>
@@ -69,7 +61,7 @@
         </div>
     </section>
 
-    <section class="scroll-section min-h-screen flex items-center">
+    <section id="about" class="scroll-section min-h-screen flex items-center">
         <div class="w-full max-w-screen-xl m-auto">
             <div
                 class="scroll-hidden inline-flex items-center justify-center w-full mb-10"
@@ -94,13 +86,13 @@
                 </p>
 
                 <p class="text-gray-800 dark:text-gray-400">
-                    Fueling our vision is the success achieved through the European Funds Competition in May 2022, where Imboxsoft secured a substantial grant of 40,000 euros. This financial boost has been strategically allocated to not only enhance our product offerings but also to create new job opportunities, contributing to the growth of the market and fostering a dynamic work environment.
+                    From here on out, allow us to guide you through our experience along the years. As we embark on this exciting journey, we invite you to explore our website and discover the transformative products and services that define Imboxsoft. Join us in shaping the future of technology, where opportunities abound, and possibilities are limitless.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="scroll-section min-h-screen flex items-center">
+    <section id="expertise" class="scroll-section min-h-screen flex items-center">
         <div class="w-full max-w-screen-xl m-auto">
             <div
                 class="scroll-hidden inline-flex items-center justify-center w-full mb-10"
@@ -149,7 +141,7 @@
         </div>
     </section>
 
-    <section class="scroll-section min-h-screen flex items-center">
+    <section id="clients" class="scroll-section min-h-screen flex items-center">
         <div class="w-full max-w-screen-xl m-auto overflow-x-hidden">
             <div
                 class="scroll-hidden inline-flex items-center justify-center w-full mb-10"
@@ -160,42 +152,12 @@
                 <h3
                     class="text-4xl font-bold absolute px-4 py-2 text-gray-900 -translate-x-1/2 bg-slate-100 left-1/2 dark:bg-gray-900 dark:text-white text-center"
                 >
-                    Clients
+                    Our clients
                 </h3>
             </div>
 
             <p class="scroll-hidden text-gray-800 dark:text-gray-400 text-center mb-16">
                 Below, you can find some of our past customers who we had the pleasure to work with:
-            </p>
-
-            <div id="customers-carousel-container" class="scroll-hidden">
-                <div class="carousel-inner">
-                </div>
-                <div class="carousel-controls">
-                    <a href="#" class="prev">&lt;</a>
-                    <a href="#" class="next">&gt;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="scroll-section min-h-screen flex items-center">
-        <div class="w-full max-w-screen-xl m-auto">
-            <div
-                class="scroll-hidden inline-flex items-center justify-center w-full mb-10"
-            >
-                <hr
-                    class="w-80 h-[2px] my-8 bg-blue-600 border-0 dark:bg-blue-600"
-                />
-                <h3
-                    class="text-4xl font-bold absolute px-4 py-2 text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900 dark:text-white text-center"
-                >
-                    Our products
-                </h3>
-            </div>
-
-            <p class="scroll-hidden text-gray-800 dark:text-gray-400 text-center mb-16">
-                Check our own line of products:
             </p>
 
             <div id="customers-carousel-container" class="scroll-hidden">
