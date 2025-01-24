@@ -150,8 +150,8 @@ export let Particles = (function () {
 
     class Point {
         #canvas;
+        #offset;
         #connectedPoints = [];
-        #offset = 25;
 
         constructor(
             canvas,
@@ -181,7 +181,8 @@ export let Particles = (function () {
                     this.minDiameter
             );
             this.positionX = Math.random() * canvas.getCanvasWidth();
-            this.positionY = Math.random() * (canvas.getCanvasHeight() - this.#offset);
+            this.positionY =
+                Math.random() * (canvas.getCanvasHeight() - this.#offset);
             this.#canvas = canvas;
             this.numberOfNeighbours = numberOfNeighbours;
             this.pointColor = pointColor;
@@ -199,7 +200,7 @@ export let Particles = (function () {
                 point.positionX < -offset ||
                 point.positionX > rect.right - rect.left + offset ||
                 point.positionY < -offset ||
-                point.positionY > rect.bottom - rect.top - offset
+                point.positionY > rect.bottom - rect.top + offset
             );
         }
 
@@ -331,7 +332,7 @@ export let Particles = (function () {
                     window.requestAnimFrame(() =>
                         animateLinesOpacity(ref, startTime, points)
                     );
-                }else {
+                } else {
                     window.cancelRequestAnimFrame(() =>
                         animateLinesOpacity(ref, startTime, points)
                     );
@@ -342,20 +343,32 @@ export let Particles = (function () {
         }
     }
 
-    let canvas;
-
     return {
-        init: function (canvasId, pointColor = "#fff", lineColor = "#fff", fps = 60, numberOfPoints = 150, numberOfNeighbours = 7) {
-            canvas = new Canvas(canvasId, fps);
+        init: function (
+            canvasId,
+            pointColor = "#fff",
+            lineColor = "#fff",
+            fps = 60,
+            numberOfPoints = 150,
+            numberOfNeighbours = 7
+        ) {
+            let canvas = new Canvas(canvasId, fps);
 
             for (let i = 0; i < numberOfPoints; i++) {
-                let point = new Point(canvas, pointColor, lineColor, numberOfNeighbours, 25);
+                let point = new Point(
+                    canvas,
+                    pointColor,
+                    lineColor,
+                    numberOfNeighbours
+                );
             }
+
+            return canvas;
         },
-        start: function () {
+        start: function (canvas) {
             canvas.startAnimation();
         },
-        cancel: function () {
+        cancel: function (canvas) {
             canvas.cancelAnimation();
         },
     };

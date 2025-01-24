@@ -1,0 +1,32 @@
+{
+  "name": "imboxsoft",
+  "version": "1.0.0",
+  "description": "landing",
+  "main": "index.html",
+  "scripts": {
+    "build:css": "postcss src/styles/css/main.css -o dist/static/styles/styles.css",
+    "watch:css": "postcss src/styles/css/main.css -o dist/static/styles/styles.css --watch",
+    "build:js": "webpack",
+    "watch:js": "webpack --watch",
+    "serve": "webpack serve --open",
+    "start": "npm-run-all -p watch:css watch:js serve",
+    "build": "npm-run-all -p build:css build:js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Imboxsoft",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "copy-webpack-plugin": "^12.0.2",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0",
+    "postcss-each": "^1.1.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-simple-vars": "^7.0.1",
+    "sass": "^1.69.5",
+    "tailwindcss": "^3.3.5",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

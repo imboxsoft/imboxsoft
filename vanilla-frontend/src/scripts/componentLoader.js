@@ -1,3 +1,5 @@
+import { Home } from "./home.js";
+
 (() => {
     let loadedComponents = {};
     const customComponents = {
@@ -6,6 +8,7 @@
             component: "/src/components/navbar.html",
             container: document.getElementsByTagName("header")[0],
             onloadcallback: function () {},
+            unloadcallback: function () {},
         },
         home: {
             key: "home",
@@ -13,8 +16,10 @@
             container: document.getElementById("app-router"),
             routed: true,
             onloadcallback: function () {
-                const headerHeight = $("header").height();
-                $(".scroll-section").css("padding-top", ` ${headerHeight}px`);
+                Home.init();
+            },
+            unloadcallback: function () {
+                Home.cancel();
             },
         },
         contact: {
@@ -26,12 +31,14 @@
                 const headerHeight = $("header").height();
                 $("#contact").css("padding-top", ` ${headerHeight}px`);
             },
+            unloadcallback: function () {},
         },
         footer: {
             key: "footer",
             component: "/src/components/footer.html",
             container: document.getElementsByTagName("footer")[0],
             onloadcallback: function () {},
+            unloadcallback: function () {},
         },
     };
     const appRoutes = {
@@ -62,9 +69,9 @@
             if (component.key in loadedComponents) {
                 throw new Error("Component already loaded!");
             }
-            loadedComponents[component.key] = component;
             const template = await fetch(component.component);
             if (template.ok) {
+                loadedComponents[component.key] = component;
                 component.container.innerHTML = await template.text();
                 component.onloadcallback();
             }
@@ -77,8 +84,9 @@
             if (!component.key in loadedComponents) {
                 throw new Error("Component not loaded!");
             }
-            delete loadedComponents[component.key];
+            component.unloadcallback();
             component.container.innerHTML = "";
+            delete loadedComponents[component.key];
         } catch (e) {
             console.log(e);
         }
