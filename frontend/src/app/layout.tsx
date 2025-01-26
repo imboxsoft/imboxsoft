@@ -52,10 +52,6 @@ export const metadata: Metadata = {
         creator: "@creatorhandle",
         images: ["https://imboxsoft.com/twitter-image.jpg"],
     },
-    icons: {
-        icon: "/favicon.ico",
-        apple: "/apple-touch-icon.png",
-    },
     manifest: "/site.webmanifest",
 };
 
@@ -69,9 +65,9 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                {/* <Header /> */}
+                <Header />
                 <main>{children}</main>
-                {/* <Footer /> */}
+                <Footer />
                 <Particles />
                 <GlobalScripts />
             </body>

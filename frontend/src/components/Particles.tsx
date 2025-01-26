@@ -9,8 +9,9 @@ export default function Header() {
     useEffect(() => {
         if (!canvasRef.current) return;
 
-        const particles = new Particles(canvasRef.current);
+        const particles = new Particles(canvasRef.current, 20, 500);
 
+        particles.enableUserInteraction();
         particles.start();
 
         return () => {

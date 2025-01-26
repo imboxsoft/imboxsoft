@@ -5,6 +5,11 @@ interface RGB {
     toString(): string;
 }
 
+interface Coordinate {
+    x: number;
+    y: number;
+}
+
 function hexToRGB(hex: string): RGB {
     hex = hex.replace(
         /^#?([a-f\d])([a-f\d])([a-f\d])$/i,
@@ -27,28 +32,35 @@ function hexToRGB(hex: string): RGB {
     };
 }
 
+interface ConnectedPoint {
+    point: Point;
+    lineOpacity: number;
+}
+
 class Point {
     private container: Particles;
     private offset: number;
-    private connectedPoints: Point[] = [];
+    private connectedPoints: ConnectedPoint[] = [];
     private reverse: boolean = false;
     private minDirectionAngle: number = 0;
     private maxDirectionAngle: number = 360;
     private directionAngle: number;
-    private minDistance: number = 0.5;
-    private maxDistance: number = 3;
+    private minDistance: number = 0.1;
+    private maxDistance: number = 1.5;
     private distance: number;
     private minDiameter: number = 3;
     private maxDiameter: number = 7;
     private diameter: number = 7;
+    private originalDiameter: number = 7;
     private positionX: number;
     private positionY: number;
     private numberOfNeighbours: number;
     private pointColor: string;
     private lineColor: RGB;
-    private lineFrameOpacityStep: number = 0.025;
-    private lineFrameDuration: number = 250;
-    private lineWidth: number = 1;
+    private lineFrameOpacityStep: number = 0.0005;
+    private lineMinOpacity: number = 0.005;
+    private lineMaxOpacity: number = 0.1;
+    private lineWidth: number = 0.8;
 
     constructor(
         container: Particles,
@@ -70,6 +82,7 @@ class Point {
             Math.random() * (this.maxDiameter - this.minDiameter) +
                 this.minDiameter
         );
+        this.originalDiameter = this.diameter;
         this.positionX = Math.random() * this.container.getCanvasWidth();
         this.positionY =
             Math.random() * (this.container.getCanvasHeight() - this.offset);
@@ -100,13 +113,16 @@ class Point {
 
     connectNewPoint(newPoint: Point) {
         if (this.connectedPoints.length < this.numberOfNeighbours) {
-            this.connectedPoints.push(newPoint);
+            this.connectedPoints.push({
+                point: newPoint,
+                lineOpacity: this.lineMinOpacity,
+            });
             return;
         }
         let maximum = 0,
             maximumIndex = 0;
         for (const [index, point] of this.connectedPoints.entries()) {
-            const distance = this.calculateDistance(this, point);
+            const distance = this.calculateDistance(this, point.point);
             if (distance > maximum) {
                 maximum = distance;
                 maximumIndex = index;
@@ -118,57 +134,145 @@ class Point {
             finalDistance >= 150 &&
             finalDistance <= 300
         ) {
-            this.connectedPoints[maximumIndex] = newPoint;
+            this.connectedPoints[maximumIndex] = {
+                point: newPoint,
+                lineOpacity: this.lineMinOpacity,
+            };
         }
     }
 
-    movePointAtFrame() {
-        const angle = this.directionAngle;
-        let tempAngle = (angle * Math.PI) / 180;
-        const quadrant =
-            angle >= 0 && angle <= 90
-                ? 1
-                : angle >= 90 && angle <= 180
-                ? 2
-                : angle >= 180 && angle <= 270
-                ? 3
-                : 4;
-        let c1, c2;
+    static getQuadrant(angle: number): number {
+        return angle >= 0 && angle <= 90
+            ? 1
+            : angle >= 90 && angle <= 180
+            ? 2
+            : angle >= 180 && angle <= 270
+            ? 3
+            : 4;
+    }
 
-        const direction = this.reverse ? 1 : -1;
+    checkPolygonsForCollision(coordinates: Coordinate[]) {
+        let totalArea1 = 0,
+            totalArea2 = 0;
 
-        switch (quadrant) {
-            case 1:
-                c1 = Math.sin(tempAngle) * this.distance;
-                c2 = Math.cos(tempAngle) * this.distance;
-                this.positionX += direction * c1;
-                this.positionY -= direction * c2;
-                break;
-            case 2:
-                tempAngle = ((angle - 90) * Math.PI) / 360;
-                c1 = Math.sin(tempAngle) * this.distance;
-                c2 = Math.cos(tempAngle) * this.distance;
-                this.positionX -= direction * c1;
-                this.positionY -= direction * c2;
-                break;
-            case 3:
-                tempAngle = ((angle - 180) * Math.PI) / 360;
-                c1 = Math.sin(tempAngle) * this.distance;
-                c2 = Math.cos(tempAngle) * this.distance;
-                this.positionX -= direction * c2;
-                this.positionY += direction * c1;
-                break;
-            case 4:
-                tempAngle = ((angle - 270) * Math.PI) / 360;
-                c1 = Math.sin(tempAngle) * this.distance;
-                c2 = Math.cos(tempAngle) * this.distance;
-                this.positionX += direction * c1;
-                this.positionY += direction * c2;
-                break;
+        for (let index = 0; index < coordinates.length; index++) {
+            const n = (index + 1) % coordinates.length;
+            totalArea1 +=
+                coordinates[index].x * coordinates[n].y -
+                coordinates[index].y * coordinates[n].x;
+
+            totalArea2 +=
+                this.positionX * (coordinates[index].y - coordinates[n].y) +
+                coordinates[index].x *
+                    (coordinates[n].y - coordinates[index].y) +
+                coordinates[n].x * (this.positionY - coordinates[index].y);
         }
+
+        totalArea1 = Math.abs(totalArea1) / 2;
+        totalArea2 = Math.abs(totalArea2) / 2;
+
+        const offset = 100;
+
+        return (
+            totalArea2 >= totalArea1 - offset &&
+            totalArea2 <= totalArea1 + offset
+        );
+    }
+
+    checkGeneralCollision(
+        cursorX: number,
+        cursorY: number,
+        cursorRadius: number
+    ): boolean {
+        const dx = this.positionX - cursorX;
+        const dy = this.positionY - cursorY;
+        const distanceSquared = dx * dx + dy * dy;
+
+        return distanceSquared <= cursorRadius * cursorRadius;
+    }
+
+    calculateAngle(): [number, boolean] {
+        const userInfo = this.container.getUserInfo() as UserInfo;
+
+        let angle = this.directionAngle;
+        let isIntersect = false;
+
+        if (userInfo && userInfo.isCursorMoving) {
+            const cursorX = userInfo.cursorX,
+                cursorY = userInfo.cursorY;
+            const pointX = this.positionX,
+                pointY = this.positionY;
+            const cursorTrajectoryAngle = userInfo.cursorTrajectoryAngle;
+            const cursorRadius = userInfo.cursorRadius;
+            const quadrant = Point.getQuadrant(cursorTrajectoryAngle);
+
+            const isCollision = this.checkGeneralCollision(
+                cursorX,
+                cursorY,
+                cursorRadius
+            );
+
+            switch (quadrant) {
+                case 1:
+                    if (isCollision) {
+                        angle = 45;
+                        isIntersect = true;
+                    }
+                    break;
+                case 2:
+                    if (isCollision) {
+                        angle = 135;
+                        isIntersect = true;
+                    }
+                    break;
+                case 3:
+                    if (isCollision) {
+                        angle = 225;
+                        isIntersect = true;
+                    }
+                    break;
+                case 4:
+                    if (isCollision) {
+                        angle = 315;
+                        isIntersect = true;
+                    }
+                    break;
+            }
+
+            if (isIntersect) {
+                this.pointColor = "#bf1725";
+                this.directionAngle = angle;
+                this.reverse = false;
+                this.distance =
+                    userInfo.cursorRadius -
+                    Math.sqrt(
+                        Math.pow(this.positionX - userInfo.cursorX, 2) +
+                            Math.pow(this.positionY - userInfo.cursorY, 2)
+                    );
+            }
+        }
+
+        return [angle, isIntersect];
+    }
+
+    movePointAtFrame() {
+        const angle = this.calculateAngle();
+        const direction = this.reverse ? 1 : -1;
+        const tempAngleRadiants = (angle[0] * Math.PI) / 180;
+        const dx = Math.cos(tempAngleRadiants) * this.distance;
+        const dy = Math.sin(tempAngleRadiants) * this.distance;
+
+        this.positionX -= direction * dx;
+        this.positionY += direction * dy;
 
         if (this.isPointOutsideTheBounds()) {
             this.reverse = !this.reverse;
+        }
+
+        if (angle[1]) {
+            this.distance =
+                Math.random() * (this.maxDistance - this.minDistance) +
+                this.minDistance;
         }
     }
 
@@ -176,6 +280,37 @@ class Point {
         const context = this.container.getCanvasContext();
         const x = this.positionX;
         const y = this.positionY;
+
+        const userIneraction = this.container.getUserInfo();
+
+        if (
+            userIneraction &&
+            (this.checkGeneralCollision(
+                userIneraction.rippleStartX,
+                userIneraction.rippleStartY,
+                userIneraction.currentRippleRadius
+            ) ||
+                this.diameter >= this.originalDiameter)
+        ) {
+            if (
+                userIneraction.drawRipple &&
+                !userIneraction.points.includes(this) &&
+                this.diameter <=
+                    this.originalDiameter + userIneraction.rippleMaxEffect
+            ) {
+                this.diameter += userIneraction.rippleEffectStep;
+            } else {
+                if (
+                    userIneraction.drawRipple &&
+                    !userIneraction.points.includes(this)
+                ) {
+                    userIneraction.points.push(this);
+                }
+                if (this.diameter >= this.originalDiameter) {
+                    this.diameter -= userIneraction.rippleEffectStep;
+                }
+            }
+        }
 
         if (context) {
             context.fillStyle = this.pointColor;
@@ -190,12 +325,10 @@ class Point {
         const context = this.container.getCanvasContext();
 
         if (context) {
-            let animationFrameId: number | null;
-
             function drawLineWithOpacity(
                 pointA: Point,
                 pointB: Point,
-                opacity: number = 0.025
+                opacity: number
             ) {
                 if (context) {
                     context.beginPath();
@@ -208,29 +341,104 @@ class Point {
                 }
             }
 
-            function animateLinesOpacity(
-                ref: Point,
-                startTime: number = Date.now()
-            ) {
-                const currentTime = Date.now();
-                const deltaTime = currentTime - startTime;
-                const duration = ref.lineFrameDuration;
-
-                for (const point of ref.connectedPoints) {
-                    drawLineWithOpacity(ref, point, ref.lineFrameOpacityStep);
+            for (const point of this.connectedPoints) {
+                const opacity = point.lineOpacity;
+                if (opacity < this.lineMaxOpacity) {
+                    drawLineWithOpacity(this, point.point, opacity);
                 }
+                point.lineOpacity += this.lineFrameOpacityStep;
+            }
+        }
+    }
+}
 
-                if (deltaTime < duration) {
-                    animationFrameId = requestAnimationFrame(() =>
-                        animateLinesOpacity(ref, startTime)
-                    );
-                } else if (animationFrameId) {
-                    cancelAnimationFrame(animationFrameId);
-                    animationFrameId = null;
-                }
+class UserInteraction {
+    public cursorX: number = 0;
+    public cursorY: number = 0;
+    public rippleStartX: number = 0;
+    public rippleStartY: number = 0;
+    public cursorTrajectoryAngle: number = 0;
+    public cursorRadius: number = 75;
+    public isCursorMoving: boolean = false;
+    public maxRippleRadius: number = 500;
+    public currentRippleRadius: number = 75;
+    public rippleStep: number = 10;
+    public rippleEffectStep: number = 0.7;
+    public rippleMaxEffect: number = 5;
+    public drawRipple: boolean = false;
+    public points: Point[] = [];
+
+    constructor() {
+        window.addEventListener(
+            "mousemove",
+            this.handleUserCursorMovement.bind(this) as EventListener
+        );
+        window.addEventListener(
+            "click",
+            this.handleUserClick.bind(this) as EventListener
+        );
+    }
+
+    destroy() {
+        window.removeEventListener("mousemove", this.handleUserCursorMovement);
+        window.removeEventListener("click", this.handleUserClick);
+    }
+
+    public drawCursorAvatar(context: CanvasRenderingContext2D | null) {
+        const x = this.cursorX;
+        const y = this.cursorY;
+        const radius = this.cursorRadius;
+
+        if (context) {
+            context.fillStyle = "rgba(0, 0, 0, 0.25)";
+            context.beginPath();
+            context.arc(x, y, radius, 0, 2 * Math.PI);
+            context.fill();
+            context.closePath();
+        }
+    }
+
+    private handleUserCursorMovement(event: MouseEvent) {
+        const previousX = this.cursorX,
+            previousY = this.cursorY;
+        const currentX = event.clientX,
+            currentY = event.clientY;
+
+        if (previousX != currentX && previousY != currentY) {
+            const dx = currentX - previousX,
+                dy = -1 * (currentY - previousY);
+
+            let angleRadians = Math.atan2(dy, dx);
+
+            if (angleRadians < 0) {
+                angleRadians += 2 * Math.PI;
             }
 
-            animateLinesOpacity(this);
+            const angleDegrees = angleRadians * (180 / Math.PI);
+
+            this.cursorTrajectoryAngle = angleDegrees;
+            this.cursorX = currentX;
+            this.cursorY = currentY;
+            this.isCursorMoving = true;
+        }
+    }
+
+    private handleUserClick(event: MouseEvent) {
+        this.drawRipple = true;
+        this.rippleStartX = event.clientX;
+        this.rippleStartY = event.clientY;
+    }
+
+    public increaseRippleRadius() {
+        if (
+            this.drawRipple &&
+            this.currentRippleRadius < this.maxRippleRadius
+        ) {
+            this.currentRippleRadius += this.rippleStep;
+        } else {
+            this.currentRippleRadius = this.cursorRadius;
+            this.drawRipple = false;
+            this.points = [];
         }
     }
 }
@@ -248,14 +456,15 @@ export class Particles {
     private lineColor: string;
     private fps: number;
     private animationFrameId: number | null = null;
+    private userInteraction: UserInteraction | null = null;
 
     constructor(
         canvas: HTMLCanvasElement,
+        fps: number = 60,
         numberOfPoints: number = 150,
         numberOfNeighbours: number = 7,
         pointColor: string = "#fff",
-        lineColor: string = "#fff",
-        fps: number = 60
+        lineColor: string = "#fff"
     ) {
         this.canvas = canvas;
         this.numberOfPoints = numberOfPoints;
@@ -321,6 +530,14 @@ export class Particles {
                     point.drawPointOnCanvas();
                     point.drawLinesToNeighbourPointsOnCanvas();
                 }
+
+                if (this.userInteraction) {
+                    if (this.userInteraction.drawRipple) {
+                        this.userInteraction.increaseRippleRadius();
+                    }
+                    this.userInteraction.drawCursorAvatar(this.context);
+                    this.userInteraction.isCursorMoving = false;
+                }
             }
 
             this.lastTime = time - (elapsed % fpsInterval);
@@ -343,6 +560,15 @@ export class Particles {
             this.animationFrameId = null;
         }
         window.removeEventListener("resize", this.updateCanvasSize);
+        this.disableUserInteraction();
+    }
+
+    public enableUserInteraction() {
+        this.userInteraction = new UserInteraction();
+    }
+
+    public disableUserInteraction() {
+        this.userInteraction = null;
     }
 
     public getCanvas() {
@@ -359,5 +585,9 @@ export class Particles {
 
     getCanvasHeight() {
         return this.height;
+    }
+
+    getUserInfo() {
+        return this.userInteraction;
     }
 }
