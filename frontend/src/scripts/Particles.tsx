@@ -1,3 +1,17 @@
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "../../tailwind.config";
+
+const fullConfig = resolveConfig(tailwindConfig);
+
+function getCssVariableValue(value: string): string {
+    let variableName = value;
+    if (value.startsWith("var(")) {
+        variableName = value.slice(4, -1).trim();
+    }
+    const rootStyles = getComputedStyle(document.documentElement);
+    return rootStyles.getPropertyValue(variableName).trim();
+}
+
 interface RGB {
     r: number;
     g: number;
@@ -64,8 +78,8 @@ class Point {
 
     constructor(
         container: Particles,
-        pointColor: string = "#fff",
-        lineColor: string = "#fff",
+        pointColor: string,
+        lineColor: string,
         numberOfNeighbours = 7,
         offset = 25
     ) {
@@ -240,7 +254,9 @@ class Point {
             }
 
             if (isIntersect) {
-                this.pointColor = "#bf1725";
+                this.pointColor = getCssVariableValue(
+                    fullConfig.theme?.colors?.main?.medium || "--light"
+                );
                 this.directionAngle = angle;
                 this.reverse = false;
                 this.distance =
@@ -463,8 +479,12 @@ export class Particles {
         fps: number = 60,
         numberOfPoints: number = 150,
         numberOfNeighbours: number = 7,
-        pointColor: string = "#fff",
-        lineColor: string = "#fff"
+        pointColor: string = getCssVariableValue(
+            fullConfig.theme?.colors?.foreground || "--foreground"
+        ),
+        lineColor: string = getCssVariableValue(
+            fullConfig.theme?.colors?.foreground || "--foreground"
+        )
     ) {
         this.canvas = canvas;
         this.numberOfPoints = numberOfPoints;

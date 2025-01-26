@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import { Particles } from "@/scripts/Particles";
+import { SlideScrolling } from "@/scripts/SlideScroll";
 
 export default function Header() {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -14,6 +15,13 @@ export default function Header() {
         particles.enableUserInteraction();
         particles.start();
 
+        SlideScrolling.init(
+            "scroll-hidden",
+            "scroll-show",
+            "scroll-section",
+            "current-scroll"
+        );
+
         return () => {
             particles.cancel();
         };
@@ -22,7 +30,7 @@ export default function Header() {
     return (
         <canvas
             ref={canvasRef}
-            className="fixed w-full h-full -z-10 block top-0 left-0"
+            className="fixed w-full h-full opacity-50 -z-10 block top-0 left-0"
         ></canvas>
     );
 }
