@@ -206,7 +206,7 @@ class Point {
     }
 
     calculateAngle(): [number, boolean] {
-        const userInfo = this.container.getUserInfo() as UserInfo;
+        const userInfo = this.container.getUserInfo() as UserInteraction;
 
         let angle = this.directionAngle;
         let isIntersect = false;
@@ -214,8 +214,8 @@ class Point {
         if (userInfo && userInfo.isCursorMoving) {
             const cursorX = userInfo.cursorX,
                 cursorY = userInfo.cursorY;
-            const pointX = this.positionX,
-                pointY = this.positionY;
+            // const pointX = this.positionX,
+            //     pointY = this.positionY;
             const cursorTrajectoryAngle = userInfo.cursorTrajectoryAngle;
             const cursorRadius = userInfo.cursorRadius;
             const quadrant = Point.getQuadrant(cursorTrajectoryAngle);
@@ -255,7 +255,8 @@ class Point {
 
             if (isIntersect) {
                 this.pointColor = getCssVariableValue(
-                    fullConfig.theme?.colors?.main?.medium || "--light"
+                    fullConfig.theme?.colors?.main?.secondary.DEFAULT ||
+                        "--secondary-light"
                 );
                 this.directionAngle = angle;
                 this.reverse = false;
@@ -609,5 +610,21 @@ export class Particles {
 
     getUserInfo() {
         return this.userInteraction;
+    }
+
+    public setParticles(count: number) {
+        this.numberOfPoints = count;
+    }
+
+    public resetParticles() {
+        this.points = [];
+        for (let i = 0; i < this.numberOfPoints; i++) {
+            new Point(
+                this,
+                this.pointColor,
+                this.lineColor,
+                this.numberOfNeighbours
+            );
+        }
     }
 }

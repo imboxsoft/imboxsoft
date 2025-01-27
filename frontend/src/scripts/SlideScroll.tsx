@@ -2,6 +2,7 @@ export const SlideScrolling = (function () {
     let scrollSection: string;
     let currentScroll: string;
     let scrollInstance: SlideScroll | null = null;
+    let paused: boolean = false;
 
     function initIntersectionObserver(
         actionDo: (entry: IntersectionObserverEntry) => void,
@@ -42,8 +43,6 @@ export const SlideScrolling = (function () {
             const nextSection = sections[nextIndex];
             nextSection.classList.add(currentScroll);
 
-            console.log(nextSection.offsetTop);
-
             window.scrollTo({
                 top: nextSection.offsetTop,
                 behavior: "smooth",
@@ -55,19 +54,19 @@ export const SlideScrolling = (function () {
         private observer: IntersectionObserver;
 
         constructor(toObserve: string, scrollShowClass: string) {
-            // this.observer = initIntersectionObserver(
-            //     (entry) => entry.target.classList.add(scrollShowClass),
-            //     (entry) => entry.target.classList.remove(scrollShowClass)
-            // );
+            this.observer = initIntersectionObserver(
+                (entry) => entry.target.classList.add(scrollShowClass),
+                (entry) => entry.target.classList.remove(scrollShowClass)
+            );
 
-            // const elements = document.querySelectorAll(`.${toObserve}`);
-            // elements.forEach((el) => this.observer.observe(el));
+            const elements = document.querySelectorAll(`.${toObserve}`);
+            elements.forEach((el) => this.observer.observe(el));
 
             let scrolling = false;
             let startY: number | null = null;
 
             const onWheel = (e: WheelEvent) => {
-                if (!scrolling) {
+                if (!scrolling && !paused) {
                     scrolling = true;
 
                     if (e.deltaY > 0) {
@@ -81,7 +80,7 @@ export const SlideScrolling = (function () {
             };
 
             const onTouchStart = (e: TouchEvent) => {
-                if (!scrolling) {
+                if (!scrolling && !paused) {
                     startY = e.touches[0].clientY;
 
                     setTimeout(() => (scrolling = false), 250);
@@ -89,9 +88,11 @@ export const SlideScrolling = (function () {
             };
 
             const onTouchMove = (e: TouchEvent) => {
-                e.preventDefault();
-                if (!scrolling && startY !== null) {
+                if (!scrolling && startY !== null && !paused) {
+                    e.preventDefault();
+
                     const currentY = e.touches[0].clientY;
+
                     scrolling = true;
 
                     if (currentY > startY) {
@@ -126,6 +127,13 @@ export const SlideScrolling = (function () {
 
             if (!scrollInstance) {
                 scrollInstance = new SlideScroll(toObserve, scrollShowClass);
+            }
+        },
+        assess: function () {
+            if (window.innerWidth <= 1024) {
+                paused = true;
+            } else {
+                paused = false;
             }
         },
     };

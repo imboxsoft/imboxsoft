@@ -18,8 +18,14 @@ export default {
                     "black-o-1": "var(--black-o-1)",
                     dark: "var(--dark)",
                     medium: "var(--medium)",
-                    light: "var(--light)",
-                    blue: "var(--blue)",
+                    primary: {
+                        DEFAULT: "var(--primary-light)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary-light)",
+                        lighter: "var(--secondary-lighter)",
+                        darker: "var(--secondary-darker)",
+                    },
                     white: "var(--white)",
                 },
             },

@@ -1,10 +1,15 @@
-export default function ContactModal() {
+type ChildProps = {
+    handleClickOnContactModal: (
+        event: React.MouseEvent<HTMLButtonElement>
+    ) => void;
+};
+
+const ContactModal: React.FC<ChildProps> = ({ handleClickOnContactModal }) => {
     return (
         <div
-            id="contact-modal"
             tabIndex={-1}
             aria-hidden="true"
-            className="modal bg-black bg-opacity-50 hidden overflow-y-auto overflow-x-hidden h-screen fixed top-0 right-0 left-0 bottom-0 z-[45] justify-center items-center w-full md:inset-0 max-h-full"
+            className="bg-black bg-opacity-50 overflow-y-auto overflow-x-hidden h-screen fixed top-0 right-0 left-0 bottom-0 z-50 flex justify-center items-center w-full md:inset-0 max-h-full"
         >
             <div className="relative p-4 w-full max-w-xl max-h-full">
                 <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -13,9 +18,9 @@ export default function ContactModal() {
                             Contact Us
                         </h3>
                         <button
+                            onClick={handleClickOnContactModal}
                             type="button"
                             className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                            data-modal-toggle="contact-modal"
                         >
                             <svg
                                 className="w-3 h-3"
@@ -35,8 +40,12 @@ export default function ContactModal() {
                             <span className="sr-only">Close modal</span>
                         </button>
                     </div>
+
+                    <div className="p-4">Content</div>
                 </div>
             </div>
         </div>
     );
-}
+};
+
+export default ContactModal;
