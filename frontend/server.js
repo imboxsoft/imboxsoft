@@ -1,3 +1,4 @@
+const fs = require("fs");
 const { createServer } = require("http");
 const { parse } = require("url");
 const next = require("next");
@@ -6,6 +7,8 @@ const port = process.env.NEXTJS_PORT;
 
 const app = next({ dev: false });
 const handle = app.getRequestHandler();
+
+const logFile = fs.createWriteStream("app.log", { flags: "a" });
 
 app.prepare().then(() => {
     createServer(async (req, res) => {
@@ -21,16 +24,16 @@ app.prepare().then(() => {
                 await handle(req, res, parsedUrl);
             }
         } catch (err) {
-            console.error("Error occurred handling", req.url, err);
+            logFile.write("Error occurred handling", req.url, err);
             res.statusCode = 500;
             res.end("internal server error");
         }
     })
         .once("error", (err) => {
-            console.error(err);
+            logFile.write(err);
             process.exit(1);
         })
         .listen(port, () => {
-            console.log("> Ready on http://localhost:3000");
+            logFile.write("> Nextjs server is ready on port 3000");
         });
 });
