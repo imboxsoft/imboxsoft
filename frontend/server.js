@@ -2,16 +2,16 @@ const fs = require("fs");
 const { createServer } = require("http");
 const { parse } = require("url");
 const next = require("next");
+const path = require("path");
 
 const port = process.env.NEXTJS_PORT;
 
 const app = next({ dev: false });
 const handle = app.getRequestHandler();
 
-const logFile = fs.createWriteStream(
-    "/home/findaro/repositories/imboxsoft/frontend/app.log",
-    { flags: "a" }
-);
+const logFile = fs.createWriteStream(path.join(__dirname, "app.log"), {
+    flags: "a",
+});
 
 app.prepare().then(() => {
     createServer(async (req, res) => {
