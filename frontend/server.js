@@ -4,7 +4,7 @@ const { parse } = require("url");
 const next = require("next");
 const path = require("path");
 
-const port = process.env.NEXTJS_PORT;
+const port = process.env.PORT || 3000;
 
 const app = next({ dev: false });
 const handle = app.getRequestHandler();
@@ -21,16 +21,18 @@ app.prepare().then(() => {
 
             if (pathname === "/a") {
                 await app.render(req, res, "/a", query);
-            } else if (pathname === "/b") {
-                await app.render(req, res, "/b", query);
             } else {
                 await handle(req, res, parsedUrl);
             }
         } catch (err) {
-            logFile.write("Error occurred handling", req.url, err);
+            logFile.write(
+                `Error occurred handling ${req.url}: ${
+                    err.stack || err.message
+                }\n`
+            );
             console.error("Error occurred handling", req.url, err);
             res.statusCode = 500;
-            res.end("internal server error");
+            res.end(`internal server error Nextjs ${err.message}`);
         }
     })
         .once("error", (err) => {
