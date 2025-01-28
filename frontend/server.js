@@ -28,12 +28,14 @@ app.prepare().then(() => {
             }
         } catch (err) {
             logFile.write("Error occurred handling", req.url, err);
+            console.error("Error occurred handling", req.url, err);
             res.statusCode = 500;
             res.end("internal server error");
         }
     })
         .once("error", (err) => {
             logFile.write(err);
+            console.error(err);
             process.exit(1);
         })
         .listen(port, () => {
