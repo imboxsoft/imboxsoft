@@ -22,7 +22,7 @@ export default function Particles() {
         particles.enableUserInteraction();
         particles.start();
 
-        const handleWinowResize = () => {
+        const handleWindowResize = () => {
             if (window.innerWidth < 640) {
                 particles.setParticles(100);
             } else if (window.innerWidth < 1024) {
@@ -33,11 +33,11 @@ export default function Particles() {
             particles.resetParticles();
         };
 
-        window.addEventListener("resize", handleWinowResize);
+        window.addEventListener("resize", handleWindowResize);
 
         return () => {
             particles.cancel();
-            window.removeEventListener("resize", handleWinowResize);
+            window.removeEventListener("resize", handleWindowResize);
         };
     }, []);
 

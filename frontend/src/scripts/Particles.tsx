@@ -406,7 +406,7 @@ class UserInteraction {
         const y = this.cursorY;
         const radius = this.cursorRadius;
 
-        if (context) {
+        if (context && window.innerWidth >= 1024) {
             context.fillStyle = "rgba(0, 0, 0, 0.25)";
             context.beginPath();
             context.arc(x, y, radius, 0, 2 * Math.PI);

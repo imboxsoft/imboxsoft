@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="scroll-section w-full max-w-screen-xl mx-auto p-4 md:pt-20 md:pb-10">
+        <footer className="scroll-section w-full max-w-screen-xl mx-auto p-4 pt-10 md:pt-20 md:pb-10">
             <div className="sm:flex sm:items-center sm:justify-between">
                 <Link href="/" className="flex items-center mb-4 sm:mb-0">
                     <Image

@@ -29,6 +29,9 @@ export default {
                     white: "var(--white)",
                 },
             },
+            position: {
+                unset: "unset",
+            },
         },
     },
     plugins: [],

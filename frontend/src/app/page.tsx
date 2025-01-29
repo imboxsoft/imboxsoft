@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { SlideScrolling } from "@/scripts/SlideScroll";
+import SlideScrollManager from "@/scripts/SlideScroll";
 
 export default function Home() {
     const technologies: string[] = [
@@ -29,28 +29,30 @@ export default function Home() {
     ];
 
     useEffect(() => {
-        SlideScrolling.init(
+        const scrollManager = SlideScrollManager.getInstance(
             "scroll-hidden",
             "scroll-show",
             "scroll-section",
             "current-scroll"
         );
-        SlideScrolling.assess();
 
-        const handleWinowResize = () => {
-            SlideScrolling.assess();
+        scrollManager.assess();
+
+        const handleWindowResize = () => {
+            scrollManager.assess();
         };
 
-        window.addEventListener("resize", handleWinowResize);
+        window.addEventListener("resize", handleWindowResize);
 
         return () => {
-            window.removeEventListener("resize", handleWinowResize);
+            window.removeEventListener("resize", handleWindowResize);
+            scrollManager.pause();
         };
     }, []);
 
     return (
         <div className="gap-16 font-[family-name:var(--font-geist-sans)] text-lg md:text-2xl">
-            <section className="pt-44 pb-10 max-w-screen-xl mx-auto lg:min-h-screen px-4 lg:px-10 flex-1 flex flex-col gap-6 md:gap-10">
+            <section className="scroll-section current-scroll pt-28 lg:pt-32 pb-10 max-w-screen-xl mx-auto lg:min-h-screen px-4 lg:px-10 flex-1 flex flex-col gap-6 md:gap-10">
                 <div className="grid grid-cols-2 lg:grid-cols-4 grid-rows-3 lg:grid-rows-2 gap-6 md:gap-10">
                     <div className="row-span-2 lg:row-span-2 col-span-2 lg:col-span-3 rounded-2xl bg-main-black-o-1 px-10 md:px-14 pt-10 sm:pt-14 pb-10 sm:pb-14">
                         <h1 className="font-bold text-2xl sm:text-4xl md:text-5xl/tight tracking-wider mb-8">
