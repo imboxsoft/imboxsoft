@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="scroll-section w-full max-w-screen-xl mx-auto p-4 pt-10 md:pt-20 md:pb-10">
-            <div className="sm:flex sm:items-center sm:justify-between">
+        <footer className="scroll-section w-full p-4 pt-10 md:pt-20 md:pb-10 bg-main-black-o-1">
+            <div className="max-w-screen-xl mx-auto sm:flex sm:items-center sm:justify-between">
                 <Link href="/" className="flex items-center mb-4 sm:mb-0">
                     <Image
                         src="/images/logo_light.svg"

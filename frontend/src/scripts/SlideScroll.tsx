@@ -1,5 +1,4 @@
 export default class SlideScrollManager {
-    private observer: IntersectionObserver | null = null;
     private onWheel: (e: WheelEvent) => void;
     private onTouchStart: (e: TouchEvent) => void;
     private onTouchMove: (e: TouchEvent) => void;
@@ -12,18 +11,8 @@ export default class SlideScrollManager {
 
     private static instance: SlideScrollManager | null = null;
 
-    private constructor(
-        toObserve: string,
-        scrollShowClass: string,
-        scrollSection: string,
-        currentScroll: string
-    ) {
-        this.initState(
-            toObserve,
-            scrollShowClass,
-            scrollSection,
-            currentScroll
-        );
+    private constructor(scrollSection: string, currentScroll: string) {
+        this.initState(scrollSection, currentScroll);
 
         this.onWheel = (e: WheelEvent) => {
             if (!this.scrolling) {
@@ -74,22 +63,9 @@ export default class SlideScrollManager {
         });
     }
 
-    private initState(
-        toObserve: string,
-        scrollShowClass: string,
-        scrollSection: string,
-        currentScroll: string
-    ) {
+    private initState(scrollSection: string, currentScroll: string) {
         this.scrollSection = scrollSection;
         this.currentScroll = currentScroll;
-
-        this.observer = this.initIntersectionObserver(
-            (entry) => entry.target.classList.add(scrollShowClass),
-            (entry) => entry.target.classList.remove(scrollShowClass)
-        );
-
-        const elements = document.querySelectorAll(`.${toObserve}`);
-        elements.forEach((el) => this.observer?.observe(el));
 
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -98,45 +74,15 @@ export default class SlideScrollManager {
         setTimeout(() => (this.scrolling = false), this.paused ? 1000 : 250);
     }
 
-    public static getInstance(
-        toObserve: string,
-        scrollShowClass: string,
-        scrollSection: string,
-        currentScroll: string
-    ) {
+    public static getInstance(scrollSection: string, currentScroll: string) {
         let instance = SlideScrollManager.instance;
         if (!instance) {
-            instance = new SlideScrollManager(
-                toObserve,
-                scrollShowClass,
-                scrollSection,
-                currentScroll
-            );
+            instance = new SlideScrollManager(scrollSection, currentScroll);
             SlideScrollManager.instance = instance;
         } else {
-            instance.initState(
-                toObserve,
-                scrollShowClass,
-                scrollSection,
-                currentScroll
-            );
+            instance.initState(scrollSection, currentScroll);
         }
         return instance;
-    }
-
-    private initIntersectionObserver(
-        actionDo: (entry: IntersectionObserverEntry) => void,
-        actionUndo: (entry: IntersectionObserverEntry) => void
-    ): IntersectionObserver {
-        return new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    actionDo(entry);
-                } else {
-                    actionUndo(entry);
-                }
-            });
-        });
     }
 
     private scrollToSection(direction: "next" | "prev") {
@@ -180,8 +126,6 @@ export default class SlideScrollManager {
 
     pause() {
         this.paused = true;
-
-        this.observer?.disconnect();
     }
 
     destroy() {

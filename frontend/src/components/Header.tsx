@@ -2,17 +2,74 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import initIntersectionObserver from "@/scripts/IntersectionObserver";
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "../../tailwind.config";
+import getCssVariableValue from "@/scripts/Colors";
+
+const fullConfig = resolveConfig(tailwindConfig);
 
 export default function Header() {
     const [isNavigationVisible, setNavigationVisibility] =
         useState<boolean>(false);
     const [isHomeDropdownVisible, setServicesDropdownVisibility] =
         useState<boolean>(false);
-    const navigationRef = useRef<HTMLDivElement>(null);
     const homeDropdownRef = useRef<HTMLDivElement>(null);
+    const navbarRef = useRef<HTMLDivElement>(null);
+    const [navbarBg, setNavbarBg] = useState<string>("transparent");
+    const activeSections = useRef(new Set<string>());
 
     useEffect(() => {
+        const navbar = navbarRef.current;
+
+        if (!navbar) return;
+
+        const offsetObserverYBound = window.innerHeight - navbar.offsetHeight;
+
+        const observer = initIntersectionObserver(
+            (entry) => {
+                let sectionBg = window.getComputedStyle(
+                    entry.target
+                ).backgroundColor;
+
+                console.log("entered: ", sectionBg);
+
+                if (
+                    sectionBg === "transparent" ||
+                    sectionBg === "rgba(0, 0, 0, 0)"
+                ) {
+                    sectionBg = getCssVariableValue(
+                        fullConfig.theme?.colors?.main["black-o-1"]
+                    );
+                }
+
+                if (entry.isIntersecting) {
+                    activeSections.current.add(sectionBg);
+                } else {
+                    activeSections.current.delete(sectionBg);
+                }
+
+                const activeSectionsArray = Array.from(activeSections.current);
+                const lastActiveSection =
+                    activeSectionsArray[activeSectionsArray.length - 1];
+
+                setNavbarBg(lastActiveSection || "transparent");
+            },
+            null,
+            {
+                root: null,
+                rootMargin: `0px 0px -${offsetObserverYBound}px 0px`,
+                threshold: 0,
+            }
+        );
+
+        const targets = document.querySelectorAll(".observe-navbar-intersect");
+        targets.forEach((target) => observer.observe(target));
+
         const handleWindowResize = () => {
+            const body = document.body;
+            body.classList.remove("no-scroll");
+
             if (window.innerWidth < 1024) {
                 setNavigationVisibility(false);
                 setServicesDropdownVisibility(false);
@@ -28,26 +85,37 @@ export default function Header() {
 
         return () => {
             window.removeEventListener("resize", handleWindowResize);
+
+            observer.disconnect();
         };
     }, []);
 
     const handleNavigationVisibility = (
         event: React.MouseEvent,
-        open: boolean = false
+        isLink: boolean = false
     ) => {
         event.stopPropagation();
 
         const body = document.body;
 
         setNavigationVisibility((prev) => {
+            if (isLink) {
+                if (window.innerWidth < 1024) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
             if (!prev) {
                 body.classList.add("no-scroll");
             } else {
                 body.classList.remove("no-scroll");
             }
 
-            return open;
+            return !prev;
         });
+        setServicesDropdownVisibility(false);
     };
 
     const handleClickOnHomeDropdown = (event: React.MouseEvent) => {
@@ -57,16 +125,22 @@ export default function Header() {
         ) {
             return;
         }
-        setServicesDropdownVisibility((prev) => !prev);
+        setServicesDropdownVisibility((prev) => {
+            return !prev;
+        });
     };
 
     return (
         <header className="w-full">
-            <nav className="fixed top-0 left-0 z-50 w-full hover:bg-main-black-o-1 duration-300">
+            <nav
+                ref={navbarRef}
+                className={`fixed top-0 left-0 z-50 w-full hover:bg-main-black-o-1 duration-300`}
+                style={{ backgroundColor: navbarBg }}
+            >
                 <div className="max-w-screen-2xl w-full flex flex-wrap items-center justify-between mx-auto p-6">
                     <Link
                         onClick={(event) => {
-                            handleNavigationVisibility(event, false);
+                            handleNavigationVisibility(event, true);
                         }}
                         href="/"
                     >
@@ -82,7 +156,7 @@ export default function Header() {
                     <button
                         type="button"
                         onMouseDown={(event) => {
-                            handleNavigationVisibility(event, true);
+                            handleNavigationVisibility(event, false);
                         }}
                         className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400"
                         aria-controls="navbar-default"
@@ -108,11 +182,10 @@ export default function Header() {
                     {isNavigationVisible && (
                         <div
                             className="fixed lg:unset h-screen lg:h-auto top-0 left-0 z-50 w-full bg-gray-950 lg:bg-transparent block lg:w-auto overflow-y-auto lg:overflow-y-visible"
-                            ref={navigationRef}
                             id="navbar-default"
                         >
                             <ul className="relative font-medium text-2xl flex flex-col gap-4 lg:gap-0 p-4 lg:p-0 mt-4 lg:flex-row lg:space-x-8 lg:mt-0 items-center">
-                                <li className="width-full absolute top-0 right-0">
+                                <li className="block lg:hidden width-full absolute top-0 right-0">
                                     <button
                                         onClick={(event) => {
                                             handleNavigationVisibility(
@@ -146,7 +219,7 @@ export default function Header() {
                                         onClick={(event) => {
                                             handleNavigationVisibility(
                                                 event,
-                                                false
+                                                true
                                             );
                                         }}
                                         href="/"
@@ -183,7 +256,7 @@ export default function Header() {
                                         onClick={(event) => {
                                             handleNavigationVisibility(
                                                 event,
-                                                false
+                                                true
                                             );
                                         }}
                                         href="/about"
@@ -205,7 +278,7 @@ export default function Header() {
                                         onClick={(event) => {
                                             handleNavigationVisibility(
                                                 event,
-                                                false
+                                                true
                                             );
                                         }}
                                         href="/blog"
@@ -219,7 +292,7 @@ export default function Header() {
                                         onClick={(event) => {
                                             handleNavigationVisibility(
                                                 event,
-                                                false
+                                                true
                                             );
                                         }}
                                         href="/contact"
@@ -241,7 +314,7 @@ export default function Header() {
                                                     onClick={(event) => {
                                                         handleNavigationVisibility(
                                                             event,
-                                                            false
+                                                            true
                                                         );
                                                     }}
                                                     href="/services/software-development"
@@ -263,7 +336,7 @@ export default function Header() {
                                                     onClick={(event) => {
                                                         handleNavigationVisibility(
                                                             event,
-                                                            false
+                                                            true
                                                         );
                                                     }}
                                                     href="/services/email-marketing"
@@ -284,7 +357,7 @@ export default function Header() {
                                                     onClick={(event) => {
                                                         handleNavigationVisibility(
                                                             event,
-                                                            false
+                                                            true
                                                         );
                                                     }}
                                                     href="/services/graphic-design"
@@ -305,7 +378,7 @@ export default function Header() {
                                                     onClick={(event) => {
                                                         handleNavigationVisibility(
                                                             event,
-                                                            false
+                                                            true
                                                         );
                                                     }}
                                                     href="/services/email-marketing"
@@ -326,7 +399,7 @@ export default function Header() {
                                                     onClick={(event) => {
                                                         handleNavigationVisibility(
                                                             event,
-                                                            false
+                                                            true
                                                         );
                                                     }}
                                                     href="/services/email-marketing"

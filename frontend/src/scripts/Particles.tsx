@@ -1,16 +1,8 @@
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config";
+import getCssVariableValue from "./Colors";
 
 const fullConfig = resolveConfig(tailwindConfig);
-
-function getCssVariableValue(value: string): string {
-    let variableName = value;
-    if (value.startsWith("var(")) {
-        variableName = value.slice(4, -1).trim();
-    }
-    const rootStyles = getComputedStyle(document.documentElement);
-    return rootStyles.getPropertyValue(variableName).trim();
-}
 
 interface RGB {
     r: number;

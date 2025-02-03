@@ -43,13 +43,13 @@ export default function Blog() {
                     </p>
                     <form
                         action="#"
-                        className="flex flex-row gap-6 justify-center items-center"
+                        className="flex flex-col sm:flex-row sm:flex-wrap gap-6 justify-center items-center"
                     >
-                        <div className="w-full max-w-lg">
+                        <div className="flex-1 w-full sm:w-fit">
                             <input
                                 type="email"
                                 id="email"
-                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                className="w-full shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                                 placeholder="email@company.tld"
                                 required
                             />
