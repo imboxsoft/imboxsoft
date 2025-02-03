@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { Particles as ParticlesFunc } from "@/scripts/Particles";
+import { Particles as ParticlesFunc } from "@/utils/Particles";
 
 export default function Particles() {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -26,7 +26,6 @@ export const metadata: Metadata = {
     ],
     generator: "Next.js",
     applicationName: "Imboxsoft Website",
-    themeColor: "#ffffff",
     referrer: "strict-origin",
     openGraph: {
         title: "Imboxsoft IT Consulting & Solutions",
@@ -53,6 +52,10 @@ export const metadata: Metadata = {
         images: ["https://imboxsoft.com/twitter-image.jpg"],
     },
     manifest: "/site.webmanifest",
+};
+
+export const viewport: Viewport = {
+    themeColor: "#000000",
 };
 
 export default function RootLayout({

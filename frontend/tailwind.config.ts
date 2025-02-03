@@ -16,6 +16,7 @@ export default {
                 foreground: "var(--foreground)",
                 main: {
                     "black-o-1": "var(--black-o-1)",
+                    "white-o-02": "var(--white-o-02)",
                     dark: "var(--dark)",
                     medium: "var(--medium)",
                     primary: {

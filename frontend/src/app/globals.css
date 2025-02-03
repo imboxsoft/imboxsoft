@@ -5,6 +5,7 @@
 :root {
     --background: #102f48;
     --black-o-1: rgba(0, 0, 0, 0.75);
+    --white-o-02: rgba(255, 255, 255, 0.2);
     --foreground: #ffffff;
     --dark: #040f0f;
     --medium: rgb(12, 22, 31);
@@ -13,6 +14,11 @@
     --secondary-light: #f45b69;
     --secondary-darker: #cc3d49;
     --white: #eeeeee;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-light) !important;
 }
 
 /* @media (prefers-color-scheme: dark) {

@@ -1,11 +1,13 @@
 "use client";
+
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import initIntersectionObserver from "@/scripts/IntersectionObserver";
+import { usePathname } from "next/navigation";
+import initIntersectionObserver from "@/utils/IntersectionObserver";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config";
-import getCssVariableValue from "@/scripts/Colors";
+import getCssVariableValue from "@/utils/Colors";
 
 const fullConfig = resolveConfig(tailwindConfig);
 
@@ -19,10 +21,14 @@ export default function Header() {
     const [navbarBg, setNavbarBg] = useState<string>("transparent");
     const activeSections = useRef(new Set<string>());
 
+    const pathname = usePathname();
+
     useEffect(() => {
         const navbar = navbarRef.current;
 
         if (!navbar) return;
+
+        activeSections.current.clear();
 
         const offsetObserverYBound = window.innerHeight - navbar.offsetHeight;
 
@@ -31,8 +37,6 @@ export default function Header() {
                 let sectionBg = window.getComputedStyle(
                     entry.target
                 ).backgroundColor;
-
-                console.log("entered: ", sectionBg);
 
                 if (
                     sectionBg === "transparent" ||
@@ -88,7 +92,7 @@ export default function Header() {
 
             observer.disconnect();
         };
-    }, []);
+    }, [pathname]);
 
     const handleNavigationVisibility = (
         event: React.MouseEvent,
