@@ -41,6 +41,7 @@ export default async function Home() {
         ".NET",
         "PostgreSQL",
         "MongoDB",
+        "GIT",
         "Docker",
         "Kubernetes",
         "AWS",
@@ -49,6 +50,7 @@ export default async function Home() {
         "Bigcommerce",
         "Stripe",
         "Paypal",
+        "API Integration",
         "Photoshop",
         "Illustrator",
         "Figma",
@@ -56,7 +58,7 @@ export default async function Home() {
 
     return (
         <div className="gap-16 font-[family-name:var(--font-geist-sans)] text-lg md:text-2xl">
-            <section className="pt-28 lg:pt-32 scroll-section current-scroll pb-10 max-w-screen-xl mx-auto lg:min-h-screen lg:max-h-screen px-4 lg:px-10 flex-1 flex flex-col">
+            <section className="pt-28 lg:pt-32 scroll-section current-scroll pb-10 max-w-screen-xl mx-auto px-4 lg:px-10 lg:min-h-screen lg:max-h-screen flex-1 flex flex-col">
                 <HeroSection articles={articles} />
             </section>
 

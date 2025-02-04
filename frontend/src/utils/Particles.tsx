@@ -364,10 +364,11 @@ class Point {
 class UserInteraction {
     public cursorX: number = 0;
     public cursorY: number = 0;
+    public isCursorAvatarEnabled: boolean = false;
     public rippleStartX: number = 0;
     public rippleStartY: number = 0;
     public cursorTrajectoryAngle: number = 0;
-    public cursorRadius: number = 75;
+    public cursorRadius: number = 125;
     public isCursorMoving: boolean = false;
     public maxRippleRadius: number = 500;
     public currentRippleRadius: number = 75;
@@ -398,7 +399,11 @@ class UserInteraction {
         const y = this.cursorY;
         const radius = this.cursorRadius;
 
-        if (context && window.innerWidth >= 1024) {
+        if (
+            context &&
+            window.innerWidth >= 1024 &&
+            this.isCursorAvatarEnabled
+        ) {
             context.fillStyle = "rgba(0, 0, 0, 0.25)";
             context.beginPath();
             context.arc(x, y, radius, 0, 2 * Math.PI);

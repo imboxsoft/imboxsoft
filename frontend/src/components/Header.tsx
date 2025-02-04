@@ -16,7 +16,8 @@ export default function Header() {
         useState<boolean>(false);
     const [isHomeDropdownVisible, setServicesDropdownVisibility] =
         useState<boolean>(false);
-    const homeDropdownRef = useRef<HTMLDivElement>(null);
+    const [isCompanyDropdownVisible, setCompanyDropdownVisibility] =
+        useState<boolean>(false);
     const navbarRef = useRef<HTMLDivElement>(null);
     const [navbarBg, setNavbarBg] = useState<string>("transparent");
     const activeSections = useRef(new Set<string>());
@@ -123,13 +124,15 @@ export default function Header() {
     };
 
     const handleClickOnHomeDropdown = (event: React.MouseEvent) => {
-        if (
-            homeDropdownRef.current &&
-            homeDropdownRef.current.contains(event.target as Node)
-        ) {
-            return;
-        }
         setServicesDropdownVisibility((prev) => {
+            return !prev;
+        });
+        setCompanyDropdownVisibility(false);
+    };
+
+    const handleClickOnCompanyDropdown = (event: React.MouseEvent) => {
+        setServicesDropdownVisibility(false);
+        setCompanyDropdownVisibility((prev) => {
             return !prev;
         });
     };
@@ -233,6 +236,20 @@ export default function Header() {
                                     </Link>
                                 </li>
                                 <li>
+                                    <Link
+                                        onClick={(event) => {
+                                            handleNavigationVisibility(
+                                                event,
+                                                true
+                                            );
+                                        }}
+                                        href="/portfolio"
+                                        className="block py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
+                                    >
+                                        Our work
+                                    </Link>
+                                </li>
+                                <li>
                                     <button
                                         onClick={handleClickOnHomeDropdown}
                                         className="flex items-center justify-between w-full py-2 px-3 rounded-sm lg:w-auto hover:text-main-secondary-lighter md:p-0"
@@ -256,26 +273,27 @@ export default function Header() {
                                     </button>
                                 </li>
                                 <li>
-                                    <Link
-                                        onClick={(event) => {
-                                            handleNavigationVisibility(
-                                                event,
-                                                true
-                                            );
-                                        }}
-                                        href="/about"
-                                        className="block py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
+                                    <button
+                                        onClick={handleClickOnCompanyDropdown}
+                                        className="flex items-center justify-between w-full py-2 px-3 rounded-sm lg:w-auto hover:text-main-secondary-lighter md:p-0"
                                     >
-                                        Our work
-                                    </Link>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#expertise"
-                                        className="block py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
-                                    >
-                                        Company
-                                    </a>
+                                        Company{" "}
+                                        <svg
+                                            className="w-2.5 h-2.5 ms-2.5"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 10 6"
+                                        >
+                                            <path
+                                                stroke="currentColor"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="m1 1 4 4 4-4"
+                                            />
+                                        </svg>
+                                    </button>
                                 </li>
                                 <li>
                                     <Link
@@ -306,119 +324,165 @@ export default function Header() {
                                     </Link>
                                 </li>
                             </ul>
-                            {isHomeDropdownVisible && (
-                                <div
-                                    ref={homeDropdownRef}
-                                    className="w-full lg:absolute top-full left-0 mt-6 lg:mt-0 shadow-xs border-y bg-gray-800 border-gray-600"
-                                >
+                            {(isHomeDropdownVisible ||
+                                isCompanyDropdownVisible) && (
+                                <div className="w-full lg:absolute top-full left-0 mt-6 lg:mt-0 shadow-xs border-y bg-gray-800 border-gray-600">
                                     <div className="max-w-screen-xl px-4 py-5 mx-auto md:px-6">
                                         <ul className="flex flex-row flex-wrap gap-10">
-                                            <li>
-                                                <Link
-                                                    onClick={(event) => {
-                                                        handleNavigationVisibility(
-                                                            event,
-                                                            true
-                                                        );
-                                                    }}
-                                                    href="/services/software-development"
-                                                    className="block p-3 rounded-lg hover:bg-gray-700"
-                                                >
-                                                    <div className="font-semibold">
-                                                        IT Consulting and
-                                                        Software Development
-                                                    </div>
-                                                    <span className="text-sm text-main-secondary-lighter">
-                                                        Connect with third-party
-                                                        tools that you&apos;re
-                                                        already using.
-                                                    </span>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    onClick={(event) => {
-                                                        handleNavigationVisibility(
-                                                            event,
-                                                            true
-                                                        );
-                                                    }}
-                                                    href="/services/email-marketing"
-                                                    className="block p-3 rounded-lg dark:hover:bg-gray-700"
-                                                >
-                                                    <div className="font-semibold">
-                                                        SEO
-                                                    </div>
-                                                    <span className="text-sm text-gray-400">
-                                                        Connect with third-party
-                                                        tools that you&apos;re
-                                                        already using.
-                                                    </span>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    onClick={(event) => {
-                                                        handleNavigationVisibility(
-                                                            event,
-                                                            true
-                                                        );
-                                                    }}
-                                                    href="/services/graphic-design"
-                                                    className="block p-3 rounded-lg hover:bg-gray-700"
-                                                >
-                                                    <div className="font-semibold">
-                                                        Graphic Design
-                                                    </div>
-                                                    <span className="text-sm text-gray-400">
-                                                        Connect with third-party
-                                                        tools that you&apos;re
-                                                        already using.
-                                                    </span>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    onClick={(event) => {
-                                                        handleNavigationVisibility(
-                                                            event,
-                                                            true
-                                                        );
-                                                    }}
-                                                    href="/services/email-marketing"
-                                                    className="block p-3 rounded-lg hover:bg-gray-700"
-                                                >
-                                                    <div className="font-semibold">
-                                                        Email marketing
-                                                    </div>
-                                                    <span className="text-sm text-gray-400">
-                                                        Connect with third-party
-                                                        tools that you&apos;re
-                                                        already using.
-                                                    </span>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    onClick={(event) => {
-                                                        handleNavigationVisibility(
-                                                            event,
-                                                            true
-                                                        );
-                                                    }}
-                                                    href="/services/email-marketing"
-                                                    className="block p-3 rounded-lg hover:bg-gray-700"
-                                                >
-                                                    <div className="font-semibold">
-                                                        Educational
-                                                    </div>
-                                                    <span className="text-sm text-gray-400">
-                                                        Connect with third-party
-                                                        tools that you&apos;re
-                                                        already using.
-                                                    </span>
-                                                </Link>
-                                            </li>
+                                            {isHomeDropdownVisible ? (
+                                                <>
+                                                    <li>
+                                                        <Link
+                                                            onClick={(
+                                                                event
+                                                            ) => {
+                                                                handleNavigationVisibility(
+                                                                    event,
+                                                                    true
+                                                                );
+                                                            }}
+                                                            href="/services/software-development"
+                                                            className="block p-3 rounded-lg hover:bg-gray-700"
+                                                        >
+                                                            <div className="font-semibold">
+                                                                IT Consulting
+                                                                and Software
+                                                                Development
+                                                            </div>
+                                                            <span className="text-sm text-main-secondary-lighter">
+                                                                Connect with
+                                                                third-party
+                                                                tools that
+                                                                you&apos;re
+                                                                already using.
+                                                            </span>
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link
+                                                            onClick={(
+                                                                event
+                                                            ) => {
+                                                                handleNavigationVisibility(
+                                                                    event,
+                                                                    true
+                                                                );
+                                                            }}
+                                                            href="/services/email-marketing"
+                                                            className="block p-3 rounded-lg dark:hover:bg-gray-700"
+                                                        >
+                                                            <div className="font-semibold">
+                                                                SEO
+                                                            </div>
+                                                            <span className="text-sm text-gray-400">
+                                                                Connect with
+                                                                third-party
+                                                                tools that
+                                                                you&apos;re
+                                                                already using.
+                                                            </span>
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link
+                                                            onClick={(
+                                                                event
+                                                            ) => {
+                                                                handleNavigationVisibility(
+                                                                    event,
+                                                                    true
+                                                                );
+                                                            }}
+                                                            href="/services/graphic-design"
+                                                            className="block p-3 rounded-lg hover:bg-gray-700"
+                                                        >
+                                                            <div className="font-semibold">
+                                                                Graphic Design
+                                                            </div>
+                                                            <span className="text-sm text-gray-400">
+                                                                Connect with
+                                                                third-party
+                                                                tools that
+                                                                you&apos;re
+                                                                already using.
+                                                            </span>
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link
+                                                            onClick={(
+                                                                event
+                                                            ) => {
+                                                                handleNavigationVisibility(
+                                                                    event,
+                                                                    true
+                                                                );
+                                                            }}
+                                                            href="/services/email-marketing"
+                                                            className="block p-3 rounded-lg hover:bg-gray-700"
+                                                        >
+                                                            <div className="font-semibold">
+                                                                Email marketing
+                                                            </div>
+                                                            <span className="text-sm text-gray-400">
+                                                                Connect with
+                                                                third-party
+                                                                tools that
+                                                                you&apos;re
+                                                                already using.
+                                                            </span>
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link
+                                                            onClick={(
+                                                                event
+                                                            ) => {
+                                                                handleNavigationVisibility(
+                                                                    event,
+                                                                    true
+                                                                );
+                                                            }}
+                                                            href="/services/email-marketing"
+                                                            className="block p-3 rounded-lg hover:bg-gray-700"
+                                                        >
+                                                            <div className="font-semibold">
+                                                                Educational
+                                                            </div>
+                                                            <span className="text-sm text-gray-400">
+                                                                Connect with
+                                                                third-party
+                                                                tools that
+                                                                you&apos;re
+                                                                already using.
+                                                            </span>
+                                                        </Link>
+                                                    </li>
+                                                </>
+                                            ) : isCompanyDropdownVisible ? (
+                                                <>
+                                                    <li>
+                                                        <Link
+                                                            onClick={(
+                                                                event
+                                                            ) => {
+                                                                handleNavigationVisibility(
+                                                                    event,
+                                                                    true
+                                                                );
+                                                            }}
+                                                            href="/company/about-us"
+                                                            className="block p-3 rounded-lg hover:bg-gray-700"
+                                                        >
+                                                            <div className="font-semibold">
+                                                                About Us
+                                                            </div>
+                                                        </Link>
+                                                    </li>
+                                                </>
+                                            ) : (
+                                                <></>
+                                            )}
                                         </ul>
                                     </div>
                                 </div>

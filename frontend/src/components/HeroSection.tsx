@@ -43,8 +43,8 @@ export const HeroSection: React.FC<NewsPageProps> = ({ articles }) => {
     }, []);
 
     return (
-        <div className="observe-navbar-intersect flex flex-col gap-6 md:gap-10 flex-1 h-full">
-            <div className="relative rounded-2xl bg-main-black-o-1 max-h-48 overflow-hidden">
+        <div className="observe-navbar-intersect flex flex-col gap-6 md:gap-10 h-full min-h-0 overflow-hidden flex-1">
+            <div className="relative rounded-2xl bg-main-black-o-1 flex-shrink min-h-0 max-h-[500px] overflow-hidden">
                 <Image
                     src="/images/hero-section1.webp"
                     className="w-full rounded-xl opacity-75"
@@ -56,7 +56,7 @@ export const HeroSection: React.FC<NewsPageProps> = ({ articles }) => {
             </div>
             <div className="flex flex-1 flex-col lg:flex-row gap-6 md:gap-10">
                 <div className="flex-1 rounded-2xl bg-main-black-o-1 px-6 sm:px-10 md:px-14 pt-6 sm:pt-10 md:pt-14 pb-6 sm:pb-10 md:pb-14">
-                    <h1 className="font-bold text-2xl sm:text-4xl md:text-5xl/tight tracking-wider mb-10">
+                    <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl/tight tracking-wider mb-10">
                         Empowering businesses through{" "}
                         <span className="text-main-primary">
                             tech innovation
@@ -109,7 +109,7 @@ export const HeroSection: React.FC<NewsPageProps> = ({ articles }) => {
                     </div>
                 </div>
                 <div className="lg:w-[450px] flex flex-col md:flex-row lg:flex-col gap-6">
-                    <div className="md:w-1/2 lg:w-full flex flex-col gap-2 lg:flex-1 rounded-2xl bg-main-black-o-1 p-4 sm:p-6 lg:p-10 text-xl sm:text-2xl whitespace-nowrap">
+                    <div className="md:w-1/2 lg:w-full flex flex-col gap-2  rounded-2xl bg-main-black-o-1 p-4 sm:p-6 lg:p-10 text-xl sm:text-2xl whitespace-nowrap">
                         <div>
                             <span className="font-semibold">👀 Visitors:</span>{" "}
                             {visitors}
