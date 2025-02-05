@@ -26,11 +26,11 @@ export const HeroSection: React.FC<NewsPageProps> = ({ articles }) => {
 
     useEffect(() => {
         const fetchCrypto = async () => {
-            const res = await fetch(
-                "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
-            );
-            const data = await res.json();
-            setBtcPrice(data.bitcoin.usd);
+            // const res = await fetch(
+            //     "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
+            // );
+            // const data = await res.json();
+            setBtcPrice(null);
         };
 
         fetchCrypto();

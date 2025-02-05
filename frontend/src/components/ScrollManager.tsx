@@ -10,8 +10,6 @@ export const ScrollManager = () => {
             "current-scroll"
         );
 
-        console.log("regergre");
-
         const handleWindowResize = () => {
             scrollManager.assess();
         };

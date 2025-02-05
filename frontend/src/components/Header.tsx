@@ -20,7 +20,9 @@ export default function Header() {
         useState<boolean>(false);
     const navbarRef = useRef<HTMLDivElement>(null);
     const [navbarBg, setNavbarBg] = useState<string>("transparent");
-    const activeSections = useRef(new Set<string>());
+    //const activeSections = useRef(new Set<string>());
+    const activeSections = useRef<string[]>([]);
+    const hasRunOnce = useRef<boolean>(false);
 
     const pathname = usePathname();
 
@@ -29,11 +31,28 @@ export default function Header() {
 
         if (!navbar) return;
 
-        activeSections.current.clear();
+        const topElementObserver = initIntersectionObserver(
+            (entry) => {
+                if (!hasRunOnce.current) {
+                    hasRunOnce.current = true;
+                    return;
+                }
+
+                activeSections.current.pop();
+                const lastActiveSection =
+                    activeSections.current[activeSections.current.length - 1];
+                setNavbarBg(lastActiveSection || "transparent");
+            },
+            (entry) => {},
+            { root: null, threshold: 0 }
+        );
+
+        const topElement = document.querySelector("#top-section");
+        if (topElement) topElementObserver.observe(topElement);
 
         const offsetObserverYBound = window.innerHeight - navbar.offsetHeight;
 
-        const observer = initIntersectionObserver(
+        const navbarIntersectionObserver = initIntersectionObserver(
             (entry) => {
                 let sectionBg = window.getComputedStyle(
                     entry.target
@@ -48,15 +67,19 @@ export default function Header() {
                     );
                 }
 
+                console.log(sectionBg, entry.isIntersecting);
+
                 if (entry.isIntersecting) {
-                    activeSections.current.add(sectionBg);
+                    activeSections.current.push(sectionBg);
                 } else {
-                    activeSections.current.delete(sectionBg);
+                    const index = activeSections.current.lastIndexOf(sectionBg);
+                    if (index !== -1 && activeSections.current.length > 1) {
+                        activeSections.current.splice(index, 1);
+                    }
                 }
 
-                const activeSectionsArray = Array.from(activeSections.current);
                 const lastActiveSection =
-                    activeSectionsArray[activeSectionsArray.length - 1];
+                    activeSections.current[activeSections.current.length - 1];
 
                 setNavbarBg(lastActiveSection || "transparent");
             },
@@ -69,7 +92,7 @@ export default function Header() {
         );
 
         const targets = document.querySelectorAll(".observe-navbar-intersect");
-        targets.forEach((target) => observer.observe(target));
+        targets.forEach((target) => navbarIntersectionObserver.observe(target));
 
         const handleWindowResize = () => {
             const body = document.body;
@@ -91,7 +114,11 @@ export default function Header() {
         return () => {
             window.removeEventListener("resize", handleWindowResize);
 
-            observer.disconnect();
+            hasRunOnce.current = false;
+            activeSections.current = [];
+
+            topElementObserver.disconnect();
+            navbarIntersectionObserver.disconnect();
         };
     }, [pathname]);
 
@@ -120,7 +147,9 @@ export default function Header() {
 
             return !prev;
         });
+
         setServicesDropdownVisibility(false);
+        setCompanyDropdownVisibility(false);
     };
 
     const handleClickOnHomeDropdown = (event: React.MouseEvent) => {
@@ -139,6 +168,7 @@ export default function Header() {
 
     return (
         <header className="w-full">
+            <section id="top-section" className="top-0 left-0"></section>
             <nav
                 ref={navbarRef}
                 className={`fixed top-0 left-0 z-50 w-full hover:bg-main-black-o-1 duration-300`}
@@ -345,8 +375,7 @@ export default function Header() {
                                                             className="block p-3 rounded-lg hover:bg-gray-700"
                                                         >
                                                             <div className="font-semibold">
-                                                                IT Consulting
-                                                                and Software
+                                                                Software
                                                                 Development
                                                             </div>
                                                             <span className="text-sm text-main-secondary-lighter">
@@ -368,7 +397,32 @@ export default function Header() {
                                                                     true
                                                                 );
                                                             }}
-                                                            href="/services/email-marketing"
+                                                            href="/services/it-consulting"
+                                                            className="block p-3 rounded-lg hover:bg-gray-700"
+                                                        >
+                                                            <div className="font-semibold">
+                                                                IT Consulting
+                                                            </div>
+                                                            <span className="text-sm text-main-secondary-lighter">
+                                                                Connect with
+                                                                third-party
+                                                                tools that
+                                                                you&apos;re
+                                                                already using.
+                                                            </span>
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link
+                                                            onClick={(
+                                                                event
+                                                            ) => {
+                                                                handleNavigationVisibility(
+                                                                    event,
+                                                                    true
+                                                                );
+                                                            }}
+                                                            href="/services/seo"
                                                             className="block p-3 rounded-lg dark:hover:bg-gray-700"
                                                         >
                                                             <div className="font-semibold">

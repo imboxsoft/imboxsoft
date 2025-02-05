@@ -1,67 +1,86 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function SoftwareDevelopment() {
-    const technologies: string[] = [
-        "Next.js",
-        "Angular",
-        "Alpinejs",
-        "Tailwind",
-        "Django",
-        "Nodejs",
-        "Laravel",
-        ".NET",
-        "PostgreSQL",
-        "MongoDB",
-        "GIT",
-        "Docker",
-        "Kubernetes",
-        "AWS",
-        "Google Cloud",
-        "Shopify",
-        "Bigcommerce",
-        "Stripe",
-        "Paypal",
-        "API Integration",
-        "Photoshop",
-        "Illustrator",
-        "Figma",
-    ];
-
+export default function SEO() {
     return (
         <div className="bg-main-medium">
-            <section className="observe-navbar-intersect pt-32 w-full bg-main-medium">
-                <div className="relative max-w-screen-xl mx-auto px-4 xs:px-10 py-32">
-                    <div className="md:w-2/3">
-                        <h5 className="text-main-primary text-sm mb-8">
-                            SERVICES
-                        </h5>
-                        <h1 className="text-5xl font-bold mb-4">
-                            Software development Services
-                        </h1>
-                        <h3 className="text-2xl">
-                            Thoroughly vetted, highly efficient, and
-                            custom-built for your unique challenge. Boost
-                            development velocity with high-impact agile teams
-                            aligned with your goals, process, and time zone
-                        </h3>
-                        <div className="flex mt-6">
-                            <Link
-                                href="/contact"
-                                className="p-6 text-2xl bg-main-secondary rounded-2xl"
-                            >
-                                Get in touch
-                            </Link>
+            <section className="observe-navbar-intersect pt-24 lg:pt-32 w-full bg-main-medium">
+                <div className="relative max-w-screen-xl mx-auto px-4 xs:px-10 pb-20 lg:py-32">
+                    <div className="flex flex-col lg:flex-row gap-20">
+                        <div className="flex-1 text-center lg:text-start">
+                            <h5 className="text-main-primary text-sm mb-8">
+                                SERVICES
+                            </h5>
+                            <h1 className="text-5xl font-bold mb-4">
+                                Free SEO Audit
+                            </h1>
+                            <h3 className="text-2xl">
+                                Get the exact keywords your competitors are
+                                ranking with.
+                            </h3>
+                            <h3 className="text-2xl">
+                                No Cost or Future Obligation. Guaranteed!
+                            </h3>
                         </div>
-                    </div>
-                    <div className="absolute right-0 bottom-0 translate-y-20 z-20">
-                        <Image
-                            src="/images/man.png"
-                            alt="Imboxsoft Logo"
-                            layout="intrinsic"
-                            width={300}
-                            height={50}
-                        />
+                        <div className="flex flex-row justify-center">
+                            <form
+                                action="#"
+                                className="grid grid-cols-2 gap-6 w-[500px]"
+                            >
+                                <div>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                        placeholder="Your name"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                        placeholder="Your email"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="text"
+                                        id="brand"
+                                        className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                        placeholder="Let us who you are"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="text"
+                                        id="website"
+                                        className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                        placeholder="Your website"
+                                        required
+                                    />
+                                </div>
+                                <div className="col-span-2">
+                                    <textarea
+                                        id="message"
+                                        rows={6}
+                                        className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        placeholder="Your SEO expectations..."
+                                    ></textarea>
+                                </div>
+                                <div className="col-span-2 flex justify-center lg:justify-start">
+                                    <button
+                                        type="submit"
+                                        className="py-3 px-5 text-sm font-medium text-center rounded-lg bg-main-secondary sm:w-fit hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-primary-300"
+                                    >
+                                        Send request
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -490,59 +509,6 @@ export default function SoftwareDevelopment() {
                                     poți vedea rezultatele în cel mai scurt timp
                                     posibil.
                                 </p>
-                            </div>
-                        </div>
-
-                        <div className="mb-24">
-                            <h2 className="text-5xl font-semibold mb-6">
-                                Technology expertise
-                            </h2>
-                            <p className="w-full md:w-1/2">
-                                Descoperă puterea tehnologiilor de ultimă oră și
-                                dezvoltă-ți potențialul de dezvoltare software
-                                cu gama noastră de soluții și servicii
-                                inovatoare.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h1 className="text-5xl font-medium mb-20">
-                                Your success metrics become ours
-                            </h1>
-                            <div className="flex flex-col lg:flex-row">
-                                <div className="flex-1 p-10 pt-32 border border-gray-500">
-                                    <h3 className="text-6xl font-semibold mb-4">
-                                        60%
-                                    </h3>
-                                    <p className="text-2xl">
-                                        of our work comes from{" "}
-                                        <span className="font-semibold">
-                                            recommendations
-                                        </span>{" "}
-                                    </p>
-                                </div>
-                                <div className="flex-1 p-10 pt-32 border border-gray-500">
-                                    <h3 className="text-6xl font-semibold mb-4">
-                                        60%
-                                    </h3>
-                                    <p className="text-2xl">
-                                        of our work comes from{" "}
-                                        <span className="font-semibold">
-                                            recommendations
-                                        </span>{" "}
-                                    </p>
-                                </div>
-                                <div className="flex-1 p-10 pt-32 border border-gray-500">
-                                    <h3 className="text-6xl font-semibold mb-4">
-                                        60%
-                                    </h3>
-                                    <p className="text-2xl">
-                                        of our work comes from{" "}
-                                        <span className="font-semibold">
-                                            recommendations
-                                        </span>{" "}
-                                    </p>
-                                </div>
                             </div>
                         </div>
                     </div>

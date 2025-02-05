@@ -6,7 +6,9 @@ export default function AboutUs() {
             <div className="observe-navbar-intersect pt-32 w-full bg-main-medium">
                 <div className="relative max-w-screen-xl mx-auto px-4 xs:px-10 py-20">
                     <div className="md:w-2/3">
-                        <h5 className="text-sm mb-8">ABOUT US</h5>
+                        <h5 className="text-main-primary text-sm mb-8">
+                            ABOUT US
+                        </h5>
                         <h1 className="text-3xl font-bold mb-4">
                             We think you should feel supported by the people you
                             work with
