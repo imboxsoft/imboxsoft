@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Portfolio() {
+export default function OurWork() {
     const technologies: string[] = [
         "Next.js",
         "Angular",

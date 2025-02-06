@@ -6,7 +6,6 @@ import { Navigation, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 type NewsArticle = {
     title: string;
@@ -56,13 +55,18 @@ export const HeroSection: React.FC<NewsPageProps> = ({ articles }) => {
             </div>
             <div className="flex flex-1 flex-col lg:flex-row gap-6 md:gap-10">
                 <div className="flex-1 rounded-2xl bg-main-black-o-1 px-6 sm:px-10 md:px-14 pt-6 sm:pt-10 md:pt-14 pb-6 sm:pb-10 md:pb-14">
-                    <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl/tight tracking-wider mb-10">
-                        Empowering businesses through{" "}
+                    <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl/tight tracking-wider mb-6">
+                        Empowering Businesses Through{" "}
                         <span className="text-main-primary">
-                            tech innovation
+                            Tech Innovation
                         </span>
                     </h1>
-                    <div className="w-full flex flex-row gap-2 items-center bg-main-white-o-02 rounded-lg px-2">
+                    <h3 className="text-lg mb-10">
+                        From software development to IT consulting, graphic
+                        design, and digital marketing – we craft solutions that
+                        grow businesses.
+                    </h3>
+                    <div className="w-full flex flex-row gap-2 items-center bg-main-white-o-02 rounded-lg px-4">
                         <div>
                             <svg
                                 className="w-6 h-6 text-main-secondary-lighter"
@@ -82,12 +86,10 @@ export const HeroSection: React.FC<NewsPageProps> = ({ articles }) => {
                                 />
                             </svg>
                         </div>
-                        <input
-                            className="flex-1 py-2.5 outline-none bg-transparent text-sm border-transparent rounded-lg ring-transparent focus:ring-transparent focus:border-transparent"
-                            type="text"
-                            placeholder="email@domain.com"
-                        />
-                        <div>
+                        <div className="ml-2 flex-1 py-4 outline-none bg-transparent text-lg border-transparent rounded-lg ring-transparent focus:ring-transparent focus:border-transparent">
+                            Start Your Project Today
+                        </div>
+                        <div className="flex flex-row gap-2 items-center">
                             <svg
                                 className="w-6 h-6 text-main-primary"
                                 aria-hidden="true"
@@ -105,6 +107,12 @@ export const HeroSection: React.FC<NewsPageProps> = ({ articles }) => {
                                     d="M19 12H5m14 0-4 4m4-4-4-4"
                                 />
                             </svg>
+                            <a
+                                href="/contact"
+                                className="my-3 px-3 py-2 bg-main-secondary rounded-lg text-base font-semibold"
+                            >
+                                Let's begin!
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -129,6 +137,7 @@ export const HeroSection: React.FC<NewsPageProps> = ({ articles }) => {
                     </div>
                     <div className="md:w-1/2 lg:w-full relative h-full lg:flex-1 rounded-2xl bg-main-black-o-1 p-4 sm:p-6 lg:p-10">
                         <Swiper
+                            touchStartPreventDefault={false}
                             className="h-full"
                             modules={[Navigation, Autoplay]}
                             spaceBetween={20}

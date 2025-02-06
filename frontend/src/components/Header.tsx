@@ -8,6 +8,7 @@ import initIntersectionObserver from "@/utils/IntersectionObserver";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config";
 import getCssVariableValue from "@/utils/Colors";
+import routes from "@/constants/routes";
 
 const fullConfig = resolveConfig(tailwindConfig);
 
@@ -66,8 +67,6 @@ export default function Header() {
                         fullConfig.theme?.colors?.main["black-o-1"]
                     );
                 }
-
-                console.log(sectionBg, entry.isIntersecting);
 
                 if (entry.isIntersecting) {
                     activeSections.current.push(sectionBg);
@@ -179,7 +178,7 @@ export default function Header() {
                         onClick={(event) => {
                             handleNavigationVisibility(event, true);
                         }}
-                        href="/"
+                        href={routes.HOME}
                     >
                         <Image
                             src="/images/logo_light.svg"
@@ -259,7 +258,7 @@ export default function Header() {
                                                 true
                                             );
                                         }}
-                                        href="/"
+                                        href={routes.HOME}
                                         className="block py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
                                     >
                                         Home
@@ -273,7 +272,7 @@ export default function Header() {
                                                 true
                                             );
                                         }}
-                                        href="/portfolio"
+                                        href={routes.PORTFOLIO}
                                         className="block py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
                                     >
                                         Our work
@@ -333,10 +332,10 @@ export default function Header() {
                                                 true
                                             );
                                         }}
-                                        href="/blog"
+                                        href={routes.INSIGHTS}
                                         className="block py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
                                     >
-                                        Blog
+                                        Insights
                                     </Link>
                                 </li>
                                 <li className="mt-4 lg:mt-0">
@@ -347,7 +346,7 @@ export default function Header() {
                                                 true
                                             );
                                         }}
-                                        href="/contact"
+                                        href={routes.CONTACT}
                                         className="text-white bg-main-secondary hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-transparent font-medium rounded-lg text-xl px-4 py-3 text-center"
                                     >
                                         Contact Us
@@ -371,7 +370,9 @@ export default function Header() {
                                                                     true
                                                                 );
                                                             }}
-                                                            href="/services/software-development"
+                                                            href={
+                                                                routes.SOFTWARE_DEVELOPMENT
+                                                            }
                                                             className="block p-3 rounded-lg hover:bg-gray-700"
                                                         >
                                                             <div className="font-semibold">
@@ -397,7 +398,9 @@ export default function Header() {
                                                                     true
                                                                 );
                                                             }}
-                                                            href="/services/it-consulting"
+                                                            href={
+                                                                routes.IT_CONSULTING
+                                                            }
                                                             className="block p-3 rounded-lg hover:bg-gray-700"
                                                         >
                                                             <div className="font-semibold">
@@ -422,7 +425,7 @@ export default function Header() {
                                                                     true
                                                                 );
                                                             }}
-                                                            href="/services/seo"
+                                                            href={routes.SEO}
                                                             className="block p-3 rounded-lg dark:hover:bg-gray-700"
                                                         >
                                                             <div className="font-semibold">
@@ -447,32 +450,9 @@ export default function Header() {
                                                                     true
                                                                 );
                                                             }}
-                                                            href="/services/graphic-design"
-                                                            className="block p-3 rounded-lg hover:bg-gray-700"
-                                                        >
-                                                            <div className="font-semibold">
-                                                                Graphic Design
-                                                            </div>
-                                                            <span className="text-sm text-gray-400">
-                                                                Connect with
-                                                                third-party
-                                                                tools that
-                                                                you&apos;re
-                                                                already using.
-                                                            </span>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            onClick={(
-                                                                event
-                                                            ) => {
-                                                                handleNavigationVisibility(
-                                                                    event,
-                                                                    true
-                                                                );
-                                                            }}
-                                                            href="/services/email-marketing"
+                                                            href={
+                                                                routes.EMAIL_MARKETING
+                                                            }
                                                             className="block p-3 rounded-lg hover:bg-gray-700"
                                                         >
                                                             <div className="font-semibold">
@@ -497,7 +477,34 @@ export default function Header() {
                                                                     true
                                                                 );
                                                             }}
-                                                            href="/services/email-marketing"
+                                                            href={
+                                                                routes.GRAPHIC_DESIGN
+                                                            }
+                                                            className="block p-3 rounded-lg hover:bg-gray-700"
+                                                        >
+                                                            <div className="font-semibold">
+                                                                Graphic Design
+                                                            </div>
+                                                            <span className="text-sm text-gray-400">
+                                                                Connect with
+                                                                third-party
+                                                                tools that
+                                                                you&apos;re
+                                                                already using.
+                                                            </span>
+                                                        </Link>
+                                                    </li>
+                                                    {/* <li>
+                                                        <Link
+                                                            onClick={(
+                                                                event
+                                                            ) => {
+                                                                handleNavigationVisibility(
+                                                                    event,
+                                                                    true
+                                                                );
+                                                            }}
+                                                            href={routes.}
                                                             className="block p-3 rounded-lg hover:bg-gray-700"
                                                         >
                                                             <div className="font-semibold">
@@ -511,7 +518,7 @@ export default function Header() {
                                                                 already using.
                                                             </span>
                                                         </Link>
-                                                    </li>
+                                                    </li> */}
                                                 </>
                                             ) : isCompanyDropdownVisible ? (
                                                 <>
@@ -525,7 +532,9 @@ export default function Header() {
                                                                     true
                                                                 );
                                                             }}
-                                                            href="/company/about-us"
+                                                            href={
+                                                                routes.ABOUT_US
+                                                            }
                                                             className="block p-3 rounded-lg hover:bg-gray-700"
                                                         >
                                                             <div className="font-semibold">

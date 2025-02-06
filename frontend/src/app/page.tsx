@@ -1,6 +1,9 @@
 import { HeroSection } from "@/components/HeroSection";
 import { ScrollManager } from "@/components/ScrollManager";
-
+import ServicesCardsSwiper from "@/components/ServicesCardsSwiper";
+import routes from "@/constants/routes";
+import Image from "next/image";
+import Link from "next/link";
 import Parser from "rss-parser";
 
 type NewsArticle = {
@@ -99,12 +102,21 @@ export default async function Home() {
             </section>
 
             <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 sm:py-24 lg:py-0 flex items-center bg-gray-800">
-                <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
-                    <div className="scroll-hidden inline-flex items-center justify-center w-full mb-8 md:mb-16">
-                        <hr className="w-56 xs:w-64 md:w-72 h-[2px] my-8 bg-main-primary border-0" />
-                        <h3 className="text-2xl md:text-3xl font-bold absolute px-4 py-2 -translate-x-1/2 left-1/2 bg-main-medium text-center">
-                            Expertise
-                        </h3>
+                <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
+                    <div className="text-center mb-8 md:mb-16">
+                        <div className="scroll-hidden inline-flex items-center justify-center w-full mb-4">
+                            <hr className="w-56 xs:w-64 md:w-72 h-[2px] my-8 bg-main-primary border-0" />
+                            <h3 className="text-2xl md:text-3xl font-bold absolute px-4 py-2 -translate-x-1/2 left-1/2 bg-main-medium text-center">
+                                Our Expertise
+                            </h3>
+                        </div>
+                        <p>
+                            Comprehensive IT Services Tailored for Your Business
+                        </p>
+                    </div>
+
+                    <div className="mb-20">
+                        <ServicesCardsSwiper />
                     </div>
 
                     <p className="scroll-hidden mb-6 text-justify">
@@ -127,6 +139,53 @@ export default async function Home() {
                                 </li>
                             ))}
                         </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 sm:py-24 lg:py-0 flex items-center bg-gray-900">
+                <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
+                    <div className="text-center mb-8 md:mb-16">
+                        <h3 className="text-3xl md:text-5xl font-medium px-4 py-2">
+                            Why Choose Us?
+                        </h3>
+                    </div>
+                    <div className="flex flex-col gap-16">
+                        <div className="flex flex-col gap-4 justify-between items-center">
+                            <div className="flex-1 flex justify-center">
+                                ✅ Years of experience in IT & software.
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-4 justify-between items-center">
+                            <div className="flex-1 flex justify-center">
+                                ✅ Full-stack expertise, from coding to
+                                branding.
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-4 justify-between items-center">
+                            <div className="flex-1 flex justify-center">
+                                ✅ Results-driven approach with cutting-edge
+                                solutions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 sm:py-24 lg:py-0 flex items-center bg-main-black-o-1">
+                <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
+                    <div className="text-center mb-8 md:mb-16">
+                        <h3 className="text-3xl md:text-5xl font-medium px-4 py-2">
+                            Ready to start your digital transformation?
+                        </h3>
+                    </div>
+                    <div className="flex flex-col gap-16 items-center">
+                        <Link
+                            href={routes.CONTACT}
+                            className="bg-main-secondary px-6 py-4 font-semibold rounded-md"
+                        >
+                            Let's Talk
+                        </Link>
                     </div>
                 </div>
             </section>

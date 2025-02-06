@@ -1,9 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
+import routes from "@/constants/routes";
 
 export default function AboutUs() {
     return (
         <div>
-            <div className="observe-navbar-intersect pt-32 w-full bg-main-medium">
+            <section className="observe-navbar-intersect pt-32 w-full bg-main-medium">
                 <div className="relative max-w-screen-xl mx-auto px-4 xs:px-10 py-20">
                     <div className="md:w-2/3">
                         <h5 className="text-main-primary text-sm mb-8">
@@ -29,8 +31,9 @@ export default function AboutUs() {
                         />
                     </div>
                 </div>
-            </div>
-            <div className="observe-navbar-intersect w-full bg-gray-800">
+            </section>
+
+            <section className="observe-navbar-intersect w-full bg-gray-800">
                 <div className="max-w-screen-xl mx-auto px-4 xs:px-10 pt-32 pb-20">
                     <div className="flex flex-row gap-32">
                         <div className="flex-1">
@@ -92,9 +95,10 @@ export default function AboutUs() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="observe-navbar-intersect w-full bg-gray-900">
-                <div className="max-w-screen-xl mx-auto px-4 xs:px-10 pt-32 pb-20">
+            </section>
+
+            <section className="observe-navbar-intersect w-full bg-gray-900">
+                <div className="max-w-screen-xl mx-auto px-4 xs:px-10 pt-32 pb-32">
                     <h5 className="text-main-primary mb-6 font-semibold text-center">
                         Meet the partners
                     </h5>
@@ -140,7 +144,25 @@ export default function AboutUs() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 sm:py-24 lg:py-0 flex items-center bg-main-black-o-1">
+                <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
+                    <div className="text-center mb-8 md:mb-16">
+                        <h3 className="text-3xl md:text-5xl font-medium px-4 py-2">
+                            Let’s work together! Contact us today.
+                        </h3>
+                    </div>
+                    <div className="flex flex-col gap-16 items-center">
+                        <Link
+                            href={routes.CONTACT}
+                            className="bg-main-secondary px-6 py-4 font-semibold rounded-md"
+                        >
+                            Get In Touch
+                        </Link>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 }
