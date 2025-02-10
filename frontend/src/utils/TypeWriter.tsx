@@ -9,8 +9,8 @@ export class Typewriter {
     private typeDelay: number;
     private deleteDelay: number;
     private pauseFor: number;
-    private loop: boolean;
     private addEndOfSentence: string;
+    private isRunning: boolean = false;
 
     constructor(
         elId: string,
@@ -18,7 +18,6 @@ export class Typewriter {
         typeDelay: number = 50,
         deleteDelay: number = 25,
         pauseFor: number = 500,
-        loop: boolean = false,
         addEndOfSentence: string = ""
     ) {
         this.elId = elId;
@@ -26,7 +25,6 @@ export class Typewriter {
         this.typeDelay = typeDelay;
         this.deleteDelay = deleteDelay;
         this.pauseFor = pauseFor;
-        this.loop = loop;
         this.addEndOfSentence = addEndOfSentence;
         this.domEl = document.getElementById(this.elId);
     }
@@ -71,10 +69,17 @@ export class Typewriter {
     }
 
     async start() {
-        do {
-            if (this.domEl) {
-                await this.words();
-            }
-        } while (this.loop);
+        if (!this.isRunning) {
+            this.isRunning = true;
+            do {
+                if (this.domEl) {
+                    await this.words();
+                }
+            } while (this.isRunning);
+        }
+    }
+
+    public stop() {
+        this.isRunning = false;
     }
 }

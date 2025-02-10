@@ -1,11 +1,18 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Typewriter } from "@/utils/TypeWriter";
 
 const HeroSectionTW = () => {
+    const twRef = useRef<Typewriter | null>(null);
+    const didInit = useRef(false);
+
     useEffect(() => {
-        new Typewriter(
+        if (didInit.current) return;
+
+        didInit.current = true;
+
+        twRef.current = new Typewriter(
             "home-typewriter",
             [
                 "Specialized in Full Stack Software Development. We give life to your vision.",
@@ -21,9 +28,17 @@ const HeroSectionTW = () => {
             ],
             25,
             15,
-            5000,
-            true
-        ).start();
+            5000
+        );
+
+        twRef.current.start();
+
+        return () => {
+            if (twRef.current) {
+                twRef.current.stop();
+                twRef.current = null;
+            }
+        };
     }, []);
 
     return (
