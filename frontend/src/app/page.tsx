@@ -1,38 +1,11 @@
 import { HeroSection } from "@/components/HeroSection";
 import { ScrollManager } from "@/components/ScrollManager";
 import ServicesCardsSwiper from "@/components/ServicesCardsSwiper";
-import routes from "@/constants/routes";
 import Image from "next/image";
+import routes from "@/constants/routes";
 import Link from "next/link";
-import Parser from "rss-parser";
-
-type NewsArticle = {
-    title: string;
-    link: string;
-    pubDate: string;
-};
-
-export async function fetchNews(): Promise<NewsArticle[]> {
-    const parser = new Parser();
-    const response = await fetch(
-        "https://news.google.com/rss/search?q=technology&hl=en-US&gl=US&ceid=US:en",
-        {
-            next: { revalidate: 86400 },
-        }
-    );
-
-    const xml = await response.text();
-    const feed = await parser.parseString(xml);
-
-    return feed.items.map((item) => ({
-        title: item.title ?? "No title",
-        link: item.link ?? "#",
-        pubDate: item.pubDate ?? "Unknown date",
-    }));
-}
 
 export default async function Home() {
-    const articles: NewsArticle[] = await fetchNews();
     const technologies: string[] = [
         "Next.js",
         "Angular",
@@ -60,12 +33,12 @@ export default async function Home() {
     ];
 
     return (
-        <div className="gap-16 font-[family-name:var(--font-geist-sans)] text-lg md:text-2xl">
-            <section className="pt-28 lg:pt-32 scroll-section current-scroll pb-10 max-w-screen-xl mx-auto px-4 lg:px-10 lg:min-h-screen lg:max-h-screen flex-1 flex flex-col">
-                <HeroSection articles={articles} />
+        <div className="gap-16 font-[family-name:var(--font-geist-sans)]">
+            <section className="sm:pt-24 scroll-section current-scroll sm:pb-10 max-w-screen-xl mx-auto sm:px-4 lg:px-10 lg:min-h-screen lg:max-h-screen flex-1 flex flex-col">
+                <HeroSection />
             </section>
 
-            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 sm:py-24 lg:py-0 flex items-center bg-gray-900">
+            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-24 lg:py-0 flex items-center bg-main-background">
                 <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
                     <div className="scroll-hidden text-center md:text-right mb-10 md:mb-16">
                         <h1 className="mb-4 text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
@@ -76,105 +49,152 @@ export default async function Home() {
                             </span>
                         </h1>
                         <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-none tracking-tight">
-                            <span className="leading-normal underline underline-offset-3 decoration-4 md:decoration-8 decoration-main-secondary">
+                            <span className="leading-normal border-b-4 border-main-secondary">
                                 Your trusted partner in cutting-edge technology
                             </span>
                         </h2>
                     </div>
 
                     <div className="scroll-hidden text-justify">
-                        <p className="mb-1">
+                        <p className="mb-4">
                             Our company specializes in delivering tailored
                             software development solutions and comprehensive IT
                             consulting services. We are dedicated to empowering
                             our clients with the tools they need to succeed in
                             today&apos;s dynamic digital landscape.
                         </p>
-                        <p className="mb-1"></p>
 
-                        <p className="mb-1">
+                        <p className="mb-4">
                             Partner with us today and we will harness together
                             the power of technology and propel your business
                             forward.
                         </p>
+
+                        <p>
+                            Navigate through our{" "}
+                            <Link
+                                href="/services"
+                                className="text-main-secondary"
+                            >
+                                Services page
+                            </Link>{" "}
+                            and find out how we can be of help to you.
+                        </p>
                     </div>
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 sm:py-24 lg:py-0 flex items-center bg-gray-800">
+            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-24 lg:py-0 flex items-center bg-main-background-lighter">
                 <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
                     <div className="text-center mb-8 md:mb-16">
                         <div className="scroll-hidden inline-flex items-center justify-center w-full mb-4">
-                            <hr className="w-56 xs:w-64 md:w-72 h-[2px] my-8 bg-main-primary border-0" />
-                            <h3 className="text-2xl md:text-3xl font-bold absolute px-4 py-2 -translate-x-1/2 left-1/2 bg-main-medium text-center">
+                            <hr className="w-56 xs:w-64 md:w-72 h-[4px] my-8 bg-main-secondary-lighter border-0" />
+                            <h3 className="text-2xl md:text-3xl font-bold absolute px-4 py-2 -translate-x-1/2 left-1/2 bg-main-background-dark text-center">
                                 Our Expertise
                             </h3>
                         </div>
-                        <p>
+                        <h4 className="font-semibold text-2xl">
                             Comprehensive IT Services Tailored for Your Business
-                        </p>
+                        </h4>
                     </div>
 
-                    <div className="mb-20">
-                        <ServicesCardsSwiper />
+                    <div className="flex flex-col lg:flex-row gap-20 w-full">
+                        <div className="flex-1">
+                            <p className="scroll-hidden mb-8 text-justify">
+                                Imboxsoft specializes in a diverse array of
+                                technologies and systems, ensuring that we stay
+                                at the forefront of innovation to meet the
+                                evolving needs of our clients.
+                            </p>
+                            <p className="scroll-hidden mb-4 text-justify font-semibold">
+                                Our core competencies include:
+                            </p>
+                            <ul className="flex flex-row flex-wrap gap-x-4 gap-y-3">
+                                {technologies.map((el, index) => (
+                                    <li key={index}>
+                                        <span className="block bg-main-secondary text-base font-semibold px-4 py-2 rounded-md">
+                                            {el}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="w-full lg:max-w-[350px]">
+                            <ServicesCardsSwiper
+                                customBreakpoints={{
+                                    0: {
+                                        slidesPerView: 1,
+                                    },
+                                    768: {
+                                        slidesPerView: 2,
+                                    },
+                                    1024: {
+                                        slidesPerView: 1,
+                                    },
+                                }}
+                            />
+                        </div>
                     </div>
+                </div>
+            </section>
 
-                    <p className="scroll-hidden mb-6 text-justify">
-                        Imboxsoft specializes in a diverse array of technologies
-                        and systems, ensuring that we stay at the forefront of
-                        innovation to meet the evolving needs of our clients.
-                    </p>
-
-                    <p className="scroll-hidden mb-4 text-justify">
-                        Our core competencies include:
-                    </p>
-
-                    <div className="scroll-hidden">
-                        <ul className="flex flex-row flex-wrap gap-x-4 gap-y-3">
-                            {technologies.map((el, index) => (
-                                <li key={index}>
-                                    <span className="block bg-gray-600 text-xs font-medium px-4 py-2 rounded-md">
-                                        {el}
-                                    </span>
+            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-24 lg:py-0 flex items-center bg-main-background">
+                <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
+                    <div className="relative flex flex-col md:flex-row gap-20 items-center">
+                        <div className="flex-1 text-shadow z-10">
+                            <div className="mb-16">
+                                <h3 className="text-3xl md:text-5xl font-medium">
+                                    Why Choose Us?
+                                </h3>
+                            </div>
+                            <ul className="flex flex-col gap-10 drop-shadow-xl">
+                                <li>
+                                    <p>
+                                        ✅ Years of experience in IT & software.
+                                    </p>
                                 </li>
-                            ))}
-                        </ul>
+                                <li>
+                                    <p>
+                                        ✅ Full-stack expertise, from coding to
+                                        branding.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        ✅ Results-driven approach with
+                                        cutting-edge solutions.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        ✅ We stay up-to-date with the latest
+                                        trends in IT.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>✅ Long career in Graphic Design.</p>
+                                </li>
+                                <li>
+                                    <p>✅ We are available Monday to Sunday.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="absolute top-0 right-0 md:relative z-0 max-w-64 lg:max-w-96">
+                            <Image
+                                src="/images/why-us.avif"
+                                width={1000}
+                                height={1000}
+                                alt="wef"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 sm:py-24 lg:py-0 flex items-center bg-gray-900">
+            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-24 lg:py-0 flex items-center bg-main-opacity-black-75">
                 <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
-                    <div className="text-center mb-8 md:mb-16">
-                        <h3 className="text-3xl md:text-5xl font-medium px-4 py-2">
-                            Why Choose Us?
-                        </h3>
-                    </div>
-                    <div className="flex flex-col gap-16">
-                        <div className="flex flex-col gap-4 justify-between items-center">
-                            <div className="flex-1 flex justify-center">
-                                ✅ Years of experience in IT & software.
-                            </div>
-                        </div>
-                        <div className="flex flex-col gap-4 justify-between items-center">
-                            <div className="flex-1 flex justify-center">
-                                ✅ Full-stack expertise, from coding to
-                                branding.
-                            </div>
-                        </div>
-                        <div className="flex flex-col gap-4 justify-between items-center">
-                            <div className="flex-1 flex justify-center">
-                                ✅ Results-driven approach with cutting-edge
-                                solutions.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 sm:py-24 lg:py-0 flex items-center bg-main-black-o-1">
-                <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
-                    <div className="text-center mb-8 md:mb-16">
+                    <div className="text-center mt-20 mb-8 md:mb-16">
                         <h3 className="text-3xl md:text-5xl font-medium px-4 py-2">
                             Ready to start your digital transformation?
                         </h3>

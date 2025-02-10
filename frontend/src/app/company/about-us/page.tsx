@@ -5,7 +5,7 @@ import routes from "@/constants/routes";
 export default function AboutUs() {
     return (
         <div>
-            <section className="observe-navbar-intersect pt-32 w-full bg-main-medium">
+            <section className="observe-navbar-intersect pt-32 w-full bg-main-background-lighter-lighter">
                 <div className="relative max-w-screen-xl mx-auto px-4 xs:px-10 py-20">
                     <div className="md:w-2/3">
                         <h5 className="text-main-primary text-sm mb-8">
@@ -33,7 +33,7 @@ export default function AboutUs() {
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect w-full bg-gray-800">
+            <section className="observe-navbar-intersect w-full bg-main-background-lighter">
                 <div className="max-w-screen-xl mx-auto px-4 xs:px-10 pt-32 pb-20">
                     <div className="flex flex-row gap-32">
                         <div className="flex-1">
@@ -97,7 +97,7 @@ export default function AboutUs() {
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect w-full bg-gray-900">
+            <section className="observe-navbar-intersect w-full bg-main-background">
                 <div className="max-w-screen-xl mx-auto px-4 xs:px-10 pt-32 pb-32">
                     <h5 className="text-main-primary mb-6 font-semibold text-center">
                         Meet the partners
@@ -146,7 +146,7 @@ export default function AboutUs() {
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 sm:py-24 lg:py-0 flex items-center bg-main-black-o-1">
+            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 sm:py-24 lg:py-0 flex items-center bg-main-opacity-black-75">
                 <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
                     <div className="text-center mb-8 md:mb-16">
                         <h3 className="text-3xl md:text-5xl font-medium px-4 py-2">

@@ -29,8 +29,8 @@ export default function SoftwareDevelopment() {
     ];
 
     return (
-        <div className="bg-main-medium">
-            <section className="observe-navbar-intersect pt-32 w-full bg-main-medium">
+        <div className="bg-main-background-lighter-lighter">
+            <section className="observe-navbar-intersect pt-32 w-full bg-main-background-lighter-lighter">
                 <div className="relative max-w-screen-xl mx-auto px-4 xs:px-10 py-32">
                     <div className="md:w-2/3">
                         <h5 className="text-main-primary text-sm mb-8">
@@ -194,9 +194,9 @@ export default function SoftwareDevelopment() {
             </section>
 
             <div className="overflow-x-hidden">
-                <section className="observe-navbar-intersect w-full bg-gray-800">
+                <section className="observe-navbar-intersect w-full bg-main-background-lighter">
                     <div className="py-24">
-                        <div className="max-w-screen-xl rounded-3xl mx-auto px-10 xs:px-20 py-20 md:py-32 bg-gray-900">
+                        <div className="max-w-screen-xl rounded-3xl mx-auto px-10 xs:px-20 py-20 md:py-32 bg-main-background">
                             <div className="flex flex-row gap-6 items-center">
                                 <div className="flex-1">
                                     <h2 className="text-5xl">
@@ -234,9 +234,9 @@ export default function SoftwareDevelopment() {
                         </div>
                     </div>
                 </section>
-                <section className="observe-navbar-intersect w-full bg-gray-800">
+                <section className="observe-navbar-intersect w-full bg-main-background-lighter">
                     <div className="lg:pb-32">
-                        <div className="max-w-screen-xl rounded-3xl mx-auto bg-gray-900 pt-10 md:pt-0 pb-20 md:pb-0">
+                        <div className="max-w-screen-xl rounded-3xl mx-auto bg-main-background pt-10 md:pt-0 pb-20 md:pb-0">
                             <div className="flex flex-col gap-20 md:gap-10 lg:gap-40 md:[&>*:nth-child(even)]:flex-row-reverse">
                                 <div className="relative flex flex-col md:flex-row gap-10">
                                     <div className="flex-1 px-6 xs:px-16 pt-24 pb-6 md:pb-16 flex flex-col items-center md:items-start text-center md:text-left">

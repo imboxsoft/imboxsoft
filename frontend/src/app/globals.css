@@ -3,22 +3,21 @@
 @tailwind utilities;
 
 :root {
-    --background: #102f48;
-    --black-o-1: rgba(0, 0, 0, 0.75);
-    --white-o-02: rgba(255, 255, 255, 0.2);
+    --background: #112d44;
     --foreground: #ffffff;
-    --dark: #040f0f;
-    --medium: rgb(12, 22, 31);
-    --primary-light: #1ad8c6;
+    --background-lighter: #163650;
+    --background-dark: #0d1d2b;
+    --primary: #1ad8c6;
+    --secondary: #f45b69;
     --secondary-lighter: #ff6c6c;
-    --secondary-light: #f45b69;
     --secondary-darker: #cc3d49;
-    --white: #eeeeee;
+    --black-o-75: rgba(0, 0, 0, 0.75);
+    --white-o-02: rgba(255, 255, 255, 0.2);
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-    color: var(--primary-light) !important;
+    color: var(--primary) !important;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -48,4 +47,28 @@ body {
 
 .no-scroll {
     overflow: hidden;
+}
+
+.tw-caret {
+    opacity: 1;
+}
+
+.tw-caret.tw-caret--blink {
+    animation: caretBlink 0.9s infinite;
+}
+
+@keyframes caretBlink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }

@@ -1,75 +1,41 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import React from "react";
 import Image from "next/image";
-import "swiper/css";
-import "swiper/css/navigation";
+import { fetchNews, NewsArticle } from "@/utils/rss";
+import HeroSectionTW from "./HeroSectionTW";
 
-type NewsArticle = {
-    title: string;
-    link: string;
-    pubDate: string;
-};
-
-type NewsPageProps = {
-    articles: NewsArticle[];
-};
-
-export const HeroSection: React.FC<NewsPageProps> = ({ articles }) => {
-    const [linesOfCode, setLinesOfCode] = useState(500000);
-    const [projects, setProjects] = useState(10);
-    const [visitors, setVisitors] = useState(100);
-    const [btcPrice, setBtcPrice] = useState(null);
-
-    useEffect(() => {
-        const fetchCrypto = async () => {
-            // const res = await fetch(
-            //     "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
-            // );
-            // const data = await res.json();
-            setBtcPrice(null);
-        };
-
-        fetchCrypto();
-
-        const interval = setInterval(() => {}, 10000);
-
-        return () => {
-            clearInterval(interval);
-        };
-    }, []);
+export const HeroSection = async () => {
+    const ARTICLES: NewsArticle[] = await fetchNews();
 
     return (
-        <div className="observe-navbar-intersect flex flex-col gap-6 md:gap-10 h-full min-h-0 overflow-hidden flex-1">
-            <div className="relative rounded-2xl bg-main-black-o-1 flex-shrink min-h-0 max-h-[500px] overflow-hidden">
-                <Image
-                    src="/images/hero-section1.webp"
-                    className="w-full rounded-xl opacity-75"
-                    layout="intrinsic"
-                    width={300}
-                    height={50}
-                    alt="Hero Section Background"
-                />
-            </div>
-            <div className="flex flex-1 flex-col lg:flex-row gap-6 md:gap-10">
-                <div className="flex-1 rounded-2xl bg-main-black-o-1 px-6 sm:px-10 md:px-14 pt-6 sm:pt-10 md:pt-14 pb-6 sm:pb-10 md:pb-14">
-                    <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl/tight tracking-wider mb-6">
-                        Empowering Businesses Through{" "}
-                        <span className="text-main-primary">
-                            Tech Innovation
-                        </span>
-                    </h1>
-                    <h3 className="text-lg mb-10">
-                        From software development to IT consulting, graphic
-                        design, and digital marketing – we craft solutions that
-                        grow businesses.
-                    </h3>
-                    <div className="w-full flex flex-row gap-2 items-center bg-main-white-o-02 rounded-lg px-4">
-                        <div>
+        <div className="observe-navbar-intersect flex flex-col justify-center sm:gap-6 md:gap-10 h-full min-h-0 overflow-hidden flex-1">
+            <div className="flex flex-col gap-6 md:gap-10">
+                <div className="relative flex flex-col gap-16 sm:gap-10 flex-1 sm:rounded-2xl bg-main-opacity-black-75 px-6 sm:px-10 md:px-14 pt-52 sm:pt-14 lg:pt-20 pb-14 sm:pb-10 md:pb-14">
+                    <div className="text-center sm:text-left w-full sm:w-2/3">
+                        <h1 className="font-bold text-4xl md:text-5xl/tight tracking-wider mb-10 sm:mb-4">
+                            Empowering Businesses Through{" "}
+                            <span className="text-main-primary">
+                                Tech Innovation
+                            </span>
+                        </h1>
+                        <h3 className="text-xl">
+                            From software development to IT consulting, SEO and
+                            graphic design – we craft solutions that grow your
+                            business.
+                        </h3>
+                    </div>
+                    <div className="hidden sm:block absolute top-0 right-[5%] w-52 translate-y-1/2">
+                        <Image
+                            className="w-full h-auto"
+                            src="/images/test-hs-pers.webp"
+                            width={2000}
+                            height={2000}
+                            alt="wewef"
+                        />
+                    </div>
+                    <div className="w-full flex flex-col sm:flex-row gap-2 items-center sm:bg-main-opacity-white-02 rounded-lg px-4">
+                        <div className="flex flex-col sm:flex-row gap-2 items-center justify-center sm:justify-start flex-1">
                             <svg
-                                className="w-6 h-6 text-main-secondary-lighter"
+                                className="w-10 sm:w-6 h-10 sm:h-6 text-main-secondary-lighter"
                                 aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -85,13 +51,13 @@ export const HeroSection: React.FC<NewsPageProps> = ({ articles }) => {
                                     d="m8 9 3 3-3 3m5 0h3M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
                                 />
                             </svg>
-                        </div>
-                        <div className="ml-2 flex-1 py-4 outline-none bg-transparent text-lg border-transparent rounded-lg ring-transparent focus:ring-transparent focus:border-transparent">
-                            Start Your Project Today
+                            <div className="flex-1 outline-none bg-transparent text-2xl sm:text-xl border-transparent rounded-lg ring-transparent focus:ring-transparent focus:border-transparent font-medium text-center sm:text-left">
+                                <HeroSectionTW />
+                            </div>
                         </div>
                         <div className="flex flex-row gap-2 items-center">
                             <svg
-                                className="w-6 h-6 text-main-primary"
+                                className="w-6 h-6 text-main-primary hidden sm:block"
                                 aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -109,66 +75,24 @@ export const HeroSection: React.FC<NewsPageProps> = ({ articles }) => {
                             </svg>
                             <a
                                 href="/contact"
-                                className="my-3 px-3 py-2 bg-main-secondary rounded-lg text-base font-semibold"
+                                className="my-3 px-5 sm:px-3 py-3 sm:py-2 bg-main-secondary rounded-lg text-lg sm:text-base font-bold sm:font-semibold"
                             >
                                 Let's begin!
                             </a>
                         </div>
                     </div>
                 </div>
-                <div className="lg:w-[450px] flex flex-col md:flex-row lg:flex-col gap-6">
-                    <div className="md:w-1/2 lg:w-full flex flex-col gap-2  rounded-2xl bg-main-black-o-1 p-4 sm:p-6 lg:p-10 text-xl sm:text-2xl whitespace-nowrap">
-                        <div>
-                            <span className="font-semibold">👀 Visitors:</span>{" "}
-                            {visitors}
-                        </div>
-                        <div>
-                            <span className="font-semibold">
-                                🚀 Projects Delivered:
-                            </span>{" "}
-                            {projects}
-                        </div>
-                        <div>
-                            <span className="font-semibold">
-                                💻 Lines of Code:
-                            </span>{" "}
-                            {linesOfCode.toLocaleString()}
-                        </div>
-                    </div>
-                    <div className="md:w-1/2 lg:w-full relative h-full lg:flex-1 rounded-2xl bg-main-black-o-1 p-4 sm:p-6 lg:p-10">
-                        <Swiper
-                            touchStartPreventDefault={false}
-                            className="h-full"
-                            modules={[Navigation, Autoplay]}
-                            spaceBetween={20}
-                            slidesPerView={1}
-                            navigation
-                        >
-                            {articles.map((article, index) => (
-                                <SwiperSlide
-                                    key={index}
-                                    className="relative !h-auto"
-                                >
-                                    <a
-                                        href={article.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="relative flex flex-col justify-between h-full w-full gap-2 bg-main-white-o-02 p-4 rounded-lg shadow hover:bg-main-black-o-1 transition"
-                                    >
-                                        <h3 className="text-lg font-semibold line-clamp-3">
-                                            {article.title}
-                                        </h3>
-                                        <p className="text-sm text-main-secondary-lighter">
-                                            {new Date(
-                                                article.pubDate
-                                            ).toLocaleDateString()}
-                                        </p>
-                                    </a>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    </div>
-                </div>
+                {/* <div>
+                    <PageStats articles={ARTICLES} />
+                </div> */}
+            </div>
+            <div className="fixed top-0 left-0 w-full h-full flex-1 bg-main-opacity-black-75 min-h-0 overflow-hidden -z-10">
+                <Image
+                    src="/images/hero_section_computer_girl.jpg"
+                    className="!relative w-full h-full opacity-50 object-cover"
+                    fill
+                    alt="Empowering Businesses Through Tech Innovation - Software Development"
+                />
             </div>
         </div>
     );

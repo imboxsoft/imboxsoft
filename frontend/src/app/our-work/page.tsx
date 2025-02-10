@@ -29,7 +29,7 @@ export default function OurWork() {
 
     return (
         <div>
-            <div className="observe-navbar-intersect pt-32 w-full bg-main-medium">
+            <div className="observe-navbar-intersect pt-32 w-full bg-main-background-lighter-lighter">
                 <div className="relative max-w-screen-xl mx-auto px-4 xs:px-10 py-20">
                     <div className="max-w-[750px] mx-auto relative w-full text-center">
                         <h5 className="text-main-primary text-2xl mb-8">
@@ -47,7 +47,7 @@ export default function OurWork() {
                     </div>
                 </div>
             </div>
-            <div className="observe-navbar-intersect w-full bg-gray-800">
+            <div className="observe-navbar-intersect w-full bg-main-background-lighter">
                 <div className="max-w-screen-xl mx-auto px-4 xs:px-10 pt-16 pb-20">
                     <div className="flex flex-col gap-32 md:[&>*:nth-child(even)]:flex-row-reverse">
                         <div className="flex flex-col md:flex-row gap-10 lg:gap-20">
@@ -146,7 +146,7 @@ export default function OurWork() {
                     </div>
                 </div>
             </div>
-            <div className="observe-navbar-intersect w-full bg-gray-900">
+            <div className="observe-navbar-intersect w-full bg-main-background">
                 <div className="max-w-screen-xl mx-auto px-4 xs:px-10 pt-24 pb-20">
                     <div>
                         <h3 className="w-full text-center text-3xl font-semibold mb-10">

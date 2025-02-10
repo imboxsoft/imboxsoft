@@ -12,22 +12,27 @@ export default {
                 xs: "450px",
             },
             colors: {
-                background: "var(--background)",
-                foreground: "var(--foreground)",
                 main: {
-                    "black-o-1": "var(--black-o-1)",
-                    "white-o-02": "var(--white-o-02)",
-                    dark: "var(--dark)",
-                    medium: "var(--medium)",
+                    background: {
+                        DEFAULT: "var(--background)",
+                        lighter: "var(--background-lighter)",
+                        dark: "var(--background-dark)",
+                    },
+                    foreground: {
+                        DEFAULT: "var(--background)",
+                    },
                     primary: {
-                        DEFAULT: "var(--primary-light)",
+                        DEFAULT: "var(--primary)",
                     },
                     secondary: {
-                        DEFAULT: "var(--secondary-light)",
+                        DEFAULT: "var(--secondary)",
                         lighter: "var(--secondary-lighter)",
                         darker: "var(--secondary-darker)",
                     },
-                    white: "var(--white)",
+                    opacity: {
+                        "black-75": "var(--black-o-75)",
+                        "white-02": "var(--white-o-02)",
+                    },
                 },
             },
             position: {

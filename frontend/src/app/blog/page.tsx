@@ -6,7 +6,7 @@ export default function Blog() {
 
     return (
         <div className="">
-            <section className="bg-main-black-o-1 pt-48">
+            <section className="bg-main-opacity-black-75 pt-48">
                 <div className="observe-navbar-intersect flex flex-row gap-20 max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 pb-20">
                     <div className="max-w-lg">
                         <h1 className="text-5xl mb-10 font-semibold">
@@ -32,7 +32,7 @@ export default function Blog() {
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect bg-gray-900">
+            <section className="observe-navbar-intersect bg-main-background">
                 <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 py-24 text-center">
                     <h2 className="text-5xl mb-6 font-semibold">
                         Get in tune with our promotions
@@ -64,7 +64,7 @@ export default function Blog() {
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect bg-gray-800">
+            <section className="observe-navbar-intersect bg-main-background-lighter">
                 <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 pt-16 pb-24">
                     <h1 className="text-4xl font-semibold mb-10">Articles</h1>
                     <div className="flex flex-row gap-10">

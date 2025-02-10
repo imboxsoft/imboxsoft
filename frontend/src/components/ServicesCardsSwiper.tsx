@@ -8,36 +8,45 @@ import "swiper/css";
 import "swiper/css/navigation";
 import routes from "@/constants/routes";
 
-export default function ServicesCardsSwiper() {
+type ServicesCardsSwiperProps = {
+    fixedSlidesPerView?: number | null;
+    customBreakpoints?: Record<number, { slidesPerView: number }> | null;
+};
+
+export default function ServicesCardsSwiper({
+    fixedSlidesPerView = null,
+    customBreakpoints = null,
+}: ServicesCardsSwiperProps) {
     const services = [
         {
             title: "Software Development",
-            image: "/images/blog_news.webp",
+            image: "/images/services/software-development.jpg",
             description: "Web, mobile, and desktop applications.",
             route: routes.SOFTWARE_DEVELOPMENT,
         },
         {
             title: "IT Consulting",
-            image: "/images/blog_news.webp",
+            image: "/images/services/it-consulting.jpg",
             description: "Cloud, security, and infrastructure strategy.",
             route: routes.IT_CONSULTING,
         },
         {
             title: "SEO",
-            image: "/images/blog_news.webp",
-            description: "Lead generation and brand growth.",
+            image: "/images/services/seo.webp",
+            description: "Boost your rank in search engine appearances.",
             route: routes.SEO,
         },
         {
             title: "Email Marketing",
-            image: "/images/blog_news.webp",
-            description: "Lead generation and brand growth.",
+            image: "/images/services/email-marketing.png",
+            description:
+                "Lead generation and brand growth through email campaigns.",
             route: routes.EMAIL_MARKETING,
         },
         {
             title: "Graphic Design",
-            image: "/images/blog_news.webp",
-            description: "Logos, branding, UI/UX.",
+            image: "/images/services/graphic-design.jpg",
+            description: "Branding, logos, business cards, posters, UI/UX.",
             route: routes.GRAPHIC_DESIGN,
         },
     ];
@@ -48,13 +57,29 @@ export default function ServicesCardsSwiper() {
                 className="h-full"
                 modules={[Navigation, Autoplay]}
                 spaceBetween={20}
-                slidesPerView={1}
+                slidesPerView={fixedSlidesPerView ? fixedSlidesPerView : 1}
                 navigation
-                breakpoints={{
-                    0: { slidesPerView: 1 },
-                    768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 },
-                }}
+                breakpoints={
+                    customBreakpoints
+                        ? customBreakpoints
+                        : {
+                              0: {
+                                  slidesPerView: fixedSlidesPerView
+                                      ? fixedSlidesPerView
+                                      : 1,
+                              },
+                              768: {
+                                  slidesPerView: fixedSlidesPerView
+                                      ? fixedSlidesPerView
+                                      : 2,
+                              },
+                              1024: {
+                                  slidesPerView: fixedSlidesPerView
+                                      ? fixedSlidesPerView
+                                      : 3,
+                              },
+                          }
+                }
                 touchStartPreventDefault={false}
             >
                 {services.map((service, index) => (

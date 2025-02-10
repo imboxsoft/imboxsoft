@@ -170,7 +170,7 @@ export default function Header() {
             <section id="top-section" className="top-0 left-0"></section>
             <nav
                 ref={navbarRef}
-                className={`fixed top-0 left-0 z-50 w-full hover:bg-main-black-o-1 duration-300`}
+                className={`fixed top-0 left-0 z-50 w-full hover:bg-main-opacity-black-75 duration-300`}
                 style={{ backgroundColor: navbarBg }}
             >
                 <div className="max-w-screen-2xl w-full flex flex-wrap items-center justify-between mx-auto p-6">
@@ -355,7 +355,7 @@ export default function Header() {
                             </ul>
                             {(isHomeDropdownVisible ||
                                 isCompanyDropdownVisible) && (
-                                <div className="w-full lg:absolute top-full left-0 mt-6 lg:mt-0 shadow-xs border-y bg-gray-800 border-gray-600">
+                                <div className="w-full lg:absolute top-full left-0 mt-6 lg:mt-0 shadow-xs border-y bg-main-background-lighter border-gray-600">
                                     <div className="max-w-screen-xl px-4 py-5 mx-auto md:px-6">
                                         <ul className="flex flex-row flex-wrap gap-10">
                                             {isHomeDropdownVisible ? (
@@ -380,11 +380,11 @@ export default function Header() {
                                                                 Development
                                                             </div>
                                                             <span className="text-sm text-main-secondary-lighter">
-                                                                Connect with
-                                                                third-party
-                                                                tools that
-                                                                you&apos;re
-                                                                already using.
+                                                                Presentation
+                                                                websites,
+                                                                e-commerce, web
+                                                                apps & desktop
+                                                                apps.
                                                             </span>
                                                         </Link>
                                                     </li>
@@ -406,12 +406,11 @@ export default function Header() {
                                                             <div className="font-semibold">
                                                                 IT Consulting
                                                             </div>
-                                                            <span className="text-sm text-main-secondary-lighter">
-                                                                Connect with
-                                                                third-party
-                                                                tools that
-                                                                you&apos;re
-                                                                already using.
+                                                            <span className="text-sm text-main-secondary-lighter block">
+                                                                Recevie most
+                                                                optimal
+                                                                suggestions for
+                                                                you projects.
                                                             </span>
                                                         </Link>
                                                     </li>
@@ -432,11 +431,11 @@ export default function Header() {
                                                                 SEO
                                                             </div>
                                                             <span className="text-sm text-gray-400">
-                                                                Connect with
-                                                                third-party
-                                                                tools that
-                                                                you&apos;re
-                                                                already using.
+                                                                Make your
+                                                                website
+                                                                discoverable and
+                                                                rank up well in
+                                                                Search Consoles.
                                                             </span>
                                                         </Link>
                                                     </li>
@@ -459,11 +458,10 @@ export default function Header() {
                                                                 Email marketing
                                                             </div>
                                                             <span className="text-sm text-gray-400">
-                                                                Connect with
-                                                                third-party
-                                                                tools that
-                                                                you&apos;re
-                                                                already using.
+                                                                Compose well
+                                                                organized email
+                                                                campaigns for
+                                                                your clients.
                                                             </span>
                                                         </Link>
                                                     </li>
@@ -486,11 +484,10 @@ export default function Header() {
                                                                 Graphic Design
                                                             </div>
                                                             <span className="text-sm text-gray-400">
-                                                                Connect with
-                                                                third-party
-                                                                tools that
-                                                                you&apos;re
-                                                                already using.
+                                                                Website design,
+                                                                logos, posters,
+                                                                flyers, business
+                                                                cards and more.
                                                             </span>
                                                         </Link>
                                                     </li>

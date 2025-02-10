@@ -1,7 +1,7 @@
 export default function Contact() {
     return (
         <div className="xl:pt-32 max-w-screen-xl mx-auto">
-            <section className="observe-navbar-intersect bg-main-medium xl:rounded-xl">
+            <section className="observe-navbar-intersect bg-main-background-lighter-lighter xl:rounded-xl">
                 <div className="pt-32 xl:pt-16 pb-8 lg:pb-16 px-12 xl:mb-10">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
                         Contact Us
