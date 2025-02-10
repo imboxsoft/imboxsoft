@@ -27,15 +27,17 @@ const HeroSectionTW = () => {
     }, []);
 
     return (
-        <span
-            id="home-typewriter"
-            className="flex flex-row items-center py-4 ml-2"
-        >
-            <span className="align-middle font-semibold inline-block"></span>
-            <span className="tw-caret text-cgreen text-3xl font-bold -ml-[1px] inline-block self-end">
-                |
+        <div className="relative w-full h-40 sm:h-24">
+            <span
+                id="home-typewriter"
+                className="absolute left-0 top-0 sm:top-1/2 w-full sm:-translate-y-1/2 flex flex-row items-center py-4 ml-2"
+            >
+                <span className="align-middle font-semibold inline-block"></span>
+                <span className="tw-caret text-cgreen text-3xl font-bold -ml-[1px] inline-block self-end">
+                    |
+                </span>
             </span>
-        </span>
+        </div>
     );
 };
 

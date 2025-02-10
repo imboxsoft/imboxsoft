@@ -33,7 +33,7 @@ export const HeroSection = async () => {
                         />
                     </div>
                     <div className="w-full flex flex-col sm:flex-row gap-2 items-center sm:bg-main-opacity-white-02 rounded-lg px-4">
-                        <div className="flex flex-col sm:flex-row gap-2 items-center justify-center sm:justify-start flex-1">
+                        <div className="flex flex-col sm:flex-row gap-2 items-center justify-center sm:justify-start flex-1 w-full">
                             <svg
                                 className="w-10 sm:w-6 h-10 sm:h-6 text-main-secondary-lighter"
                                 aria-hidden="true"
@@ -51,7 +51,7 @@ export const HeroSection = async () => {
                                     d="m8 9 3 3-3 3m5 0h3M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
                                 />
                             </svg>
-                            <div className="flex-1 outline-none bg-transparent text-2xl sm:text-xl border-transparent rounded-lg ring-transparent focus:ring-transparent focus:border-transparent font-medium text-center sm:text-left">
+                            <div className="w-full flex-1 outline-none bg-transparent text-2xl sm:text-xl border-transparent rounded-lg ring-transparent focus:ring-transparent focus:border-transparent font-medium text-center sm:text-left">
                                 <HeroSectionTW />
                             </div>
                         </div>

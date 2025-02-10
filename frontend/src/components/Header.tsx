@@ -4,13 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import initIntersectionObserver from "@/utils/IntersectionObserver";
-import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "../../tailwind.config";
-import getCssVariableValue from "@/utils/Colors";
 import routes from "@/constants/routes";
-
-const fullConfig = resolveConfig(tailwindConfig);
+import SlideScrollManager from "@/utils/SlideScroll";
 
 export default function Header() {
     const [isNavigationVisible, setNavigationVisibility] =
@@ -21,77 +16,20 @@ export default function Header() {
         useState<boolean>(false);
     const navbarRef = useRef<HTMLDivElement>(null);
     const [navbarBg, setNavbarBg] = useState<string>("transparent");
-    //const activeSections = useRef(new Set<string>());
-    const activeSections = useRef<string[]>([]);
-    const hasRunOnce = useRef<boolean>(false);
 
     const pathname = usePathname();
 
     useEffect(() => {
         const navbar = navbarRef.current;
 
-        if (!navbar) return;
-
-        const topElementObserver = initIntersectionObserver(
-            (entry) => {
-                if (!hasRunOnce.current) {
-                    hasRunOnce.current = true;
-                    return;
-                }
-
-                activeSections.current.pop();
-                const lastActiveSection =
-                    activeSections.current[activeSections.current.length - 1];
-                setNavbarBg(lastActiveSection || "transparent");
-            },
-            (entry) => {},
-            { root: null, threshold: 0 }
-        );
-
-        const topElement = document.querySelector("#top-section");
-        if (topElement) topElementObserver.observe(topElement);
-
-        const offsetObserverYBound = window.innerHeight - navbar.offsetHeight;
-
-        const navbarIntersectionObserver = initIntersectionObserver(
-            (entry) => {
-                let sectionBg = window.getComputedStyle(
-                    entry.target
-                ).backgroundColor;
-
-                if (
-                    sectionBg === "transparent" ||
-                    sectionBg === "rgba(0, 0, 0, 0)"
-                ) {
-                    sectionBg = getCssVariableValue(
-                        fullConfig.theme?.colors?.main["black-o-1"]
-                    );
-                }
-
-                if (entry.isIntersecting) {
-                    activeSections.current.push(sectionBg);
-                } else {
-                    const index = activeSections.current.lastIndexOf(sectionBg);
-                    if (index !== -1 && activeSections.current.length > 1) {
-                        activeSections.current.splice(index, 1);
-                    }
-                }
-
-                const lastActiveSection =
-                    activeSections.current[activeSections.current.length - 1];
-
-                setNavbarBg(lastActiveSection || "transparent");
-            },
-            null,
-            {
-                root: null,
-                rootMargin: `0px 0px -${offsetObserverYBound}px 0px`,
-                threshold: 0,
-            }
-        );
-
-        const targets = document.querySelectorAll(".observe-navbar-intersect");
-        targets.forEach((target) => navbarIntersectionObserver.observe(target));
+        const scrollSliderManager = SlideScrollManager.getCurrentInstance();
+        if (scrollSliderManager && navbar) {
+            scrollSliderManager.activateNavbarObserver(
+                navbar,
+                ".observe-navbar-intersect",
+                (value: string) => setNavbarBg(value)
+            );
+        }
 
         const handleWindowResize = () => {
             const body = document.body;
@@ -112,12 +50,6 @@ export default function Header() {
 
         return () => {
             window.removeEventListener("resize", handleWindowResize);
-
-            hasRunOnce.current = false;
-            activeSections.current = [];
-
-            topElementObserver.disconnect();
-            navbarIntersectionObserver.disconnect();
         };
     }, [pathname]);
 
@@ -167,7 +99,6 @@ export default function Header() {
 
     return (
         <header className="w-full">
-            <section id="top-section" className="top-0 left-0"></section>
             <nav
                 ref={navbarRef}
                 className={`fixed top-0 left-0 z-50 w-full hover:bg-main-opacity-black-75 duration-300`}

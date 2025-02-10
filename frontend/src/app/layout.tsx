@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { ScrollManager } from "@/components/ScrollManager";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Particles from "@/components/Particles";
@@ -68,6 +69,7 @@ export default function RootLayout({
             <body
                 className={`relative ${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
             >
+                <ScrollManager />
                 <div className="flex-1">
                     <Header />
                     <main className="text-xl">{children}</main>

@@ -1,5 +1,4 @@
 import { HeroSection } from "@/components/HeroSection";
-import { ScrollManager } from "@/components/ScrollManager";
 import ServicesCardsSwiper from "@/components/ServicesCardsSwiper";
 import Image from "next/image";
 import routes from "@/constants/routes";
@@ -209,8 +208,6 @@ export default async function Home() {
                     </div>
                 </div>
             </section>
-
-            <ScrollManager />
         </div>
     );
 }
