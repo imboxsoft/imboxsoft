@@ -1,4 +1,6 @@
+import routes from "@/constants/routes";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function OurWork() {
     const projects = [
@@ -224,6 +226,19 @@ export default function OurWork() {
                                 </div>
                             ))}
                         </div>
+                    </div>
+
+                    <div className="max-w-xl mx-auto rounded-xl bg-main-background-dark py-24 mt-32 text-center flex flex-col items-center gap-3">
+                        <h3 className="text-2xl font-medium">
+                            What do you think? Are we a good fit?
+                        </h3>
+                        <p></p>
+                        <Link
+                            href={routes.CONTACT}
+                            className="px-4 py-2 bg-main-secondary rounded-md"
+                        >
+                            Book a free consultation
+                        </Link>
                     </div>
                 </div>
             </div>

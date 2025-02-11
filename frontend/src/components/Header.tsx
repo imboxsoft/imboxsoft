@@ -146,7 +146,10 @@ export default function Header() {
     ) => {
         event.stopPropagation();
 
-        console.log(key);
+        if (currentDropdownMenuKey == key) {
+            setCurrentDropdownKey(null);
+            return;
+        }
 
         setCurrentDropdownKey(key);
     };
@@ -310,9 +313,9 @@ export default function Header() {
                                 </li>
                             </ul>
                             {currentDropdownMenuKey && (
-                                <div className="w-full absolute top-0 lg:top-full left-0 lg:mt-0 shadow-xs border-y bg-main-background-lighter border-gray-600 z-[10000]">
-                                    <div className="fixed top-0 left-0 z-[55] h-screen lg:h-auto w-full overflow-y-auto lg:overflow-y-visible lg:max-w-screen-xl px-4 py-5 mx-auto md:px-6 bg-main-background-dark">
-                                        <ul className="relative flex flex-row flex-wrap gap-10">
+                                <div className="w-full fixed lg:absolute z-[55] top-0 lg:top-full left-0  h-screen lg:h-auto overflow-y-auto lg:overflow-y-visible shadow-xs border-y bg-main-background-dark border-gray-600">
+                                    <div className="w-full lg:max-w-screen-xl px-4 py-5 mx-auto md:px-6">
+                                        <ul className="relative grid grid-cols-1 lg:grid-cols-2 gap-6">
                                             <button
                                                 onClick={(event) => {
                                                     handleDropdownVisibility(

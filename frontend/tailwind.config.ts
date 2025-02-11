@@ -17,6 +17,7 @@ export default {
                         DEFAULT: "var(--background)",
                         lighter: "var(--background-lighter)",
                         dark: "var(--background-dark)",
+                        darker: "var(--background-darker)",
                     },
                     foreground: {
                         DEFAULT: "var(--background)",

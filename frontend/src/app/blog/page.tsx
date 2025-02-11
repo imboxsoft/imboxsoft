@@ -6,41 +6,46 @@ export default function Blog() {
 
     return (
         <div className="">
-            <section className="bg-main-opacity-black-75 pt-48">
+            <section className="relative bg-main-background-darker pt-48">
                 <div className="observe-navbar-intersect flex flex-row gap-20 max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 pb-20">
-                    <div className="max-w-lg">
-                        <h1 className="text-5xl mb-10 font-semibold">
-                            Ramai la zi cu noutatile in IT
-                        </h1>
-                        <p className="text-lg">
-                            Citește despre cele mai recente tendințe IT și cele
-                            mai bune practici din industrie! Află ce se ascunde
-                            în spatele noilor tehnologii și cum poți profita de
-                            inovațiile din zona dezvoltării de software.
-                        </p>
+                    <div className="w-full xs:max-w-[450px] md:max-w-[700px] lg:max-w-[50%] z-10">
+                        <div className="lg:mr-20">
+                            <h1 className="text-4xl md:text-5xl mb-10 font-semibold">
+                                Stay up-to-date with the latest trends in IT
+                            </h1>
+                            <p className="text-lg text-justify">
+                                Read the most recent trends in IT and what are
+                                the best practices to follow! Learn about what
+                                hides behind the new technologies and how you
+                                can benefit from software innovation.
+                            </p>
+                        </div>
                     </div>
-                    <div className="flex-1">
+                    <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full z-0 opacity-40 lg:opacity-60">
                         <Image
-                            src="/images/blog_news.webp"
-                            className="w-full rounded-xl"
-                            layout="intrinsic"
-                            width={300}
-                            height={50}
+                            src="/images/news.jpg"
+                            className="w-full h-full object-cover rounded-2xl"
+                            fill
                             alt="Imboxsoft Logo"
                         />
+                        <div className="absolute inset-0 block bg-gradient-to-r from-main-background-darker to-transparent"></div>
+                        <div className="absolute inset-0 block lg:hidden bg-gradient-to-l from-main-background-darker to-transparent"></div>
                     </div>
                 </div>
             </section>
 
             <section className="observe-navbar-intersect bg-main-background">
                 <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 py-24 text-center">
-                    <h2 className="text-5xl mb-6 font-semibold">
+                    <h2 className="text-4xl md:text-5xl mb-6 font-semibold">
                         Get in tune with our promotions
                     </h2>
-                    <p className="text-2xl font-semibold mb-16">
-                        Stay ahead of the curve & get weekly updates on the
-                        latest industry trends, tips & news.
-                    </p>
+                    <div className="w-full flex justify-center">
+                        <p className="max-w-[850px] text-xl md:text-2xl font-medium mb-16">
+                            Be that one person who is always ahead of the curve
+                            & get weekly updates on the latest industry trends,
+                            tips & news.
+                        </p>
+                    </div>
                     <form
                         action="#"
                         className="flex flex-col sm:flex-row sm:flex-wrap gap-6 justify-center items-center"
@@ -49,14 +54,14 @@ export default function Blog() {
                             <input
                                 type="email"
                                 id="email"
-                                className="w-full shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                className="w-full shadow-sm bg-transparent text-sm rounded-lg block p-3 text-white border border-main-secondary focus:ring-main-secondary placeholder-gray-300 focus:border-main-secondary"
                                 placeholder="email@company.tld"
                                 required
                             />
                         </div>
                         <button
                             type="submit"
-                            className="py-3 px-5 text-sm font-medium text-center rounded-lg bg-main-secondary sm:w-fit hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-primary-300"
+                            className="py-3 px-5 text-sm font-semibold text-center rounded-lg bg-main-secondary sm:w-fit hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-primary-300"
                         >
                             Join the Club
                         </button>
