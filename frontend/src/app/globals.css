@@ -9,10 +9,12 @@
     --background-dark: #0d1d2b;
     --primary: #1ad8c6;
     --secondary: #f45b69;
-    --secondary-lighter: #ff6c6c;
+    --secondary-light: #ff6c6c;
+    --secondary-lighter: #ff6565;
     --secondary-darker: #cc3d49;
     --black-o-75: rgba(0, 0, 0, 0.75);
-    --white-o-02: rgba(255, 255, 255, 0.2);
+    --black-o-50: rgba(0, 0, 0, 0.6);
+    --white-o-20: rgba(255, 255, 255, 0.2);
 }
 
 .swiper-button-next,

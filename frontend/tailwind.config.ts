@@ -26,12 +26,14 @@ export default {
                     },
                     secondary: {
                         DEFAULT: "var(--secondary)",
+                        light: "var(--secondary-light)",
                         lighter: "var(--secondary-lighter)",
                         darker: "var(--secondary-darker)",
                     },
                     opacity: {
                         "black-75": "var(--black-o-75)",
-                        "white-02": "var(--white-o-02)",
+                        "black-50": "var(--black-o-50)",
+                        "white-20": "var(--white-o-20)",
                     },
                 },
             },

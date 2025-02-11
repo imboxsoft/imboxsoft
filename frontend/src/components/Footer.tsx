@@ -3,6 +3,8 @@ import Image from "next/image";
 import routes from "@/constants/routes";
 
 export default function Footer() {
+    const today = new Date().getFullYear().toString();
+
     return (
         <footer className="scroll-section w-full p-4 pt-10 md:pt-20 md:pb-10 bg-main-opacity-black-75">
             <div className="max-w-screen-xl mx-auto">
@@ -24,14 +26,14 @@ export default function Footer() {
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-20 sm:grid-cols-3">
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                            <h2 className="mb-6 text-base font-semibold text-white uppercase border-b-2 border-main-primary">
                                 Sitemap
                             </h2>
-                            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                            <ul className="flex flex-col gap-4 font-medium">
                                 <li>
                                     <Link
                                         href={routes.PORTFOLIO}
-                                        className="mr-4 hover:underline md:mr-6"
+                                        className="hover:underline text-slate-50 hover:text-main-primary"
                                     >
                                         Our work
                                     </Link>
@@ -39,7 +41,7 @@ export default function Footer() {
                                 <li>
                                     <Link
                                         href={routes.SOFTWARE_DEVELOPMENT}
-                                        className="mr-4 hover:underline md:mr-6"
+                                        className="hover:underline text-slate-50 hover:text-main-primary"
                                     >
                                         Services
                                     </Link>
@@ -47,7 +49,7 @@ export default function Footer() {
                                 <li>
                                     <Link
                                         href={routes.ABOUT_US}
-                                        className="mr-4 hover:underline md:mr-6"
+                                        className="hover:underline text-slate-50 hover:text-main-primary"
                                     >
                                         About Us
                                     </Link>
@@ -55,7 +57,7 @@ export default function Footer() {
                                 <li>
                                     <Link
                                         href={routes.INSIGHTS}
-                                        className="mr-4 hover:underline md:mr-6"
+                                        className="hover:underline text-slate-50 hover:text-main-primary"
                                     >
                                         Blog
                                     </Link>
@@ -63,7 +65,7 @@ export default function Footer() {
                                 <li>
                                     <Link
                                         href={routes.CONTACT}
-                                        className="mr-4 hover:underline md:mr-6"
+                                        className="hover:underline text-slate-50 hover:text-main-primary"
                                     >
                                         Contact
                                     </Link>
@@ -71,17 +73,17 @@ export default function Footer() {
                             </ul>
                         </div>
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                            <h2 className="mb-6 text-base font-semibold text-white uppercase border-b-2 border-main-primary">
                                 Socials
                             </h2>
-                            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                            <ul className="flex flex-col gap-4 font-medium">
                                 <li>
                                     <Link
                                         href={
                                             process.env.LINKED_IN_PAGE ||
                                             "https://www.linkedin.com/company/imboxsoft"
                                         }
-                                        className="mr-4 hover:underline md:mr-6"
+                                        className="hover:underline text-slate-50 hover:text-main-primary"
                                         target="_blank"
                                     >
                                         Linkedin
@@ -90,14 +92,14 @@ export default function Footer() {
                             </ul>
                         </div>
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                            <h2 className="mb-6 text-base font-semibold text-white uppercase border-b-2 border-main-primary">
                                 Legal
                             </h2>
-                            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                            <ul className="flex flex-col gap-4 font-medium">
                                 <li>
                                     <Link
                                         href={routes.ABOUT_US}
-                                        className="mr-4 hover:underline md:mr-6"
+                                        className="hover:underline text-slate-50 hover:text-main-primary"
                                     >
                                         Terms & Conditions
                                     </Link>
@@ -105,7 +107,7 @@ export default function Footer() {
                                 <li>
                                     <Link
                                         href={routes.ABOUT_US}
-                                        className="mr-4 hover:underline md:mr-6"
+                                        className="hover:underline text-slate-50 hover:text-main-primary"
                                     >
                                         Privacy Policy
                                     </Link>
@@ -113,7 +115,7 @@ export default function Footer() {
                                 <li>
                                     <Link
                                         href={routes.ABOUT_US}
-                                        className="mr-4 hover:underline md:mr-6"
+                                        className="hover:underline text-slate-50 hover:text-main-primary"
                                     >
                                         Cookies
                                     </Link>
@@ -124,9 +126,12 @@ export default function Footer() {
                 </div>
             </div>
             <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <span className="block text-sm sm:text-center">
-                ©<span className="current-year-el"></span>
-                <Link href="/" className="hover:underline">
+            <span className="block text-base sm:text-center">
+                <span>© Copyright {today} </span>
+                <Link
+                    href="/"
+                    className="hover:hover:underline text-main-secondary"
+                >
                     Imboxsoft™
                 </Link>
                 . All Rights Reserved

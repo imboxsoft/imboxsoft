@@ -67,12 +67,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`relative ${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+                className={`relative ${geistSans.variable} ${geistMono.variable} antialiased flex flex-col h-screen`}
             >
                 <ScrollManager />
                 <div className="flex-1">
                     <Header />
-                    <main className="text-xl">{children}</main>
+                    <main className="h-full text-xl">{children}</main>
                 </div>
                 <Footer />
                 <Particles />

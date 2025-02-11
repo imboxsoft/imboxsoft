@@ -19,3 +19,14 @@ export const ScrollManager = () => {
 
     return null;
 };
+
+export const ScrollManagerEvaluator = () => {
+    useEffect(() => {
+        const scrollSliderManager = SlideScrollManager.getCurrentInstance();
+        if (scrollSliderManager) {
+            scrollSliderManager.evaluateNavbarObserver();
+        }
+    }, []);
+
+    return null;
+};

@@ -32,7 +32,7 @@ export const HeroSection = async () => {
                             alt="wewef"
                         />
                     </div>
-                    <div className="w-full flex flex-col sm:flex-row gap-2 items-center sm:bg-main-opacity-white-02 rounded-lg px-4">
+                    <div className="w-full flex flex-col sm:flex-row gap-2 items-center sm:bg-main-opacity-white-20 rounded-lg px-4">
                         <div className="flex flex-col sm:flex-row gap-2 items-center justify-center sm:justify-start flex-1 w-full">
                             <svg
                                 className="w-10 sm:w-6 h-10 sm:h-6 text-main-secondary-lighter"

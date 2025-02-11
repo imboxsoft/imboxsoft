@@ -73,7 +73,7 @@ export const PageStats: React.FC<NewsPageProps> = ({ articles }) => {
                                 href={article.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="relative flex flex-col justify-between h-full w-full gap-2 bg-main-opacity-white-02 p-4 rounded-lg shadow hover:bg-main-opacity-black-75 transition"
+                                className="relative flex flex-col justify-between h-full w-full gap-2 bg-main-opacity-white-20 p-4 rounded-lg shadow hover:bg-main-opacity-black-75 transition"
                             >
                                 <h3 className="text-lg font-semibold line-clamp-3">
                                     {article.title}

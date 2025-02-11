@@ -14,8 +14,8 @@ export default function Header() {
         useState<boolean>(false);
     const [isCompanyDropdownVisible, setCompanyDropdownVisibility] =
         useState<boolean>(false);
-    const navbarRef = useRef<HTMLDivElement>(null);
     const [navbarBg, setNavbarBg] = useState<string>("transparent");
+    const navbarRef = useRef<HTMLDivElement>(null);
 
     const pathname = usePathname();
 

@@ -173,7 +173,7 @@ export default class SlideScrollManager {
         return instance;
     }
 
-    public static getCurrentInstance() {
+    public static getCurrentInstance(): SlideScrollManager | null {
         return SlideScrollManager.instance;
     }
 
@@ -221,7 +221,7 @@ export default class SlideScrollManager {
         return (xa > ya && xa < yb) || (xb > ya && xb < yb);
     }
 
-    private evaluateNavbarObserver() {
+    public evaluateNavbarObserver() {
         if (
             !this.navbar ||
             !this.navbarObserved ||

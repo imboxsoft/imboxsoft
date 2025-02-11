@@ -3,9 +3,10 @@ import ServicesCardsSwiper from "@/components/ServicesCardsSwiper";
 import Image from "next/image";
 import routes from "@/constants/routes";
 import Link from "next/link";
+import { ScrollManagerEvaluator } from "@/components/ScrollManager";
 
 export default async function Home() {
-    const technologies: string[] = [
+    const skills: string[] = [
         "Next.js",
         "Angular",
         "Alpinejs",
@@ -33,52 +34,65 @@ export default async function Home() {
 
     return (
         <div className="gap-16 font-[family-name:var(--font-geist-sans)]">
-            <section className="sm:pt-24 scroll-section current-scroll sm:pb-10 max-w-screen-xl mx-auto sm:px-4 lg:px-10 lg:min-h-screen lg:max-h-screen flex-1 flex flex-col">
+            <section className="sm:pt-24 scroll-section current-scroll sm:pb-10 max-w-screen-2xl mx-auto sm:px-4 lg:px-10 lg:min-h-screen lg:max-h-screen flex-1 flex flex-col">
                 <HeroSection />
             </section>
 
             <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-24 lg:py-0 flex items-center bg-main-background">
-                <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
-                    <div className="scroll-hidden text-center md:text-right mb-10 md:mb-16">
-                        <h1 className="mb-4 text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
-                            Welcome to
-                            <span className="text-main-primary">
-                                {" "}
-                                Imboxsoft
-                            </span>
-                        </h1>
-                        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-none tracking-tight">
-                            <span className="leading-normal border-b-4 border-main-secondary">
-                                Your trusted partner in cutting-edge technology
-                            </span>
-                        </h2>
+                <div className="relative max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
+                    <div className="z-10">
+                        <div className="scroll-hidden text-center md:text-right mb-10 md:mb-16">
+                            <h1 className="mb-4 text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
+                                Welcome to
+                                <span className="text-main-primary">
+                                    {" "}
+                                    Imboxsoft
+                                </span>
+                            </h1>
+                            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-none tracking-tight">
+                                <span className="leading-normal border-b-4 border-main-secondary">
+                                    Your trusted partner in cutting-edge
+                                    technology
+                                </span>
+                            </h2>
+                        </div>
+
+                        <div className="scroll-hidden text-justify">
+                            <p className="mb-4">
+                                Our company specializes in delivering tailored
+                                software development solutions and comprehensive
+                                IT consulting services. We are dedicated to
+                                empowering our clients with the tools they need
+                                to succeed in today&apos;s dynamic digital
+                                landscape.
+                            </p>
+
+                            <p className="mb-4">
+                                Partner with us today and we will harness
+                                together the power of technology and propel your
+                                business forward.
+                            </p>
+
+                            <p>
+                                Navigate through our{" "}
+                                <Link
+                                    href="/services"
+                                    className="text-main-secondary"
+                                >
+                                    Services page
+                                </Link>{" "}
+                                and find out how we can be of help to you.
+                            </p>
+                        </div>
                     </div>
 
-                    <div className="scroll-hidden text-justify">
-                        <p className="mb-4">
-                            Our company specializes in delivering tailored
-                            software development solutions and comprehensive IT
-                            consulting services. We are dedicated to empowering
-                            our clients with the tools they need to succeed in
-                            today&apos;s dynamic digital landscape.
-                        </p>
-
-                        <p className="mb-4">
-                            Partner with us today and we will harness together
-                            the power of technology and propel your business
-                            forward.
-                        </p>
-
-                        <p>
-                            Navigate through our{" "}
-                            <Link
-                                href="/services"
-                                className="text-main-secondary"
-                            >
-                                Services page
-                            </Link>{" "}
-                            and find out how we can be of help to you.
-                        </p>
+                    <div className="hidden md:block absolute -top-[75px] left-[10px] z-0 max-w-48">
+                        <Image
+                            src="/images/home/megaphone.svg"
+                            width={500}
+                            height={500}
+                            alt=""
+                        />
                     </div>
                 </div>
             </section>
@@ -101,15 +115,15 @@ export default async function Home() {
                         <div className="flex-1">
                             <p className="scroll-hidden mb-8 text-justify">
                                 Imboxsoft specializes in a diverse array of
-                                technologies and systems, ensuring that we stay
-                                at the forefront of innovation to meet the
-                                evolving needs of our clients.
+                                skills and systems, ensuring that we stay at the
+                                forefront of innovation to meet the evolving
+                                needs of our clients.
                             </p>
                             <p className="scroll-hidden mb-4 text-justify font-semibold">
                                 Our core competencies include:
                             </p>
                             <ul className="flex flex-row flex-wrap gap-x-4 gap-y-3">
-                                {technologies.map((el, index) => (
+                                {skills.map((el, index) => (
                                     <li key={index}>
                                         <span className="block bg-main-secondary text-base font-semibold px-4 py-2 rounded-md">
                                             {el}
@@ -208,6 +222,8 @@ export default async function Home() {
                     </div>
                 </div>
             </section>
+
+            <ScrollManagerEvaluator />
         </div>
     );
 }
