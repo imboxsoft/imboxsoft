@@ -10,14 +10,71 @@ import SlideScrollManager from "@/utils/SlideScroll";
 export default function Header() {
     const [isNavigationVisible, setNavigationVisibility] =
         useState<boolean>(false);
-    const [isHomeDropdownVisible, setServicesDropdownVisibility] =
-        useState<boolean>(false);
-    const [isCompanyDropdownVisible, setCompanyDropdownVisibility] =
-        useState<boolean>(false);
     const [navbarBg, setNavbarBg] = useState<string>("transparent");
+    const [currentDropdownMenuKey, setCurrentDropdownKey] = useState<
+        keyof typeof navMenu | null
+    >(null);
     const navbarRef = useRef<HTMLDivElement>(null);
-
     const pathname = usePathname();
+    const navMenu = {
+        portfolio: {
+            route: routes.PORTFOLIO,
+            name: "Our work",
+            subMenu: [],
+        },
+        services: {
+            route: null,
+            name: "Services",
+            subMenu: [
+                {
+                    route: routes.EMAIL_MARKETING,
+                    title: "Software Development",
+                    description:
+                        "Presentation websites, e-commerce, web apps & desktop apps.",
+                },
+                {
+                    route: routes.EMAIL_MARKETING,
+                    title: "IT Consulting",
+                    description:
+                        "Recevie most optimal suggestions for you projects.",
+                },
+                {
+                    route: routes.EMAIL_MARKETING,
+                    title: "SEO",
+                    description:
+                        "Make your website discoverable and rank up well in Search Consoles.",
+                },
+                {
+                    route: routes.EMAIL_MARKETING,
+                    title: "Email marketing",
+                    description:
+                        "Compose well organized email campaigns for your clients.",
+                },
+                {
+                    route: routes.EMAIL_MARKETING,
+                    title: "Graphic Design",
+                    description:
+                        "Website design, logos, posters, flyers, business cards and more.",
+                },
+            ],
+        },
+        company: {
+            route: null,
+            name: "Company",
+            subMenu: [
+                {
+                    route: routes.ABOUT_US,
+                    title: "About us",
+                    description: null,
+                },
+            ],
+        },
+        insights: {
+            route: routes.INSIGHTS,
+            name: "Insights",
+            subMenu: [],
+        },
+    };
 
     useEffect(() => {
         const navbar = navbarRef.current;
@@ -29,6 +86,7 @@ export default function Header() {
                 ".observe-navbar-intersect",
                 (value: string) => setNavbarBg(value)
             );
+            scrollSliderManager.evaluateNavbarObserver();
         }
 
         const handleWindowResize = () => {
@@ -37,11 +95,11 @@ export default function Header() {
 
             if (window.innerWidth < 1024) {
                 setNavigationVisibility(false);
-                setServicesDropdownVisibility(false);
             } else {
                 setNavigationVisibility(true);
-                setServicesDropdownVisibility(false);
             }
+
+            setCurrentDropdownKey(null);
         };
 
         handleWindowResize();
@@ -79,22 +137,18 @@ export default function Header() {
             return !prev;
         });
 
-        setServicesDropdownVisibility(false);
-        setCompanyDropdownVisibility(false);
+        handleDropdownVisibility(event, null);
     };
 
-    const handleClickOnHomeDropdown = (event: React.MouseEvent) => {
-        setServicesDropdownVisibility((prev) => {
-            return !prev;
-        });
-        setCompanyDropdownVisibility(false);
-    };
+    const handleDropdownVisibility = (
+        event: React.MouseEvent,
+        key: keyof typeof navMenu | null
+    ) => {
+        event.stopPropagation();
 
-    const handleClickOnCompanyDropdown = (event: React.MouseEvent) => {
-        setServicesDropdownVisibility(false);
-        setCompanyDropdownVisibility((prev) => {
-            return !prev;
-        });
+        console.log(key);
+
+        setCurrentDropdownKey(key);
     };
 
     return (
@@ -152,35 +206,33 @@ export default function Header() {
                             id="navbar-default"
                         >
                             <ul className="relative font-medium text-2xl flex flex-col gap-4 lg:gap-0 p-4 lg:p-0 mt-4 lg:flex-row lg:space-x-8 lg:mt-0 items-center">
-                                <li className="block lg:hidden width-full absolute top-0 right-0">
-                                    <button
-                                        onClick={(event) => {
-                                            handleNavigationVisibility(
-                                                event,
-                                                false
-                                            );
-                                        }}
-                                        className="block py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
+                                <button
+                                    onClick={(event) => {
+                                        handleNavigationVisibility(
+                                            event,
+                                            false
+                                        );
+                                    }}
+                                    className="block lg:hidden width-full absolute top-0 right-0 py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
+                                >
+                                    <svg
+                                        className="w-6 h-6 text-gray-800 dark:text-white"
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
                                     >
-                                        <svg
-                                            className="w-6 h-6 text-gray-800 dark:text-white"
-                                            aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="24"
-                                            height="24"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                                            />
-                                        </svg>
-                                    </button>
-                                </li>
+                                        <path
+                                            stroke="currentColor"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                        />
+                                    </svg>
+                                </button>
                                 <li className="block lg:hidden">
                                     <Link
                                         onClick={(event) => {
@@ -195,80 +247,53 @@ export default function Header() {
                                         Home
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link
-                                        onClick={(event) => {
-                                            handleNavigationVisibility(
-                                                event,
-                                                true
-                                            );
-                                        }}
-                                        href={routes.PORTFOLIO}
-                                        className="block py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
-                                    >
-                                        Our work
-                                    </Link>
-                                </li>
-                                <li>
-                                    <button
-                                        onClick={handleClickOnHomeDropdown}
-                                        className="flex items-center justify-between w-full py-2 px-3 rounded-sm lg:w-auto hover:text-main-secondary-lighter md:p-0"
-                                    >
-                                        Services{" "}
-                                        <svg
-                                            className="w-2.5 h-2.5 ms-2.5"
-                                            aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 10 6"
-                                        >
-                                            <path
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="m1 1 4 4 4-4"
-                                            />
-                                        </svg>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button
-                                        onClick={handleClickOnCompanyDropdown}
-                                        className="flex items-center justify-between w-full py-2 px-3 rounded-sm lg:w-auto hover:text-main-secondary-lighter md:p-0"
-                                    >
-                                        Company{" "}
-                                        <svg
-                                            className="w-2.5 h-2.5 ms-2.5"
-                                            aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 10 6"
-                                        >
-                                            <path
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="m1 1 4 4 4-4"
-                                            />
-                                        </svg>
-                                    </button>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={(event) => {
-                                            handleNavigationVisibility(
-                                                event,
-                                                true
-                                            );
-                                        }}
-                                        href={routes.INSIGHTS}
-                                        className="block py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
-                                    >
-                                        Insights
-                                    </Link>
-                                </li>
+                                {Object.entries(navMenu).map(
+                                    ([key, menuItem], index) => (
+                                        <li key={index}>
+                                            {menuItem.route ? (
+                                                <Link
+                                                    onClick={(event) => {
+                                                        handleNavigationVisibility(
+                                                            event,
+                                                            true
+                                                        );
+                                                    }}
+                                                    href={menuItem.route}
+                                                    className="block py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
+                                                >
+                                                    {menuItem.name}
+                                                </Link>
+                                            ) : (
+                                                <button
+                                                    onClick={(event) => {
+                                                        handleDropdownVisibility(
+                                                            event,
+                                                            key as keyof typeof navMenu
+                                                        );
+                                                    }}
+                                                    className="flex items-center justify-between w-full py-2 px-3 rounded-sm lg:w-auto hover:text-main-secondary-lighter md:p-0"
+                                                >
+                                                    {menuItem.name}{" "}
+                                                    <svg
+                                                        className="w-2.5 h-2.5 ms-2.5"
+                                                        aria-hidden="true"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        fill="none"
+                                                        viewBox="0 0 10 6"
+                                                    >
+                                                        <path
+                                                            stroke="currentColor"
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            strokeWidth="2"
+                                                            d="m1 1 4 4 4-4"
+                                                        />
+                                                    </svg>
+                                                </button>
+                                            )}
+                                        </li>
+                                    )
+                                )}
                                 <li className="mt-4 lg:mt-0">
                                     <Link
                                         onClick={(event) => {
@@ -284,196 +309,60 @@ export default function Header() {
                                     </Link>
                                 </li>
                             </ul>
-                            {(isHomeDropdownVisible ||
-                                isCompanyDropdownVisible) && (
-                                <div className="w-full lg:absolute top-full left-0 mt-6 lg:mt-0 shadow-xs border-y bg-main-background-lighter border-gray-600">
-                                    <div className="max-w-screen-xl px-4 py-5 mx-auto md:px-6">
-                                        <ul className="flex flex-row flex-wrap gap-10">
-                                            {isHomeDropdownVisible ? (
-                                                <>
-                                                    <li>
-                                                        <Link
-                                                            onClick={(
-                                                                event
-                                                            ) => {
-                                                                handleNavigationVisibility(
-                                                                    event,
-                                                                    true
-                                                                );
-                                                            }}
-                                                            href={
-                                                                routes.SOFTWARE_DEVELOPMENT
-                                                            }
-                                                            className="block p-3 rounded-lg hover:bg-gray-700"
-                                                        >
-                                                            <div className="font-semibold">
-                                                                Software
-                                                                Development
-                                                            </div>
-                                                            <span className="text-sm text-main-secondary-lighter">
-                                                                Presentation
-                                                                websites,
-                                                                e-commerce, web
-                                                                apps & desktop
-                                                                apps.
-                                                            </span>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            onClick={(
-                                                                event
-                                                            ) => {
-                                                                handleNavigationVisibility(
-                                                                    event,
-                                                                    true
-                                                                );
-                                                            }}
-                                                            href={
-                                                                routes.IT_CONSULTING
-                                                            }
-                                                            className="block p-3 rounded-lg hover:bg-gray-700"
-                                                        >
-                                                            <div className="font-semibold">
-                                                                IT Consulting
-                                                            </div>
-                                                            <span className="text-sm text-main-secondary-lighter block">
-                                                                Recevie most
-                                                                optimal
-                                                                suggestions for
-                                                                you projects.
-                                                            </span>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            onClick={(
-                                                                event
-                                                            ) => {
-                                                                handleNavigationVisibility(
-                                                                    event,
-                                                                    true
-                                                                );
-                                                            }}
-                                                            href={routes.SEO}
-                                                            className="block p-3 rounded-lg dark:hover:bg-gray-700"
-                                                        >
-                                                            <div className="font-semibold">
-                                                                SEO
-                                                            </div>
-                                                            <span className="text-sm text-gray-400">
-                                                                Make your
-                                                                website
-                                                                discoverable and
-                                                                rank up well in
-                                                                Search Consoles.
-                                                            </span>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            onClick={(
-                                                                event
-                                                            ) => {
-                                                                handleNavigationVisibility(
-                                                                    event,
-                                                                    true
-                                                                );
-                                                            }}
-                                                            href={
-                                                                routes.EMAIL_MARKETING
-                                                            }
-                                                            className="block p-3 rounded-lg hover:bg-gray-700"
-                                                        >
-                                                            <div className="font-semibold">
-                                                                Email marketing
-                                                            </div>
-                                                            <span className="text-sm text-gray-400">
-                                                                Compose well
-                                                                organized email
-                                                                campaigns for
-                                                                your clients.
-                                                            </span>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            onClick={(
-                                                                event
-                                                            ) => {
-                                                                handleNavigationVisibility(
-                                                                    event,
-                                                                    true
-                                                                );
-                                                            }}
-                                                            href={
-                                                                routes.GRAPHIC_DESIGN
-                                                            }
-                                                            className="block p-3 rounded-lg hover:bg-gray-700"
-                                                        >
-                                                            <div className="font-semibold">
-                                                                Graphic Design
-                                                            </div>
-                                                            <span className="text-sm text-gray-400">
-                                                                Website design,
-                                                                logos, posters,
-                                                                flyers, business
-                                                                cards and more.
-                                                            </span>
-                                                        </Link>
-                                                    </li>
-                                                    {/* <li>
-                                                        <Link
-                                                            onClick={(
-                                                                event
-                                                            ) => {
-                                                                handleNavigationVisibility(
-                                                                    event,
-                                                                    true
-                                                                );
-                                                            }}
-                                                            href={routes.}
-                                                            className="block p-3 rounded-lg hover:bg-gray-700"
-                                                        >
-                                                            <div className="font-semibold">
-                                                                Educational
-                                                            </div>
-                                                            <span className="text-sm text-gray-400">
-                                                                Connect with
-                                                                third-party
-                                                                tools that
-                                                                you&apos;re
-                                                                already using.
-                                                            </span>
-                                                        </Link>
-                                                    </li> */}
-                                                </>
-                                            ) : isCompanyDropdownVisible ? (
-                                                <>
-                                                    <li>
-                                                        <Link
-                                                            onClick={(
-                                                                event
-                                                            ) => {
-                                                                handleNavigationVisibility(
-                                                                    event,
-                                                                    true
-                                                                );
-                                                            }}
-                                                            href={
-                                                                routes.ABOUT_US
-                                                            }
-                                                            className="block p-3 rounded-lg hover:bg-gray-700"
-                                                        >
-                                                            <div className="font-semibold">
-                                                                About Us
-                                                            </div>
-                                                        </Link>
-                                                    </li>
-                                                </>
-                                            ) : (
-                                                <></>
-                                            )}
+                            {currentDropdownMenuKey && (
+                                <div className="w-full absolute top-0 lg:top-full left-0 lg:mt-0 shadow-xs border-y bg-main-background-lighter border-gray-600 z-[10000]">
+                                    <div className="fixed top-0 left-0 z-[55] h-screen lg:h-auto w-full overflow-y-auto lg:overflow-y-visible lg:max-w-screen-xl px-4 py-5 mx-auto md:px-6 bg-main-background-dark">
+                                        <ul className="relative flex flex-row flex-wrap gap-10">
+                                            <button
+                                                onClick={(event) => {
+                                                    handleDropdownVisibility(
+                                                        event,
+                                                        null
+                                                    );
+                                                }}
+                                                className="block lg:hidden width-full absolute top-0 right-0 py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
+                                            >
+                                                <svg
+                                                    className="w-6 h-6 text-gray-800 dark:text-white"
+                                                    aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        stroke="currentColor"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M5 12h14M5 12l4-4m-4 4 4 4"
+                                                    />
+                                                </svg>
+                                            </button>
+                                            {navMenu[
+                                                currentDropdownMenuKey
+                                            ]?.subMenu.map((item, index) => (
+                                                <li key={index}>
+                                                    <Link
+                                                        onClick={(event) => {
+                                                            handleNavigationVisibility(
+                                                                event,
+                                                                true
+                                                            );
+                                                        }}
+                                                        href={item.route}
+                                                        className="block p-3 rounded-lg hover:bg-gray-700"
+                                                    >
+                                                        <div className="font-semibold">
+                                                            {item.title}
+                                                        </div>
+                                                        <span className="text-sm text-main-secondary-lighter">
+                                                            {item.description}
+                                                        </span>
+                                                    </Link>
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
                                 </div>
