@@ -15,12 +15,7 @@ export default async function OurWork() {
     const industries = [
         {
             src: "/images/swi.png",
-            name: "Information Technology",
-            alt: "",
-        },
-        {
-            src: "/images/swi.png",
-            name: "Graphic Design",
+            name: "Information Technology (IT)",
             alt: "",
         },
         {
@@ -30,7 +25,12 @@ export default async function OurWork() {
         },
         {
             src: "/images/swi.png",
-            name: "Consulting & Partnerships",
+            name: "Creative and Design",
+            alt: "",
+        },
+        {
+            src: "/images/swi.png",
+            name: "Business Consulting",
             alt: "",
         },
     ];

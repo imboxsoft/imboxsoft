@@ -12,13 +12,12 @@ export default function AboutUs() {
                             ABOUT US
                         </h5>
                         <h1 className="text-3xl font-bold mb-4">
-                            We think you should feel supported by the people you
-                            work with
+                            Find out more about who we are and how we started
                         </h1>
                         <h3 className="text-2xl">
-                            How we treat each other makes us better as software
-                            creators. Our talent remains approachable and ready
-                            to lend a hand because it’s the right thing to do.
+                            Progress is what drives our business initiative
+                            forward. Let's embark onto new ships of technology
+                            innovation and build a more efficient world.
                         </h3>
                     </div>
                     <div className="absolute right-0 bottom-0 translate-y-20">
@@ -43,45 +42,48 @@ export default function AboutUs() {
                             <h2 className="text-4xl font-bold mb-10">
                                 Our story
                             </h2>
-                            <div className="mb-8">
-                                <p className="font-semibold mb-4">
-                                    The company’s three founders used to work as
-                                    frontline software developers.
-                                </p>
-                                <p className="mb-4">
-                                    They started the Software House in 2012,
-                                    knowing that flexibility and collaboration
-                                    make Agile great, but only when employees
-                                    are cared for.
-                                </p>
-                                <p className="mb-4">
-                                    That assumption allowed the company to
-                                    deliver custom development projects for 24
-                                    countries, growing to a number of 220
-                                    employees.
-                                </p>
-                            </div>
-                            <div className="mb-6">
-                                <h5 className="text-2xl font-semibold mb-4">
-                                    Who do we help?
-                                </h5>
-                                <p>
-                                    Companies that rely on technology for
-                                    business growth. Our clients see us as a
-                                    long-term strategic partner and trusted
-                                    adviser for product design, development,
-                                    DevOps, and cloud computing work.
-                                </p>
-                            </div>
                             <div>
-                                <h5 className="text-2xl font-semibold mb-4">
-                                    Our philosophy
-                                </h5>
-                                <p>
-                                    Do good and the good will come to you. Each
-                                    software project we select we treat as our
-                                    own because our client’s success fuels ours.
-                                </p>
+                                <div className="mb-8">
+                                    <p className="mb-4">
+                                        The company’s two founders used to work
+                                        independently as Full Stack Software
+                                        Developers at reputable IT companies
+                                        which gave start to the initiative of
+                                        starting their own business in the
+                                        software industry.
+                                    </p>
+                                    <p className="mb-4">
+                                        Thus, in 2022, Imboxsoft was founded
+                                        gaining a considerable start-up fund of
+                                        €40.000 that propelled the company into
+                                        securing considerable long-term
+                                        relations and projects in the very first
+                                        year of activity.
+                                    </p>
+                                </div>
+                                <div className="mb-6">
+                                    <h5 className="text-2xl font-semibold mb-4">
+                                        Who do we help?
+                                    </h5>
+                                    <p>
+                                        Any business that relies on technology
+                                        for growth. Our clients see us as a
+                                        long-term strategic partner and trusted
+                                        adviser for product design, development,
+                                        DevOps, and more.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h5 className="text-2xl font-semibold mb-4">
+                                        Our philosophy
+                                    </h5>
+                                    <p>
+                                        Do good and the good will come to you.
+                                        We treat each software project as our
+                                        own because our client’s success fuels
+                                        ours many times over.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         <div className="">

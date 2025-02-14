@@ -40,7 +40,7 @@ export default function Footer() {
                                 </li>
                                 <li>
                                     <Link
-                                        href={routes.SOFTWARE_DEVELOPMENT}
+                                        href={routes.SERVICES}
                                         className="hover:underline text-slate-50 hover:text-main-primary"
                                     >
                                         Services

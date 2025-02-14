@@ -27,19 +27,19 @@ export default function Header() {
             name: "Services",
             subMenu: [
                 {
-                    route: routes.EMAIL_MARKETING,
+                    route: routes.SOFTWARE_DEVELOPMENT,
                     title: "Software Development",
                     description:
                         "Presentation websites, e-commerce, web apps & desktop apps.",
                 },
                 {
-                    route: routes.EMAIL_MARKETING,
+                    route: routes.IT_CONSULTING,
                     title: "IT Consulting",
                     description:
                         "Recevie most optimal suggestions for you projects.",
                 },
                 {
-                    route: routes.EMAIL_MARKETING,
+                    route: routes.SEO,
                     title: "SEO",
                     description:
                         "Make your website discoverable and rank up well in Search Consoles.",
@@ -51,7 +51,7 @@ export default function Header() {
                         "Compose well organized email campaigns for your clients.",
                 },
                 {
-                    route: routes.EMAIL_MARKETING,
+                    route: routes.GRAPHIC_DESIGN,
                     title: "Graphic Design",
                     description:
                         "Website design, logos, posters, flyers, business cards and more.",

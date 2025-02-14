@@ -52,7 +52,7 @@ export default function ServicesCardsSwiper({
     ];
 
     return (
-        <div>
+        <div className="w-full">
             <Swiper
                 className="h-full"
                 modules={[Navigation, Autoplay]}
