@@ -1,73 +1,37 @@
 import routes from "@/constants/routes";
 import Image from "next/image";
 import Link from "next/link";
+import { ImageType } from "@/types/strapi";
+import { generateAPIURL } from "@/utils/Strapi";
 
-export default function OurWork() {
-    const projects = [
+interface ProjectType {
+    title: string;
+    shortDescription: string;
+    clientLogo: ImageType;
+    coverImage: ImageType;
+}
+
+export default async function OurWork() {
+    const industries = [
         {
-            title: "Creating one platform to manage 6 sites led to a 400% revenue growth",
-            description:
-                "Pet Media Group centralized the management of 6 pet marketplaces worth $12M by architecting a new platform and migrat millions of data points to it with The Software House.",
-            logo: {
-                src: "/images/clients/verso_radioguide.svg",
-                alt: "",
-            },
-            thumbnail: {
-                src: "/images/clients/verso_thumbnail.jpg",
-                alt: "",
-            },
+            src: "/images/swi.png",
+            name: "Information Technology",
+            alt: "",
         },
         {
-            title: "Smart Student",
-            description:
-                "Pet Media Group centralized the management of 6 pet marketplaces worth $12M by architecting a new platform and migrat millions of data points to it with The Software House.",
-            logo: {
-                src: "/images/clients/smartstudent.svg",
-                alt: "",
-            },
-            thumbnail: {
-                src: "/images/clients/smartstudent_thumbnail.svg",
-                alt: "",
-            },
+            src: "/images/swi.png",
+            name: "Graphic Design",
+            alt: "",
         },
         {
-            title: "Creating one platform to manage 6 sites led to a 400% revenue growth",
-            description:
-                "Pet Media Group centralized the management of 6 pet marketplaces worth $12M by architecting a new platform and migrat millions of data points to it with The Software House.",
-            logo: {
-                src: "/images/clients/gtss.png",
-                alt: "",
-            },
-            thumbnail: {
-                src: "/images/clients/gtss_thumbnail.png",
-                alt: "",
-            },
+            src: "/images/swi.png",
+            name: "Digital Marketing",
+            alt: "",
         },
         {
-            title: "Creating one platform to manage 6 sites led to a 400% revenue growth",
-            description:
-                "Pet Media Group centralized the management of 6 pet marketplaces worth $12M by architecting a new platform and migrat millions of data points to it with The Software House.",
-            logo: {
-                src: "/images/clients/xcd.svg",
-                alt: "",
-            },
-            thumbnail: {
-                src: "/images/clients/xcd_thumbnail.jpg",
-                alt: "",
-            },
-        },
-        {
-            title: "Creating one platform to manage 6 sites led to a 400% revenue growth",
-            description:
-                "Pet Media Group centralized the management of 6 pet marketplaces worth $12M by architecting a new platform and migrat millions of data points to it with The Software House.",
-            logo: {
-                src: "/images/clients/lotus.jpg",
-                alt: "",
-            },
-            thumbnail: {
-                src: "/images/clients/lotus_thumbnail.jpeg",
-                alt: "",
-            },
+            src: "/images/swi.png",
+            name: "Consulting & Partnerships",
+            alt: "",
         },
     ];
     const technologies: string[] = [
@@ -95,28 +59,25 @@ export default function OurWork() {
         "Illustrator",
         "Figma",
     ];
-    const industries = [
-        {
-            src: "/images/swi.png",
-            name: "Technology",
-            alt: "",
-        },
-        {
-            src: "/images/swi.png",
-            name: "Technology",
-            alt: "",
-        },
-        {
-            src: "/images/swi.png",
-            name: "Technology",
-            alt: "",
-        },
-        {
-            src: "/images/swi.png",
-            name: "Technology",
-            alt: "",
-        },
-    ];
+
+    let projects: ProjectType[] = [];
+
+    try {
+        const res = await fetch(
+            `${process.env.STRAPI_API_URL}/our-works?populate=*`,
+            {
+                cache: "force-cache",
+            }
+        );
+
+        if (!res.ok) throw new Error("Response failed");
+
+        const resData = await res.json();
+
+        projects = resData.data;
+    } catch (e) {
+        console.log(e);
+    }
 
     return (
         <div>
@@ -150,23 +111,30 @@ export default function OurWork() {
                                 <div className="flex flex-col flex-1 items-center md:items-start text-center md:text-left">
                                     <div className="relative w-64 max-w-full h-20 mb-6">
                                         <Image
-                                            src={project.logo.src}
+                                            src={generateAPIURL(
+                                                project.clientLogo.url
+                                            )}
                                             fill
                                             className="object-contain"
-                                            alt={project.logo.alt}
+                                            alt={
+                                                project.clientLogo
+                                                    .alternativeText
+                                            }
                                         />
                                     </div>
                                     <h2 className="text-3xl font-semibold mb-6">
                                         {project.title}
                                     </h2>
-                                    <p>{project.description}</p>
+                                    <p>{project.shortDescription}</p>
                                 </div>
                                 <div className="relative w-full md:w-1/3 lg:flex-1 h-56 lg:h-72 md:mt-16 rounded-xl overflow-hidden">
                                     <Image
-                                        src={project.thumbnail.src}
+                                        src={generateAPIURL(
+                                            project.coverImage.url
+                                        )}
                                         fill
                                         className="object-cover"
-                                        alt={project.thumbnail.alt}
+                                        alt={project.coverImage.alternativeText}
                                     />
                                 </div>
                             </div>
@@ -181,7 +149,7 @@ export default function OurWork() {
                         <h3 className="w-full text-center text-3xl font-semibold mb-10">
                             Featured Industries
                         </h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-24">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-24 text-center">
                             {industries.map((industry, index) => (
                                 <div
                                     className="relative bg-main-secondary p-6 flex flex-col items-center mt-16"
@@ -230,12 +198,12 @@ export default function OurWork() {
 
                     <div className="max-w-xl mx-auto rounded-xl bg-main-background-dark py-24 mt-32 text-center flex flex-col items-center gap-3">
                         <h3 className="text-2xl font-medium">
-                            What do you think? Are we a good fit?
+                            What do you think? Let's discuss further.
                         </h3>
                         <p></p>
                         <Link
                             href={routes.CONTACT}
-                            className="px-4 py-2 bg-main-secondary rounded-md"
+                            className="px-4 py-2 bg-main-secondary rounded-md font-semibold"
                         >
                             Book a free consultation
                         </Link>

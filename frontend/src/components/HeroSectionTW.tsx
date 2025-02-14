@@ -28,7 +28,7 @@ const HeroSectionTW = () => {
             ],
             25,
             15,
-            5000
+            3000
         );
 
         twRef.current.start();

@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import { ScrollManagerEvaluator } from "@/components/ScrollManager";
+import GoogleMapComponent from "@/components/GoogleMap";
 
 export default function Contact() {
+    const apiKey = process.env.GOOGLE_MAPS_API_KEY || "";
+
     return (
         <div className="observe-navbar-intersect w-full h-full bg-main-opacity-black-50 ">
             <div className="xl:pt-32 max-w-screen-xl mx-auto">
@@ -40,12 +42,9 @@ export default function Contact() {
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div className="relative flex-1 order-1 sm:order-2">
-                                                <Image
-                                                    className="w-full !relative sm:!absolute !h-[200px] sm:!h-full object-cover"
-                                                    src="/images/blog_news.webp"
-                                                    fill
-                                                    alt=""
+                                            <div className="relative flex-1 order-1 sm:order-2 max-h-[250px]">
+                                                <GoogleMapComponent
+                                                    apiKey={apiKey}
                                                 />
                                             </div>
                                         </div>

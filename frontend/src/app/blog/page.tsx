@@ -1,8 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BlogPostType } from "@/components/BlogPost";
+import routes from "@/constants/routes";
+import { generateAPIURL } from "@/utils/Strapi";
 
-export default function Blog() {
-    const blogs: number[] = [1, 2, 3, 4, 5];
+export default async function BlogPage() {
+    let posts: BlogPostType[] = [];
+
+    try {
+        const res = await fetch(
+            `${process.env.STRAPI_API_URL}/blog-posts?populate=coverImage`,
+            {
+                cache: "force-cache",
+            }
+        );
+
+        if (!res.ok) throw new Error("Response failed");
+
+        const resData = await res.json();
+
+        posts = resData.data;
+    } catch (e) {
+        console.log(e);
+    }
 
     return (
         <div className="">
@@ -74,44 +94,45 @@ export default function Blog() {
                     <h1 className="text-4xl font-semibold mb-10">Articles</h1>
                     <div className="flex flex-row gap-10">
                         <div className="flex flex-col gap-10 flex-[2/3]">
-                            {blogs.map((blog, index) => (
+                            {posts.map((post, index) => (
                                 <div
-                                    key={index}
+                                    key={post.slug}
                                     className="border border-gray-600 rounded-xl p-12 shadow-xl"
                                 >
                                     <h1 className="text-2xl md:text-4xl font-semibold mb-6">
-                                        6 Dumbest Mistakes Smart People Make
-                                        When Hiring A Web Designer
+                                        {post.title}
                                     </h1>
-                                    <span className="block mb-6">Author</span>
+                                    <span className="block mb-6">
+                                        {post.author}
+                                    </span>
                                     <div className="flex flex-col md:flex-row gap-10">
                                         <div className="w-full md:w-1/4 flex-shrink-0">
                                             <div className="relative aspect-square">
                                                 <Image
-                                                    src="/images/blog_news.webp"
+                                                    src={generateAPIURL(
+                                                        post.coverImage.url
+                                                    )}
                                                     className="rounded-xl"
                                                     layout="fill"
                                                     objectFit="cover"
-                                                    alt="Imboxsoft Logo"
+                                                    alt={
+                                                        post.coverImage
+                                                            .alternativeText ||
+                                                        `${post.title} - Blog Post Image`
+                                                    }
                                                 />
                                             </div>
                                         </div>
                                         <div className="flex-1 text-xl">
-                                            If you’re looking to hire a website
-                                            designer for your next website
-                                            design project, you’re in the right
-                                            place. But, first of all, who is
-                                            this written for? Table of Contents
-                                            This article is for anyone who is a
-                                            marketing manager. That could be
-                                            anything from, the CMO of the
-                                            company to a marketing intern […]
+                                            {post.excerpt}
                                         </div>
                                     </div>
                                     <hr className="h-px my-16 bg-gray-200 border-0 dark:bg-gray-700" />
                                     <div className="flex flex-row justify-center">
                                         <Link
-                                            href="/contact"
+                                            href={routes.INSIGHT_POST(
+                                                post.slug
+                                            )}
                                             className="bg-main-secondary hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-transparent font-medium rounded-lg text-lg px-4 py-3 text-center"
                                         >
                                             FIND OUT MORE

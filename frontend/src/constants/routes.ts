@@ -14,7 +14,7 @@ const routes = {
     ABOUT_US: "/company/about-us",
 
     INSIGHTS: "/blog",
-    //INSIGHT_POST: (slug: string) => `/blog/${slug}`,
+    INSIGHT_POST: (slug: string) => `/blog/${slug}`,
 
     CONTACT: "/contact",
 };

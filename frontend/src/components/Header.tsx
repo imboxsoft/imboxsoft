@@ -306,7 +306,7 @@ export default function Header() {
                                             );
                                         }}
                                         href={routes.CONTACT}
-                                        className="text-white bg-main-secondary hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-transparent font-medium rounded-lg text-xl px-4 py-3 text-center"
+                                        className="text-white bg-main-secondary hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-transparent font-[520] rounded-lg text-xl px-4 py-3 text-center"
                                     >
                                         Contact Us
                                     </Link>
