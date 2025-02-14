@@ -2,19 +2,16 @@
 import Image from "next/image";
 import { ImageType } from "@/types/strapi";
 
-export interface BlogPostType {
-    slug: string;
-    title: string;
-    author: string;
-    coverImage: ImageType;
-    excerpt: string;
-    content: ContentBlockType[];
-    date: string;
+interface ParagraphBlockTextType {
+    type: "text";
+    text: string;
 }
 
-interface TextBlockType {
-    type: "text";
-    value: string;
+type ParagraphBlockChildrenType = ParagraphBlockTextType;
+
+interface ParagraphBlockType {
+    type: "paragraph";
+    children: ParagraphBlockChildrenType[];
 }
 
 interface ImageBlockType {
@@ -36,13 +33,23 @@ interface ReferenceBlockType {
 }
 
 export type ContentBlockType =
-    | TextBlockType
+    | ParagraphBlockType
     | ImageBlockType
     | VideoBlockType
     | ReferenceBlockType;
 
-export const TextBlock = ({ block }: { block: TextBlockType }) => (
-    <p className="text-lg">{block.value}</p>
+export interface BlogPostType {
+    slug: string;
+    title: string;
+    author: string;
+    coverImage: ImageType;
+    excerpt: string;
+    content: ContentBlockType[];
+    date: string;
+}
+
+export const TextBlock = ({ block }: { block: ParagraphBlockTextType }) => (
+    <p className="text-lg">{block.text}</p>
 );
 
 export const ImageBlock = ({ block }: { block: ImageBlockType }) => (

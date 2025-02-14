@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BlogPostType } from "@/components/BlogPost";
 import routes from "@/constants/routes";
-import { generateAPIURL } from "@/utils/Strapi";
+import { generateBaseURL, generateAPIURL } from "@/utils/Strapi";
 import NewsletterForm from "@/components/NewsletterForm";
 
 export default async function BlogPage() {
@@ -10,7 +10,7 @@ export default async function BlogPage() {
 
     try {
         const res = await fetch(
-            `${process.env.STRAPI_API_URL}/blog-posts?populate=coverImage`,
+            generateAPIURL("/blog-posts?populate=coverImage"),
             {
                 cache: "force-cache",
             }
@@ -26,7 +26,7 @@ export default async function BlogPage() {
     }
 
     return (
-        <div className="">
+        <div>
             <section className="relative bg-main-background-darker pt-48">
                 <div className="observe-navbar-intersect flex flex-row gap-20 max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 pb-20">
                     <div className="w-full xs:max-w-[450px] md:max-w-[700px] lg:max-w-[66%] z-10">
@@ -91,7 +91,7 @@ export default async function BlogPage() {
                                         <div className="w-full md:w-1/4 flex-shrink-0">
                                             <div className="relative aspect-square">
                                                 <Image
-                                                    src={generateAPIURL(
+                                                    src={generateBaseURL(
                                                         post.coverImage.url
                                                     )}
                                                     className="rounded-xl"
