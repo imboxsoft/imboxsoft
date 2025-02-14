@@ -112,7 +112,7 @@ export default function AboutUs() {
                             <div className="flex flex-col gap-6">
                                 <div className="relative h-64 min-w-52">
                                     <Image
-                                        src="/images/eu.jpg"
+                                        src="/images/team/bojan.jpg"
                                         alt="Picture of CEO & Co-Founder Bojan Alex-Narcis"
                                         fill
                                         className="object-cover"
@@ -130,7 +130,7 @@ export default function AboutUs() {
                             <div className="flex flex-col gap-6">
                                 <div className="relative h-64 min-w-52">
                                     <Image
-                                        src="/images/imbre.jpeg"
+                                        src="/images/team/imbre.jpeg"
                                         alt="Picture of CTO & Co-Founder Imbre Jozsef-Jafet"
                                         fill
                                         className="object-cover"
