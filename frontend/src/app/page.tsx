@@ -217,7 +217,7 @@ export default async function Home() {
                             href={routes.CONTACT}
                             className="bg-main-secondary px-6 py-4 font-semibold rounded-md"
                         >
-                            Let's Talk
+                            Let&apos;s Talk
                         </Link>
                     </div>
                 </div>

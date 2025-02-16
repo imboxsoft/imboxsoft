@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 interface ContactForm {

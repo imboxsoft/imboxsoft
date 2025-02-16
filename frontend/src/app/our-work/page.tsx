@@ -2,7 +2,7 @@ import routes from "@/constants/routes";
 import Image from "next/image";
 import Link from "next/link";
 import { ImageType } from "@/types/strapi";
-import { generateBaseURL } from "@/utils/Strapi";
+import { generateBaseURL, generateAPIURL } from "@/utils/Strapi";
 
 interface ProjectType {
     title: string;
@@ -63,12 +63,9 @@ export default async function OurWork() {
     let projects: ProjectType[] = [];
 
     try {
-        const res = await fetch(
-            `${process.env.STRAPI_API_URL}/our-works?populate=*`,
-            {
-                cache: "force-cache",
-            }
-        );
+        const res = await fetch(generateAPIURL("/our-works?populate=*"), {
+            cache: "force-cache",
+        });
 
         if (!res.ok) throw new Error("Response failed");
 
@@ -198,7 +195,7 @@ export default async function OurWork() {
 
                     <div className="max-w-xl mx-auto rounded-xl bg-main-background-dark py-24 mt-32 text-center flex flex-col items-center gap-3">
                         <h3 className="text-2xl font-medium">
-                            What do you think? Let's discuss further.
+                            What do you think? Let&apos;s discuss further.
                         </h3>
                         <p></p>
                         <Link

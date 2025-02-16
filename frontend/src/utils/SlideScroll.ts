@@ -72,7 +72,7 @@ export default class SlideScrollManager {
             }
         };
 
-        this.onWindowResize = (e: Event) => {
+        this.onWindowResize = () => {
             this.assess();
         };
 

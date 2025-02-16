@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
     BlogPostType,
     TextBlock,
@@ -8,10 +7,6 @@ import {
     ReferenceBlock,
 } from "@/components/BlogPost";
 import { generateAPIURL, generateBaseURL } from "@/utils/Strapi";
-
-interface BlogPostProps {
-    slug: string;
-}
 
 export async function generateStaticParams() {
     try {
@@ -48,6 +43,10 @@ async function getBlogPost(slug: string): Promise<BlogPostType | null> {
 
     return posts[0];
 }
+
+type BlogPostProps = {
+    slug: string;
+}; //Record<string, string>;
 
 export default async function BlogPostPage({
     params,

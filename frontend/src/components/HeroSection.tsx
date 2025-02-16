@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { fetchNews, NewsArticle } from "@/utils/rss";
+// import { fetchNews, NewsArticle } from "@/utils/rss";
 import HeroSectionTW from "./HeroSectionTW";
 
 export const HeroSection = async () => {
-    const ARTICLES: NewsArticle[] = await fetchNews();
+    // const ARTICLES: NewsArticle[] = await fetchNews();
 
     return (
         <div className="observe-navbar-intersect flex flex-col justify-center sm:gap-6 md:gap-10 h-full min-h-0 overflow-hidden flex-1">
@@ -77,7 +77,7 @@ export const HeroSection = async () => {
                                 href="/contact"
                                 className="my-3 px-5 sm:px-3 py-3 sm:py-2 bg-main-secondary rounded-lg text-lg sm:text-base font-bold sm:font-semibold"
                             >
-                                Let's begin!
+                                Let&apos;s begin!
                             </a>
                         </div>
                     </div>

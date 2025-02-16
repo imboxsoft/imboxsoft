@@ -2,31 +2,31 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function SoftwareDevelopment() {
-    const technologies: string[] = [
-        "Next.js",
-        "Angular",
-        "Alpinejs",
-        "Tailwind",
-        "Django",
-        "Nodejs",
-        "Laravel",
-        ".NET",
-        "PostgreSQL",
-        "MongoDB",
-        "GIT",
-        "Docker",
-        "Kubernetes",
-        "AWS",
-        "Google Cloud",
-        "Shopify",
-        "Bigcommerce",
-        "Stripe",
-        "Paypal",
-        "API Integration",
-        "Photoshop",
-        "Illustrator",
-        "Figma",
-    ];
+    // const technologies: string[] = [
+    //     "Next.js",
+    //     "Angular",
+    //     "Alpinejs",
+    //     "Tailwind",
+    //     "Django",
+    //     "Nodejs",
+    //     "Laravel",
+    //     ".NET",
+    //     "PostgreSQL",
+    //     "MongoDB",
+    //     "GIT",
+    //     "Docker",
+    //     "Kubernetes",
+    //     "AWS",
+    //     "Google Cloud",
+    //     "Shopify",
+    //     "Bigcommerce",
+    //     "Stripe",
+    //     "Paypal",
+    //     "API Integration",
+    //     "Photoshop",
+    //     "Illustrator",
+    //     "Figma",
+    // ];
 
     return (
         <div className="bg-main-background-lighter-lighter">

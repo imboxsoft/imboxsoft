@@ -76,7 +76,7 @@ export default async function BlogPage() {
                     <h1 className="text-4xl font-semibold mb-10">Articles</h1>
                     <div className="flex flex-row gap-10">
                         <div className="flex flex-col gap-10 flex-[2/3]">
-                            {posts.map((post, index) => (
+                            {posts.map((post) => (
                                 <div
                                     key={post.slug}
                                     className="border border-gray-600 rounded-xl p-12 shadow-xl"

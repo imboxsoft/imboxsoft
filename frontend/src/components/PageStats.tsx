@@ -17,22 +17,11 @@ type NewsPageProps = {
 };
 
 export const PageStats: React.FC<NewsPageProps> = ({ articles }) => {
-    const [linesOfCode, setLinesOfCode] = useState(500000);
-    const [projects, setProjects] = useState(10);
-    const [visitors, setVisitors] = useState(100);
-    const [btcPrice, setBtcPrice] = useState(null);
+    const [linesOfCode] = useState(500000);
+    const [projects] = useState(10);
+    const [visitors] = useState(100);
 
     useEffect(() => {
-        const fetchCrypto = async () => {
-            // const res = await fetch(
-            //     "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
-            // );
-            // const data = await res.json();
-            setBtcPrice(null);
-        };
-
-        fetchCrypto();
-
         const interval = setInterval(() => {}, 10000);
 
         return () => {

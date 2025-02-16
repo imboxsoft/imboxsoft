@@ -16,8 +16,9 @@ export default function AboutUs() {
                         </h1>
                         <h3 className="text-2xl">
                             Progress is what drives our business initiative
-                            forward. Let's embark onto new ships of technology
-                            innovation and build a more efficient world.
+                            forward. Let&apos;s embark onto new ships of
+                            technology innovation and build a more efficient
+                            world.
                         </h3>
                     </div>
                     <div className="absolute right-0 bottom-0 translate-y-20">
