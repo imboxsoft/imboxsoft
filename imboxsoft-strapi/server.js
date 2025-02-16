@@ -1,3 +1,3 @@
-const Strapi = require("@strapi/strapi").default;
+const { Strapi } = require("@strapi/strapi");
 
 Strapi().start();
