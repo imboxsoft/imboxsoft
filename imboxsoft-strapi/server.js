@@ -1,3 +1,5 @@
 const { Strapi } = require("@strapi/strapi");
 
-new Strapi.start();
+const app = new Strapi();
+
+app.start();
