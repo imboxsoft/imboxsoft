@@ -1,9 +1,9 @@
 const ENV = process.env;
 
-export function generateBaseURL(url: string) {
+export function generateStrapiBaseURL(url: string) {
     return `${ENV.STRAPI_BASE_URL}${url}`;
 }
 
-export function generateAPIURL(url: string) {
+export function generateStrapiAPIURL(url: string) {
     return `${ENV.STRAPI_BASE_URL}${ENV.STRAPI_API_ROUTE}${url}`;
 }

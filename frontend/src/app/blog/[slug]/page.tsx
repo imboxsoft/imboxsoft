@@ -6,11 +6,11 @@ import {
     VideoBlock,
     ReferenceBlock,
 } from "@/components/BlogPost";
-import { generateAPIURL, generateBaseURL } from "@/utils/Strapi";
+import { generateStrapiAPIURL, generateStrapiBaseURL } from "@/utils/Strapi";
 
 export async function generateStaticParams() {
     try {
-        const res = await fetch(generateAPIURL("/blog-posts"));
+        const res = await fetch(generateStrapiAPIURL("/blog-posts"));
 
         if (!res.ok) throw new Error("Response failed");
 
@@ -27,7 +27,9 @@ export async function generateStaticParams() {
 
 async function getBlogPost(slug: string): Promise<BlogPostType | null> {
     const res = await fetch(
-        generateAPIURL(`/blog-posts?filters[slug][$eq]=${slug}&populate=*`),
+        generateStrapiAPIURL(
+            `/blog-posts?filters[slug][$eq]=${slug}&populate=*`
+        ),
         {
             cache: "no-store",
         }
@@ -73,7 +75,7 @@ export default async function BlogPostPage({
                 </div>
                 <div className="absolute top-0 left-0 w-full h-full z-0 opacity-20">
                     <Image
-                        src={generateBaseURL(post.coverImage.url)}
+                        src={generateStrapiBaseURL(post.coverImage.url)}
                         className="w-full h-full object-cover"
                         fill
                         alt={post.coverImage.alternativeText}

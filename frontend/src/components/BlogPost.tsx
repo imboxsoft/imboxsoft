@@ -1,5 +1,7 @@
 // import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Image from "next/image";
+import Link from "next/link";
+import routes from "@/constants/routes";
 import { ImageType } from "@/types/strapi";
 
 interface ParagraphBlockTextType {
@@ -32,19 +34,25 @@ interface ReferenceBlockType {
     text: string;
 }
 
-export type ContentBlockType =
+interface WPHTMLBlockType {
+    type: "wp-rendered-content";
+    rendered: string;
+}
+
+export type StrapiContentBlockType =
     | ParagraphBlockType
     | ImageBlockType
     | VideoBlockType
     | ReferenceBlockType;
 
 export interface BlogPostType {
+    from: "wordpress" | "strapi";
     slug: string;
     title: string;
     author: string;
     coverImage: ImageType;
     excerpt: string;
-    content: ContentBlockType[];
+    content: WPHTMLBlockType | StrapiContentBlockType[];
     date: string;
 }
 
@@ -73,3 +81,64 @@ export const ReferenceBlock = ({ block }: { block: ReferenceBlockType }) => (
 // export const CodeBlock = ({ code }: { code: string }) => (
 //     <SyntaxHighlighter language="javascript">{code}</SyntaxHighlighter>
 // );
+
+export const BlogPostHeadline = ({ post }: { post: BlogPostType }) => {
+    return (
+        <div>
+            <div
+                key={post.slug}
+                className="border border-gray-600 rounded-xl p-12 shadow-xl"
+            >
+                <h1 className="text-2xl md:text-4xl font-semibold mb-16">
+                    {post.title}
+                </h1>
+                <div className="flex flex-col md:flex-row gap-10">
+                    <div className="w-full md:w-1/4 flex-shrink-0">
+                        <div className="relative aspect-square">
+                            <Image
+                                src={post.coverImage.src}
+                                className="rounded-xl"
+                                layout="fill"
+                                objectFit="cover"
+                                alt={
+                                    post.coverImage.alternativeText ||
+                                    `${post.title} - Blog Post Image`
+                                }
+                            />
+                        </div>
+                    </div>
+                    <div className="flex-1 text-xl">
+                        {renderPostContent(post)}
+                    </div>
+                </div>
+                <hr className="h-px my-16 bg-gray-200 border-0 dark:bg-gray-700" />
+                <div className="flex flex-row justify-center">
+                    <Link
+                        href={routes.INSIGHT_POST(post.slug)}
+                        className="bg-main-secondary hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-transparent font-medium rounded-lg text-lg px-4 py-3 text-center"
+                    >
+                        FIND OUT MORE
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const renderPostContent = (post: BlogPostType) => {
+    console.log(post);
+    switch (post.from) {
+        case "wordpress":
+            return (
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: post.excerpt,
+                    }}
+                />
+            );
+        case "strapi":
+            return post.excerpt;
+        default:
+            return post.excerpt;
+    }
+};

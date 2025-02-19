@@ -2,7 +2,7 @@ import routes from "@/constants/routes";
 import Image from "next/image";
 import Link from "next/link";
 import { ImageType } from "@/types/strapi";
-import { generateBaseURL, generateAPIURL } from "@/utils/Strapi";
+import { generateStrapiBaseURL, generateStrapiAPIURL } from "@/utils/Strapi";
 
 interface ProjectType {
     title: string;
@@ -63,7 +63,7 @@ export default async function OurWork() {
     let projects: ProjectType[] = [];
 
     try {
-        const res = await fetch(generateAPIURL("/our-works?populate=*"), {
+        const res = await fetch(generateStrapiAPIURL("/our-works?populate=*"), {
             cache: "force-cache",
         });
 
@@ -108,7 +108,7 @@ export default async function OurWork() {
                                 <div className="flex flex-col flex-1 items-center md:items-start text-center md:text-left">
                                     <div className="relative w-64 max-w-full h-20 mb-6">
                                         <Image
-                                            src={generateBaseURL(
+                                            src={generateStrapiBaseURL(
                                                 project.clientLogo.url
                                             )}
                                             fill
@@ -126,7 +126,7 @@ export default async function OurWork() {
                                 </div>
                                 <div className="relative w-full md:w-1/3 lg:flex-1 h-56 lg:h-72 md:mt-16 rounded-xl overflow-hidden">
                                     <Image
-                                        src={generateBaseURL(
+                                        src={generateStrapiBaseURL(
                                             project.coverImage.url
                                         )}
                                         fill

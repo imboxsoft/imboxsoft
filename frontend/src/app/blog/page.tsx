@@ -1,26 +1,24 @@
 import Image from "next/image";
-import Link from "next/link";
 import { BlogPostType } from "@/components/BlogPost";
-import routes from "@/constants/routes";
-import { generateBaseURL, generateAPIURL } from "@/utils/Strapi";
+import { generateWPBaseURL } from "@/utils/Wordpress";
 import NewsletterForm from "@/components/NewsletterForm";
+import { normalizeBlogPostData } from "@/utils/Normalizer";
+import { BlogPostHeadline } from "@/components/BlogPost";
 
 export default async function BlogPage() {
     let posts: BlogPostType[] = [];
 
     try {
-        const res = await fetch(
-            generateAPIURL("/blog-posts?populate=coverImage"),
-            {
-                cache: "force-cache",
-            }
-        );
+        const res = await fetch(generateWPBaseURL("/posts?_embed"), {
+            cache: "force-cache",
+        });
 
         if (!res.ok) throw new Error("Response failed");
 
-        const resData = await res.json();
+        const wpData = await res.json();
+        const wordpressPosts = normalizeBlogPostData("wordpress", wpData);
 
-        posts = resData.data;
+        posts = [...wordpressPosts];
     } catch (e) {
         console.log(e);
     }
@@ -76,51 +74,8 @@ export default async function BlogPage() {
                     <h1 className="text-4xl font-semibold mb-10">Articles</h1>
                     <div className="flex flex-row gap-10">
                         <div className="flex flex-col gap-10 flex-[2/3]">
-                            {posts.map((post) => (
-                                <div
-                                    key={post.slug}
-                                    className="border border-gray-600 rounded-xl p-12 shadow-xl"
-                                >
-                                    <h1 className="text-2xl md:text-4xl font-semibold mb-6">
-                                        {post.title}
-                                    </h1>
-                                    <span className="block mb-6">
-                                        {post.author}
-                                    </span>
-                                    <div className="flex flex-col md:flex-row gap-10">
-                                        <div className="w-full md:w-1/4 flex-shrink-0">
-                                            <div className="relative aspect-square">
-                                                <Image
-                                                    src={generateBaseURL(
-                                                        post.coverImage.url
-                                                    )}
-                                                    className="rounded-xl"
-                                                    layout="fill"
-                                                    objectFit="cover"
-                                                    alt={
-                                                        post.coverImage
-                                                            .alternativeText ||
-                                                        `${post.title} - Blog Post Image`
-                                                    }
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="flex-1 text-xl">
-                                            {post.excerpt}
-                                        </div>
-                                    </div>
-                                    <hr className="h-px my-16 bg-gray-200 border-0 dark:bg-gray-700" />
-                                    <div className="flex flex-row justify-center">
-                                        <Link
-                                            href={routes.INSIGHT_POST(
-                                                post.slug
-                                            )}
-                                            className="bg-main-secondary hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-transparent font-medium rounded-lg text-lg px-4 py-3 text-center"
-                                        >
-                                            FIND OUT MORE
-                                        </Link>
-                                    </div>
-                                </div>
+                            {posts.map((post, index) => (
+                                <BlogPostHeadline key={index} post={post} />
                             ))}
                         </div>
                         {/* <div className="flex-[1/3]"></div> */}

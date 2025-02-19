@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
                 protocol: "https",
                 hostname: "your-live-strapi-domain.com", // For production
             },
+            {
+                protocol: "https",
+                hostname: "api.imboxsoft.com", // For production
+            },
         ],
     },
     typescript: {
