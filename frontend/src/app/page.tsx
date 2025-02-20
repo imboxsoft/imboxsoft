@@ -91,7 +91,7 @@ export default async function Home() {
                             src="/images/home/megaphone.svg"
                             width={500}
                             height={500}
-                            alt=""
+                            alt="Welcome to Imboxsoft"
                         />
                     </div>
                 </div>
@@ -195,10 +195,10 @@ export default async function Home() {
 
                         <div className="absolute top-0 right-0 md:relative z-0 max-w-64 lg:max-w-96">
                             <Image
-                                src="/images/why-us.avif"
+                                src="/images/home/why-us.avif"
                                 width={1000}
                                 height={1000}
-                                alt="wef"
+                                alt="Why Imboxsoft?"
                             />
                         </div>
                     </div>

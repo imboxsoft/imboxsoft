@@ -79,10 +79,7 @@ export default function Footer() {
                             <ul className="flex flex-col gap-4 font-medium">
                                 <li>
                                     <Link
-                                        href={
-                                            process.env.LINKED_IN_PAGE ||
-                                            "https://www.linkedin.com/company/imboxsoft"
-                                        }
+                                        href="https://www.linkedin.com/company/imboxsoft"
                                         className="hover:underline text-slate-50 hover:text-main-primary"
                                         target="_blank"
                                     >

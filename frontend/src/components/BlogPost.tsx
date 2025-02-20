@@ -34,7 +34,7 @@ interface ReferenceBlockType {
     text: string;
 }
 
-interface WPHTMLBlockType {
+export interface WPHTMLBlockType {
     type: "wp-rendered-content";
     rendered: string;
 }
@@ -47,6 +47,7 @@ export type StrapiContentBlockType =
 
 export interface BlogPostType {
     from: "wordpress" | "strapi";
+    url: string;
     slug: string;
     title: string;
     author: string;
@@ -84,49 +85,51 @@ export const ReferenceBlock = ({ block }: { block: ReferenceBlockType }) => (
 
 export const BlogPostHeadline = ({ post }: { post: BlogPostType }) => {
     return (
-        <div>
+        <div className="w-full">
             <div
                 key={post.slug}
-                className="border border-gray-600 rounded-xl p-12 shadow-xl"
+                className="border border-gray-600 rounded-xl shadow-xl"
             >
-                <h1 className="text-2xl md:text-4xl font-semibold mb-16">
-                    {post.title}
-                </h1>
-                <div className="flex flex-col md:flex-row gap-10">
-                    <div className="w-full md:w-1/4 flex-shrink-0">
-                        <div className="relative aspect-square">
-                            <Image
-                                src={post.coverImage.src}
-                                className="rounded-xl"
-                                layout="fill"
-                                objectFit="cover"
-                                alt={
-                                    post.coverImage.alternativeText ||
-                                    `${post.title} - Blog Post Image`
-                                }
-                            />
-                        </div>
-                    </div>
-                    <div className="flex-1 text-xl">
-                        {renderPostContent(post)}
-                    </div>
+                <div className="relative w-full max-h-[250px] sm:max-h-[350px] aspect-square">
+                    <Image
+                        src={post.coverImage.src}
+                        className="rounded-xl object-cover"
+                        fill
+                        alt={
+                            post.coverImage.alternativeText ||
+                            `${post.title} - Blog Post Image`
+                        }
+                    />
                 </div>
-                <hr className="h-px my-16 bg-gray-200 border-0 dark:bg-gray-700" />
-                <div className="flex flex-row justify-center">
-                    <Link
-                        href={routes.INSIGHT_POST(post.slug)}
-                        className="bg-main-secondary hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-transparent font-medium rounded-lg text-lg px-4 py-3 text-center"
-                    >
-                        FIND OUT MORE
-                    </Link>
+                <div className="px-6 pb-6 sm:px-10 sm:pb-10">
+                    <div className="mt-6 mb-4 uppercase font-semibold text-base">
+                        {post.date}
+                    </div>
+                    <h1 className="text-2xl md:text-3xl font-semibold mb-6">
+                        {post.title}
+                    </h1>
+                    <div className="text-xl">{renderPostExcerpt(post)}</div>
+                    <hr className="h-px my-10 bg-gray-200 border-0 dark:bg-gray-700" />
+                    <div className="flex flex-row justify-center">
+                        <Link
+                            href={{
+                                pathname: routes.INSIGHT_POST(post.slug),
+                                query: {
+                                    url: encodeURIComponent(post.url),
+                                },
+                            }}
+                            className="bg-main-secondary hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-transparent font-medium rounded-lg text-lg px-4 py-3 text-center"
+                        >
+                            FIND OUT MORE
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
     );
 };
 
-const renderPostContent = (post: BlogPostType) => {
-    console.log(post);
+const renderPostExcerpt = (post: BlogPostType) => {
     switch (post.from) {
         case "wordpress":
             return (

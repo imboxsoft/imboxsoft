@@ -2,7 +2,7 @@ import Image from "next/image";
 import { BlogPostType } from "@/components/BlogPost";
 import { generateWPBaseURL } from "@/utils/Wordpress";
 import NewsletterForm from "@/components/NewsletterForm";
-import { normalizeBlogPostData } from "@/utils/Normalizer";
+import { normalizeBlogPostsData } from "@/utils/Normalizer";
 import { BlogPostHeadline } from "@/components/BlogPost";
 
 export default async function BlogPage() {
@@ -16,7 +16,7 @@ export default async function BlogPage() {
         if (!res.ok) throw new Error("Response failed");
 
         const wpData = await res.json();
-        const wordpressPosts = normalizeBlogPostData("wordpress", wpData);
+        const wordpressPosts = normalizeBlogPostsData(wpData, "wordpress");
 
         posts = [...wordpressPosts];
     } catch (e) {
@@ -54,7 +54,7 @@ export default async function BlogPage() {
             </section>
 
             <section className="observe-navbar-intersect bg-main-background">
-                <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 py-24 text-center">
+                <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 py-16 md:py-24 text-center">
                     <h2 className="text-4xl md:text-5xl mb-6 font-semibold">
                         Get in tune with our promotions
                     </h2>
@@ -72,13 +72,12 @@ export default async function BlogPage() {
             <section className="observe-navbar-intersect bg-main-background-lighter">
                 <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 pt-16 pb-24">
                     <h1 className="text-4xl font-semibold mb-10">Articles</h1>
-                    <div className="flex flex-row gap-10">
-                        <div className="flex flex-col gap-10 flex-[2/3]">
-                            {posts.map((post, index) => (
-                                <BlogPostHeadline key={index} post={post} />
-                            ))}
-                        </div>
-                        {/* <div className="flex-[1/3]"></div> */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        {posts.map((post, index) => (
+                            <div className="col-span-1" key={index}>
+                                <BlogPostHeadline post={post} />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>

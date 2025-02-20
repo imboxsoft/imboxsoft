@@ -23,18 +23,21 @@ export default function ServicesCardsSwiper({
             image: "/images/services/software-development.jpg",
             description: "Web, mobile, and desktop applications.",
             route: routes.SOFTWARE_DEVELOPMENT,
+            alternativeText: "Hero Section Background",
         },
         {
             title: "IT Consulting",
             image: "/images/services/it-consulting.jpg",
             description: "Cloud, security, and infrastructure strategy.",
             route: routes.IT_CONSULTING,
+            alternativeText: "Hero Section Background",
         },
         {
             title: "SEO",
             image: "/images/services/seo.webp",
             description: "Boost your rank in search engine appearances.",
             route: routes.SEO,
+            alternativeText: "Hero Section Background",
         },
         {
             title: "Email Marketing",
@@ -42,12 +45,14 @@ export default function ServicesCardsSwiper({
             description:
                 "Lead generation and brand growth through email campaigns.",
             route: routes.EMAIL_MARKETING,
+            alternativeText: "Hero Section Background",
         },
         {
             title: "Graphic Design",
             image: "/images/services/graphic-design.jpg",
             description: "Branding, logos, business cards, posters, UI/UX.",
             route: routes.GRAPHIC_DESIGN,
+            alternativeText: "Hero Section Background",
         },
     ];
 
@@ -90,7 +95,7 @@ export default function ServicesCardsSwiper({
                                     src={service.image}
                                     className="w-full object-cover"
                                     fill
-                                    alt="Hero Section Background"
+                                    alt={service.alternativeText}
                                 />
                             </div>
                             <div className="flex-1 flex flex-col gap-6 items-center md:items-start p-6 flex-grow">

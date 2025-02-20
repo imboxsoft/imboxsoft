@@ -26,10 +26,10 @@ export const HeroSection = async () => {
                     <div className="hidden sm:block absolute top-0 right-[5%] w-52 translate-y-1/2">
                         <Image
                             className="w-full h-auto"
-                            src="/images/test-hs-pers.webp"
+                            src="/images/home/test-hs-pers.webp"
                             width={2000}
                             height={2000}
-                            alt="wewef"
+                            alt="Imboxsoft Hero Section"
                         />
                     </div>
                     <div className="w-full flex flex-col sm:flex-row gap-2 items-center sm:bg-main-opacity-white-20 rounded-lg px-4">

@@ -2,7 +2,10 @@ import routes from "@/constants/routes";
 import Image from "next/image";
 import Link from "next/link";
 import { ImageType } from "@/types/strapi";
-import { generateStrapiBaseURL, generateStrapiAPIURL } from "@/utils/Strapi";
+import {
+    generateStrapiBaseURL,
+    generateStrapiAPIURL,
+} from "@/utils/URLGenerators";
 
 interface ProjectType {
     title: string;
@@ -71,7 +74,20 @@ export default async function OurWork() {
 
         const resData = await res.json();
 
-        projects = resData.data;
+        projects = resData.data.map((el: any) => {
+            return {
+                title: el.title,
+                shortDescription: el.shortDescription,
+                clientLogo: {
+                    src: generateStrapiBaseURL(`${el.clientLogo.url}`),
+                    alternativeText: el.clientLogo?.alternativeText || el.title,
+                },
+                coverImage: {
+                    src: generateStrapiBaseURL(`${el.coverImage.url}`),
+                    alternativeText: el.coverImage?.alternativeText || el.title,
+                },
+            };
+        });
     } catch (e) {
         console.log(e);
     }
@@ -108,9 +124,7 @@ export default async function OurWork() {
                                 <div className="flex flex-col flex-1 items-center md:items-start text-center md:text-left">
                                     <div className="relative w-64 max-w-full h-20 mb-6">
                                         <Image
-                                            src={generateStrapiBaseURL(
-                                                project.clientLogo.url
-                                            )}
+                                            src={project.clientLogo.src}
                                             fill
                                             className="object-contain"
                                             alt={
@@ -126,9 +140,7 @@ export default async function OurWork() {
                                 </div>
                                 <div className="relative w-full md:w-1/3 lg:flex-1 h-56 lg:h-72 md:mt-16 rounded-xl overflow-hidden">
                                     <Image
-                                        src={generateStrapiBaseURL(
-                                            project.coverImage.url
-                                        )}
+                                        src={project.coverImage.src}
                                         fill
                                         className="object-cover"
                                         alt={project.coverImage.alternativeText}
@@ -186,7 +198,7 @@ export default async function OurWork() {
                                         className="w-12 aspect-sqaure"
                                         width={100}
                                         height={100}
-                                        alt=""
+                                        alt="Tech"
                                     />
                                 </div>
                             ))}

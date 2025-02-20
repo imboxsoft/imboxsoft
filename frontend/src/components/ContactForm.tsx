@@ -2,19 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { IContactForm } from "@/app/api/contact/route";
 
-interface ContactForm {
-    firstName: string;
-    lastName: string;
-    email: string;
-    phoneNumber: string;
-    company: string;
-    websiteURL: string;
-    message: string;
-    agreeToTerms: boolean;
-}
-
-const initialFormData: ContactForm = {
+const initialFormData: IContactForm = {
     firstName: "",
     lastName: "",
     email: "",
@@ -26,8 +16,8 @@ const initialFormData: ContactForm = {
 };
 
 const ContactForm = () => {
-    const [formData, setFormData] = useState<ContactForm>(initialFormData);
-    const [errors, setErrors] = useState<Partial<ContactForm>>({});
+    const [formData, setFormData] = useState<IContactForm>(initialFormData);
+    const [errors, setErrors] = useState<Partial<IContactForm>>({});
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -35,13 +25,13 @@ const ContactForm = () => {
         const { id, value } = e.target;
         setFormData({ ...formData, [id]: value });
 
-        if (errors[id as keyof ContactForm]) {
+        if (errors[id as keyof IContactForm]) {
             setErrors({ ...errors, [id]: "" });
         }
     };
 
     const validateForm = (): boolean => {
-        const newErrors: Partial<ContactForm> = {};
+        const newErrors: Partial<IContactForm> = {};
 
         if (!formData.firstName.trim())
             newErrors.firstName = "First name is missing.";
