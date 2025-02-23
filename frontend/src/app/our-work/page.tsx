@@ -5,6 +5,7 @@ import { ImageType } from "@/types/strapi";
 import {
     generateStrapiBaseURL,
     generateStrapiAPIURL,
+    generateWPAPIURL,
 } from "@/utils/URLGenerators";
 
 interface ProjectType {
@@ -39,6 +40,7 @@ export default async function OurWork() {
     ];
     const technologies: string[] = [
         "Next.js",
+        "React",
         "Angular",
         "Alpinejs",
         "Tailwind",
@@ -50,14 +52,12 @@ export default async function OurWork() {
         "MongoDB",
         "GIT",
         "Docker",
-        "Kubernetes",
+        "GCP",
         "AWS",
-        "Google Cloud",
         "Shopify",
         "Bigcommerce",
         "Stripe",
         "Paypal",
-        "API Integration",
         "Photoshop",
         "Illustrator",
         "Figma",
@@ -66,25 +66,29 @@ export default async function OurWork() {
     let projects: ProjectType[] = [];
 
     try {
-        const res = await fetch(generateStrapiAPIURL("/our-works?populate=*"), {
-            cache: "force-cache",
-        });
+        const res = await fetch(
+            generateWPAPIURL("/our-works?_fields=acf&acf_format=standard"),
+            {
+                cache: "force-cache",
+            }
+        );
 
         if (!res.ok) throw new Error("Response failed");
 
         const resData = await res.json();
 
-        projects = resData.data.map((el: any) => {
+        projects = resData.map((el: any) => {
+            const content = el.acf;
             return {
-                title: el.title,
-                shortDescription: el.shortDescription,
+                title: content.title,
+                shortDescription: content.shortDescription,
                 clientLogo: {
-                    src: generateStrapiBaseURL(`${el.clientLogo.url}`),
-                    alternativeText: el.clientLogo?.alternativeText || el.title,
+                    src: content.clientLogo.url,
+                    alternativeText: content.clientLogo.alt || content.title,
                 },
                 coverImage: {
-                    src: generateStrapiBaseURL(`${el.coverImage.url}`),
-                    alternativeText: el.coverImage?.alternativeText || el.title,
+                    src: content.coverImage.url,
+                    alternativeText: content.coverImage.alt || content.title,
                 },
             };
         });
@@ -95,7 +99,7 @@ export default async function OurWork() {
     return (
         <div>
             <div className="observe-navbar-intersect pt-32 w-full bg-main-opacity-black-50">
-                <div className="relative max-w-screen-xl mx-auto px-4 xs:px-10 py-20">
+                <div className="relative max-w-screen-2xl mx-auto px-4 xs:px-10 py-20">
                     <div className="max-w-[750px] mx-auto relative w-full text-center">
                         <h5 className="text-main-primary text-2xl mb-8">
                             OUR WORK
@@ -107,18 +111,19 @@ export default async function OurWork() {
                         <h3 className="text-2xl">
                             How we treat each other makes us better as software
                             creators. Our talent remains approachable and ready
-                            to lend a hand because it’s the right thing to do.
+                            to lend a hand because it&apos;s the right thing to
+                            do.
                         </h3>
                     </div>
                 </div>
             </div>
 
             <div className="observe-navbar-intersect w-full bg-main-background-lighter">
-                <div className="max-w-screen-xl mx-auto px-4 xs:px-10 pt-16 pb-20">
-                    <div className="flex flex-col gap-32 md:[&>*:nth-child(even)]:flex-row-reverse">
+                <div className="max-w-screen-2xl mx-auto px-4 xs:px-10 pt-16 pb-20">
+                    <div className="flex flex-col gap-48 md:[&>*:nth-child(even)]:flex-row-reverse">
                         {projects.map((project, index) => (
                             <div
-                                className="flex flex-col md:flex-row gap-10 lg:gap-20"
+                                className="flex flex-col md:flex-row gap-16 lg:gap-24"
                                 key={index}
                             >
                                 <div className="flex flex-col flex-1 items-center md:items-start text-center md:text-left">
@@ -138,7 +143,7 @@ export default async function OurWork() {
                                     </h2>
                                     <p>{project.shortDescription}</p>
                                 </div>
-                                <div className="relative w-full md:w-1/3 lg:flex-1 h-56 lg:h-72 md:mt-16 rounded-xl overflow-hidden">
+                                <div className="relative w-full md:w-1/3 lg:flex-1 h-56 lg:h-96 md:mt-16 rounded-xl overflow-hidden">
                                     <Image
                                         src={project.coverImage.src}
                                         fill
@@ -153,7 +158,7 @@ export default async function OurWork() {
             </div>
 
             <div className="observe-navbar-intersect w-full bg-main-background">
-                <div className="max-w-screen-xl mx-auto px-4 xs:px-10 pt-24 pb-20">
+                <div className="max-w-screen-2xl mx-auto px-4 xs:px-10 pt-24 pb-20">
                     <div>
                         <h3 className="w-full text-center text-3xl font-semibold mb-10">
                             Featured Industries
@@ -193,13 +198,16 @@ export default async function OurWork() {
                                     className="justify-self-center"
                                     key={index}
                                 >
-                                    <Image
+                                    {/* <Image
                                         src="/images/swi.png"
                                         className="w-12 aspect-sqaure"
                                         width={100}
                                         height={100}
                                         alt="Tech"
-                                    />
+                                    /> */}
+                                    <span className="block bg-main-secondary text-base font-semibold px-4 py-2 rounded-md">
+                                        {el}
+                                    </span>
                                 </div>
                             ))}
                         </div>

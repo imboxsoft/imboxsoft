@@ -26,7 +26,7 @@ export default async function BlogPage() {
     return (
         <div>
             <section className="relative bg-main-background-darker pt-48">
-                <div className="observe-navbar-intersect flex flex-row gap-20 max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 pb-20">
+                <div className="observe-navbar-intersect flex flex-row gap-20 max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16 pb-20">
                     <div className="w-full xs:max-w-[450px] md:max-w-[700px] lg:max-w-[66%] z-10">
                         <div className="lg:mr-20">
                             <h1 className="text-4xl md:text-5xl mb-10 font-semibold">
@@ -54,7 +54,7 @@ export default async function BlogPage() {
             </section>
 
             <section className="observe-navbar-intersect bg-main-background">
-                <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 py-16 md:py-24 text-center">
+                <div className="max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16 py-16 md:py-24 text-center">
                     <h2 className="text-4xl md:text-5xl mb-6 font-semibold">
                         Get in tune with our promotions
                     </h2>
@@ -70,7 +70,7 @@ export default async function BlogPage() {
             </section>
 
             <section className="observe-navbar-intersect bg-main-background-lighter">
-                <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 pt-16 pb-24">
+                <div className="max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16 pt-16 pb-24">
                     <h1 className="text-4xl font-semibold mb-10">Articles</h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                         {posts.map((post, index) => (

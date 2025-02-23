@@ -7,7 +7,7 @@ export default function Footer() {
 
     return (
         <footer className="scroll-section w-full p-4 pt-10 md:pt-20 md:pb-10 bg-main-opacity-black-75">
-            <div className="max-w-screen-xl mx-auto">
+            <div className="max-w-screen-2xl mx-auto">
                 <div className="flex flex-col md:flex-row md:justify-between gap-10 md:gap-32">
                     <div>
                         <Link
@@ -15,7 +15,7 @@ export default function Footer() {
                             className="flex items-center mb-4 sm:mb-0"
                         >
                             <Image
-                                src="/images/logo_light.svg"
+                                src="/images/logo/logo_light.svg"
                                 className="h-8 mr-3"
                                 layout="intrinsic"
                                 width={300}

@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ITConsultancy() {
+export default function ITConsulting() {
     return (
         <div className="bg-main-background-lighter-lighter">
-            <section className="observe-navbar-intersect pt-32 w-full bg-main-background-lighter-lighter">
-                <div className="relative max-w-screen-xl mx-auto px-4 xs:px-10 py-32">
+            <section className="observe-navbar-intersect pt-32 w-full bg-main-opacity-black-75">
+                <div className="relative max-w-screen-2xl mx-auto px-4 xs:px-10 py-32">
                     <div className="md:w-2/3">
                         <h5 className="text-main-primary text-sm mb-8">
                             SERVICES
@@ -14,23 +14,26 @@ export default function ITConsultancy() {
                             IT Consulting
                         </h1>
                         <h3 className="text-2xl">
-                            Thoroughly vetted, highly efficient, and
-                            custom-built for your unique challenge. Boost
-                            development velocity with high-impact agile teams
-                            aligned with your goals, process, and time zone
+                            We empower businesses with innovative IT solutions
+                            and strategic digital planning. Our consulting
+                            aligns technology investments with business goals,
+                            enhances customer focus, and drives digital agility.
+                            From strategic assessments to clear technology
+                            roadmaps, we simplify your digital transformation
+                            journey for sustainable growth.
                         </h3>
                         <div className="flex mt-6">
                             <Link
                                 href="/contact"
                                 className="p-6 text-2xl bg-main-secondary rounded-2xl"
                             >
-                                Get in touch
+                                <b>Get in touch</b>
                             </Link>
                         </div>
                     </div>
                     <div className="absolute right-0 bottom-0 translate-y-20 z-20">
                         <Image
-                            src="/images/man.png"
+                            src="/images/common/man.png"
                             alt="Imboxsoft Logo"
                             layout="intrinsic"
                             width={300}
@@ -43,7 +46,7 @@ export default function ITConsultancy() {
             <div className="overflow-x-hidden">
                 <section className="observe-navbar-intersect w-full bg-main-background-lighter">
                     <div className="py-24">
-                        <div className="max-w-screen-xl rounded-3xl mx-auto px-10 xs:px-20 py-20 md:py-32 bg-main-background">
+                        <div className="max-w-screen-2xl rounded-3xl mx-auto px-10 xs:px-20 py-20 md:py-32 bg-main-background">
                             <div className="flex flex-row gap-6 items-center">
                                 <div className="flex-1">
                                     <h2 className="text-5xl">
@@ -82,104 +85,7 @@ export default function ITConsultancy() {
                     </div>
                 </section>
                 <section className="observe-navbar-intersect w-full bg-main-background-lighter">
-                    <div className="lg:pb-32">
-                        <div className="max-w-screen-xl rounded-3xl mx-auto bg-main-background pt-10 md:pt-0 pb-20 md:pb-0">
-                            <div className="flex flex-col gap-20 md:gap-10 lg:gap-40 md:[&>*:nth-child(even)]:flex-row-reverse">
-                                <div className="relative flex flex-col md:flex-row gap-10">
-                                    <div className="flex-1 px-6 xs:px-16 pt-24 pb-6 md:pb-16 flex flex-col items-center md:items-start text-center md:text-left">
-                                        <h2 className="text-3xl font-semibold mb-6">
-                                            Creating one platform to manage 6
-                                            sites led to a 400% revenue growth
-                                        </h2>
-                                        <p>
-                                            Pet Media Group centralized the
-                                            management of 6 pet marketplaces
-                                            worth $12M by architecting a new
-                                            platform and migrating millions of
-                                            data points to it with The Software
-                                            House.
-                                        </p>
-                                    </div>
-                                    <div className="relative w-full md:w-2/5 flex">
-                                        <div className="flex relative flex-wrap items-center w-full">
-                                            <div className="w-full relative mx-10 md:mx-0">
-                                                <div className="md:-mt-[10%] md:-mr-[15%] md:-mb-[10%] md:-ml-[13%]">
-                                                    <Image
-                                                        src="/images/blog_news.webp"
-                                                        alt="Imboxsoft Logo"
-                                                        fill
-                                                        className="!relative w-3/4 h-auto object-cover rounded-md"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="relative flex flex-col md:flex-row gap-10">
-                                    <div className="flex-1 p-6 md:p-16 flex flex-col items-center md:items-start text-center md:text-left">
-                                        <h2 className="text-3xl font-semibold mb-6">
-                                            Creating one platform to manage 6
-                                            sites led to a 400% revenue growth
-                                        </h2>
-                                        <p>
-                                            Pet Media Group centralized the
-                                            management of 6 pet marketplaces
-                                            worth $12M by architecting a new
-                                            platform and migrating millions of
-                                            data points to it with The Software
-                                            House.
-                                        </p>
-                                    </div>
-                                    <div className="relative w-full md:w-2/5 flex">
-                                        <div className="flex relative flex-wrap items-center w-full">
-                                            <div className="w-full relative mx-10 md:mx-0">
-                                                <div className="md:-mt-[10%] md:-mr-[15%] md:-mb-[10%] md:-ml-[13%]">
-                                                    <Image
-                                                        src="/images/blog_news.webp"
-                                                        alt="Imboxsoft Logo"
-                                                        fill
-                                                        className="!relative w-3/4 h-auto object-cover rounded-md"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="relative flex flex-col md:flex-row gap-10">
-                                    <div className="flex-1 px-6 md:px-16 pt-6 md:pt-16 pb-6 md:pb-24 flex flex-col items-center md:items-start text-center md:text-left">
-                                        <h2 className="text-3xl font-semibold mb-6">
-                                            Creating one platform to manage 6
-                                            sites led to a 400% revenue growth
-                                        </h2>
-                                        <p>
-                                            Pet Media Group centralized the
-                                            management of 6 pet marketplaces
-                                            worth $12M by architecting a new
-                                            platform and migrating millions of
-                                            data points to it with The Software
-                                            House.
-                                        </p>
-                                    </div>
-                                    <div className="relative w-full md:w-2/5 flex">
-                                        <div className="flex relative flex-wrap items-center w-full">
-                                            <div className="w-full relative mx-10 md:mx-0">
-                                                <div className="md:-mt-[10%] md:-mr-[15%] md:-mb-[10%] md:-ml-[13%]">
-                                                    <Image
-                                                        src="/images/blog_news.webp"
-                                                        alt="Imboxsoft Logo"
-                                                        fill
-                                                        className="!relative w-3/4 h-auto object-cover rounded-md"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="max-w-screen-xl mx-auto px-4 xs:px-10 pt-10 pb-24">
+                    <div className="max-w-screen-2xl mx-auto px-4 xs:px-10 pt-10 pb-24">
                         <div className="grid grid-cols-3 gap-20 mb-24">
                             <div className="flex-1 flex flex-col gap-4 items-start">
                                 <span className="rounded-3xl p-4 bg-gray-500">

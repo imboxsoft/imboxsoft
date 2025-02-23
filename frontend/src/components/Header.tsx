@@ -30,19 +30,19 @@ export default function Header() {
                     route: routes.SOFTWARE_DEVELOPMENT,
                     title: "Software Development",
                     description:
-                        "Presentation websites, e-commerce, web apps & desktop apps.",
+                        "Presentation websites, e-commerce, web apps & desktop applications.",
                 },
                 {
                     route: routes.IT_CONSULTING,
                     title: "IT Consulting",
                     description:
-                        "Recevie most optimal suggestions for you projects.",
+                        "Recevie optimal suggestions and apply best practices in you projects.",
                 },
                 {
                     route: routes.SEO,
                     title: "SEO",
                     description:
-                        "Make your website discoverable and rank up well in Search Consoles.",
+                        "Make your business discoverable and rank up well in Search Consoles.",
                 },
                 {
                     route: routes.EMAIL_MARKETING,
@@ -169,7 +169,7 @@ export default function Header() {
                         href={routes.HOME}
                     >
                         <Image
-                            src="/images/logo_light.svg"
+                            src="/images/logo/logo_light.svg"
                             alt="Imboxsoft Logo"
                             layout="intrinsic"
                             width={300}
@@ -314,7 +314,7 @@ export default function Header() {
                             </ul>
                             {currentDropdownMenuKey && (
                                 <div className="w-full fixed lg:absolute z-[55] top-0 lg:top-full left-0  h-screen lg:h-auto overflow-y-auto lg:overflow-y-visible shadow-xs border-y bg-main-background-dark border-gray-600">
-                                    <div className="w-full lg:max-w-screen-xl px-4 py-5 mx-auto md:px-6">
+                                    <div className="w-full lg:max-w-screen-2xl px-4 py-5 mx-auto md:px-6">
                                         <ul className="relative grid grid-cols-1 lg:grid-cols-2 gap-6">
                                             <button
                                                 onClick={(event) => {

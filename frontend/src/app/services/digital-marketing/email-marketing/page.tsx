@@ -4,7 +4,7 @@ export default function SEO() {
     return (
         <div className="bg-main-background-lighter-lighter">
             <section className="observe-navbar-intersect pt-24 lg:pt-32 w-full bg-main-background-lighter-lighter">
-                <div className="relative max-w-screen-xl mx-auto px-4 xs:px-10 pb-20 lg:py-32">
+                <div className="relative max-w-screen-2xl mx-auto px-4 xs:px-10 pb-20 lg:py-32">
                     <div className="flex flex-col lg:flex-row gap-20">
                         <div className="flex-1 text-center lg:text-start">
                             <h5 className="text-main-primary text-sm mb-8">
@@ -85,7 +85,7 @@ export default function SEO() {
             </section>
 
             <section className="sticky z-10 top-20 xl:top-24 bg-main-secondary py-6">
-                <div className="relative max-w-screen-xl mx-auto">
+                <div className="relative max-w-screen-2xl mx-auto">
                     <div className="flex flex-row overflow-x-auto gap-10 text-white px-4 xs:px-10 justify-between">
                         <div className="flex flex-col gap-2 items-center whitespace-nowrap">
                             <svg
@@ -214,7 +214,7 @@ export default function SEO() {
             <div className="overflow-x-hidden">
                 <section className="observe-navbar-intersect w-full bg-main-background-lighter">
                     <div className="py-24">
-                        <div className="max-w-screen-xl rounded-3xl mx-auto px-10 xs:px-20 py-20 md:py-32 bg-main-background">
+                        <div className="max-w-screen-2xl rounded-3xl mx-auto px-10 xs:px-20 py-20 md:py-32 bg-main-background">
                             <div className="flex flex-row gap-6 items-center">
                                 <div className="flex-1">
                                     <h2 className="text-5xl">
@@ -254,7 +254,7 @@ export default function SEO() {
                 </section>
                 <section className="observe-navbar-intersect w-full bg-main-background-lighter">
                     <div className="lg:pb-32">
-                        <div className="max-w-screen-xl rounded-3xl mx-auto bg-main-background pt-10 md:pt-0 pb-20 md:pb-0">
+                        <div className="max-w-screen-2xl rounded-3xl mx-auto bg-main-background pt-10 md:pt-0 pb-20 md:pb-0">
                             <div className="flex flex-col gap-20 md:gap-10 lg:gap-40 md:[&>*:nth-child(even)]:flex-row-reverse">
                                 <div className="relative flex flex-col md:flex-row gap-10">
                                     <div className="flex-1 px-6 xs:px-16 pt-24 pb-6 md:pb-16 flex flex-col items-center md:items-start text-center md:text-left">
@@ -350,7 +350,7 @@ export default function SEO() {
                         </div>
                     </div>
 
-                    <div className="max-w-screen-xl mx-auto px-4 xs:px-10 pt-10 pb-24">
+                    <div className="max-w-screen-2xl mx-auto px-4 xs:px-10 pt-10 pb-24">
                         <div className="grid grid-cols-3 gap-20 mb-24">
                             <div className="flex-1 flex flex-col gap-4 items-start">
                                 <span className="rounded-3xl p-4 bg-gray-500">

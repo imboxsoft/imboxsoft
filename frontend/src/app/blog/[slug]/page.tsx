@@ -117,7 +117,7 @@ export default async function BlogPostPage({
                         alt={post.coverImage.alternativeText}
                     />
                 </div>
-                <div className="observe-navbar-intersect flex flex-col gap-20 max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 pb-20 z-10">
+                <div className="observe-navbar-intersect flex flex-col gap-20 max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16 pb-20 z-10">
                     <h1 className="text-3xl md:text-5xl font-bold mb-4 z-10">
                         {post.title}
                     </h1>
@@ -128,7 +128,7 @@ export default async function BlogPostPage({
             </div>
 
             <div className="relative bg-main-background pt-20">
-                <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
+                <div className="max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16">
                     {renderPostContent(post)}
 
                     <div className="w-full rounded-t-xl bg-main-background-dark py-24 mt-20 text-center flex flex-col items-center gap-3">

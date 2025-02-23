@@ -7,7 +7,7 @@ export default function Contact() {
 
     return (
         <div className="observe-navbar-intersect w-full h-full bg-main-opacity-black-50 ">
-            <div className="xl:pt-32 max-w-screen-xl mx-auto">
+            <div className="xl:pt-32 max-w-screen-2xl mx-auto">
                 <section className="xl:rounded-xl">
                     <div className="pt-32 xl:pt-16 pb-16 px-12">
                         <div className="max-w-[750px] mx-auto mb-20">

@@ -75,3 +75,25 @@ body {
 .text-shadow {
     text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
+
+.services-ul li svg {
+    transition: 0.25s linear;
+}
+
+.services-ul li:hover svg {
+    transform: translateY(-5px);
+}
+
+.services-ul li::after {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid var(--foreground);
+    transform: translateY(5px);
+    transition: 0.25s;
+    width: 0;
+    margin: 0 auto 0;
+}
+
+.services-ul li:hover::after {
+    width: 100%;
+}

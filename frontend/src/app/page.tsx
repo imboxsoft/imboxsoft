@@ -39,7 +39,7 @@ export default async function Home() {
             </section>
 
             <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-24 lg:py-0 flex items-center bg-main-background">
-                <div className="relative max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
+                <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16">
                     <div className="z-10">
                         <div className="scroll-hidden text-center md:text-right mb-10 md:mb-16">
                             <h1 className="mb-4 text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
@@ -98,7 +98,7 @@ export default async function Home() {
             </section>
 
             <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-24 lg:py-0 flex items-center bg-main-background-lighter">
-                <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
+                <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16">
                     <div className="text-center mb-8 md:mb-16">
                         <div className="scroll-hidden inline-flex items-center justify-center w-full mb-4">
                             <hr className="w-56 xs:w-64 md:w-72 h-[4px] my-8 bg-main-secondary-lighter border-0" />
@@ -152,7 +152,7 @@ export default async function Home() {
             </section>
 
             <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-24 lg:py-0 flex items-center bg-main-background">
-                <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
+                <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16">
                     <div className="relative flex flex-col md:flex-row gap-20 items-center">
                         <div className="flex-1 text-shadow z-10">
                             <div className="mb-16">
@@ -206,7 +206,7 @@ export default async function Home() {
             </section>
 
             <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-24 lg:py-0 flex items-center bg-main-opacity-black-75">
-                <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16">
+                <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16">
                     <div className="text-center mt-20 mb-8 md:mb-16">
                         <h3 className="text-3xl md:text-5xl font-medium px-4 py-2">
                             Ready to start your digital transformation?

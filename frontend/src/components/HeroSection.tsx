@@ -88,7 +88,7 @@ export const HeroSection = async () => {
             </div>
             <div className="fixed top-0 left-0 w-full h-full flex-1 bg-main-opacity-black-75 min-h-0 overflow-hidden -z-10">
                 <Image
-                    src="/images/hero_section_computer_girl.jpg"
+                    src="/images/home/hero_section_computer_girl.jpg"
                     className="!relative w-full h-full opacity-50 object-cover"
                     fill
                     alt="Empowering Businesses Through Tech Innovation - Software Development"
