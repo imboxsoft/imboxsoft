@@ -1,27 +1,29 @@
 import React from "react";
 import Image from "next/image";
+
+import { getTranslations } from "next-intl/server";
+
 // import { fetchNews, NewsArticle } from "@/utils/rss";
+import { getRichTranslations } from "@/i18n/utils";
 import HeroSectionTW from "./HeroSectionTW";
 
 export const HeroSection = async () => {
+    const t = await getRichTranslations("home");
     // const ARTICLES: NewsArticle[] = await fetchNews();
 
     return (
         <div className="observe-navbar-intersect flex flex-col justify-center sm:gap-6 md:gap-10 h-full min-h-0 overflow-hidden flex-1">
             <div className="flex flex-col gap-6 md:gap-10">
-                <div className="relative flex flex-col gap-16 sm:gap-10 flex-1 sm:rounded-2xl bg-main-opacity-black-75 px-6 sm:px-10 md:px-14 pt-52 sm:pt-14 lg:pt-20 pb-14 sm:pb-10 md:pb-14">
+                <div className="relative flex flex-col gap-14 sm:gap-10 flex-1 sm:rounded-2xl sm:bg-main-opacity-black-75 sm:pt-14 lg:pt-20 sm:pb-10 md:pb-14">
                     <div className="text-center sm:text-left w-full sm:w-2/3">
                         <h1 className="font-bold text-4xl md:text-5xl/tight tracking-wider mb-10 sm:mb-4">
-                            Empowering Businesses Through{" "}
-                            <span className="text-main-primary">
-                                Tech Innovation
-                            </span>
+                            {t("title")}
                         </h1>
-                        <h3 className="text-xl">
+                        <p className="text-xl">
                             From software development to IT consulting, SEO and
                             graphic design – we craft solutions that grow your
                             business.
-                        </h3>
+                        </p>
                     </div>
                     <div className="hidden sm:block absolute top-0 right-[5%] w-52 translate-y-1/2">
                         <Image
@@ -51,7 +53,7 @@ export const HeroSection = async () => {
                                     d="m8 9 3 3-3 3m5 0h3M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
                                 />
                             </svg>
-                            <div className="w-full flex-1 outline-none bg-transparent text-2xl sm:text-xl border-transparent rounded-lg ring-transparent focus:ring-transparent focus:border-transparent font-medium text-center sm:text-left">
+                            <div className="w-full flex-1 outline-none bg-transparent text-lg sm:text-xl border-transparent rounded-lg ring-transparent focus:ring-transparent focus:border-transparent font-medium text-center sm:text-left">
                                 <HeroSectionTW />
                             </div>
                         </div>
