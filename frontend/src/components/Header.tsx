@@ -3,24 +3,37 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
+
+import getCssVariableValue from "@/utils/Colors";
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "../../tailwind.config";
 
 import { ROUTE_KEYS as routes } from "@/constants/routes";
 import SlideScrollManager from "@/utils/SlideScroll";
 
 import LocaleSwitcher from "./LocaleSwitcher";
 
+const fullConfig = resolveConfig(tailwindConfig);
+
 export default function Header() {
     const t = useTranslations("common");
+    const pathname = usePathname();
+
+    const [navbarBg, setNavbarBg] = useState<string>("transparent");
+    const [lastNavbarBgReg, setlastNavbarBgReg] =
+        useState<string>("transparent");
+
     const [isNavigationVisible, setNavigationVisibility] =
         useState<boolean>(false);
-    const [navbarBg, setNavbarBg] = useState<string>("transparent");
-    const [currentDropdownMenuKey, setCurrentDropdownKey] = useState<
+    const [currentSubmenuKey, setCurrentSubmenuKey] = useState<
         keyof typeof navMenu | null
     >(null);
+    const currentSubmenuKeyRef = useRef<keyof typeof navMenu | null>(null);
+
     const navbarRef = useRef<HTMLDivElement>(null);
-    const pathname = usePathname();
+
     const navMenu = {
         services: {
             route: null,
@@ -77,6 +90,10 @@ export default function Header() {
     };
 
     useEffect(() => {
+        currentSubmenuKeyRef.current = currentSubmenuKey;
+    }, [currentSubmenuKey]);
+
+    useEffect(() => {
         const navbar = navbarRef.current;
 
         const scrollSliderManager = SlideScrollManager.getCurrentInstance();
@@ -84,7 +101,14 @@ export default function Header() {
             scrollSliderManager.activateNavbarObserver(
                 navbar,
                 ".observe-navbar-intersect",
-                (value: string) => setNavbarBg(value)
+                (value: string) => {
+                    const key = currentSubmenuKeyRef.current;
+
+                    if (!key) {
+                        setNavbarBg(value);
+                    }
+                    setlastNavbarBgReg(value);
+                }
             );
             scrollSliderManager.evaluateNavbarObserver();
         }
@@ -99,7 +123,7 @@ export default function Header() {
                 setNavigationVisibility(true);
             }
 
-            setCurrentDropdownKey(null);
+            setCurrentSubmenuKey(null);
         };
 
         handleWindowResize();
@@ -137,28 +161,35 @@ export default function Header() {
             return !prev;
         });
 
-        handleDropdownVisibility(event, null);
+        handleSubmenuVisibility(event, null);
     };
 
-    const handleDropdownVisibility = (
+    const handleSubmenuVisibility = (
         event: React.MouseEvent,
         key: keyof typeof navMenu | null
     ) => {
         event.stopPropagation();
 
-        if (currentDropdownMenuKey == key) {
-            setCurrentDropdownKey(null);
+        if (currentSubmenuKey == key) {
+            setCurrentSubmenuKey(null);
+            if (lastNavbarBgReg) {
+                setNavbarBg(lastNavbarBgReg);
+            }
             return;
         }
 
-        setCurrentDropdownKey(key);
+        setNavbarBg(
+            getCssVariableValue(fullConfig.theme?.colors?.main.background.dark)
+        );
+
+        setCurrentSubmenuKey(key);
     };
 
     return (
         <header className="w-full">
             <nav
                 ref={navbarRef}
-                className={`fixed top-0 left-0 z-50 w-full hover:bg-main-opacity-black-75 duration-300`}
+                className={`fixed top-0 left-0 z-50 w-full lg:hover:!bg-main-background-dark duration-300`}
                 style={{ backgroundColor: navbarBg }}
             >
                 <div className="max-w-screen-2xl w-full flex flex-wrap items-center justify-between mx-auto p-6">
@@ -205,10 +236,10 @@ export default function Header() {
                     </button>
                     {isNavigationVisible && (
                         <div
-                            className="fixed lg:unset h-screen lg:h-auto top-0 left-0 z-50 w-full bg-gray-950 lg:bg-transparent block lg:w-auto overflow-y-auto lg:overflow-y-visible"
+                            className="fixed lg:unset h-screen lg:h-auto top-0 left-0 z-50 w-full bg-main-background-dark lg:bg-transparent block lg:w-auto overflow-y-auto lg:overflow-y-visible"
                             id="navbar-default"
                         >
-                            <ul className="relative font-medium text-2xl flex flex-col gap-4 lg:gap-0 p-4 lg:p-0 mt-4 lg:flex-row lg:space-x-8 lg:mt-0 items-center">
+                            <ul className="relative font-medium text-xl flex flex-col gap-4 lg:gap-0 p-4 lg:p-0 mt-4 lg:flex-row lg:space-x-8 lg:mt-0 items-center">
                                 <button
                                     onClick={(event) => {
                                         handleNavigationVisibility(
@@ -269,7 +300,7 @@ export default function Header() {
                                             ) : (
                                                 <button
                                                     onClick={(event) => {
-                                                        handleDropdownVisibility(
+                                                        handleSubmenuVisibility(
                                                             event,
                                                             key as keyof typeof navMenu
                                                         );
@@ -312,13 +343,13 @@ export default function Header() {
                                     </Link>
                                 </li>
                             </ul>
-                            {currentDropdownMenuKey && (
-                                <div className="w-full fixed lg:absolute z-[55] top-0 lg:top-full left-0  h-screen lg:h-auto overflow-y-auto lg:overflow-y-visible shadow-xs border-y bg-main-background-dark border-gray-600">
-                                    <div className="w-full lg:max-w-screen-2xl px-4 py-5 mx-auto md:px-6">
+                            {currentSubmenuKey && (
+                                <div className="w-full fixed lg:absolute z-[55] top-0 lg:top-full left-0  h-screen lg:h-auto overflow-y-auto lg:overflow-y-visible lg:shadow-xs lg:border-y bg-main-background-dark border-gray-600">
+                                    <div className="w-full lg:max-w-screen-2xl px-4 py-4 mt-4 mx-auto md:px-6">
                                         <ul className="relative grid grid-cols-1 lg:grid-cols-2 gap-6">
                                             <button
                                                 onClick={(event) => {
-                                                    handleDropdownVisibility(
+                                                    handleSubmenuVisibility(
                                                         event,
                                                         null
                                                     );
@@ -344,7 +375,7 @@ export default function Header() {
                                                 </svg>
                                             </button>
                                             {navMenu[
-                                                currentDropdownMenuKey
+                                                currentSubmenuKey
                                             ]?.subMenu.map((item, index) => (
                                                 <li key={index}>
                                                     <Link
@@ -355,7 +386,7 @@ export default function Header() {
                                                             );
                                                         }}
                                                         href={item.route}
-                                                        className="block p-3 rounded-lg hover:bg-gray-700"
+                                                        className="block p-3 rounded-lg hover:bg-main-secondary"
                                                     >
                                                         <div className="font-semibold">
                                                             {item.title}
@@ -373,7 +404,7 @@ export default function Header() {
                         </div>
                     )}
                 </div>
-                <div className="absolute left-[25px] top-100">
+                <div className="absolute left-0 top-100">
                     <LocaleSwitcher />
                 </div>
             </nav>

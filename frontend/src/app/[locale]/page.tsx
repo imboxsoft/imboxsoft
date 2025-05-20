@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
+import { getTranslations } from "next-intl/server";
 import { getRichTranslations } from "@/i18n/utils";
 
 import { ROUTE_KEYS as routes } from "@/constants/routes";
 import { HeroSection } from "@/components/HeroSection";
 import ServicesCardsSwiper from "@/components/ServicesCardsSwiper";
 import { ScrollManagerEvaluator } from "@/components/ScrollManager";
-import { getTranslations } from "next-intl/server";
+import { technologies } from "@/utils/Technologies";
 
 // export async function generateMetadata({
 //     params,
@@ -40,32 +41,6 @@ import { getTranslations } from "next-intl/server";
 
 export default async function Home() {
     const t = await getRichTranslations("home");
-
-    const skills: string[] = [
-        "Django",
-        "Nodejs",
-        "Laravel",
-        ".NET",
-        "Next.js",
-        "Angular",
-        "Alpinejs",
-        "Tailwind",
-        "Wordpress",
-        "Shopify",
-        "Bigcommerce",
-        "PostgreSQL",
-        "MongoDB",
-        "GIT",
-        "Docker",
-        "Kubernetes",
-        "AWS",
-        "Google Cloud",
-        "Stripe",
-        "Paypal",
-        "Photoshop",
-        "Illustrator",
-        "Figma",
-    ];
 
     return (
         <div className="gap-16 font-[family-name:var(--font-geist-sans)]">
@@ -154,7 +129,7 @@ export default async function Home() {
                                     )}
                                 </p>
                                 <ul className="flex flex-row flex-wrap gap-x-4 gap-y-3">
-                                    {skills.map((el, index) => (
+                                    {technologies.map((el, index) => (
                                         <li key={index}>
                                             <span className="block bg-main-secondary text-base font-semibold px-4 py-2 rounded-md">
                                                 {el}

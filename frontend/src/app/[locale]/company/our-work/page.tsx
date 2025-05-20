@@ -1,5 +1,8 @@
 import { ROUTE_KEYS as routes } from "@/constants/routes";
 import Image from "next/image";
+
+import { getRichTranslations } from "@/i18n/utils";
+
 import { Link } from "@/i18n/navigation";
 import { ImageType } from "@/types/strapi";
 import {
@@ -7,6 +10,7 @@ import {
     generateStrapiAPIURL,
     generateWPAPIURL,
 } from "@/utils/URLGenerators";
+import { technologies } from "@/utils/Technologies";
 
 interface ProjectType {
     title: string;
@@ -16,51 +20,29 @@ interface ProjectType {
 }
 
 export default async function OurWork() {
+    const t = await getRichTranslations("company.ourWork");
+
     const industries = [
         {
             src: "/images/swi.png",
-            name: "Information Technology (IT)",
+            name: t.text("it"),
             alt: "",
         },
         {
             src: "/images/swi.png",
-            name: "Digital Marketing",
+            name: t.text("dm"),
             alt: "",
         },
         {
             src: "/images/swi.png",
-            name: "Creative and Design",
+            name: t.text("cd"),
             alt: "",
         },
         {
             src: "/images/swi.png",
-            name: "Business Consulting",
+            name: t.text("bc"),
             alt: "",
         },
-    ];
-    const technologies: string[] = [
-        "Next.js",
-        "React",
-        "Angular",
-        "Alpinejs",
-        "Tailwind",
-        "Django",
-        "Nodejs",
-        "Laravel",
-        ".NET",
-        "PostgreSQL",
-        "MongoDB",
-        "GIT",
-        "Docker",
-        "GCP",
-        "AWS",
-        "Shopify",
-        "Bigcommerce",
-        "Stripe",
-        "Paypal",
-        "Photoshop",
-        "Illustrator",
-        "Figma",
     ];
 
     let projects: ProjectType[] = [];
@@ -101,26 +83,30 @@ export default async function OurWork() {
             <div className="observe-navbar-intersect pt-32 w-full bg-main-opacity-black-50">
                 <div className="relative max-w-screen-2xl mx-auto px-4 xs:px-10 py-20">
                     <div className="max-w-[750px] mx-auto relative w-full text-center">
-                        <h5 className="text-main-primary text-2xl mb-8">
-                            OUR WORK
-                        </h5>
-                        <h1 className="text-5xl font-bold mb-6">
-                            Explore how we helped our clients achieve real
-                            business benefits
+                        <h1 className="text-main-primary text-2xl mb-8">
+                            {t.text("mainTitle")}
                         </h1>
-                        <h3 className="text-2xl">
-                            How we treat each other makes us better as software
-                            creators. Our talent remains approachable and ready
-                            to lend a hand because it&apos;s the right thing to
-                            do.
-                        </h3>
+                        <h2 className="text-5xl font-bold mb-6">
+                            {t.text("subTitle")}
+                        </h2>
+                        <p className="text-2xl">{t.rich("description")}</p>
                     </div>
                 </div>
             </div>
 
             <div className="observe-navbar-intersect w-full bg-main-background-lighter">
                 <div className="max-w-screen-2xl mx-auto px-4 xs:px-10 pt-16 pb-20">
-                    <div className="flex flex-col gap-48 md:[&>*:nth-child(even)]:flex-row-reverse">
+                    <h2 className="w-full text-center text-3xl font-semibold mb-10">
+                        {t.text("ourPortfolio")}
+                    </h2>
+
+                    {t.raw("ourPortfolioP").map((p: string, i: number) => (
+                        <p key={i} className="mb-4">
+                            {t.rich(`ourPortfolioP.${i}`)}
+                        </p>
+                    ))}
+
+                    <div className="flex flex-col gap-28 md:[&>*:nth-child(even)]:flex-row-reverse pt-20">
                         {projects.map((project, index) => (
                             <div
                                 className="flex flex-col md:flex-row gap-16 lg:gap-24"
@@ -138,9 +124,9 @@ export default async function OurWork() {
                                             }
                                         />
                                     </div>
-                                    <h2 className="text-3xl font-semibold mb-6">
+                                    <h3 className="text-3xl font-semibold mb-6">
                                         {project.title}
-                                    </h2>
+                                    </h3>
                                     <p>{project.shortDescription}</p>
                                 </div>
                                 <div className="relative w-full md:w-1/3 lg:flex-1 h-56 lg:h-96 md:mt-16 rounded-xl overflow-hidden">
@@ -160,9 +146,9 @@ export default async function OurWork() {
             <div className="observe-navbar-intersect w-full bg-main-background">
                 <div className="max-w-screen-2xl mx-auto px-4 xs:px-10 pt-24 pb-20">
                     <div>
-                        <h3 className="w-full text-center text-3xl font-semibold mb-10">
-                            Featured Industries
-                        </h3>
+                        <h2 className="w-full text-center text-3xl font-semibold mb-10">
+                            {t.text("featuredIndustries")}
+                        </h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-24 text-center">
                             {industries.map((industry, index) => (
                                 <div
@@ -189,10 +175,10 @@ export default async function OurWork() {
                     </div>
 
                     <div>
-                        <h3 className="w-full text-center text-3xl font-semibold mb-10">
-                            Tech we work with
-                        </h3>
-                        <div className="grid grid-cols-3 xs:grid-cols-5 md:grid-cols-8 lg:grid-cols-10 grid-flow-row gap-6">
+                        <h2 className="w-full text-center text-3xl font-semibold mb-10">
+                            {t.text("techwww")}
+                        </h2>
+                        <div className="flex flex-row flex-wrap gap-6">
                             {technologies.map((el, index) => (
                                 <div
                                     className="justify-self-center"
@@ -214,15 +200,14 @@ export default async function OurWork() {
                     </div>
 
                     <div className="max-w-xl mx-auto rounded-xl bg-main-background-dark py-24 mt-32 text-center flex flex-col items-center gap-3">
-                        <h3 className="text-2xl font-medium">
-                            What do you think? Let&apos;s discuss further.
-                        </h3>
-                        <p></p>
+                        <p className="text-2xl font-medium">
+                            {t.text("ctaTitle")}
+                        </p>
                         <Link
                             href={routes.CONTACT}
                             className="px-4 py-2 bg-main-secondary rounded-md font-semibold"
                         >
-                            Book a free consultation
+                            {t.text("ctaBtn")}
                         </Link>
                     </div>
                 </div>

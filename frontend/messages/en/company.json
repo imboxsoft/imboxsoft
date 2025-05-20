@@ -1,0 +1,36 @@
+{
+    "aboutUs": {
+        "mainTitle": "About Us",
+        "subTitle": "Find out more about who we are and how we started",
+        "description": "Progress is what drives our business initiative forward. Let's embark onto new ships of technology innovation and build a more efficient world.",
+        "makeDiff": "Making a difference",
+        "ourStory": "Our story",
+        "ourStoryP": "Imboxsoft was founded in 2022 by two young developers, as one of the winners of JBA's start-up funding program for €40.000 - €100.000. Our mission is to bring improvements for a better and sustainable world.",
+        "whoWeHelp": "Who do we help?",
+        "whoWeHelpP": "Any business that relies on technology for growth and sustainability. Our clients see us as a long-term strategic partner and trusted adviser for product design, development, deployment, maintenance and more.",
+        "ourPhilosophy": "Our philosophy",
+        "ourPhilosophyP": "Do the best and the best will come to you. We treat each project as our own because our client's success fuels ours many times over.",
+        "meetPartners": "Meet the partners",
+        "coFounders": "Co-Founders",
+        "ctaTitle": "Let's work together! Contact us today.",
+        "ctaBtn": "Get In Touch"
+    },
+    "ourWork": {
+        "mainTitle": "Our Work",
+        "subTitle": "Explore how we helped our clients achieve real business benefits",
+        "description": "Throughout our endeavours, we have been repeatedly asked by various clients if their ideas were possbile and our solemn answer was always: <strong>Definitely, YES!</strong>. There is no bound to what one can achieve as long he or she has the right tools and set of skills to invest on.",
+        "ourPortfolio": "Our portfolio",
+        "ourPortfolioP": [
+            "What matters the most is how we treat each other as business collaborators. With solid communication, there is no limitation to creativity, thus no idea is impossible.",
+            "In the end, practical results hold the most weight in this world, and for this reason we have listed some insights into a few of our latest involvements in the market."
+        ],
+        "featuredIndustries": "Featured Industries",
+        "it": "Information Technology",
+        "dm": "Digital Marketing",
+        "cd": "Creative and Design",
+        "bc": "Business Consulting",
+        "techwww": "Tech we work with",
+        "ctaTitle": "What do you think? Let's discuss further.",
+        "ctaBtn": "Book a free consultation"
+    }
+}
