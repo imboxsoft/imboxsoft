@@ -10,10 +10,6 @@ export const pathnames = {
         ro: "/",
     },
 
-    [ROUTE_KEYS.PORTFOLIO]: {
-        ro: "/proiecte",
-    },
-
     [ROUTE_KEYS.SERVICES]: {
         ro: "/servicii",
     },
@@ -38,6 +34,9 @@ export const pathnames = {
     },
     [ROUTE_KEYS.ABOUT_US]: {
         ro: "/companie/despre-noi",
+    },
+    [ROUTE_KEYS.PORTFOLIO]: {
+        ro: "/companie/proiecte",
     },
 
     [ROUTE_KEYS.INSIGHTS]: {

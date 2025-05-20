@@ -1,8 +1,6 @@
 export const ROUTE_KEYS = {
     HOME: "/",
 
-    PORTFOLIO: "/our-work",
-
     SERVICES: "/services",
     SOFTWARE_DEVELOPMENT: "/services/software-development",
     IT_CONSULTING: "/services/it-consulting",
@@ -12,6 +10,7 @@ export const ROUTE_KEYS = {
 
     COMPANY: "/company",
     ABOUT_US: "/company/about-us",
+    PORTFOLIO: "/company/our-work",
 
     INSIGHTS: "/blog",
     INSIGHT_POST: (slug: string) => `/blog/${slug}`,

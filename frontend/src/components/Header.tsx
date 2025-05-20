@@ -22,14 +22,9 @@ export default function Header() {
     const navbarRef = useRef<HTMLDivElement>(null);
     const pathname = usePathname();
     const navMenu = {
-        portfolio: {
-            route: routes.PORTFOLIO,
-            name: t("navbar.portfolio.title"),
-            subMenu: [],
-        },
         services: {
             route: null,
-            name: t("navbar.services.title"),
+            title: t("navbar.services.title"),
             subMenu: [
                 {
                     route: routes.SOFTWARE_DEVELOPMENT,
@@ -60,18 +55,23 @@ export default function Header() {
         },
         company: {
             route: null,
-            name: t("navbar.company.title"),
+            title: t("navbar.company.title"),
             subMenu: [
                 {
                     route: routes.ABOUT_US,
                     title: t("navbar.aboutUs.title"),
                     description: null,
                 },
+                {
+                    route: routes.PORTFOLIO,
+                    title: t("navbar.portfolio.title"),
+                    description: null,
+                },
             ],
         },
         insights: {
             route: routes.INSIGHTS,
-            name: t("navbar.blog.title"),
+            title: t("navbar.blog.title"),
             subMenu: [],
         },
     };
@@ -264,7 +264,7 @@ export default function Header() {
                                                     href={menuItem.route}
                                                     className="block py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
                                                 >
-                                                    {menuItem.name}
+                                                    {menuItem.title}
                                                 </Link>
                                             ) : (
                                                 <button
@@ -276,7 +276,7 @@ export default function Header() {
                                                     }}
                                                     className="flex items-center justify-between w-full py-2 px-3 rounded-sm lg:w-auto hover:text-main-secondary-lighter md:p-0"
                                                 >
-                                                    {menuItem.name}{" "}
+                                                    {menuItem.title}{" "}
                                                     <svg
                                                         className="w-2.5 h-2.5 ms-2.5"
                                                         aria-hidden="true"
