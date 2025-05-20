@@ -1,4 +1,52 @@
 {
-    "title": "Empowering Businesses Through Tech Innovation",
-    "subtitle": "From software development to IT consulting, SEO and graphic design – we craft solutions that grow your business."
+    "navbar": {
+        "home": {
+            "title": "",
+            "description": ""
+        },
+        "portfolio": {
+            "title": "Portofoliu",
+            "description": ""
+        },
+        "services": {
+            "title": "Servicii",
+            "description": ""
+        },
+        "softwareDevelopment": {
+            "title": "Dezvotlare Software",
+            "description": ""
+        },
+        "itConsulting": {
+            "title": "IT Consulting",
+            "description": ""
+        },
+        "seo": {
+            "title": "SEO",
+            "description": ""
+        },
+        "emailMarketing": {
+            "title": "Email marketing",
+            "description": ""
+        },
+        "graphicDesign": {
+            "title": "Graphic Design",
+            "description": ""
+        },
+        "company": {
+            "title": "Companie",
+            "description": ""
+        },
+        "aboutUs": {
+            "title": "Despre noi",
+            "description": ""
+        },
+        "blog": {
+            "title": "Blog",
+            "description": ""
+        },
+        "contact": {
+            "title": "Contactează-ne",
+            "description": ""
+        }
+    }
 }

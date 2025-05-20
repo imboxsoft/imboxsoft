@@ -2,12 +2,17 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { usePathname } from "next/navigation";
-import routes from "@/constants/routes";
+import { useTranslations } from "next-intl";
+
+import { ROUTE_KEYS as routes } from "@/constants/routes";
 import SlideScrollManager from "@/utils/SlideScroll";
 
+import LocaleSwitcher from "./LocaleSwitcher";
+
 export default function Header() {
+    const t = useTranslations("common");
     const [isNavigationVisible, setNavigationVisibility] =
         useState<boolean>(false);
     const [navbarBg, setNavbarBg] = useState<string>("transparent");
@@ -19,59 +24,54 @@ export default function Header() {
     const navMenu = {
         portfolio: {
             route: routes.PORTFOLIO,
-            name: "Our work",
+            name: t("navbar.portfolio.title"),
             subMenu: [],
         },
         services: {
             route: null,
-            name: "Services",
+            name: t("navbar.services.title"),
             subMenu: [
                 {
                     route: routes.SOFTWARE_DEVELOPMENT,
-                    title: "Software Development",
-                    description:
-                        "Presentation websites, e-commerce, web apps & desktop applications.",
+                    title: t("navbar.softwareDevelopment.title"),
+                    description: t("navbar.softwareDevelopment.description"),
                 },
                 {
                     route: routes.IT_CONSULTING,
-                    title: "IT Consulting",
-                    description:
-                        "Recevie optimal suggestions and apply best practices in you projects.",
+                    title: t("navbar.itConsulting.title"),
+                    description: t("navbar.itConsulting.description"),
                 },
                 {
                     route: routes.SEO,
-                    title: "SEO",
-                    description:
-                        "Make your business discoverable and rank up well in Search Consoles.",
+                    title: t("navbar.seo.title"),
+                    description: t("navbar.seo.description"),
                 },
                 {
                     route: routes.EMAIL_MARKETING,
-                    title: "Email marketing",
-                    description:
-                        "Compose well organized email campaigns for your clients.",
+                    title: t("navbar.emailMarketing.title"),
+                    description: t("navbar.emailMarketing.description"),
                 },
                 {
                     route: routes.GRAPHIC_DESIGN,
-                    title: "Graphic Design",
-                    description:
-                        "Website design, logos, posters, flyers, business cards and more.",
+                    title: t("navbar.graphicDesign.title"),
+                    description: t("navbar.graphicDesign.description"),
                 },
             ],
         },
         company: {
             route: null,
-            name: "Company",
+            name: t("navbar.company.title"),
             subMenu: [
                 {
                     route: routes.ABOUT_US,
-                    title: "About us",
+                    title: t("navbar.aboutUs.title"),
                     description: null,
                 },
             ],
         },
         insights: {
             route: routes.INSIGHTS,
-            name: "Insights",
+            name: t("navbar.blog.title"),
             subMenu: [],
         },
     };
@@ -247,7 +247,7 @@ export default function Header() {
                                         href={routes.HOME}
                                         className="block py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
                                     >
-                                        Home
+                                        {t("navbar.home.title")}
                                     </Link>
                                 </li>
                                 {Object.entries(navMenu).map(
@@ -308,7 +308,7 @@ export default function Header() {
                                         href={routes.CONTACT}
                                         className="text-white bg-main-secondary hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-transparent font-[520] rounded-lg text-xl px-4 py-3 text-center"
                                     >
-                                        Contact Us
+                                        {t("navbar.contact.title")}
                                     </Link>
                                 </li>
                             </ul>
@@ -372,6 +372,9 @@ export default function Header() {
                             )}
                         </div>
                     )}
+                </div>
+                <div className="absolute left-[25px] top-100">
+                    <LocaleSwitcher />
                 </div>
             </nav>
         </header>

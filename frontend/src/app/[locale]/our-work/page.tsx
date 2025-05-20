@@ -1,6 +1,6 @@
-import routes from "@/constants/routes";
+import { ROUTE_KEYS as routes } from "@/constants/routes";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { ImageType } from "@/types/strapi";
 import {
     generateStrapiBaseURL,

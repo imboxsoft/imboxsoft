@@ -1,13 +1,14 @@
-import { getTranslations } from "next-intl/server";
-
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
-import routes from "@/constants/routes";
+import { getRichTranslations } from "@/i18n/utils";
+
+import { ROUTE_KEYS as routes } from "@/constants/routes";
 import { HeroSection } from "@/components/HeroSection";
 import ServicesCardsSwiper from "@/components/ServicesCardsSwiper";
 import { ScrollManagerEvaluator } from "@/components/ScrollManager";
+import { getTranslations } from "next-intl/server";
 
 // export async function generateMetadata({
 //     params,
@@ -29,16 +30,16 @@ import { ScrollManagerEvaluator } from "@/components/ScrollManager";
 //             siteName: "Imboxsoft",
 //             type: "website",
 //         },
-//         // twitter: {
-//         //     card: "summary_large_image",
-//         //     title: t("ogTitle"),
-//         //     description: t("ogDescription"),
-//         // },
+//         twitter: {
+//             card: "summary_large_image",
+//             title: t("ogTitle"),
+//             description: t("ogDescription"),
+//         },
 //     };
 // }
 
 export default async function Home() {
-    const t = await getTranslations("home");
+    const t = await getRichTranslations("home");
 
     const skills: string[] = [
         "Django",
@@ -82,59 +83,40 @@ export default async function Home() {
                         <div className="z-10">
                             <div className="scroll-hidden text-center md:text-right mb-10 md:mb-16">
                                 <h2 className="mb-4 text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
-                                    Welcome to
-                                    <span className="text-main-primary">
-                                        {" "}
-                                        Imboxsoft
-                                    </span>
+                                    {t.rich("welcomeSection.title")}
                                 </h2>
                                 <p className="text-xl sm:text-2xl lg:text-3xl font-bold leading-none tracking-tight">
                                     <span className="leading-normal border-b-4 border-main-secondary">
-                                        Your trusted partner in cutting-edge
-                                        technology
+                                        {t.text("welcomeSection.subtitle")}
                                     </span>
                                 </p>
                             </div>
 
                             <div className="scroll-hidden text-justify">
-                                <p className="mb-4">
-                                    Our company specializes in delivering
-                                    tailored software development solutions and
-                                    comprehensive IT consulting services. We are
-                                    dedicated to empowering our clients with the
-                                    tools they need to succeed in today&apos;s
-                                    dynamic digital landscape.
-                                </p>
+                                {t
+                                    .raw("welcomeSection.aboutUs")
+                                    .map((p: string, i: number) => (
+                                        <p key={i} className="mb-4">
+                                            {t.rich(
+                                                `welcomeSection.aboutUs.${i}`
+                                            )}
+                                        </p>
+                                    ))}
 
-                                <p className="mb-4">
-                                    Partner with us today and we will harness
-                                    together the power of technology and propel
-                                    your business forward.
-                                </p>
-
-                                <p className="mb-10">
-                                    Navigate through our{" "}
-                                    <Link
-                                        href="/services"
-                                        className="text-main-secondary"
-                                    >
-                                        Services page
-                                    </Link>{" "}
-                                    and find out how we can be of help to you.
-                                </p>
-
-                                <div className="flex flex-row justify-center">
+                                <div className="flex flex-row justify-center pt-6">
                                     <a
                                         href="/services"
                                         className="px-5 sm:px-3 py-3 sm:py-2 bg-main-secondary rounded-lg text-lg sm:text-base font-bold sm:font-semibold"
                                     >
-                                        Check Our Services
+                                        {t.text(
+                                            "welcomeSection.checkOurServices"
+                                        )}
                                     </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="hidden md:block absolute -top-[75px] left-[10px] z-0 max-w-48">
+                        <div className="hidden md:block absolute -top-[50px] left-[25px] z-0 max-w-40">
                             <Image
                                 src="/images/home/megaphone.svg"
                                 width={500}
@@ -153,25 +135,23 @@ export default async function Home() {
                             <div className="scroll-hidden inline-flex items-center justify-center w-full mb-6">
                                 <hr className="w-56 xs:w-64 md:w-72 h-[4px] my-8 bg-main-secondary-lighter border-0" />
                                 <h2 className="text-2xl md:text-3xl font-bold absolute px-4 py-2 -translate-x-1/2 left-1/2 bg-main-background-dark text-center">
-                                    Our Expertise
+                                    {t.text("ourExpertiseSection.title")}
                                 </h2>
                             </div>
                             <p className="font-bold">
-                                Comprehensive IT Services Tailored for Your
-                                Business
+                                {t.text("ourExpertiseSection.subtitle")}
                             </p>
                         </div>
 
                         <div className="flex flex-col lg:flex-row gap-y-10 gap-x-20 w-full">
                             <div className="flex-1">
                                 <p className="scroll-hidden mb-8 text-justify">
-                                    Imboxsoft specializes in a diverse array of
-                                    skills and systems, ensuring that we stay at
-                                    the forefront of innovation to meet the
-                                    evolving needs of our clients.
+                                    {t.text("ourExpertiseSection.description")}
                                 </p>
                                 <p className="scroll-hidden mb-4 text-justify font-semibold">
-                                    Our core competencies include:
+                                    {t.text(
+                                        "ourExpertiseSection.ourCoreCompetenciesInclude"
+                                    )}
                                 </p>
                                 <ul className="flex flex-row flex-wrap gap-x-4 gap-y-3">
                                     {skills.map((el, index) => (
@@ -210,43 +190,17 @@ export default async function Home() {
                             <div className="flex-1 z-10">
                                 <div className="mb-10">
                                     <h2 className="text-3xl md:text-5xl font-medium">
-                                        Why Choose Us?
+                                        {t.text("whyUsSection.title")}
                                     </h2>
                                 </div>
                                 <ul className="flex flex-col gap-10">
-                                    <li>
-                                        <p>
-                                            ✅ Years of experience in IT &
-                                            software.
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            ✅ Full-stack expertise, from coding
-                                            to branding.
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            ✅ Results-driven approach with
-                                            cutting-edge solutions.
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            ✅ We stay up-to-date with the
-                                            latest trends in IT.
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>✅ Long career in Graphic Design.</p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            ✅ We are available Monday to
-                                            Sunday.
-                                        </p>
-                                    </li>
+                                    {t
+                                        .raw("whyUsSection.bulletPoints")
+                                        .map((bp: string, i: number) => (
+                                            <li key={i}>
+                                                <p>✅ {bp}</p>
+                                            </li>
+                                        ))}
                                 </ul>
                             </div>
 
@@ -268,7 +222,7 @@ export default async function Home() {
                     <div>
                         <div className="text-center mt-20 mb-8 md:mb-16">
                             <h2 className="text-2xl md:text-4xl font-medium py-2">
-                                Ready to start your digital transformation?
+                                {t.text("ctaSection.title")}
                             </h2>
                         </div>
                         <div className="flex flex-col gap-16 items-center">
@@ -276,7 +230,7 @@ export default async function Home() {
                                 href={routes.CONTACT}
                                 className="bg-main-secondary px-6 py-4 font-semibold rounded-md"
                             >
-                                Let&apos;s Talk
+                                {t.text("ctaSection.letsTalk")}
                             </Link>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { IContactForm } from "@/app/api/contact/route";
 
 const initialFormData: IContactForm = {

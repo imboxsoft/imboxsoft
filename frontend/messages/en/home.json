@@ -1,4 +1,50 @@
 {
-    "title": "Empowering Businesses Through <highlight>Tech Innovation</highlight>",
-    "subtitle": "From software development to IT consulting, SEO and graphic design – we craft solutions that grow your business."
+    "heroSection": {
+        "title": "Empowering Businesses Through <highlight>Tech Innovation</highlight>",
+        "subtitle": "From software development to IT consulting, SEO and graphic design – we craft solutions that grow your business.",
+        "typewriters": [
+            "Specialized in Full Stack Software Development. We give life to your vision.",
+            "Do you want to sell your products online, but you have no idea how to deploy an ecommerce platform? Hand over this responsibility to us.",
+            "Can't keep up with the new coming trends in IT and you find it hard to make the right decisions? We can help.",
+            "Are you looking to launch a presentation website? Give us 7 days and you will have it.",
+            "Few visitors? Your website may benefit from professional SEO optimizations.",
+            "You require help designing a logo? Give us a message.",
+            "Let's create your first business card. Shall we?",
+            "You can't decide how to plan, develop or deploy your app? We may have some suggestions.",
+            "Monday to Sunday. We are at your disposal.",
+            "Start Your Project Today."
+        ],
+        "letsBegin": "Let's begin!"
+    },
+    "welcomeSection": {
+        "title": "Welcome to <highlight>Imboxsoft</highlight>",
+        "subtitle": "Your trusted partner in cutting-edge technology",
+        "aboutUs": [
+            "Our company specializes in delivering tailored software development solutions and comprehensive IT consulting services. We are dedicated to empowering our clients with the tools they need to succeed in today's dynamic digital landscape.",
+            "Partner with us today and we will harness together the power of technology and propel your business forward.",
+            "Navigate through our <servicesLink>Services page</servicesLink> and find out how we can be of help to you."
+        ],
+        "checkOurServices": "Check Our Services"
+    },
+    "ourExpertiseSection": {
+        "title": "Our Expertise",
+        "subtitle": "Comprehensive IT Services Tailored for Your Business",
+        "description": "Imboxsoft specializes in a diverse array of skills and systems, ensuring that we stay at the forefront of innovation to meet the evolving needs of our clients.",
+        "ourCoreCompetenciesInclude": "Our core competencies include:"
+    },
+    "whyUsSection": {
+        "title": "Why Choose Us?",
+        "bulletPoints": [
+            "Years of experience in IT & software.",
+            "Full-stack expertise, from coding to branding.",
+            "Results-driven approach with cutting-edge solutions.",
+            "We stay up-to-date with the latest trends in IT.",
+            "Long career in Graphic Design.",
+            "We are available Monday to Sunday."
+        ]
+    },
+    "ctaSection": {
+        "title": "Ready to start your digital transformation?",
+        "letsTalk": "Let's Talk"
+    }
 }

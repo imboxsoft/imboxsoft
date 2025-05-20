@@ -1,6 +1,6 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import routes from "@/constants/routes";
+import { ROUTE_KEYS as routes } from "@/constants/routes";
 
 export default function Footer() {
     const today = new Date().getFullYear().toString();

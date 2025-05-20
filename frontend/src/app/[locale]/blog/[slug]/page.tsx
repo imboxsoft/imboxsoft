@@ -11,8 +11,8 @@ import {
 import { generateStrapiAPIURL } from "@/utils/URLGenerators";
 import { normalizeBlogPostData } from "@/utils/Normalizer";
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import routes from "@/constants/routes";
+import { Link } from "@/i18n/navigation";
+import { ROUTE_KEYS as routes } from "@/constants/routes";
 
 export async function generateStaticParams() {
     try {

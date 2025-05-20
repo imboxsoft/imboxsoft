@@ -1,4 +1,52 @@
 {
-    "title": "ergergerger",
-    "subtitle": "ergerge"
+    "navbar": {
+        "home": {
+            "title": "",
+            "description": ""
+        },
+        "portfolio": {
+            "title": "Our work",
+            "description": ""
+        },
+        "services": {
+            "title": "Services",
+            "description": ""
+        },
+        "softwareDevelopment": {
+            "title": "Software Development",
+            "description": ""
+        },
+        "itConsulting": {
+            "title": "IT Consulting",
+            "description": ""
+        },
+        "seo": {
+            "title": "SEO",
+            "description": ""
+        },
+        "emailMarketing": {
+            "title": "Email marketing",
+            "description": ""
+        },
+        "graphicDesign": {
+            "title": "Graphic Design",
+            "description": ""
+        },
+        "company": {
+            "title": "Company",
+            "description": ""
+        },
+        "aboutUs": {
+            "title": "About us",
+            "description": ""
+        },
+        "blog": {
+            "title": "Insights",
+            "description": ""
+        },
+        "contact": {
+            "title": "Contact Us",
+            "description": ""
+        }
+    }
 }

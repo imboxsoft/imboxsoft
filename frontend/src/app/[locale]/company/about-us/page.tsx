@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
-import routes from "@/constants/routes";
+import { Link } from "@/i18n/navigation";
+import { ROUTE_KEYS as routes } from "@/constants/routes";
 
 export default function AboutUs() {
     return (

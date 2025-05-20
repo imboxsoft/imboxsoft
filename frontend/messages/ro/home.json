@@ -1,4 +1,50 @@
 {
-    "title": "Bun venit",
-    "subtitle": "Acesta este site-ul tău"
+    "heroSection": {
+        "title": "Oferim putere afacerilor prin <highlight>Inovație Tehnologică</highlight>",
+        "subtitle": "De la dezvoltare software la consultanță IT, SEO și design grafic – oferim soluții care îți dezvoltă afacerea.",
+        "typewriters": [
+            "Specializați în dezvoltare software Full Stack. Dăm viață viziunii tale.",
+            "Vrei să-ți vinzi produsele online, dar nu știi cum să lansezi o platformă eCommerce? Lasă-ne pe noi să ne ocupăm.",
+            "Nu mai ții pasul cu noile tendințe IT și îți este greu să iei deciziile corecte? Te putem ajuta.",
+            "Vrei să lansezi un site de prezentare? Oferă-ne 7 zile și îl vei avea.",
+            "Ai puțini vizitatori? Site-ul tău poate beneficia de optimizări SEO profesionale.",
+            "Ai nevoie de ajutor pentru a crea un logo? Trimite-ne un mesaj.",
+            "Hai să-ți creăm prima carte de vizită. Ce zici?",
+            "Nu știi cum să planifici, dezvolți sau lansezi aplicația ta? Avem câteva sugestii.",
+            "De luni până duminică. Suntem la dispoziția ta.",
+            "Începe proiectul tău astăzi."
+        ],
+        "letsBegin": "Să începem!"
+    },
+    "welcomeSection": {
+        "title": "Bine ai venit la <highlight>Imboxsoft</highlight>",
+        "subtitle": "Partenerul tău de încredere în tehnologie de ultimă generație",
+        "aboutUs": [
+            "Compania noastră este specializată în livrarea de soluții software personalizate și servicii complete de consultanță IT. Suntem dedicați să oferim clienților noștri instrumentele necesare pentru a avea succes în peisajul digital dinamic de astăzi.",
+            "Colaborează cu noi și vom valorifica împreună puterea tehnologiei pentru a-ți propulsa afacerea.",
+            "Navighează pe <servicesLink>pagina noastră de Servicii</servicesLink> și descoperă cum te putem ajuta."
+        ],
+        "checkOurServices": "Vezi Serviciile Noastre"
+    },
+    "ourExpertiseSection": {
+        "title": "Expertiza Noastră",
+        "subtitle": "Servicii IT complete adaptate afacerii tale",
+        "description": "Imboxsoft este specializată într-o gamă variată de tehnologii și sisteme, ceea ce ne permite să rămânem în avangarda inovației și să răspundem nevoilor în continuă schimbare ale clienților noștri.",
+        "ourCoreCompetenciesInclude": "Competențele noastre de bază includ:"
+    },
+    "whyUsSection": {
+        "title": "De ce să ne alegi?",
+        "bulletPoints": [
+            "Ani de experiență în IT și software.",
+            "Expertiză full-stack, de la codare la branding.",
+            "Abordare orientată către rezultate și soluții inovatoare.",
+            "Suntem mereu la curent cu cele mai noi tendințe din IT.",
+            "Carieră extinsă în design grafic.",
+            "Suntem disponibili de luni până duminică."
+        ]
+    },
+    "ctaSection": {
+        "title": "Ești pregătit să începi transformarea digitală?",
+        "letsTalk": "Hai să vorbim"
+    }
 }

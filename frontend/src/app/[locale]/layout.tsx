@@ -82,7 +82,7 @@ export default async function LocaleLayout({
             <body
                 className={`relative ${geistSans.variable} ${geistMono.variable} antialiased flex flex-col h-screen`}
             >
-                <NextIntlClientProvider>
+                <NextIntlClientProvider locale={locale}>
                     <ScrollManager />
                     <div className="flex-1">
                         <Header />

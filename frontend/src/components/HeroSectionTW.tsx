@@ -1,9 +1,13 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+
+import { useRichTranslation } from "@/i18n/utils";
+
 import { Typewriter } from "@/utils/TypeWriter";
 
 const HeroSectionTW = () => {
+    const t = useRichTranslation("home.heroSection");
     const twRef = useRef<Typewriter | null>(null);
     const didInit = useRef(false);
 
@@ -14,18 +18,7 @@ const HeroSectionTW = () => {
 
         twRef.current = new Typewriter(
             "home-typewriter",
-            [
-                "Specialized in Full Stack Software Development. We give life to your vision.",
-                "Do you want to sell your products online, but you have no idea how to deploy an ecommerce platform? Hand over this responsibility to us.",
-                "Can't keep up with the new coming trends in IT and you find it hard to make the right decisions? We can help.",
-                "Are you looking to launch a presentation website? Give us 7 days and you will have it.",
-                "Few visitors? Your website may benefit from professional SEO optimizations.",
-                "You require help designing a logo? Give us a message.",
-                "Let's create your first business card. Shall we?",
-                "You can't decide how to plan, develop or deploy your app? We may have some suggestions.",
-                "Monday to Sunday. We are at your disposal.",
-                "Start Your Project Today.",
-            ],
+            t.raw("typewriters"),
             25,
             15,
             3000
@@ -39,7 +32,7 @@ const HeroSectionTW = () => {
                 twRef.current = null;
             }
         };
-    }, []);
+    }, [t]);
 
     return (
         <div className="relative w-full h-40 sm:h-24">

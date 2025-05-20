@@ -1,4 +1,4 @@
-const routes = {
+export const ROUTE_KEYS = {
     HOME: "/",
 
     PORTFOLIO: "/our-work",
@@ -17,6 +17,6 @@ const routes = {
     INSIGHT_POST: (slug: string) => `/blog/${slug}`,
 
     CONTACT: "/contact",
-};
+} as const;
 
-export default routes;
+export type RouteKey = keyof typeof ROUTE_KEYS;

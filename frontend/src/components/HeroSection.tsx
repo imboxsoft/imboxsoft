@@ -1,29 +1,24 @@
 import React from "react";
 import Image from "next/image";
 
-import { getTranslations } from "next-intl/server";
+import { getRichTranslations } from "@/i18n/utils";
 
 // import { fetchNews, NewsArticle } from "@/utils/rss";
-import { getRichTranslations } from "@/i18n/utils";
 import HeroSectionTW from "./HeroSectionTW";
 
 export const HeroSection = async () => {
-    const t = await getRichTranslations("home");
+    const t = await getRichTranslations("home.heroSection");
     // const ARTICLES: NewsArticle[] = await fetchNews();
 
     return (
         <div className="observe-navbar-intersect flex flex-col justify-center sm:gap-6 md:gap-10 h-full min-h-0 overflow-hidden flex-1">
             <div className="flex flex-col gap-6 md:gap-10">
-                <div className="relative flex flex-col gap-14 sm:gap-10 flex-1 sm:rounded-2xl sm:bg-main-opacity-black-75 sm:pt-14 lg:pt-20 sm:pb-10 md:pb-14">
+                <div className="relative flex flex-col gap-14 sm:gap-10 flex-1 sm:rounded-2xl sm:pt-14 lg:pt-20 sm:pb-10 md:pb-14">
                     <div className="text-center sm:text-left w-full sm:w-2/3">
                         <h1 className="font-bold text-4xl md:text-5xl/tight tracking-wider mb-10 sm:mb-4">
-                            {t("title")}
+                            {t.rich("title")}
                         </h1>
-                        <p className="text-xl">
-                            From software development to IT consulting, SEO and
-                            graphic design – we craft solutions that grow your
-                            business.
-                        </p>
+                        <p className="text-xl">{t.text("subtitle")}</p>
                     </div>
                     <div className="hidden sm:block absolute top-0 right-[5%] w-52 translate-y-1/2">
                         <Image
@@ -79,7 +74,7 @@ export const HeroSection = async () => {
                                 href="/contact"
                                 className="my-3 px-5 sm:px-3 py-3 sm:py-2 bg-main-secondary rounded-lg text-lg sm:text-base font-bold sm:font-semibold"
                             >
-                                Let&apos;s begin!
+                                {t.text("letsBegin")}
                             </a>
                         </div>
                     </div>

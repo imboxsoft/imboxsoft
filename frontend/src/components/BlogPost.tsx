@@ -1,7 +1,7 @@
 // import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Image from "next/image";
-import Link from "next/link";
-import routes from "@/constants/routes";
+import { Link } from "@/i18n/navigation";
+import { ROUTE_KEYS as routes } from "@/constants/routes";
 import { ImageType } from "@/types/strapi";
 
 interface ParagraphBlockTextType {

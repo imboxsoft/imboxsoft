@@ -3,10 +3,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import "swiper/css";
 import "swiper/css/navigation";
-import routes from "@/constants/routes";
+import { ROUTE_KEYS as routes } from "@/constants/routes";
 
 type ServicesCardsSwiperProps = {
     fixedSlidesPerView?: number | null;
