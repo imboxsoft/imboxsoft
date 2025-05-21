@@ -1,50 +1,95 @@
 {
-    "heroSection": {
-        "title": "Empowering Businesses Through <highlight>Tech Innovation</highlight>",
-        "subtitle": "From software development to IT consulting, SEO and graphic design – we craft solutions that grow your business.",
-        "typewriters": [
-            "Specialized in Full Stack Software Development. We give life to your vision.",
-            "Do you want to sell your products online, but you have no idea how to deploy an ecommerce platform? Hand over this responsibility to us.",
-            "Can't keep up with the new coming trends in IT and you find it hard to make the right decisions? We can help.",
-            "Are you looking to launch a presentation website? Give us 7 days and you will have it.",
-            "Few visitors? Your website may benefit from professional SEO optimizations.",
-            "You require help designing a logo? Give us a message.",
-            "Let's create your first business card. Shall we?",
-            "You can't decide how to plan, develop or deploy your app? We may have some suggestions.",
-            "Monday to Sunday. We are at your disposal.",
-            "Start Your Project Today."
-        ],
-        "letsBegin": "Let's begin!"
-    },
-    "welcomeSection": {
-        "title": "Welcome to <highlight>Imboxsoft</highlight>",
-        "subtitle": "Your trusted partner in cutting-edge technology",
-        "aboutUs": [
-            "Our company specializes in delivering tailored software development solutions and comprehensive IT consulting services. We are dedicated to empowering our clients with the tools they need to succeed in today's dynamic digital landscape.",
-            "Partner with us today and we will harness together the power of technology and propel your business forward.",
-            "Navigate through our <servicesLink>Services page</servicesLink> and find out how we can be of help to you."
-        ],
-        "checkOurServices": "Check Our Services"
-    },
-    "ourExpertiseSection": {
-        "title": "Our Expertise",
-        "subtitle": "Comprehensive IT Services Tailored for Your Business",
-        "description": "Imboxsoft specializes in a diverse array of skills and systems, ensuring that we stay at the forefront of innovation to meet the evolving needs of our clients.",
-        "ourCoreCompetenciesInclude": "Our core competencies include:"
-    },
-    "whyUsSection": {
-        "title": "Why Choose Us?",
-        "bulletPoints": [
-            "Years of experience in IT & software.",
-            "Full-stack expertise, from coding to branding.",
-            "Results-driven approach with cutting-edge solutions.",
-            "We stay up-to-date with the latest trends in IT.",
-            "Long career in Graphic Design.",
-            "We are available Monday to Sunday."
+    "services": {
+        "title": "Our Services",
+        "shortTitle": "Services",
+        "descriptions": [
+            "Discover the full spectrum of digital services designed to help your business thrive. At Imboxsoft, we combine software development expertise with creative design thinking to deliver solutions that are both technically powerful and visually compelling.",
+            "Whether you're launching a new platform, streamlining internal operations, enhancing your online visibility, or building a brand from the ground up — our team is here to make it happen.",
+            "Explore our services below and find out how we turn ideas into impactful results."
         ]
     },
-    "ctaSection": {
-        "title": "Ready to start your digital transformation?",
-        "letsTalk": "Let's Talk"
+    "softwareDevelopment": {
+        "title": "Software Development",
+        "description": "Boost your business through digital solutions with high development velocity and skilled agile team at the best possible costs.",
+        "subtitle": "Software solutions for your business",
+        "subtitleP": [
+            "Support and consultancy in each stage of the project.",
+            "Team of skilled developers with 10+ years of coding experience.",
+            "Swift implementation for immediate results."
+        ],
+        "offer": {
+            "design": {
+                "shortTitle": "Concept & Design",
+                "title": "Personalized Design",
+                "description": "Every project is built around your vision. An excellent product derives from excellent identity. Thus, we always take this into consideration first in order to provide the best concept for your digital solution."
+            },
+            "apps": {
+                "shortTitle": "Custom Apps",
+                "title": "Custom Apps & Websites",
+                "description": "We are skilled in several technologies and tools. We can build anything that you request, from presentation websites to fully customized apps for your business."
+            },
+            "ecommerce": {
+                "shortTitle": "E-commerce",
+                "title": "E-commerce websites",
+                "description": "We have prior experience with tools like Wordpress, Shopify and Bigcommerce. Depending on your needs and expectations, we can come up with suggestions about the best tools to go with, costs and long-term maintenance."
+            },
+            "seo": {
+                "shortTitle": "SEO",
+                "title": "SEO",
+                "description": "We also provide SEO services for businesses that may benefit from it. For more details, please follow this link to our SEO services page."
+            },
+            "api": {
+                "shortTitle": "API Integration",
+                "title": "Seamless integration with third-parties APIs",
+                "description": "If you are looking into extending your applications by connecting to various vendors like: payment gateways, CRMs, ERPs, real-time data sync or automated workflows (invoicing, emailing, delivery tracking), we can definitely be of help and do it for you."
+            },
+            "maintenance": {
+                "shortTitle": "Maintenance",
+                "title": "Maintenance & Optimization",
+                "description": "If your product is in need for optimizations, we are there for you. We will analyze and discover possible issues and come with the most optimal solutions to eradicate them. You will receive a period of FREE maintenance for each project that you hand us over, so make sure to use it to the best of your advantage."
+            }
+        },
+        "benefits": {
+            "title": "Benefits and uses",
+            "subtitle": "Enhance your work with personalized apps",
+            "description": "Let your business benefit from the power of digital solutions, through automation and logical organizing.",
+            "list": {
+                "results": {
+                    "title": "Immediate results",
+                    "description": "We customize your business workflow in the shortest time span possible."
+                },
+                "prices": {
+                    "title": "Lowest price possible",
+                    "description": "We adjust our costs accordingly to your requirements. You will receive best quality at the lowest price possible."
+                },
+                "meetings": {
+                    "title": "Periodical meetings",
+                    "description": "You have 100% control over the development process. We will schedule periodical meetings and notify you whenever any target or issue was hit."
+                },
+                "developers": {
+                    "title": "Skilled developers",
+                    "description": "Our company is rather new, but our team isn't. We have more than 10 years of experience in coding. Rest assured that your pojects are in good hands."
+                },
+                "web": {
+                    "title": "Web, Mobile & Desktop",
+                    "description": "What platform has piqued your interest? Let's have a talk about your idea and see what's the best way to go."
+                }
+            }
+        },
+        "expertise": {
+            "title": "Technology expertise",
+            "description": "As passionate developers, we strive to stay up-to-date with the latest technology trends. Below, you’ll find the core technologies we're most proficient in.",
+            "metrics": {
+                "title": "Your success metrics become ours",
+                "recommendations": "of our work comes from <strong>recommendations</strong>",
+                "projects": "finalized projects in the past <strong>2 years</strong>",
+                "clients": "of our clients chose to <strong>continue</strong> with us"
+            }
+        },
+        "cta": {
+            "title": "",
+            "description": "",
+            "btn": ""
+        }
     }
 }
