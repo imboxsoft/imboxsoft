@@ -1,0 +1,95 @@
+{
+    "services": {
+        "title": "Serviciile Noastre",
+        "shortTitle": "Servicii",
+        "descriptions": [
+            "Descoperă gama completă de servicii digitale menite să-ți propulseze afacerea. La Imboxsoft, îmbinăm expertiza în dezvoltare software cu gândirea creativă specifică designului pentru a livra soluții puternice și vizual atractive.",
+            "Fie că lansezi o platformă nouă, optimizezi operațiuni interne, îți crești vizibilitatea online sau construiești un brand de la zero — echipa noastră este aici să transforme ideile în realitate.",
+            "Explorează serviciile noastre de mai jos și vezi cum transformăm conceptele în rezultate concrete."
+        ]
+    },
+    "softwareDevelopment": {
+        "title": "Dezvoltare Software",
+        "description": "Accesează soluții digitale rapide și eficiente cu o echipă agilă și experimentată — la cele mai bune costuri.",
+        "subtitle": "Soluții software pentru afacerea ta",
+        "subtitleP": [
+            "Suport și consultanță în fiecare etapă a proiectului.",
+            "Echipă de dezvoltatori cu peste 10 ani de experiență.",
+            "Implementare rapidă pentru rezultate imediate."
+        ],
+        "offer": {
+            "design": {
+                "shortTitle": "Concept & Design",
+                "title": "Design Personalizat",
+                "description": "Fiecare proiect este construit în jurul viziunii tale. Un produs excelent pornește de la o identitate clară — de aceea începem întotdeauna cu definirea conceptului potrivit."
+            },
+            "apps": {
+                "shortTitle": "Aplicații Custom",
+                "title": "Aplicații & Website-uri Personalizate",
+                "description": "Stăpânim mai multe tehnologii și tool-uri. Putem construi orice — de la site-uri de prezentare la aplicații complexe pentru afacerea ta."
+            },
+            "ecommerce": {
+                "shortTitle": "E-commerce",
+                "title": "Website-uri E-commerce",
+                "description": "Avem experiență cu platforme precum WordPress, Shopify și BigCommerce. În funcție de nevoile și bugetul tău, vom propune cea mai potrivită soluție."
+            },
+            "seo": {
+                "shortTitle": "SEO",
+                "title": "Servicii SEO",
+                "description": "Oferim și servicii SEO pentru afacerile care pot beneficia de o vizibilitate crescută. Află mai multe pe pagina dedicată SEO."
+            },
+            "api": {
+                "shortTitle": "Integrare API",
+                "title": "Integrare perfectă cu API-uri externe",
+                "description": "Dacă ai nevoie să-ți extinzi aplicația prin conectarea cu servicii externe (plăți online, CRMs, ERPs, sincronizare date în timp real, automatizări — facturare, e-mailing, tracking), te putem ajuta."
+            },
+            "maintenance": {
+                "shortTitle": "Mentenanță",
+                "title": "Mentenanță & Optimizare",
+                "description": "Ai nevoie de optimizări? Le rezolvăm. Vom identifica eventualele probleme și vom propune soluții optime. Fiecare proiect include o perioadă de mentenanță GRATUITĂ — profită de ea."
+            }
+        },
+        "benefits": {
+            "title": "Beneficii și utilizări",
+            "subtitle": "Optimizează-ți activitatea cu aplicații personalizate",
+            "description": "Permite afacerii tale să evolueze cu ajutorul digitalizării, automatizării și organizării logice.",
+            "list": {
+                "results": {
+                    "title": "Rezultate imediate",
+                    "description": "Personalizăm fluxul tău de lucru în cel mai scurt timp posibil."
+                },
+                "prices": {
+                    "title": "Prețuri accesibile",
+                    "description": "Ne adaptăm cerințelor tale — calitate premium la costuri corecte."
+                },
+                "meetings": {
+                    "title": "Întâlniri periodice",
+                    "description": "Ai control complet asupra dezvoltării. Programăm ședințe regulate și notificări la fiecare pas."
+                },
+                "developers": {
+                    "title": "Dezvoltatori experimentați",
+                    "description": "Firma noastră este tânără, dar echipa are peste 10 ani experiență în programare. Proiectul tău este pe mâini bune."
+                },
+                "web": {
+                    "title": "Web, Mobile & Desktop",
+                    "description": "Nu ești sigur ce platformă se potrivește ideii tale? Hai să discutăm și alegem direcția potrivită."
+                }
+            }
+        },
+        "expertise": {
+            "title": "Expertiză Tehnologică",
+            "description": "Suntem dezvoltatori pasionați, mereu la curent cu noile trenduri. Iată tehnologiile în care excelăm.",
+            "metrics": {
+                "title": "Succesul tău este și al nostru",
+                "recommendations": "din proiectele noastre vin prin <strong>recomandări</strong>",
+                "projects": "proiecte finalizate în ultimii <strong>2 ani</strong>",
+                "clients": "dintre clienți au ales să <strong>continue</strong> colaborarea"
+            }
+        },
+        "cta": {
+            "title": "",
+            "description": "",
+            "btn": ""
+        }
+    }
+}

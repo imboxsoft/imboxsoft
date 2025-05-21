@@ -17,7 +17,7 @@ export default async function Footer() {
         },
         {
             route: routes.SERVICES,
-            title: t("navigation.aboutUs.title"),
+            title: t("navigation.services.title"),
         },
         {
             route: routes.ABOUT_US,

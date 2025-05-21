@@ -10,10 +10,10 @@
     },
     "softwareDevelopment": {
         "title": "Software Development",
-        "description": "Boost your business through digital solutions with high development velocity and skilled agile team at the best possible costs.",
+        "description": "Boost your business through digital solutions with high development velocity and a skilled agile team — at the best possible costs.",
         "subtitle": "Software solutions for your business",
         "subtitleP": [
-            "Support and consultancy in each stage of the project.",
+            "Support and consultancy in every stage of the project.",
             "Team of skilled developers with 10+ years of coding experience.",
             "Swift implementation for immediate results."
         ],
@@ -21,68 +21,68 @@
             "design": {
                 "shortTitle": "Concept & Design",
                 "title": "Personalized Design",
-                "description": "Every project is built around your vision. An excellent product derives from excellent identity. Thus, we always take this into consideration first in order to provide the best concept for your digital solution."
+                "description": "Every project is built around your vision. A great product comes from a strong identity. That's why we always begin by defining the best concept for your digital solution."
             },
             "apps": {
                 "shortTitle": "Custom Apps",
                 "title": "Custom Apps & Websites",
-                "description": "We are skilled in several technologies and tools. We can build anything that you request, from presentation websites to fully customized apps for your business."
+                "description": "We are proficient in several technologies and tools. From presentation websites to fully customized apps — we can build anything tailored to your business needs."
             },
             "ecommerce": {
                 "shortTitle": "E-commerce",
                 "title": "E-commerce websites",
-                "description": "We have prior experience with tools like Wordpress, Shopify and Bigcommerce. Depending on your needs and expectations, we can come up with suggestions about the best tools to go with, costs and long-term maintenance."
+                "description": "We have experience with tools like WordPress, Shopify, and BigCommerce. Based on your goals and budget, we'll recommend the best platform with optimal long-term performance."
             },
             "seo": {
                 "shortTitle": "SEO",
                 "title": "SEO",
-                "description": "We also provide SEO services for businesses that may benefit from it. For more details, please follow this link to our SEO services page."
+                "description": "We also offer SEO services for businesses that can benefit from better visibility. Learn more on our dedicated <seoLink>SEO services page</seoLink>."
             },
             "api": {
                 "shortTitle": "API Integration",
-                "title": "Seamless integration with third-parties APIs",
-                "description": "If you are looking into extending your applications by connecting to various vendors like: payment gateways, CRMs, ERPs, real-time data sync or automated workflows (invoicing, emailing, delivery tracking), we can definitely be of help and do it for you."
+                "title": "Seamless integration with third-party APIs",
+                "description": "If you need to extend your app by connecting to services like payment gateways, CRMs, ERPs, real-time data sync, or automated workflows (invoicing, emailing, delivery tracking), we're ready to help."
             },
             "maintenance": {
                 "shortTitle": "Maintenance",
                 "title": "Maintenance & Optimization",
-                "description": "If your product is in need for optimizations, we are there for you. We will analyze and discover possible issues and come with the most optimal solutions to eradicate them. You will receive a period of FREE maintenance for each project that you hand us over, so make sure to use it to the best of your advantage."
+                "description": "If your product needs improvements, we've got you covered. We'll diagnose any issues and provide optimal solutions. Every project includes a FREE maintenance period — take full advantage of it."
             }
         },
         "benefits": {
             "title": "Benefits and uses",
             "subtitle": "Enhance your work with personalized apps",
-            "description": "Let your business benefit from the power of digital solutions, through automation and logical organizing.",
+            "description": "Let your business thrive through digital solutions, process automation, and logical organization.",
             "list": {
                 "results": {
                     "title": "Immediate results",
-                    "description": "We customize your business workflow in the shortest time span possible."
+                    "description": "We customize your business workflow in the shortest possible time."
                 },
                 "prices": {
-                    "title": "Lowest price possible",
-                    "description": "We adjust our costs accordingly to your requirements. You will receive best quality at the lowest price possible."
+                    "title": "Lowest possible price",
+                    "description": "We adapt pricing based on your goals — premium quality at a fair price."
                 },
                 "meetings": {
-                    "title": "Periodical meetings",
-                    "description": "You have 100% control over the development process. We will schedule periodical meetings and notify you whenever any target or issue was hit."
+                    "title": "Periodic meetings",
+                    "description": "You have full control during development. We schedule check-ins and notify you of milestones hit, and also when issues arise."
                 },
                 "developers": {
                     "title": "Skilled developers",
-                    "description": "Our company is rather new, but our team isn't. We have more than 10 years of experience in coding. Rest assured that your pojects are in good hands."
+                    "description": "Our company is new, but our team isn't. We bring over 10 years of coding experience — your project is in good hands."
                 },
                 "web": {
                     "title": "Web, Mobile & Desktop",
-                    "description": "What platform has piqued your interest? Let's have a talk about your idea and see what's the best way to go."
+                    "description": "Not sure which platform suits your needs? Let's talk and choose the best direction for your project."
                 }
             }
         },
         "expertise": {
             "title": "Technology expertise",
-            "description": "As passionate developers, we strive to stay up-to-date with the latest technology trends. Below, you’ll find the core technologies we're most proficient in.",
+            "description": "As passionate developers, we strive to stay up-to-date with the latest tech trends. Below are the technologies we're most proficient in.",
             "metrics": {
                 "title": "Your success metrics become ours",
                 "recommendations": "of our work comes from <strong>recommendations</strong>",
-                "projects": "finalized projects in the past <strong>2 years</strong>",
+                "projects": "completed projects in the past <strong>2 years</strong>",
                 "clients": "of our clients chose to <strong>continue</strong> with us"
             }
         },

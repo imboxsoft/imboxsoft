@@ -5,12 +5,21 @@ import { Link } from "@/i18n/navigation";
 
 const linkTags = {
     servicesLink: (chunk: React.ReactNode) => (
-        <Link href="/services" className="text-main-secondary">
+        <Link href="/services" className="text-main-secondary" target="_blank">
+            {chunk}
+        </Link>
+    ),
+    seoLink: (chunk: React.ReactNode) => (
+        <Link
+            href="/services/digital-marketing/seo"
+            className="text-main-secondary"
+            target="_blank"
+        >
             {chunk}
         </Link>
     ),
     privacypolicyLink: (chunk: React.ReactNode) => (
-        <Link href="/" className="text-main-secondary">
+        <Link href="/" className="text-main-secondary" target="_blank">
             {chunk}
         </Link>
     ),
@@ -27,8 +36,9 @@ const defaultTags = {
     ...linkTags,
 };
 
-export function useRichTranslation(namespace: string) {
-    const t = useTranslations(namespace);
+type Translator = ReturnType<typeof useTranslations>;
+
+function getTranslator(t: Translator) {
     return {
         rich: (key: string, tags = defaultTags) => t.rich(key, tags),
         text: (key: string) => t(key),
@@ -36,11 +46,12 @@ export function useRichTranslation(namespace: string) {
     };
 }
 
+export function useRichTranslation(namespace: string) {
+    const t = useTranslations(namespace);
+    return getTranslator(t);
+}
+
 export async function getRichTranslations(namespace: string) {
     const t = await getTranslations(namespace);
-    return {
-        rich: (key: string, tags = defaultTags) => t.rich(key, tags),
-        text: (key: string) => t(key),
-        raw: (key: string) => t.raw(key),
-    };
+    return getTranslator(t);
 }

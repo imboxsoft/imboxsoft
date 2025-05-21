@@ -1,4 +1,13 @@
 {
+    "common": {
+        "cta": {
+            "btn": {
+                "getInTouch": "Să începem o conversație"
+            }
+        },
+        "allM": "Toți",
+        "allF": "Toate"
+    },
     "navigation": {
         "home": {
             "title": "Acasă",

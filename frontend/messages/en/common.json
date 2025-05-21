@@ -1,4 +1,13 @@
 {
+    "common": {
+        "cta": {
+            "btn": {
+                "getInTouch": "Get in touch"
+            }
+        },
+        "allM": "All",
+        "allF": "All"
+    },
     "navigation": {
         "home": {
             "title": "Home",
