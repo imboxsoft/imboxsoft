@@ -18,7 +18,7 @@ import LocaleSwitcher from "./LocaleSwitcher";
 const fullConfig = resolveConfig(tailwindConfig);
 
 export default function Header() {
-    const t = useTranslations("common");
+    const t = useTranslations("common.navigation");
     const pathname = usePathname();
 
     const [navbarBg, setNavbarBg] = useState<string>("transparent");
@@ -37,54 +37,54 @@ export default function Header() {
     const navMenu = {
         services: {
             route: null,
-            title: t("navbar.services.title"),
+            title: t("services.title"),
             subMenu: [
                 {
                     route: routes.SOFTWARE_DEVELOPMENT,
-                    title: t("navbar.softwareDevelopment.title"),
-                    description: t("navbar.softwareDevelopment.description"),
+                    title: t("softwareDevelopment.title"),
+                    description: t("softwareDevelopment.description"),
                 },
                 {
                     route: routes.IT_CONSULTING,
-                    title: t("navbar.itConsulting.title"),
-                    description: t("navbar.itConsulting.description"),
+                    title: t("itConsulting.title"),
+                    description: t("itConsulting.description"),
                 },
                 {
                     route: routes.SEO,
-                    title: t("navbar.seo.title"),
-                    description: t("navbar.seo.description"),
+                    title: t("seo.title"),
+                    description: t("seo.description"),
                 },
                 {
                     route: routes.EMAIL_MARKETING,
-                    title: t("navbar.emailMarketing.title"),
-                    description: t("navbar.emailMarketing.description"),
+                    title: t("emailMarketing.title"),
+                    description: t("emailMarketing.description"),
                 },
                 {
                     route: routes.GRAPHIC_DESIGN,
-                    title: t("navbar.graphicDesign.title"),
-                    description: t("navbar.graphicDesign.description"),
+                    title: t("graphicDesign.title"),
+                    description: t("graphicDesign.description"),
                 },
             ],
         },
         company: {
             route: null,
-            title: t("navbar.company.title"),
+            title: t("company.title"),
             subMenu: [
                 {
                     route: routes.ABOUT_US,
-                    title: t("navbar.aboutUs.title"),
+                    title: t("aboutUs.title"),
                     description: null,
                 },
                 {
                     route: routes.PORTFOLIO,
-                    title: t("navbar.portfolio.title"),
+                    title: t("portfolio.title"),
                     description: null,
                 },
             ],
         },
         insights: {
             route: routes.INSIGHTS,
-            title: t("navbar.blog.title"),
+            title: t("blog.title"),
             subMenu: [],
         },
     };
@@ -278,7 +278,7 @@ export default function Header() {
                                         href={routes.HOME}
                                         className="block py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
                                     >
-                                        {t("navbar.home.title")}
+                                        {t("home.title")}
                                     </Link>
                                 </li>
                                 {Object.entries(navMenu).map(
@@ -339,7 +339,7 @@ export default function Header() {
                                         href={routes.CONTACT}
                                         className="text-white bg-main-secondary hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-transparent font-[520] rounded-lg text-xl px-4 py-3 text-center"
                                     >
-                                        {t("navbar.contact.title")}
+                                        {t("contact.title")}
                                     </Link>
                                 </li>
                             </ul>

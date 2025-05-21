@@ -1,4 +1,7 @@
 import Image from "next/image";
+
+import { getTranslations } from "next-intl/server";
+
 import {
     WPHTMLBlockType,
     StrapiContentBlockType,
@@ -82,6 +85,7 @@ export default async function BlogPostPage({
     params,
     searchParams,
 }: BlogPostProps) {
+    const t = await getTranslations("blog.blogPost");
     const { slug } = await params;
     const { url } = await searchParams;
 
@@ -132,16 +136,14 @@ export default async function BlogPostPage({
                     {renderPostContent(post)}
 
                     <div className="w-full rounded-t-xl bg-main-background-dark py-24 mt-20 text-center flex flex-col items-center gap-3">
-                        <h3 className="text-2xl font-medium">
-                            Curious for more details? Let&apos;s discuss
-                            further.
+                        <h3 className="text-2xl font-medium mb-4">
+                            {t("ctaTitle")}
                         </h3>
-                        <p></p>
                         <Link
                             href={routes.CONTACT}
                             className="px-4 py-2 bg-main-secondary rounded-md font-semibold"
                         >
-                            Let&apos;s start a conversation
+                            {t("ctaBtn")}
                         </Link>
                     </div>
                 </div>

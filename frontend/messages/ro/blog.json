@@ -1,0 +1,15 @@
+{
+    "blog": {
+        "title": "Rămâi la curent cu cele mai noi tendințe din IT",
+        "description": "Citește cele mai recente tendințe din domeniul IT și descoperă cele mai bune practici! Află ce se ascunde în spatele noilor tehnologii și cum poți beneficia de inovația software.",
+        "getInTune": "Fii la curent cu ofertele noastre",
+        "getInTuneP": "Fii acea persoană mereu cu un pas înainte și primește săptămânal actualizări despre cele mai noi tendințe, sfaturi și noutăți din industrie.",
+        "join": "Intră în Club",
+        "articles": "Articole",
+        "findOut": "Află mai multe"
+    },
+    "blogPost": {
+        "ctaTitle": "Ești curios să afli mai multe detalii? Hai să discutăm mai pe larg.",
+        "ctaBtn": "Să începem o conversație"
+    }
+}

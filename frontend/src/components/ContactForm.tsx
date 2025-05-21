@@ -1,6 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
+
+import { useRichTranslation } from "@/i18n/utils";
+
 import { Link } from "@/i18n/navigation";
 import { IContactForm } from "@/app/api/contact/route";
 
@@ -16,6 +19,8 @@ const initialFormData: IContactForm = {
 };
 
 const ContactForm = () => {
+    const t = useRichTranslation("contact");
+
     const [formData, setFormData] = useState<IContactForm>(initialFormData);
     const [errors, setErrors] = useState<Partial<IContactForm>>({});
 
@@ -95,7 +100,7 @@ const ContactForm = () => {
                         htmlFor="first_name"
                         className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
                     >
-                        First name
+                        {t.text("firstName")}
                         <span className="text-main-secondary">*</span>
                     </label>
                     <input
@@ -117,7 +122,7 @@ const ContactForm = () => {
                         htmlFor="last_name"
                         className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
                     >
-                        Last name
+                        {t.text("lastName")}
                         <span className="text-main-secondary">*</span>
                     </label>
                     <input
@@ -139,7 +144,7 @@ const ContactForm = () => {
                         htmlFor="email"
                         className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
                     >
-                        Work email
+                        {t.text("workEmail")}
                         <span className="text-main-secondary">*</span>
                     </label>
                     <input
@@ -161,7 +166,7 @@ const ContactForm = () => {
                         htmlFor="phone_number"
                         className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
                     >
-                        Phone number
+                        {t.text("phoneNumber")}
                     </label>
                     <input
                         type="text"
@@ -181,7 +186,7 @@ const ContactForm = () => {
                         htmlFor="company"
                         className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
                     >
-                        Company
+                        {t.text("company")}
                     </label>
                     <input
                         type="text"
@@ -201,7 +206,7 @@ const ContactForm = () => {
                         htmlFor="website_url"
                         className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
                     >
-                        Website URL
+                        {t.text("website")}
                     </label>
                     <input
                         type="text"
@@ -221,7 +226,7 @@ const ContactForm = () => {
                         htmlFor="message"
                         className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
                     >
-                        Message
+                        {t.text("message")}
                         <span className="text-main-secondary">*</span>
                     </label>
                     <textarea
@@ -255,13 +260,7 @@ const ContactForm = () => {
                     htmlFor="agree_terms"
                     className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                 >
-                    I have read the{" "}
-                    <Link href="#" className="text-main-secondary">
-                        Privacy Policy
-                    </Link>{" "}
-                    and understand that my personal data will be processed for
-                    the purpose of providing the necessary information and
-                    assistance.
+                    {t.rich("policy")}
                 </label>
                 <span className="mt-1 text-red-400 text-base">
                     {errors.agreeToTerms}
@@ -272,7 +271,7 @@ const ContactForm = () => {
                     type="submit"
                     className="py-3 px-5 text-sm font-medium text-center rounded-lg bg-main-secondary sm:w-fit hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-primary-300"
                 >
-                    Send message
+                    {t.text("send")}
                 </button>
             </div>
         </form>

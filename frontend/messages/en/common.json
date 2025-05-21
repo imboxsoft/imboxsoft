@@ -1,5 +1,5 @@
 {
-    "navbar": {
+    "navigation": {
         "home": {
             "title": "Home",
             "description": ""
@@ -48,5 +48,14 @@
             "title": "Contact Us",
             "description": ""
         }
+    },
+    "footer": {
+        "sitemap": "Sitemap",
+        "socials": "Socials",
+        "legal": "Legal",
+        "termsAndConditions": "Terms & Conditions",
+        "privacyPolicy": "Privacy Policy",
+        "cookies": "Cookies",
+        "allRightsReserved": "All Rights Reserved"
     }
 }

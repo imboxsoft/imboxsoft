@@ -2,7 +2,11 @@
 
 import React, { useState } from "react";
 
+import { useTranslations } from "next-intl";
+
 const NewsletterForm = () => {
+    const t = useTranslations("blog.blog");
+
     const [email, setEmail] = useState<string>("");
 
     const handleChange = (
@@ -63,7 +67,7 @@ const NewsletterForm = () => {
                 type="submit"
                 className="py-3 px-5 text-sm font-semibold text-center rounded-lg bg-main-secondary sm:w-fit hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-primary-300"
             >
-                Join the Club
+                {t("join")}
             </button>
         </form>
     );

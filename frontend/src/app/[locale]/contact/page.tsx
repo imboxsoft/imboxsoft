@@ -1,8 +1,12 @@
+import { getTranslations } from "next-intl/server";
+
 import { ScrollManagerEvaluator } from "@/components/ScrollManager";
 import GoogleMapComponent from "@/components/GoogleMap";
 import ContactForm from "@/components/ContactForm";
 
-export default function Contact() {
+export default async function Contact() {
+    const t = await getTranslations("contact");
+
     const apiKey = process.env.GOOGLE_MAPS_API_KEY || "";
 
     return (
@@ -12,20 +16,17 @@ export default function Contact() {
                     <div className="pt-32 xl:pt-16 pb-16 px-12">
                         <div className="max-w-[750px] mx-auto mb-20">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-white">
-                                Contact Us
+                                {t("title")}
                             </h2>
                             <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-                                Need help with a technical issue? Want to
-                                partner up or are you interested in how we can
-                                be of service to you, let us know through the
-                                contact form below.
+                                {t("description")}
                             </p>
                         </div>
                         <div className="flex flex-col lg:flex-row gap-20">
                             <div className="w-full flex flex-row flex-wrap gap-16 order-2 lg:order-1">
                                 <div className="w-full">
                                     <h3 className="text-2xl font-semibold mb-6 text-center lg:text-left">
-                                        Locations
+                                        {t("locations")}
                                     </h3>
                                     <div className="w-full flex flex-row justify-center lg:justify-start">
                                         <div className="w-full max-w-[500px] flex flex-col sm:flex-row bg-main-opacity-white-20 rounded-2xl overflow-hidden">
@@ -51,19 +52,19 @@ export default function Contact() {
                                 </div>
                                 <div className="w-full">
                                     <h3 className="text-2xl font-semibold mb-6 text-center lg:text-left">
-                                        Contacts
+                                        {t("contacs")}
                                     </h3>
                                     <div className="w-full flex flex-row justify-center lg:justify-start">
                                         <div className="flex flex-row flex-wrap gap-6">
                                             <div className="p-4 bg-main-opacity-white-20 rounded-2xl">
                                                 <h4 className="font-semibold text-xl mb-1">
-                                                    E-mail
+                                                    {t("email")}
                                                 </h4>
                                                 <p>office@imboxsoft.com</p>
                                             </div>
                                             <div className="p-4 bg-main-opacity-white-20 rounded-2xl">
                                                 <h4 className="font-semibold text-xl mb-1">
-                                                    Phone
+                                                    {t("phone")}
                                                 </h4>
                                                 <p>+40 722 370 944</p>
                                             </div>

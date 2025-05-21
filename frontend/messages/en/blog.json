@@ -1,0 +1,15 @@
+{
+    "blog": {
+        "title": "Stay up-to-date with the latest trends in IT",
+        "description": "Read the most recent trends in IT and what are the best practices to follow! Learn about what hides behind the new technologies and how you can benefit from software innovation.",
+        "getInTune": "Get in tune with our promotions",
+        "getInTuneP": "Be that one person who is always ahead of the curve & get weekly updates on the latest industry trends, tips & news.",
+        "join": "Join the Club",
+        "articles": "Articles",
+        "findOut": "Find Out More"
+    },
+    "blogPost": {
+        "ctaTitle": "Curious for more details? Let's discuss further.",
+        "ctaBtn": "Let's start a conversation"
+    }
+}

@@ -1,9 +1,37 @@
+import { getTranslations } from "next-intl/server";
+
 import { Link } from "@/i18n/navigation";
+
 import Image from "next/image";
 import { ROUTE_KEYS as routes } from "@/constants/routes";
 
-export default function Footer() {
+export default async function Footer() {
+    const t = await getTranslations("common");
+
     const today = new Date().getFullYear().toString();
+
+    const navigation = [
+        {
+            route: routes.PORTFOLIO,
+            title: t("navigation.portfolio.title"),
+        },
+        {
+            route: routes.SERVICES,
+            title: t("navigation.aboutUs.title"),
+        },
+        {
+            route: routes.ABOUT_US,
+            title: t("navigation.aboutUs.title"),
+        },
+        {
+            route: routes.INSIGHTS,
+            title: t("navigation.blog.title"),
+        },
+        {
+            route: routes.CONTACT,
+            title: t("navigation.contact.title"),
+        },
+    ];
 
     return (
         <footer className="scroll-section w-full pt-10 md:pt-20 md:pb-10 bg-main-opacity-black-75">
@@ -28,54 +56,24 @@ export default function Footer() {
                         <div className="grid grid-cols-2 gap-8 sm:gap-20 sm:grid-cols-3">
                             <div>
                                 <h2 className="mb-6 text-base font-semibold text-white uppercase border-b-2 border-main-primary">
-                                    Sitemap
+                                    {t("footer.sitemap")}
                                 </h2>
                                 <ul className="flex flex-col gap-4 font-medium">
-                                    <li>
-                                        <Link
-                                            href={routes.PORTFOLIO}
-                                            className="hover:underline text-slate-50 hover:text-main-primary"
-                                        >
-                                            Our work
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            href={routes.SERVICES}
-                                            className="hover:underline text-slate-50 hover:text-main-primary"
-                                        >
-                                            Services
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            href={routes.ABOUT_US}
-                                            className="hover:underline text-slate-50 hover:text-main-primary"
-                                        >
-                                            About Us
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            href={routes.INSIGHTS}
-                                            className="hover:underline text-slate-50 hover:text-main-primary"
-                                        >
-                                            Blog
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            href={routes.CONTACT}
-                                            className="hover:underline text-slate-50 hover:text-main-primary"
-                                        >
-                                            Contact
-                                        </Link>
-                                    </li>
+                                    {navigation.map((el, index) => (
+                                        <li key={index}>
+                                            <Link
+                                                href={el.route}
+                                                className="hover:underline text-slate-50 hover:text-main-primary"
+                                            >
+                                                {el.title}
+                                            </Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                             <div>
                                 <h2 className="mb-6 text-base font-semibold text-white uppercase border-b-2 border-main-primary">
-                                    Socials
+                                    {t("footer.socials")}
                                 </h2>
                                 <ul className="flex flex-col gap-4 font-medium">
                                     <li>
@@ -91,7 +89,7 @@ export default function Footer() {
                             </div>
                             <div>
                                 <h2 className="mb-6 text-base font-semibold text-white uppercase border-b-2 border-main-primary">
-                                    Legal
+                                    {t("footer.legal")}
                                 </h2>
                                 <ul className="flex flex-col gap-4 font-medium">
                                     <li>
@@ -99,7 +97,7 @@ export default function Footer() {
                                             href={routes.ABOUT_US}
                                             className="hover:underline text-slate-50 hover:text-main-primary"
                                         >
-                                            Terms & Conditions
+                                            {t("footer.termsAndConditions")}
                                         </Link>
                                     </li>
                                     <li>
@@ -107,7 +105,7 @@ export default function Footer() {
                                             href={routes.ABOUT_US}
                                             className="hover:underline text-slate-50 hover:text-main-primary"
                                         >
-                                            Privacy Policy
+                                            {t("footer.privacyPolicy")}
                                         </Link>
                                     </li>
                                     <li>
@@ -115,7 +113,7 @@ export default function Footer() {
                                             href={routes.ABOUT_US}
                                             className="hover:underline text-slate-50 hover:text-main-primary"
                                         >
-                                            Cookies
+                                            {t("footer.cookies")}
                                         </Link>
                                     </li>
                                 </ul>
@@ -135,7 +133,7 @@ export default function Footer() {
                         >
                             Imboxsoft™
                         </Link>
-                        . All Rights Reserved
+                        . {t("footer.allRightsReserved")}
                     </span>
                 </div>
             </div>

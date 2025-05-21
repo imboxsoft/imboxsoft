@@ -1,0 +1,17 @@
+{
+    "title": "Contactează-ne",
+    "description": "Ai nevoie de ajutor tehnic? Vrei să colaborăm sau ești interesat de cum te putem ajuta? Scrie-ne prin formularul de contact de mai jos.",
+    "locations": "Locații",
+    "contacs": "Contacte",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "firstName": "Prenume",
+    "lastName": "Nume",
+    "workEmail": "Email de serviciu",
+    "phoneNumber": "Număr de telefon",
+    "company": "Companie",
+    "website": "Adresă website",
+    "message": "Mesaj",
+    "send": "Trimite mesajul",
+    "policy": "Am citit <privacypolicyLink>Politica de Confidențialitate</privacypolicyLink> și înțeleg că datele mele personale vor fi prelucrate în scopul furnizării informațiilor și asistenței necesare."
+}

@@ -1,4 +1,7 @@
 import Image from "next/image";
+
+import { getTranslations } from "next-intl/server";
+
 import { BlogPostType } from "@/components/BlogPost";
 import { generateWPBaseURL } from "@/utils/Wordpress";
 import NewsletterForm from "@/components/NewsletterForm";
@@ -6,6 +9,8 @@ import { normalizeBlogPostsData } from "@/utils/Normalizer";
 import { BlogPostHeadline } from "@/components/BlogPost";
 
 export default async function BlogPage() {
+    const t = await getTranslations("blog.blog");
+
     let posts: BlogPostType[] = [];
 
     try {
@@ -30,13 +35,10 @@ export default async function BlogPage() {
                     <div className="w-full xs:max-w-[450px] md:max-w-[700px] lg:max-w-[66%] z-10">
                         <div className="lg:mr-20">
                             <h1 className="text-4xl md:text-5xl mb-10 font-semibold">
-                                Stay up-to-date with the latest trends in IT
+                                {t("title")}
                             </h1>
                             <p className="text-lg text-justify">
-                                Read the most recent trends in IT and what are
-                                the best practices to follow! Learn about what
-                                hides behind the new technologies and how you
-                                can benefit from software innovation.
+                                {t("description")}
                             </p>
                         </div>
                     </div>
@@ -56,13 +58,11 @@ export default async function BlogPage() {
             <section className="observe-navbar-intersect bg-main-background">
                 <div className="max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16 py-16 md:py-24 text-center">
                     <h2 className="text-4xl md:text-5xl mb-6 font-semibold">
-                        Get in tune with our promotions
+                        {t("getInTune")}
                     </h2>
                     <div className="w-full flex justify-center">
                         <p className="max-w-[850px] text-xl md:text-2xl font-medium mb-16">
-                            Be that one person who is always ahead of the curve
-                            & get weekly updates on the latest industry trends,
-                            tips & news.
+                            {t("getInTuneP")}
                         </p>
                     </div>
                     <NewsletterForm />
@@ -71,7 +71,9 @@ export default async function BlogPage() {
 
             <section className="observe-navbar-intersect bg-main-background-lighter">
                 <div className="max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16 pt-16 pb-24">
-                    <h1 className="text-4xl font-semibold mb-10">Articles</h1>
+                    <h1 className="text-4xl font-semibold mb-10">
+                        {t("articles")}
+                    </h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                         {posts.map((post, index) => (
                             <div className="col-span-1" key={index}>

@@ -9,6 +9,11 @@ const linkTags = {
             {chunk}
         </Link>
     ),
+    privacypolicyLink: (chunk: React.ReactNode) => (
+        <Link href="/" className="text-main-secondary">
+            {chunk}
+        </Link>
+    ),
 };
 
 const defaultTags = {

@@ -1,5 +1,8 @@
 // import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Image from "next/image";
+
+import { getTranslations } from "next-intl/server";
+
 import { Link } from "@/i18n/navigation";
 import { ROUTE_KEYS as routes } from "@/constants/routes";
 import { ImageType } from "@/types/strapi";
@@ -83,7 +86,9 @@ export const ReferenceBlock = ({ block }: { block: ReferenceBlockType }) => (
 //     <SyntaxHighlighter language="javascript">{code}</SyntaxHighlighter>
 // );
 
-export const BlogPostHeadline = ({ post }: { post: BlogPostType }) => {
+export const BlogPostHeadline = async ({ post }: { post: BlogPostType }) => {
+    const t = await getTranslations("blog.blog");
+
     return (
         <div className="w-full">
             <div
@@ -95,10 +100,7 @@ export const BlogPostHeadline = ({ post }: { post: BlogPostType }) => {
                         src={post.coverImage.src}
                         className="rounded-xl object-cover"
                         fill
-                        alt={
-                            post.coverImage.alternativeText ||
-                            `${post.title} - Blog Post Image`
-                        }
+                        alt={post.coverImage.alternativeText || `${post.title}`}
                     />
                 </div>
                 <div className="px-6 pb-6 sm:px-10 sm:pb-10">
@@ -118,9 +120,9 @@ export const BlogPostHeadline = ({ post }: { post: BlogPostType }) => {
                                     url: encodeURIComponent(post.url),
                                 },
                             }}
-                            className="bg-main-secondary hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-transparent font-medium rounded-lg text-lg px-4 py-3 text-center"
+                            className="uppercase bg-main-secondary hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-transparent font-medium rounded-lg text-lg px-4 py-3 text-center"
                         >
-                            FIND OUT MORE
+                            {t("findOut")}
                         </Link>
                     </div>
                 </div>

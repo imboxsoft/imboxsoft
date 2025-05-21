@@ -1,5 +1,5 @@
 {
-    "navbar": {
+    "navigation": {
         "home": {
             "title": "Acasă",
             "description": ""
@@ -48,5 +48,14 @@
             "title": "Contactează-ne",
             "description": ""
         }
+    },
+    "footer": {
+        "sitemap": "Hartă site",
+        "socials": "Rețele sociale",
+        "legal": "Legal",
+        "termsAndConditions": "Termeni și condiții",
+        "privacyPolicy": "Politica de confidențialitate",
+        "cookies": "Cookie-uri",
+        "allRightsReserved": "Toate drepturile rezervate"
     }
 }

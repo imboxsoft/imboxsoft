@@ -3,7 +3,15 @@ import { hasLocale } from "next-intl";
 
 import { routing } from "./routing";
 
-const namespaces = ["home", "services", "company", "contact", "common", "meta"];
+const namespaces = [
+    "home",
+    "services",
+    "company",
+    "blog",
+    "contact",
+    "common",
+    "meta",
+];
 
 export default getRequestConfig(async ({ requestLocale }) => {
     const requested = await requestLocale;
