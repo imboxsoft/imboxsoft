@@ -1,4 +1,5 @@
 import { getRichTranslations } from "@/i18n/utils";
+import { ROUTE_KEYS as routes } from "@/constants/routes";
 
 import ScrollToLink from "@/components/ScrollToLink";
 import Image from "next/image";
@@ -8,7 +9,7 @@ export default async function SoftwareDevelopment() {
     const ts = await getRichTranslations("services");
     const tc = await getRichTranslations("common");
 
-    const whatWeCanDo = [
+    const whatWeDo = [
         {
             id: "1",
             shortTitle: ts.text("softwareDevelopment.offer.design.shortTitle"),
@@ -22,21 +23,21 @@ export default async function SoftwareDevelopment() {
             },
             svgIcon: (
                 <svg
-                    className="hidden sm:block w-6 h-6"
+                    className="w-8 h-8 text-gray-800 dark:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
-                    fill="currentColor"
+                    fill="none"
                     viewBox="0 0 24 24"
                 >
-                    <path d="M11 9a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" />
                     <path
-                        fill-rule="evenodd"
-                        d="M9.896 3.051a2.681 2.681 0 0 1 4.208 0c.147.186.38.282.615.255a2.681 2.681 0 0 1 2.976 2.975.681.681 0 0 0 .254.615 2.681 2.681 0 0 1 0 4.208.682.682 0 0 0-.254.615 2.681 2.681 0 0 1-2.976 2.976.681.681 0 0 0-.615.254 2.682 2.682 0 0 1-4.208 0 .681.681 0 0 0-.614-.255 2.681 2.681 0 0 1-2.976-2.975.681.681 0 0 0-.255-.615 2.681 2.681 0 0 1 0-4.208.681.681 0 0 0 .255-.615 2.681 2.681 0 0 1 2.976-2.975.681.681 0 0 0 .614-.255ZM12 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"
-                        clip-rule="evenodd"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 18.5A2.493 2.493 0 0 1 7.51 20H7.5a2.468 2.468 0 0 1-2.4-3.154 2.98 2.98 0 0 1-.85-5.274 2.468 2.468 0 0 1 .92-3.182 2.477 2.477 0 0 1 1.876-3.344 2.5 2.5 0 0 1 3.41-1.856A2.5 2.5 0 0 1 12 5.5m0 13v-13m0 13a2.493 2.493 0 0 0 4.49 1.5h.01a2.468 2.468 0 0 0 2.403-3.154 2.98 2.98 0 0 0 .847-5.274 2.468 2.468 0 0 0-.921-3.182 2.477 2.477 0 0 0-1.875-3.344A2.5 2.5 0 0 0 14.5 3 2.5 2.5 0 0 0 12 5.5m-8 5a2.5 2.5 0 0 1 3.48-2.3m-.28 8.551a3 3 0 0 1-2.953-5.185M20 10.5a2.5 2.5 0 0 0-3.481-2.3m.28 8.551a3 3 0 0 0 2.954-5.185"
                     />
-                    <path d="M5.395 15.055 4.07 19a1 1 0 0 0 1.264 1.267l1.95-.65 1.144 1.707A1 1 0 0 0 10.2 21.1l1.12-3.18a4.641 4.641 0 0 1-2.515-1.208 4.667 4.667 0 0 1-3.411-1.656Zm7.269 2.867 1.12 3.177a1 1 0 0 0 1.773.224l1.144-1.707 1.95.65A1 1 0 0 0 19.915 19l-1.32-3.93a4.667 4.667 0 0 1-3.4 1.642 4.643 4.643 0 0 1-2.53 1.21Z" />
                 </svg>
             ),
         },
@@ -51,21 +52,21 @@ export default async function SoftwareDevelopment() {
             },
             svgIcon: (
                 <svg
-                    className="hidden sm:block w-6 h-6"
+                    className="w-8 h-8 text-gray-800 dark:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
-                    fill="currentColor"
+                    fill="none"
                     viewBox="0 0 24 24"
                 >
-                    <path d="M11 9a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" />
                     <path
-                        fill-rule="evenodd"
-                        d="M9.896 3.051a2.681 2.681 0 0 1 4.208 0c.147.186.38.282.615.255a2.681 2.681 0 0 1 2.976 2.975.681.681 0 0 0 .254.615 2.681 2.681 0 0 1 0 4.208.682.682 0 0 0-.254.615 2.681 2.681 0 0 1-2.976 2.976.681.681 0 0 0-.615.254 2.682 2.682 0 0 1-4.208 0 .681.681 0 0 0-.614-.255 2.681 2.681 0 0 1-2.976-2.975.681.681 0 0 0-.255-.615 2.681 2.681 0 0 1 0-4.208.681.681 0 0 0 .255-.615 2.681 2.681 0 0 1 2.976-2.975.681.681 0 0 0 .614-.255ZM12 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"
-                        clip-rule="evenodd"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"
                     />
-                    <path d="M5.395 15.055 4.07 19a1 1 0 0 0 1.264 1.267l1.95-.65 1.144 1.707A1 1 0 0 0 10.2 21.1l1.12-3.18a4.641 4.641 0 0 1-2.515-1.208 4.667 4.667 0 0 1-3.411-1.656Zm7.269 2.867 1.12 3.177a1 1 0 0 0 1.773.224l1.144-1.707 1.95.65A1 1 0 0 0 19.915 19l-1.32-3.93a4.667 4.667 0 0 1-3.4 1.642 4.643 4.643 0 0 1-2.53 1.21Z" />
                 </svg>
             ),
         },
@@ -84,21 +85,21 @@ export default async function SoftwareDevelopment() {
             },
             svgIcon: (
                 <svg
-                    className="hidden sm:block w-6 h-6"
+                    className="w-8 h-8 text-gray-800 dark:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
-                    fill="currentColor"
+                    fill="none"
                     viewBox="0 0 24 24"
                 >
-                    <path d="M11 9a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" />
                     <path
-                        fill-rule="evenodd"
-                        d="M9.896 3.051a2.681 2.681 0 0 1 4.208 0c.147.186.38.282.615.255a2.681 2.681 0 0 1 2.976 2.975.681.681 0 0 0 .254.615 2.681 2.681 0 0 1 0 4.208.682.682 0 0 0-.254.615 2.681 2.681 0 0 1-2.976 2.976.681.681 0 0 0-.615.254 2.682 2.682 0 0 1-4.208 0 .681.681 0 0 0-.614-.255 2.681 2.681 0 0 1-2.976-2.975.681.681 0 0 0-.255-.615 2.681 2.681 0 0 1 0-4.208.681.681 0 0 0 .255-.615 2.681 2.681 0 0 1 2.976-2.975.681.681 0 0 0 .614-.255ZM12 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"
-                        clip-rule="evenodd"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
                     />
-                    <path d="M5.395 15.055 4.07 19a1 1 0 0 0 1.264 1.267l1.95-.65 1.144 1.707A1 1 0 0 0 10.2 21.1l1.12-3.18a4.641 4.641 0 0 1-2.515-1.208 4.667 4.667 0 0 1-3.411-1.656Zm7.269 2.867 1.12 3.177a1 1 0 0 0 1.773.224l1.144-1.707 1.95.65A1 1 0 0 0 19.915 19l-1.32-3.93a4.667 4.667 0 0 1-3.4 1.642 4.643 4.643 0 0 1-2.53 1.21Z" />
                 </svg>
             ),
         },
@@ -113,21 +114,20 @@ export default async function SoftwareDevelopment() {
             },
             svgIcon: (
                 <svg
-                    className="hidden sm:block w-6 h-6"
+                    className="w-8 h-8 text-gray-800 dark:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
-                    fill="currentColor"
+                    fill="none"
                     viewBox="0 0 24 24"
                 >
-                    <path d="M11 9a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" />
                     <path
-                        fill-rule="evenodd"
-                        d="M9.896 3.051a2.681 2.681 0 0 1 4.208 0c.147.186.38.282.615.255a2.681 2.681 0 0 1 2.976 2.975.681.681 0 0 0 .254.615 2.681 2.681 0 0 1 0 4.208.682.682 0 0 0-.254.615 2.681 2.681 0 0 1-2.976 2.976.681.681 0 0 0-.615.254 2.682 2.682 0 0 1-4.208 0 .681.681 0 0 0-.614-.255 2.681 2.681 0 0 1-2.976-2.975.681.681 0 0 0-.255-.615 2.681 2.681 0 0 1 0-4.208.681.681 0 0 0 .255-.615 2.681 2.681 0 0 1 2.976-2.975.681.681 0 0 0 .614-.255ZM12 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"
-                        clip-rule="evenodd"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                        d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
                     />
-                    <path d="M5.395 15.055 4.07 19a1 1 0 0 0 1.264 1.267l1.95-.65 1.144 1.707A1 1 0 0 0 10.2 21.1l1.12-3.18a4.641 4.641 0 0 1-2.515-1.208 4.667 4.667 0 0 1-3.411-1.656Zm7.269 2.867 1.12 3.177a1 1 0 0 0 1.773.224l1.144-1.707 1.95.65A1 1 0 0 0 19.915 19l-1.32-3.93a4.667 4.667 0 0 1-3.4 1.642 4.643 4.643 0 0 1-2.53 1.21Z" />
                 </svg>
             ),
         },
@@ -142,21 +142,21 @@ export default async function SoftwareDevelopment() {
             },
             svgIcon: (
                 <svg
-                    className="hidden sm:block w-6 h-6"
+                    className="w-8 h-8 text-gray-800 dark:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
-                    fill="currentColor"
+                    fill="none"
                     viewBox="0 0 24 24"
                 >
-                    <path d="M11 9a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" />
                     <path
-                        fill-rule="evenodd"
-                        d="M9.896 3.051a2.681 2.681 0 0 1 4.208 0c.147.186.38.282.615.255a2.681 2.681 0 0 1 2.976 2.975.681.681 0 0 0 .254.615 2.681 2.681 0 0 1 0 4.208.682.682 0 0 0-.254.615 2.681 2.681 0 0 1-2.976 2.976.681.681 0 0 0-.615.254 2.682 2.682 0 0 1-4.208 0 .681.681 0 0 0-.614-.255 2.681 2.681 0 0 1-2.976-2.975.681.681 0 0 0-.255-.615 2.681 2.681 0 0 1 0-4.208.681.681 0 0 0 .255-.615 2.681 2.681 0 0 1 2.976-2.975.681.681 0 0 0 .614-.255ZM12 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"
-                        clip-rule="evenodd"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 8v8m0-8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm6-2a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm0 0h-1a5 5 0 0 1-5-5v-.5"
                     />
-                    <path d="M5.395 15.055 4.07 19a1 1 0 0 0 1.264 1.267l1.95-.65 1.144 1.707A1 1 0 0 0 10.2 21.1l1.12-3.18a4.641 4.641 0 0 1-2.515-1.208 4.667 4.667 0 0 1-3.411-1.656Zm7.269 2.867 1.12 3.177a1 1 0 0 0 1.773.224l1.144-1.707 1.95.65A1 1 0 0 0 19.915 19l-1.32-3.93a4.667 4.667 0 0 1-3.4 1.642 4.643 4.643 0 0 1-2.53 1.21Z" />
                 </svg>
             ),
         },
@@ -175,21 +175,20 @@ export default async function SoftwareDevelopment() {
             },
             svgIcon: (
                 <svg
-                    className="hidden sm:block w-6 h-6"
+                    className="w-8 h-8 text-gray-800 dark:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
-                    fill="currentColor"
+                    fill="none"
                     viewBox="0 0 24 24"
                 >
-                    <path d="M11 9a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" />
                     <path
-                        fill-rule="evenodd"
-                        d="M9.896 3.051a2.681 2.681 0 0 1 4.208 0c.147.186.38.282.615.255a2.681 2.681 0 0 1 2.976 2.975.681.681 0 0 0 .254.615 2.681 2.681 0 0 1 0 4.208.682.682 0 0 0-.254.615 2.681 2.681 0 0 1-2.976 2.976.681.681 0 0 0-.615.254 2.682 2.682 0 0 1-4.208 0 .681.681 0 0 0-.614-.255 2.681 2.681 0 0 1-2.976-2.975.681.681 0 0 0-.255-.615 2.681 2.681 0 0 1 0-4.208.681.681 0 0 0 .255-.615 2.681 2.681 0 0 1 2.976-2.975.681.681 0 0 0 .614-.255ZM12 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"
-                        clip-rule="evenodd"
+                        stroke="currentColor"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M7.58209 8.96025 9.8136 11.1917l-1.61782 1.6178c-1.08305-.1811-2.23623.1454-3.07364.9828-1.1208 1.1208-1.32697 2.8069-.62368 4.1363.14842.2806.42122.474.73509.5213.06726.0101.1347.0133.20136.0098-.00351.0666-.00036.1341.00977.2013.04724.3139.24069.5867.52125.7351 1.32944.7033 3.01552.4971 4.13627-.6237.8375-.8374 1.1639-1.9906.9829-3.0736l4.8107-4.8108c1.0831.1811 2.2363-.1454 3.0737-.9828 1.1208-1.1208 1.3269-2.80688.6237-4.13632-.1485-.28056-.4213-.474-.7351-.52125-.0673-.01012-.1347-.01327-.2014-.00977.0035-.06666.0004-.13409-.0098-.20136-.0472-.31386-.2406-.58666-.5212-.73508-1.3294-.70329-3.0155-.49713-4.1363.62367-.8374.83741-1.1639 1.9906-.9828 3.07365l-1.7788 1.77875-2.23152-2.23148-1.41419 1.41424Zm1.31056-3.1394c-.04235-.32684-.24303-.61183-.53647-.76186l-1.98183-1.0133c-.38619-.19746-.85564-.12345-1.16234.18326l-.86321.8632c-.3067.3067-.38072.77616-.18326 1.16235l1.0133 1.98182c.15004.29345.43503.49412.76187.53647l1.1127.14418c.3076.03985.61628-.06528.8356-.28461l.86321-.8632c.21932-.21932.32446-.52801.2846-.83561l-.14417-1.1127ZM19.4448 16.4052l-3.1186-3.1187c-.7811-.781-2.0474-.781-2.8285 0l-.1719.172c-.7811.781-.7811 2.0474 0 2.8284l3.1186 3.1187c.7811.781 2.0474.781 2.8285 0l.1719-.172c.7811-.781.7811-2.0474 0-2.8284Z"
                     />
-                    <path d="M5.395 15.055 4.07 19a1 1 0 0 0 1.264 1.267l1.95-.65 1.144 1.707A1 1 0 0 0 10.2 21.1l1.12-3.18a4.641 4.641 0 0 1-2.515-1.208 4.667 4.667 0 0 1-3.411-1.656Zm7.269 2.867 1.12 3.177a1 1 0 0 0 1.773.224l1.144-1.707 1.95.65A1 1 0 0 0 19.915 19l-1.32-3.93a4.667 4.667 0 0 1-3.4 1.642 4.643 4.643 0 0 1-2.53 1.21Z" />
                 </svg>
             ),
         },
@@ -389,13 +388,15 @@ export default async function SoftwareDevelopment() {
                 <div className="relative custom-container">
                     <div>
                         <ul className="services-ul flex flex-wrap lg:flex-nowrap flex-row gap-y-6 gap-x-20 lg:gap-x-6 lg:justify-between text-white">
-                            {whatWeCanDo.map((item, index) => (
+                            {whatWeDo.map((item, index) => (
                                 <li key={index}>
                                     <ScrollToLink id={item.id}>
-                                        {item.svgIcon}
-                                        <span className="line-clamp-2 text-center">
-                                            {item.shortTitle}
-                                        </span>
+                                        <div className="flex flex-col items-center gap-2">
+                                            <span>{item.svgIcon}</span>
+                                            <span className="line-clamp-2 text-center">
+                                                {item.shortTitle}
+                                            </span>
+                                        </div>
                                     </ScrollToLink>
                                 </li>
                             ))}
@@ -409,9 +410,9 @@ export default async function SoftwareDevelopment() {
                     <div className="xl:py-24 xl:!pb-40">
                         <div className="custom-container xl:rounded-3xl py-20 md:py-32 bg-main-background">
                             <div>
-                                <div className="flex flex-col md:flex-row gap-20 items-center text-center md:text-left px-20">
+                                <div className="flex flex-col md:flex-row md:gap-20 items-center text-center md:text-left md:px-20">
                                     <div className="flex-1">
-                                        <h2 className="text-5xl mb-6 md:mb-0">
+                                        <h2 className="text-4xl lg:text-5xl mb-6 md:mb-0 font-semibold lg:font-medium">
                                             {ts.text(
                                                 "softwareDevelopment.subtitle"
                                             )}
@@ -440,17 +441,17 @@ export default async function SoftwareDevelopment() {
                     <div className="xl:pb-32">
                         <div className="custom-container xl:rounded-3xl bg-main-background pt-10 md:pt-0 pb-20 md:pb-0">
                             <div>
-                                <div className="flex flex-col gap-32 xl:gap-40 pb-20 xl:pb-0 md:[&>*:nth-child(even)]:flex-row-reverse">
-                                    {whatWeCanDo.map((item, index) => (
+                                <div className="flex flex-col gap-32 xl:gap-40 md:pb-20 xl:pb-0 md:[&>*:nth-child(even)]:flex-row-reverse">
+                                    {whatWeDo.map((item, index) => (
                                         <div
                                             id={item.id}
-                                            className="relative flex flex-col md:flex-row gap-10 xl:gap-10 px-16 xl:px-0"
+                                            className="relative flex flex-col md:flex-row gap-10 xl:gap-10 md:px-16 xl:px-0"
                                             key={index}
                                         >
                                             <div className="order-2 flex-1 xl:px-24 xl:pt-24 xl:pb-16 flex flex-col items-center md:items-start text-center md:text-left">
-                                                <h2 className="text-4xl font-semibold mb-6">
+                                                <h3 className="text-3xl lg:text-4xl font-semibold mb-6">
                                                     {item.title}
-                                                </h2>
+                                                </h3>
                                                 <p>{item.description}</p>
                                             </div>
                                             <div className="order-1 relative w-full md:w-2/5 flex">
@@ -481,8 +482,10 @@ export default async function SoftwareDevelopment() {
                             </div>
                         </div>
                     </div>
+                </section>
 
-                    <div className="custom-container pt-32 pb-24">
+                <section className="observe-navbar-intersect w-full bg-main-background-lighter">
+                    <div className="custom-container py-20 md:pt-32 md:pb-24">
                         <div>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mb-32">
                                 <div className="flex-1 flex flex-col gap-4 items-start">
@@ -504,13 +507,15 @@ export default async function SoftwareDevelopment() {
                                 </div>
                                 {benefits.map((item, index) => (
                                     <div
-                                        className="flex-1 flex flex-col gap-4 items-start"
+                                        className="flex-1 flex flex-col gap-4 self-center lg:self-start"
                                         key={index}
                                     >
-                                        {item.svgIcon}
-                                        <h4 className="text-2xl font-semibold">
-                                            {item.title}
-                                        </h4>
+                                        <div className="flex flex-row lg:flex-col gap-2">
+                                            <span>{item.svgIcon}</span>
+                                            <h4 className="text-2xl font-semibold">
+                                                {item.title}
+                                            </h4>
+                                        </div>
                                         <p>{item.description}</p>
                                     </div>
                                 ))}
@@ -582,6 +587,28 @@ export default async function SoftwareDevelopment() {
                                         </p>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="observe-navbar-intersect w-full">
+                    <div className="custom-container py-40 lg:py-72">
+                        <div>
+                            <div className="text-center">
+                                <h2 className="text-2xl md:text-4xl font-medium pb-10">
+                                    {tc.text(
+                                        "common.cta.descriptions.gotAnIdea"
+                                    )}
+                                </h2>
+                            </div>
+                            <div className="flex flex-col gap-16 items-center">
+                                <Link
+                                    href={routes.CONTACT}
+                                    className="bg-main-secondary px-6 py-4 font-semibold rounded-md"
+                                >
+                                    {tc.text("common.cta.btn.getInTouch")}
+                                </Link>
                             </div>
                         </div>
                     </div>

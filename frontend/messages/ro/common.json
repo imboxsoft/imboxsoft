@@ -1,6 +1,9 @@
 {
     "common": {
         "cta": {
+            "descriptions": {
+                "gotAnIdea": "Ai o idee? Hai să o transformăm în cod."
+            },
             "btn": {
                 "getInTouch": "Să începem o conversație"
             }

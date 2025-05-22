@@ -1,6 +1,9 @@
 {
     "common": {
         "cta": {
+            "descriptions": {
+                "gotAnIdea": "Got an idea? Let's code it into reality."
+            },
             "btn": {
                 "getInTouch": "Get in touch"
             }

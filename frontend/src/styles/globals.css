@@ -36,3 +36,10 @@
 .menu-slide-target {
     display: none;
 }
+
+@media (min-width: 640px) {
+    .custom-container > * {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
