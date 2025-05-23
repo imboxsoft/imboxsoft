@@ -13,5 +13,14 @@
     "website": "Adresă website",
     "message": "Mesaj",
     "send": "Trimite mesajul",
-    "policy": "Am citit <privacypolicyLink>Politica de Confidențialitate</privacypolicyLink> și înțeleg că datele mele personale vor fi prelucrate în scopul furnizării informațiilor și asistenței necesare."
+    "policy": "Am citit <privacypolicyLink>Politica de Confidențialitate</privacypolicyLink> și înțeleg că datele mele personale vor fi prelucrate în scopul furnizării informațiilor și asistenței necesare.",
+    "placeholders": {
+        "firstName": "Introduceți prenumele",
+        "lastName": "Introduceți numele",
+        "email": "Introduceți adresa de email",
+        "phone": "Introduceți numărul de telefon",
+        "company": "Introduceți numele companiei",
+        "website": "Introduceți adresa website-ului",
+        "message": "Cu ce vă putem ajuta?"
+    }
 }

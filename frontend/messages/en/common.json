@@ -1,11 +1,15 @@
 {
     "common": {
         "cta": {
+            "titles": {},
             "descriptions": {
-                "gotAnIdea": "Got an idea? Let's code it into reality."
+                "gotAnIdea": "Got an idea? Let's code it into reality.",
+                "happyToBuild": "We're happy to help you figure out what to build, how to build it, or whether to build it at all. Get in touch — first consultation is free."
             },
             "btn": {
-                "getInTouch": "Get in touch"
+                "getInTouch": "Get in touch",
+                "letsTalkStrategy": "Let's Talk Strategy",
+                "bookConsultaion": "Book a Consultation"
             }
         },
         "allM": "All",

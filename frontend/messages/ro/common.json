@@ -1,11 +1,15 @@
 {
     "common": {
         "cta": {
+            "titles": {},
             "descriptions": {
-                "gotAnIdea": "Ai o idee? Hai să o transformăm în cod."
+                "gotAnIdea": "Ai o idee? Hai să o transformăm în cod.",
+                "happyToBuild": "Suntem bucuroși să te ajutăm să înțelegi ce să construiești, cum să o faci sau dacă merită construit. Scrie-ne — prima consultație este gratuită."
             },
             "btn": {
-                "getInTouch": "Să începem o conversație"
+                "getInTouch": "Ia legătura cu noi",
+                "letsTalkStrategy": "Hai să vorbim strategie",
+                "bookConsultaion": "Programează o consultație"
             }
         },
         "allM": "Toți",
@@ -25,7 +29,7 @@
             "description": ""
         },
         "softwareDevelopment": {
-            "title": "Dezvotlare Software",
+            "title": "Dezvoltare Software",
             "description": ""
         },
         "itConsulting": {

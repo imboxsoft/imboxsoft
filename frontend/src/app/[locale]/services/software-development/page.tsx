@@ -1,8 +1,11 @@
+import Image from "next/image";
+
 import { getRichTranslations } from "@/i18n/utils";
 import { ROUTE_KEYS as routes } from "@/constants/routes";
 
 import ScrollToLink from "@/components/ScrollToLink";
-import Image from "next/image";
+import PointsWithIcons from "@/components/PointsWithIcons";
+
 import { Link } from "@/i18n/navigation";
 
 export default async function SoftwareDevelopment() {
@@ -351,17 +354,11 @@ export default async function SoftwareDevelopment() {
                                 {ts.text("services.shortTitle")}
                             </p>
                             <h1 className="text-5xl font-bold mb-4">
-                                {ts.text("services.title")}
+                                {ts.text("softwareDevelopment.title")}
                             </h1>
-                            <div className="text-2xl">
-                                {ts
-                                    .raw("services.descriptions")
-                                    .map((p: string, i: number) => (
-                                        <p key={i} className="mb-4">
-                                            {p}
-                                        </p>
-                                    ))}
-                            </div>
+                            <p className="text-2xl">
+                                {ts.text("softwareDevelopment.description")}
+                            </p>
                             <div className="flex mt-6">
                                 <Link
                                     href="/contact"
@@ -405,215 +402,188 @@ export default async function SoftwareDevelopment() {
                 </div>
             </section>
 
-            <div className="overflow-x-hidden">
-                <section className="observe-navbar-intersect w-full bg-main-background-lighter">
-                    <div className="xl:py-24 xl:!pb-40">
-                        <div className="custom-container xl:rounded-3xl py-20 md:py-32 bg-main-background">
-                            <div>
-                                <div className="flex flex-col md:flex-row md:gap-20 items-center text-center md:text-left md:px-20">
-                                    <div className="flex-1">
-                                        <h2 className="text-4xl lg:text-5xl mb-6 md:mb-0 font-semibold lg:font-medium">
-                                            {ts.text(
-                                                "softwareDevelopment.subtitle"
-                                            )}
-                                        </h2>
-                                    </div>
-                                    <div className="flex-1">
-                                        <ul className="flex flex-col gap-6">
-                                            {ts
-                                                .raw(
-                                                    "softwareDevelopment.subtitleP"
-                                                )
-                                                .map((p: string, i: number) => (
-                                                    <li key={i}>
-                                                        <span>{p}</span>
-                                                    </li>
-                                                ))}
-                                        </ul>
-                                    </div>
+            <section className="observe-navbar-intersect w-full bg-main-background-lighter">
+                <div className="xl:py-24 xl:!pb-40">
+                    <div className="custom-container xl:rounded-3xl py-20 md:py-32 bg-main-background">
+                        <div>
+                            <div className="flex flex-col md:flex-row md:gap-20 items-center text-center md:text-left md:px-20">
+                                <div className="flex-1">
+                                    <h2 className="text-4xl lg:text-5xl mb-6 md:mb-0 font-semibold lg:font-medium">
+                                        {ts.text(
+                                            "softwareDevelopment.subtitle"
+                                        )}
+                                    </h2>
+                                </div>
+                                <div className="flex-1">
+                                    <ul className="flex flex-col gap-6">
+                                        {ts
+                                            .raw(
+                                                "softwareDevelopment.subtitleP"
+                                            )
+                                            .map((p: string, i: number) => (
+                                                <li key={i}>
+                                                    <span>{p}</span>
+                                                </li>
+                                            ))}
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className="observe-navbar-intersect w-full bg-main-background-lighter">
-                    <div className="xl:pb-32">
-                        <div className="custom-container xl:rounded-3xl bg-main-background pt-10 md:pt-0 pb-20 md:pb-0">
-                            <div>
-                                <div className="flex flex-col gap-32 xl:gap-40 md:pb-20 xl:pb-0 md:[&>*:nth-child(even)]:flex-row-reverse">
-                                    {whatWeDo.map((item, index) => (
-                                        <div
-                                            id={item.id}
-                                            className="relative flex flex-col md:flex-row gap-10 xl:gap-10 md:px-16 xl:px-0"
-                                            key={index}
-                                        >
-                                            <div className="order-2 flex-1 xl:px-24 xl:pt-24 xl:pb-16 flex flex-col items-center md:items-start text-center md:text-left">
-                                                <h3 className="text-3xl lg:text-4xl font-semibold mb-6">
-                                                    {item.title}
-                                                </h3>
-                                                <p>{item.description}</p>
-                                            </div>
-                                            <div className="order-1 relative w-full md:w-2/5 flex">
-                                                <div className="flex relative flex-wrap items-center w-full">
-                                                    <div className="w-full relative">
-                                                        <div className="xl:-mt-[10%] xl:-mr-[15%] xl:-mb-[10%] xl:-ml-[13%]">
-                                                            <Image
-                                                                src={
-                                                                    item
-                                                                        .thumbnail
-                                                                        .src
-                                                                }
-                                                                fill
-                                                                className="!relative w-3/4 h-auto object-cover rounded-md"
-                                                                alt={
-                                                                    item
-                                                                        .thumbnail
-                                                                        .alternativeText
-                                                                }
-                                                            />
-                                                        </div>
+            <section className="observe-navbar-intersect w-full bg-main-background-lighter">
+                <div className="xl:pb-32">
+                    <div className="custom-container xl:rounded-3xl bg-main-background pt-10 md:pt-0 pb-20 md:pb-0">
+                        <div>
+                            <div className="flex flex-col gap-32 xl:gap-40 md:pb-20 xl:pb-0 md:[&>*:nth-child(even)]:flex-row-reverse">
+                                {whatWeDo.map((item, index) => (
+                                    <div
+                                        id={item.id}
+                                        className="relative flex flex-col md:flex-row gap-10 xl:gap-10 md:px-16 xl:px-0"
+                                        key={index}
+                                    >
+                                        <div className="order-2 flex-1 xl:px-24 xl:pt-24 xl:pb-16 flex flex-col items-center md:items-start text-center md:text-left">
+                                            <h3 className="text-3xl lg:text-4xl font-semibold mb-6">
+                                                {item.title}
+                                            </h3>
+                                            <p>{item.description}</p>
+                                        </div>
+                                        <div className="order-1 relative w-full md:w-2/5 flex">
+                                            <div className="flex relative flex-wrap items-center w-full">
+                                                <div className="w-full relative">
+                                                    <div className="xl:-mt-[10%] xl:-mr-[15%] xl:-mb-[10%] xl:-ml-[13%]">
+                                                        <Image
+                                                            src={
+                                                                item.thumbnail
+                                                                    .src
+                                                            }
+                                                            fill
+                                                            className="!relative w-3/4 h-auto object-cover rounded-md"
+                                                            alt={
+                                                                item.thumbnail
+                                                                    .alternativeText
+                                                            }
+                                                        />
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="observe-navbar-intersect w-full bg-main-background-lighter">
-                    <div className="custom-container py-20 md:pt-32 md:pb-24">
-                        <div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mb-32">
-                                <div className="flex-1 flex flex-col gap-4 items-start">
-                                    <span className="rounded-3xl p-4 bg-main-secondary text-base font-semibold">
-                                        {ts.text(
-                                            "softwareDevelopment.benefits.title"
-                                        )}
-                                    </span>
-                                    <h2 className="text-4xl font-semibold">
-                                        {ts.text(
-                                            "softwareDevelopment.benefits.subtitle"
-                                        )}
-                                    </h2>
-                                    <p>
-                                        {ts.text(
-                                            "softwareDevelopment.benefits.description"
-                                        )}
-                                    </p>
-                                </div>
-                                {benefits.map((item, index) => (
-                                    <div
-                                        className="flex-1 flex flex-col gap-4 self-center lg:self-start"
-                                        key={index}
-                                    >
-                                        <div className="flex flex-row lg:flex-col gap-2">
-                                            <span>{item.svgIcon}</span>
-                                            <h4 className="text-2xl font-semibold">
-                                                {item.title}
-                                            </h4>
-                                        </div>
-                                        <p>{item.description}</p>
                                     </div>
                                 ))}
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                            <div className="my-32 md:mt-0">
-                                <div className="flex flex-col lg:flex-row gap-20">
-                                    <div className="flex-1">
-                                        <h2 className="text-5xl font-semibold mb-6">
-                                            {ts.text(
-                                                "softwareDevelopment.expertise.title"
-                                            )}
-                                        </h2>
-                                        <p className="w-full">
-                                            {ts.text(
-                                                "softwareDevelopment.expertise.description"
-                                            )}
-                                        </p>
-                                    </div>
-                                    <ul className="lg:max-w-[650px] flex flex-row flex-wrap gap-10">
-                                        {technologies.map(
-                                            (technology, index) => (
-                                                <li key={index}>
-                                                    <span className="block bg-main-secondary text-base font-semibold px-4 py-2 rounded-md">
-                                                        {technology}
-                                                    </span>
-                                                </li>
-                                            )
+            <section className="observe-navbar-intersect w-full bg-main-background-lighter">
+                <div className="custom-container py-20 md:pt-32 md:pb-24">
+                    <div>
+                        <div className="mb-32">
+                            <PointsWithIcons
+                                title={ts.text(
+                                    "softwareDevelopment.benefits.title"
+                                )}
+                                subtitle={ts.text(
+                                    "softwareDevelopment.benefits.subtitle"
+                                )}
+                                description={ts.text(
+                                    "softwareDevelopment.benefits.description"
+                                )}
+                                points={benefits}
+                            />
+                        </div>
+
+                        <div className="my-32 md:mt-0">
+                            <div className="flex flex-col lg:flex-row gap-20">
+                                <div className="flex-1">
+                                    <h2 className="text-5xl font-semibold mb-6">
+                                        {ts.text(
+                                            "softwareDevelopment.expertise.title"
                                         )}
-                                    </ul>
+                                    </h2>
+                                    <p className="w-full">
+                                        {ts.text(
+                                            "softwareDevelopment.expertise.description"
+                                        )}
+                                    </p>
                                 </div>
-                            </div>
-
-                            <div>
-                                <h1 className="text-5xl font-medium mb-10">
-                                    {ts.text(
-                                        "softwareDevelopment.expertise.metrics.title"
-                                    )}
-                                </h1>
-                                <div className="flex flex-col lg:flex-row">
-                                    <div className="flex-1 p-10 pt-32 border border-gray-500">
-                                        <h3 className="text-6xl font-semibold mb-4">
-                                            80%
-                                        </h3>
-                                        <p className="text-2xl">
-                                            {ts.rich(
-                                                "softwareDevelopment.expertise.metrics.recommendations"
-                                            )}
-                                        </p>
-                                    </div>
-                                    <div className="flex-1 p-10 pt-32 border border-gray-500">
-                                        <h3 className="text-6xl font-semibold mb-4">
-                                            10+
-                                        </h3>
-                                        <p className="text-2xl">
-                                            {ts.rich(
-                                                "softwareDevelopment.expertise.metrics.projects"
-                                            )}
-                                        </p>
-                                    </div>
-                                    <div className="flex-1 p-10 pt-32 border border-gray-500">
-                                        <h3 className="text-6xl font-semibold mb-4">
-                                            {tc.text("common.allM")}
-                                        </h3>
-                                        <p className="text-2xl">
-                                            {ts.rich(
-                                                "softwareDevelopment.expertise.metrics.clients"
-                                            )}
-                                        </p>
-                                    </div>
-                                </div>
+                                <ul className="lg:max-w-[650px] flex flex-row flex-wrap gap-10">
+                                    {technologies.map((technology, index) => (
+                                        <li key={index}>
+                                            <span className="block bg-main-secondary text-base font-semibold px-4 py-2 rounded-md">
+                                                {technology}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
-                    </div>
-                </section>
 
-                <section className="observe-navbar-intersect w-full">
-                    <div className="custom-container py-40 lg:py-72">
                         <div>
-                            <div className="text-center">
-                                <h2 className="text-2xl md:text-4xl font-medium pb-10">
-                                    {tc.text(
-                                        "common.cta.descriptions.gotAnIdea"
-                                    )}
-                                </h2>
-                            </div>
-                            <div className="flex flex-col gap-16 items-center">
-                                <Link
-                                    href={routes.CONTACT}
-                                    className="bg-main-secondary px-6 py-4 font-semibold rounded-md"
-                                >
-                                    {tc.text("common.cta.btn.getInTouch")}
-                                </Link>
+                            <h2 className="text-5xl font-medium mb-10">
+                                {ts.text(
+                                    "softwareDevelopment.expertise.metrics.title"
+                                )}
+                            </h2>
+                            <div className="flex flex-col lg:flex-row">
+                                <div className="flex-1 p-10 pt-32 border border-gray-500">
+                                    <h3 className="text-6xl font-semibold mb-4">
+                                        80%
+                                    </h3>
+                                    <p className="text-2xl">
+                                        {ts.rich(
+                                            "softwareDevelopment.expertise.metrics.recommendations"
+                                        )}
+                                    </p>
+                                </div>
+                                <div className="flex-1 p-10 pt-32 border border-gray-500">
+                                    <h3 className="text-6xl font-semibold mb-4">
+                                        10+
+                                    </h3>
+                                    <p className="text-2xl">
+                                        {ts.rich(
+                                            "softwareDevelopment.expertise.metrics.projects"
+                                        )}
+                                    </p>
+                                </div>
+                                <div className="flex-1 p-10 pt-32 border border-gray-500">
+                                    <h3 className="text-6xl font-semibold mb-4">
+                                        {tc.text("common.allM")}
+                                    </h3>
+                                    <p className="text-2xl">
+                                        {ts.rich(
+                                            "softwareDevelopment.expertise.metrics.clients"
+                                        )}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
+
+            <section className="observe-navbar-intersect w-full">
+                <div className="custom-container py-40 lg:py-72">
+                    <div>
+                        <div className="text-center">
+                            <h2 className="text-2xl md:text-4xl font-medium pb-10">
+                                {tc.text("common.cta.descriptions.gotAnIdea")}
+                            </h2>
+                        </div>
+                        <div className="flex flex-col gap-16 items-center">
+                            <Link
+                                href={routes.CONTACT}
+                                className="bg-main-secondary px-6 py-4 font-semibold rounded-md"
+                            >
+                                {tc.text("common.cta.btn.getInTouch")}
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 }

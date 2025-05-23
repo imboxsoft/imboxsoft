@@ -13,5 +13,14 @@
     "website": "Website URL",
     "message": "Message",
     "send": "Send message",
-    "policy": "I have read the <privacypolicyLink>Privacy Policy</privacypolicyLink> and understand that my personal data will be processed for the purpose of providing the necessary information and assistance."
+    "policy": "I have read the <privacypolicyLink>Privacy Policy</privacypolicyLink> and understand that my personal data will be processed for the purpose of providing the necessary information and assistance.",
+    "placeholders": {
+        "firstName": "Enter your first name",
+        "lastName": "Enter your last name",
+        "email": "Enter your email",
+        "phone": "Enter your phone number",
+        "company": "Enter your company",
+        "website": "Enter your website",
+        "message": "How can we help you?"
+    }
 }

@@ -91,5 +91,50 @@
             "description": "",
             "btn": ""
         }
+    },
+    "itConsulting": {
+        "title": "IT Consulting",
+        "description": "From strategy to execution — we help you make confident, future-proof technology choices.",
+        "subtitle": "Build Smarter, Not Just Faster",
+        "subtitleP": [
+            "At Imboxsoft, IT consulting is more than just advice — it's partnership.",
+            "Whether you're a startup planning your first product or a company modernizing legacy systems, we provide clear, actionable guidance to align technology with your business goals."
+        ],
+        "whatWeDo": {
+            "title": "What We Can Help You With",
+            "subtitle": "Enhance your work with personalized apps",
+            "description": "Let your business thrive through digital solutions, process automation, and logical organization.",
+            "list": {
+                "digital": {
+                    "title": "Digital Transformation Strategy",
+                    "description": "Align business objectives with modern tech solutions."
+                },
+                "architecture": {
+                    "title": "Architecture & Tech Stack Planning",
+                    "description": "Choose the right tools, frameworks, and platforms."
+                },
+                "cloud": {
+                    "title": "Cloud Migration & Infrastructure",
+                    "description": "Move safely to scalable cloud platforms (AWS, GCP, Azure)."
+                },
+                "automation": {
+                    "title": "Automation & Workflow Optimization",
+                    "description": "Identify bottlenecks and improve internal processes."
+                },
+                "security": {
+                    "title": "Security & Data Compliance Audits",
+                    "description": "Ensure your systems are safe and regulation-compliant."
+                },
+                "software": {
+                    "title": "Software Vendor Evaluation",
+                    "description": "Need a CRM, ERP, or payment gateway? We’ll help you choose."
+                }
+            }
+        },
+        "cta": {
+            "title": "",
+            "description": "",
+            "btn": ""
+        }
     }
 }
