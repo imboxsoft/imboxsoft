@@ -1,15 +1,20 @@
 {
     "common": {
         "cta": {
-            "titles": {},
+            "titles": {
+                "readyToDesign": "Ready to Design Something Beautiful?"
+            },
             "descriptions": {
                 "gotAnIdea": "Got an idea? Let's code it into reality.",
-                "happyToBuild": "We're happy to help you figure out what to build, how to build it, or whether to build it at all. Get in touch — first consultation is free."
+                "happyToBuild": "We're happy to help you figure out what to build, how to build it, or whether to build it at all. Get in touch — first consultation is free.",
+                "hearAboutYourIdea": "We'd love to hear about your ideas — big or small. First design consultation is free."
             },
             "btn": {
                 "getInTouch": "Get in touch",
                 "letsTalkStrategy": "Let's Talk Strategy",
-                "bookConsultaion": "Book a Consultation"
+                "bookConsultaion": "Book a Consultation",
+                "letsCreateTogether": "Let's Create Together",
+                "bookACall": "Book a Call"
             }
         },
         "allM": "All",

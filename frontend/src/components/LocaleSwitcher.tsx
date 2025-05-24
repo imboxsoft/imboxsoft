@@ -29,9 +29,9 @@ export default function LocaleSwitcher() {
                 >
                     <path
                         stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="m19 9-7 7-7-7"
                     />
                 </svg>

@@ -3,14 +3,14 @@
         "title": "Serviciile Noastre",
         "shortTitle": "Servicii",
         "descriptions": [
-            "Descoperă gama completă de servicii digitale menite să-ți propulseze afacerea. La Imboxsoft, îmbinăm expertiza în dezvoltare software cu gândirea creativă specifică designului pentru a livra soluții puternice și vizual atractive.",
-            "Fie că lansezi o platformă nouă, optimizezi operațiuni interne, îți crești vizibilitatea online sau construiești un brand de la zero — echipa noastră este aici să transforme ideile în realitate.",
-            "Explorează serviciile noastre de mai jos și vezi cum transformăm conceptele în rezultate concrete."
+            "Descoperă gama completă de servicii digitale menite să îți dezvolte afacerea. La Imboxsoft, combinăm expertiza în dezvoltare software cu gândirea creativă de design pentru a livra soluții puternice și atrăgătoare.",
+            "Fie că lansezi o nouă platformă, îți optimizezi procesele interne, îți îmbunătățești vizibilitatea online sau construiești un brand de la zero — echipa noastră este aici să te ajute.",
+            "Explorează serviciile noastre mai jos și vezi cum transformăm ideile în rezultate de impact."
         ]
     },
     "softwareDevelopment": {
         "title": "Dezvoltare Software",
-        "description": "Accesează soluții digitale rapide și eficiente cu o echipă agilă și experimentată — la cele mai bune costuri.",
+        "description": "Accelerează-ți afacerea prin soluții digitale, cu implementare rapidă și o echipă agilă, la cele mai bune costuri.",
         "subtitle": "Soluții software pentru afacerea ta",
         "subtitleP": [
             "Suport și consultanță în fiecare etapă a proiectului.",
@@ -21,75 +21,171 @@
             "design": {
                 "shortTitle": "Concept & Design",
                 "title": "Design Personalizat",
-                "description": "Fiecare proiect este construit în jurul viziunii tale. Un produs excelent pornește de la o identitate clară — de aceea începem întotdeauna cu definirea conceptului potrivit."
+                "description": "Fiecare proiect este construit în jurul viziunii tale. Un produs de succes pornește de la o identitate solidă. De aceea începem mereu cu definirea conceptului potrivit."
             },
             "apps": {
-                "shortTitle": "Aplicații Custom",
+                "shortTitle": "Aplicații Personalizate",
                 "title": "Aplicații & Website-uri Personalizate",
-                "description": "Stăpânim mai multe tehnologii și tool-uri. Putem construi orice — de la site-uri de prezentare la aplicații complexe pentru afacerea ta."
+                "description": "Stăpânim diverse tehnologii și unelte. De la site-uri de prezentare la aplicații personalizate — construim orice ai nevoie pentru afacerea ta."
             },
             "ecommerce": {
                 "shortTitle": "E-commerce",
                 "title": "Website-uri E-commerce",
-                "description": "Avem experiență cu platforme precum WordPress, Shopify și BigCommerce. În funcție de nevoile și bugetul tău, vom propune cea mai potrivită soluție."
+                "description": "Avem experiență cu platforme precum WordPress, Shopify și BigCommerce. În funcție de obiectivele și bugetul tău, recomandăm soluția ideală."
             },
             "seo": {
                 "shortTitle": "SEO",
-                "title": "Servicii SEO",
-                "description": "Oferim și servicii SEO pentru afacerile care pot beneficia de o vizibilitate crescută. Află mai multe pe pagina dedicată SEO."
+                "title": "Optimizare SEO",
+                "description": "Oferim servicii SEO pentru afacerile care pot beneficia de vizibilitate crescută. Află mai multe pe <seoLink>pagina noastră dedicată SEO</seoLink>."
             },
             "api": {
                 "shortTitle": "Integrare API",
-                "title": "Integrare perfectă cu API-uri externe",
-                "description": "Dacă ai nevoie să-ți extinzi aplicația prin conectarea cu servicii externe (plăți online, CRMs, ERPs, sincronizare date în timp real, automatizări — facturare, e-mailing, tracking), te putem ajuta."
+                "title": "Integrare cu API-uri Terțe",
+                "description": "Ai nevoie să conectezi aplicația ta la servicii precum plăți online, CRM-uri, ERP-uri, sincronizare de date sau fluxuri automate? Ne ocupăm noi."
             },
             "maintenance": {
                 "shortTitle": "Mentenanță",
                 "title": "Mentenanță & Optimizare",
-                "description": "Ai nevoie de optimizări? Le rezolvăm. Vom identifica eventualele probleme și vom propune soluții optime. Fiecare proiect include o perioadă de mentenanță GRATUITĂ — profită de ea."
+                "description": "Dacă produsul tău are nevoie de îmbunătățiri, te ajutăm cu plăcere. Analizăm problemele și venim cu soluții. Fiecare proiect beneficiază de o perioadă GRATUITĂ de mentenanță."
             }
         },
         "benefits": {
-            "title": "Beneficii și utilizări",
-            "subtitle": "Optimizează-ți activitatea cu aplicații personalizate",
-            "description": "Permite afacerii tale să evolueze cu ajutorul digitalizării, automatizării și organizării logice.",
+            "title": "Beneficii și Utilizări",
+            "subtitle": "Îmbunătățește-ți activitatea cu aplicații personalizate",
+            "description": "Lasă afacerea ta să crească prin soluții digitale, automatizare și organizare logică.",
             "list": {
                 "results": {
-                    "title": "Rezultate imediate",
-                    "description": "Personalizăm fluxul tău de lucru în cel mai scurt timp posibil."
+                    "title": "Rezultate Imediate",
+                    "description": "Adaptăm fluxul tău de lucru într-un timp cât mai scurt."
                 },
                 "prices": {
-                    "title": "Prețuri accesibile",
-                    "description": "Ne adaptăm cerințelor tale — calitate premium la costuri corecte."
+                    "title": "Prețuri Competitive",
+                    "description": "Ne adaptăm costurile în funcție de obiectivele tale — calitate premium la un preț corect."
                 },
                 "meetings": {
-                    "title": "Întâlniri periodice",
-                    "description": "Ai control complet asupra dezvoltării. Programăm ședințe regulate și notificări la fiecare pas."
+                    "title": "Întâlniri Periodice",
+                    "description": "Ai control total asupra dezvoltării. Programăm întâlniri și te ținem la curent cu progresul și eventualele obstacole."
                 },
                 "developers": {
-                    "title": "Dezvoltatori experimentați",
-                    "description": "Firma noastră este tânără, dar echipa are peste 10 ani experiență în programare. Proiectul tău este pe mâini bune."
+                    "title": "Dezvoltatori Experimentați",
+                    "description": "Firma este nouă, dar echipa noastră nu. Avem peste 10 ani de experiență în programare — proiectul tău e pe mâini bune."
                 },
                 "web": {
                     "title": "Web, Mobile & Desktop",
-                    "description": "Nu ești sigur ce platformă se potrivește ideii tale? Hai să discutăm și alegem direcția potrivită."
+                    "description": "Nu știi ce platformă ți se potrivește? Hai să discutăm și alegem direcția potrivită."
                 }
             }
         },
         "expertise": {
             "title": "Expertiză Tehnologică",
-            "description": "Suntem dezvoltatori pasionați, mereu la curent cu noile trenduri. Iată tehnologiile în care excelăm.",
+            "description": "Suntem dezvoltatori pasionați și ne menținem la curent cu cele mai noi tendințe tech. Mai jos sunt tehnologiile cu care lucrăm cel mai des.",
             "metrics": {
-                "title": "Succesul tău este și al nostru",
-                "recommendations": "din proiectele noastre vin prin <strong>recomandări</strong>",
+                "title": "Succesul tău devine al nostru",
+                "recommendations": "din munca noastră provine din <strong>recomandări</strong>",
                 "projects": "proiecte finalizate în ultimii <strong>2 ani</strong>",
-                "clients": "dintre clienți au ales să <strong>continue</strong> colaborarea"
+                "clients": "dintre clienți aleg să <strong>continue</strong> cu noi"
+            }
+        }
+    },
+    "itConsulting": {
+        "title": "Consultanță IT",
+        "description": "De la strategie la execuție — te ajutăm să iei decizii tehnologice sigure și sustenabile.",
+        "subtitle": "Construiește inteligent, nu doar rapid",
+        "subtitleP": [
+            "La Imboxsoft, consultanța IT înseamnă parteneriat, nu doar sfaturi.",
+            "Fie că ești un startup care planifică primul produs sau o companie care vrea să modernizeze sisteme vechi, oferim îndrumare clară și practică pentru a-ți alinia tehnologia cu obiectivele de afaceri."
+        ],
+        "whatWeDo": {
+            "title": "Cum te putem ajuta",
+            "subtitle": "Maximizează eficiența cu soluții digitale",
+            "description": "Lasă tehnologia să lucreze pentru tine — prin automatizare, integrare și structură logică.",
+            "list": {
+                "digital": {
+                    "title": "Strategie de Transformare Digitală",
+                    "description": "Aliniază obiectivele de afaceri cu cele mai bune soluții tech."
+                },
+                "architecture": {
+                    "title": "Arhitectură & Tehnologii",
+                    "description": "Alege corect uneltele, framework-urile și platformele."
+                },
+                "cloud": {
+                    "title": "Migrare & Infrastructură Cloud",
+                    "description": "Treci în siguranță pe platforme scalabile (AWS, GCP, Azure)."
+                },
+                "automation": {
+                    "title": "Automatizări & Optimizări de Flux",
+                    "description": "Identificăm blocajele și îmbunătățim procesele interne."
+                },
+                "security": {
+                    "title": "Audit Securitate & Conformitate",
+                    "description": "Asigură-te că sistemele tale sunt sigure și respectă normele."
+                },
+                "software": {
+                    "title": "Evaluare Furnizori Software",
+                    "description": "CRM, ERP sau soluții de plată? Te ajutăm să alegi corect."
+                }
             }
         },
-        "cta": {
-            "title": "",
-            "description": "",
-            "btn": ""
+        "whenToReachOut": {
+            "title": "Când să ne contactezi?",
+            "list": {
+                "techStack": "Nu știi ce tehnologii să alegi",
+                "workflows": "Vrei să îmbunătățești procesele interne",
+                "saas": "Plănuiești să lansezi un produs SaaS",
+                "guidance": "Ai nevoie de expertiză înainte de dezvoltare",
+                "thirdParty": "Integrezi mai multe sisteme externe",
+                "scaling": "Te extinzi și ai nevoie de strategie cloud"
+            }
+        }
+    },
+    "graphicDesign": {
+        "title": "Design Grafic",
+        "description": "De la logo-uri la sisteme vizuale complete — creăm designuri clare, scalabile și memorabile.",
+        "subtitle": "Un design excelent face brandul de neuitat",
+        "subtitleP": [
+            "Creăm sisteme vizuale care reflectă obiectivele afacerii tale, consolidează brandul și atrag publicul potrivit.",
+            "Fie că lansezi un brand nou sau vrei să-ți actualizezi identitatea, tratăm designul ca parte strategică, nu doar decor.",
+            "Lucrăm cu startup-uri, branduri personale, afaceri consolidate și platforme SaaS — fie că vrei un refresh sau un partener pe termen lung."
+        ],
+        "whatWeOffer": {
+            "title": "Cum te putem ajuta",
+            "subtitle": "Construiește-ți imaginea cu design personalizat",
+            "description": "Lasă designul să îți spună povestea, cu claritate și impact.",
+            "list": {
+                "logo": {
+                    "title": "Logo & Identitate Vizuală",
+                    "description": "Un logo puternic și atemporal + ghiduri vizuale de brand."
+                },
+                "web": {
+                    "title": "Design UI pentru Web & Aplicații",
+                    "description": "Interfețe frumoase, intuitive și pregătite pentru dezvoltare."
+                },
+                "marketing": {
+                    "title": "Materiale de Marketing",
+                    "description": "Broșuri, cărți de vizită, bannere, pitch decks, vizuale social media."
+                },
+                "brand": {
+                    "title": "Rebranding & Actualizare de Identitate",
+                    "description": "Actualizează-ți imaginea într-un stil curat, modern și memorabil."
+                },
+                "design": {
+                    "title": "Design de Produs & Ambalaj",
+                    "description": "Design atractiv pentru produse fizice sau digitale."
+                },
+                "guides": {
+                    "title": "Sisteme de Design & Ghiduri de Stil",
+                    "description": "Frameworkuri scalabile pentru coerență vizuală în toate mediile."
+                }
+            }
+        },
+        "whyUs": {
+            "title": "De ce să alegi Imboxsoft",
+            "list": {
+                "synergy": "<strong>Design + Tech</strong> — Înțelegem și implementăm ce funcționează.",
+                "results": "<strong>Design fără compromisuri</strong> — Atent la detalii, layout și claritate.",
+                "thinking": "<strong>Gândire orientată spre business</strong> — Fiecare alegere susține obiectivele tale.",
+                "collaborative": "<strong>Proces colaborativ</strong> — Ești parte din fiecare etapă, nu doar la final."
+            }
         }
     }
 }

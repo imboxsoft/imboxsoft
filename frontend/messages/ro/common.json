@@ -1,15 +1,20 @@
 {
     "common": {
         "cta": {
-            "titles": {},
+            "titles": {
+                "readyToDesign": "Gata să creăm ceva frumos?"
+            },
             "descriptions": {
-                "gotAnIdea": "Ai o idee? Hai să o transformăm în cod.",
-                "happyToBuild": "Suntem bucuroși să te ajutăm să înțelegi ce să construiești, cum să o faci sau dacă merită construit. Scrie-ne — prima consultație este gratuită."
+                "gotAnIdea": "Ai o idee? Hai să o transformăm în realitate.",
+                "happyToBuild": "Suntem bucuroși să te ajutăm să înțelegi ce să construiești, cum să o faci sau dacă merită construit. Ia legătura cu noi — prima consultație este gratuită.",
+                "hearAboutYourIdea": "Ne-ar plăcea să aflăm ideile tale — mari sau mici. Prima consultație de design este gratuită."
             },
             "btn": {
                 "getInTouch": "Ia legătura cu noi",
                 "letsTalkStrategy": "Hai să vorbim strategie",
-                "bookConsultaion": "Programează o consultație"
+                "bookConsultaion": "Programează o consultație",
+                "letsCreateTogether": "Hai să creăm împreună",
+                "bookACall": "Programează un apel"
             }
         },
         "allM": "Toți",

@@ -85,11 +85,6 @@
                 "projects": "completed projects in the past <strong>2 years</strong>",
                 "clients": "of our clients chose to <strong>continue</strong> with us"
             }
-        },
-        "cta": {
-            "title": "",
-            "description": "",
-            "btn": ""
         }
     },
     "itConsulting": {
@@ -131,10 +126,66 @@
                 }
             }
         },
-        "cta": {
-            "title": "",
-            "description": "",
-            "btn": ""
+        "whenToReachOut": {
+            "title": "When Should You Reach Out?",
+            "list": {
+                "techStack": "You're unsure what tech stack to use",
+                "workflows": "You want to improve internal tools or workflows",
+                "saas": "You're planning a new SaaS product",
+                "guidance": "Your team needs expert guidance before development",
+                "thirdParty": "You're integrating multiple third-party systems",
+                "scaling": "You're scaling and need cloud strategy"
+            }
+        }
+    },
+    "graphicDesign": {
+        "title": "Graphic Design",
+        "description": "From logos to full visual systems — we create sharp, scalable designs that resonate.",
+        "subtitle": "Great Design Makes Brands Unforgettable",
+        "subtitleP": [
+            "We create design systems that align with your business goals, strengthen your brand, and help you connect with the right audience.",
+            "Whether you're building a new brand or upgrading an old one, we treat design as a core part of your strategy — not just decoration.",
+            "We work with startups, established businesses, personal brands, SaaS platforms, and more. Whether you need a new look or a design partner long-term — we're here."
+        ],
+        "whatWeOffer": {
+            "title": "What We Can Help You With",
+            "subtitle": "Enhance your work with personalized apps",
+            "description": "Let your business thrive through digital solutions, process automation, and logical organization.",
+            "list": {
+                "logo": {
+                    "title": "Logo & Visual Identity Design",
+                    "description": "A strong, timeless logo and matching brand guidelines."
+                },
+                "web": {
+                    "title": "Web & App UI Design",
+                    "description": "Beautiful, intuitive interfaces — responsive and ready to hand off to developers."
+                },
+                "marketing": {
+                    "title": "Marketing Materials",
+                    "description": "Brochures, business cards, banners, pitch decks, and social media visuals."
+                },
+                "brand": {
+                    "title": "Brand Refresh & Redesign",
+                    "description": "Evolve your outdated look into something clean, bold, and modern."
+                },
+                "design": {
+                    "title": "Packaging & Product Design",
+                    "description": "For physical products or digital assets — eye-catching and professional."
+                },
+                "guides": {
+                    "title": "Design Systems & Style Guides",
+                    "description": "Scalable frameworks for consistent brand execution across platforms."
+                }
+            }
+        },
+        "whyUs": {
+            "title": "Why Choose Imboxsoft",
+            "list": {
+                "synergy": "<strong>Tech + Design Synergy</strong> — We understand development, so we design what works.",
+                "results": "<strong>Pixel-Perfect Results</strong> — We obsess over detail, layout, and polish.",
+                "thinking": "<strong>Business-Driven Thinking</strong> — Every visual choice supports your brand goals.",
+                "collaborative": "<strong>Collaborative Process</strong> — You're part of the journey, not just the brief."
+            }
         }
     }
 }
