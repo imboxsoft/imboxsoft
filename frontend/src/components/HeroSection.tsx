@@ -5,10 +5,14 @@ import { getRichTranslations } from "@/i18n/utils";
 
 // import { fetchNews, NewsArticle } from "@/utils/rss";
 import HeroSectionTW from "./HeroSectionTW";
+import { Link } from "@/i18n/navigation";
+
+import { getServices } from "@/utils/Services";
 
 export const HeroSection = async () => {
     const t = await getRichTranslations("home.heroSection");
     // const ARTICLES: NewsArticle[] = await fetchNews();
+    const services = await getServices();
 
     return (
         <div className="observe-navbar-intersect flex flex-col justify-center sm:gap-6 md:gap-10 h-full min-h-0 overflow-hidden flex-1">
@@ -70,14 +74,27 @@ export const HeroSection = async () => {
                                     d="M19 12H5m14 0-4 4m4-4-4-4"
                                 />
                             </svg>
-                            <a
+                            <Link
                                 href="/contact"
                                 className="my-3 px-5 sm:px-3 py-3 sm:py-2 bg-main-secondary rounded-lg text-lg sm:text-base font-bold sm:font-semibold"
                             >
                                 {t.text("letsBegin")}
-                            </a>
+                            </Link>
                         </div>
                     </div>
+
+                    <ul className="flex flex-row flex-wrap gap-10">
+                        {services.map((service, index) => (
+                            <li key={index} className="">
+                                <Link
+                                    href={service.route}
+                                    className="hover:text-main-secondary"
+                                >
+                                    {service.title}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
                 {/* <div>
                     <PageStats articles={ARTICLES} />

@@ -7,7 +7,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 
 import { Link } from "@/i18n/navigation";
 
-import { services } from "@/utils/Services";
+import { useServices } from "@/utils/Services";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -21,6 +21,8 @@ export default function ServicesCardsSwiper({
     fixedSlidesPerView = null,
     customBreakpoints = null,
 }: ServicesCardsSwiperProps) {
+    const services = useServices();
+
     return (
         <div className="w-full">
             <Swiper

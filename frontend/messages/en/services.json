@@ -25,18 +25,13 @@
             },
             "apps": {
                 "shortTitle": "Custom Apps",
-                "title": "Custom Apps & Websites",
+                "title": "Custom Full Stack Apps",
                 "description": "We are proficient in several technologies and tools. From presentation websites to fully customized apps — we can build anything tailored to your business needs."
             },
-            "ecommerce": {
-                "shortTitle": "E-commerce",
-                "title": "E-commerce websites",
+            "websites": {
+                "shortTitle": "Websites",
+                "title": "Presentation websites & e-commerce",
                 "description": "We have experience with tools like WordPress, Shopify, and BigCommerce. Based on your goals and budget, we'll recommend the best platform with optimal long-term performance."
-            },
-            "seo": {
-                "shortTitle": "SEO",
-                "title": "SEO",
-                "description": "We also offer SEO services for businesses that can benefit from better visibility. Learn more on our dedicated <seoLink>SEO services page</seoLink>."
             },
             "api": {
                 "shortTitle": "API Integration",

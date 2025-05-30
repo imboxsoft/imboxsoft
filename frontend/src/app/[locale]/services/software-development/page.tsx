@@ -14,7 +14,6 @@ export default async function SoftwareDevelopment() {
 
     const whatWeDo = [
         {
-            id: "1",
             shortTitle: ts.text("softwareDevelopment.offer.design.shortTitle"),
             title: ts.text("softwareDevelopment.offer.design.title"),
             description: ts.text(
@@ -45,7 +44,6 @@ export default async function SoftwareDevelopment() {
             ),
         },
         {
-            id: "2",
             shortTitle: ts.text("softwareDevelopment.offer.apps.shortTitle"),
             title: ts.text("softwareDevelopment.offer.apps.title"),
             description: ts.text("softwareDevelopment.offer.apps.description"),
@@ -74,13 +72,12 @@ export default async function SoftwareDevelopment() {
             ),
         },
         {
-            id: "3",
             shortTitle: ts.text(
-                "softwareDevelopment.offer.ecommerce.shortTitle"
+                "softwareDevelopment.offer.websites.shortTitle"
             ),
-            title: ts.text("softwareDevelopment.offer.ecommerce.title"),
+            title: ts.text("softwareDevelopment.offer.websites.title"),
             description: ts.text(
-                "softwareDevelopment.offer.ecommerce.description"
+                "softwareDevelopment.offer.websites.description"
             ),
             thumbnail: {
                 src: "/images/our-work/ecommerce.png",
@@ -107,35 +104,6 @@ export default async function SoftwareDevelopment() {
             ),
         },
         {
-            id: "4",
-            shortTitle: ts.text("softwareDevelopment.offer.seo.shortTitle"),
-            title: ts.text("softwareDevelopment.offer.seo.title"),
-            description: ts.rich("softwareDevelopment.offer.seo.description"),
-            thumbnail: {
-                src: "/images/our-work/ecommerce.png",
-                alternativeText: "",
-            },
-            svgIcon: (
-                <svg
-                    className="w-8 h-8 text-gray-800 dark:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeWidth="2"
-                        d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
-                    />
-                </svg>
-            ),
-        },
-        {
-            id: "5",
             shortTitle: ts.text("softwareDevelopment.offer.api.shortTitle"),
             title: ts.text("softwareDevelopment.offer.api.title"),
             description: ts.text("softwareDevelopment.offer.api.description"),
@@ -164,7 +132,6 @@ export default async function SoftwareDevelopment() {
             ),
         },
         {
-            id: "6",
             shortTitle: ts.text(
                 "softwareDevelopment.offer.maintenance.shortTitle"
             ),
@@ -368,10 +335,11 @@ export default async function SoftwareDevelopment() {
                                 </Link>
                             </div>
                         </div>
-                        <div className="absolute right-0 bottom-0 translate-y-20 z-20">
+
+                        <div className="absolute right-0 bottom-0 translate-y-20 z-20 pointer-events-none">
                             <Image
-                                src="/images/man.png"
-                                alt="Imboxsoft Logo"
+                                src="/images/common/man.png"
+                                alt="SWD Man"
                                 layout="intrinsic"
                                 width={300}
                                 height={50}
@@ -384,10 +352,10 @@ export default async function SoftwareDevelopment() {
             <section className="lg:sticky z-10 lg:top-[92px] bg-main-secondary py-6">
                 <div className="relative custom-container">
                     <div>
-                        <ul className="services-ul flex flex-wrap lg:flex-nowrap flex-row gap-y-6 gap-x-20 lg:gap-x-6 lg:justify-between text-white">
+                        <ul className="services-ul relative z-50 flex flex-wrap lg:flex-nowrap flex-row gap-y-6 gap-x-20 lg:gap-x-6 lg:justify-between text-white">
                             {whatWeDo.map((item, index) => (
                                 <li key={index}>
-                                    <ScrollToLink id={item.id}>
+                                    <ScrollToLink id={`${index}`}>
                                         <div className="flex flex-col items-center gap-2">
                                             <span>{item.svgIcon}</span>
                                             <span className="line-clamp-2 text-center">
@@ -406,7 +374,7 @@ export default async function SoftwareDevelopment() {
                 <div className="xl:py-24 xl:!pb-40">
                     <div className="custom-container xl:rounded-3xl py-20 md:py-32 bg-main-background">
                         <div>
-                            <div className="flex flex-col md:flex-row md:gap-20 items-center text-center md:text-left md:px-20">
+                            <div className="flex flex-col md:flex-row md:gap-20 items-center text-center md:text-left lg:px-20">
                                 <div className="flex-1">
                                     <h2 className="text-4xl lg:text-5xl mb-6 md:mb-0 font-semibold lg:font-medium">
                                         {ts.text(
@@ -433,15 +401,15 @@ export default async function SoftwareDevelopment() {
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect w-full bg-main-background-lighter">
+            <section className="observe-navbar-intersect w-full bg-main-background-lighter overflow-hidden">
                 <div className="xl:pb-32">
                     <div className="custom-container xl:rounded-3xl bg-main-background pt-10 md:pt-0 pb-20 md:pb-0">
                         <div>
                             <div className="flex flex-col gap-32 xl:gap-40 md:pb-20 xl:pb-0 md:[&>*:nth-child(even)]:flex-row-reverse">
                                 {whatWeDo.map((item, index) => (
                                     <div
-                                        id={item.id}
-                                        className="relative flex flex-col md:flex-row gap-10 xl:gap-10 md:px-16 xl:px-0"
+                                        id={`${index}`}
+                                        className="relative flex flex-col md:flex-row gap-10 xl:gap-10 lg:px-16 xl:px-0"
                                         key={index}
                                     >
                                         <div className="order-2 flex-1 xl:px-24 xl:pt-24 xl:pb-16 flex flex-col items-center md:items-start text-center md:text-left">

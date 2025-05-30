@@ -19,6 +19,12 @@ export const pathnames = {
     [ROUTE_KEYS.IT_CONSULTING]: {
         ro: "/servicii/consultanta-it",
     },
+    [ROUTE_KEYS.PRESENTATION_WEBSITES]: {
+        ro: "/servicii/site-de-prezentare",
+    },
+    [ROUTE_KEYS.ECOMMERCE]: {
+        ro: "/servicii/magazin-online",
+    },
     [ROUTE_KEYS.SEO]: {
         ro: "/servicii/digital-marketing/seo",
     },

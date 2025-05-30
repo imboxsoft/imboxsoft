@@ -38,11 +38,19 @@
             "description": ""
         },
         "itConsulting": {
-            "title": "IT Consulting",
+            "title": "IT Consulting & Maintenance",
+            "description": ""
+        },
+        "presentationWebsites": {
+            "title": "Presentation Websites",
+            "description": ""
+        },
+        "ecommerce": {
+            "title": "Online Shops",
             "description": ""
         },
         "seo": {
-            "title": "SEO",
+            "title": "SEO Optimization",
             "description": ""
         },
         "emailMarketing": {
@@ -50,7 +58,7 @@
             "description": ""
         },
         "graphicDesign": {
-            "title": "Graphic Design",
+            "title": "Graphic Design & Branding",
             "description": ""
         },
         "company": {

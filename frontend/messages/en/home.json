@@ -24,7 +24,7 @@
             "Partner with us today and we will harness together the power of technology and propel your business forward.",
             "Navigate through our <servicesLink>Services page</servicesLink> and find out how we can be of help to you."
         ],
-        "checkOurServices": "Check Our Services"
+        "learnMoreAboutUs": "Learn more about us"
     },
     "ourExpertiseSection": {
         "title": "Our Expertise",
@@ -33,14 +33,32 @@
         "ourCoreCompetenciesInclude": "Our core competencies include:"
     },
     "whyUsSection": {
-        "title": "Why Choose Us?",
+        "title": "So Why Us?",
         "bulletPoints": [
-            "Years of experience in IT & software.",
-            "Full-stack expertise, from coding to branding.",
-            "Results-driven approach with cutting-edge solutions.",
-            "We stay up-to-date with the latest trends in IT.",
-            "Long career in Graphic Design.",
-            "We are available Monday to Sunday."
+            {
+                "title": "Years of experience in IT & software.",
+                "description": "Host code that you don't want to share with the world in private GitHub repos only accessible to you and people you share them with."
+            },
+            {
+                "title": "Full-stack expertise, from coding to branding.",
+                "description": ""
+            },
+            {
+                "title": "Results-driven approach with cutting-edge solutions.",
+                "description": ""
+            },
+            {
+                "title": "We stay up-to-date with the latest trends in IT.",
+                "description": "Host code that you don't want to share with the world in private GitHub repos only accessible to you and people you share them with."
+            },
+            {
+                "title": "Long career in Graphic Design.",
+                "description": ""
+            },
+            {
+                "title": "We are available Monday to Sunday.",
+                "description": ""
+            }
         ]
     },
     "ctaSection": {

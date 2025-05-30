@@ -15,11 +15,15 @@ import SlideScrollManager from "@/utils/SlideScroll";
 
 import LocaleSwitcher from "./LocaleSwitcher";
 
+import { useServices } from "@/utils/Services";
+
 const fullConfig = resolveConfig(tailwindConfig);
 
 export default function Header() {
     const t = useTranslations("common.navigation");
     const pathname = usePathname();
+
+    const services = useServices();
 
     const [navbarBg, setNavbarBg] = useState<string>("transparent");
     const [lastNavbarBgReg, setlastNavbarBgReg] =
@@ -38,33 +42,7 @@ export default function Header() {
         services: {
             route: null,
             title: t("services.title"),
-            subMenu: [
-                {
-                    route: routes.SOFTWARE_DEVELOPMENT,
-                    title: t("softwareDevelopment.title"),
-                    description: t("softwareDevelopment.description"),
-                },
-                {
-                    route: routes.IT_CONSULTING,
-                    title: t("itConsulting.title"),
-                    description: t("itConsulting.description"),
-                },
-                {
-                    route: routes.GRAPHIC_DESIGN,
-                    title: t("graphicDesign.title"),
-                    description: t("graphicDesign.description"),
-                },
-                {
-                    route: routes.SEO,
-                    title: t("seo.title"),
-                    description: t("seo.description"),
-                },
-                {
-                    route: routes.EMAIL_MARKETING,
-                    title: t("emailMarketing.title"),
-                    description: t("emailMarketing.description"),
-                },
-            ],
+            subMenu: services,
         },
         company: {
             route: null,
@@ -352,70 +330,74 @@ export default function Header() {
                                         </li>
                                     </ul>
                                     {currentSubmenuKey && (
-                                        <div className="w-full fixed lg:absolute z-[55] top-0 lg:top-full left-0  h-screen lg:h-auto overflow-y-auto lg:overflow-y-visible lg:shadow-xs lg:border-y bg-main-background-dark border-gray-600">
-                                            <div className="w-full lg:max-w-screen-2xl px-4 py-4 mt-4 mx-auto md:px-6">
-                                                <ul className="relative grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                                    <button
-                                                        onClick={(event) => {
-                                                            handleSubmenuVisibility(
-                                                                event,
-                                                                null
-                                                            );
-                                                        }}
-                                                        className="block lg:hidden width-full absolute top-0 right-0 py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
-                                                    >
-                                                        <svg
-                                                            className="w-6 h-6 text-gray-800 dark:text-white"
-                                                            aria-hidden="true"
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="24"
-                                                            height="24"
-                                                            fill="none"
-                                                            viewBox="0 0 24 24"
+                                        <div className="w-full fixed lg:absolute z-[55] top-0 lg:top-full left-0 h-screen lg:h-auto overflow-y-auto lg:overflow-y-visible lg:shadow-xs lg:border-y bg-main-background-dark border-gray-600">
+                                            <div className="w-full custom-container py-8">
+                                                <div>
+                                                    <ul className="relative grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                                        <button
+                                                            onClick={(
+                                                                event
+                                                            ) => {
+                                                                handleSubmenuVisibility(
+                                                                    event,
+                                                                    null
+                                                                );
+                                                            }}
+                                                            className="block lg:hidden width-full absolute top-0 right-0 py-2 pl-3 pr-4 lg:hover:text-main-secondary-lighter"
                                                         >
-                                                            <path
-                                                                stroke="currentColor"
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                strokeWidth="2"
-                                                                d="M5 12h14M5 12l4-4m-4 4 4 4"
-                                                            />
-                                                        </svg>
-                                                    </button>
-                                                    {navMenu[
-                                                        currentSubmenuKey
-                                                    ]?.subMenu.map(
-                                                        (item, index) => (
-                                                            <li key={index}>
-                                                                <Link
-                                                                    onClick={(
-                                                                        event
-                                                                    ) => {
-                                                                        handleNavigationVisibility(
-                                                                            event,
-                                                                            true
-                                                                        );
-                                                                    }}
-                                                                    href={
-                                                                        item.route
-                                                                    }
-                                                                    className="block p-3 rounded-lg hover:bg-main-secondary"
-                                                                >
-                                                                    <div className="font-semibold">
-                                                                        {
-                                                                            item.title
+                                                            <svg
+                                                                className="w-6 h-6 text-gray-800 dark:text-white"
+                                                                aria-hidden="true"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="24"
+                                                                height="24"
+                                                                fill="none"
+                                                                viewBox="0 0 24 24"
+                                                            >
+                                                                <path
+                                                                    stroke="currentColor"
+                                                                    strokeLinecap="round"
+                                                                    strokeLinejoin="round"
+                                                                    strokeWidth="2"
+                                                                    d="M5 12h14M5 12l4-4m-4 4 4 4"
+                                                                />
+                                                            </svg>
+                                                        </button>
+                                                        {navMenu[
+                                                            currentSubmenuKey
+                                                        ]?.subMenu.map(
+                                                            (item, index) => (
+                                                                <li key={index}>
+                                                                    <Link
+                                                                        onClick={(
+                                                                            event
+                                                                        ) => {
+                                                                            handleNavigationVisibility(
+                                                                                event,
+                                                                                true
+                                                                            );
+                                                                        }}
+                                                                        href={
+                                                                            item.route
                                                                         }
-                                                                    </div>
-                                                                    <span className="text-sm text-main-secondary-lighter">
-                                                                        {
-                                                                            item.description
-                                                                        }
-                                                                    </span>
-                                                                </Link>
-                                                            </li>
-                                                        )
-                                                    )}
-                                                </ul>
+                                                                        className="block p-3 rounded-lg hover:bg-main-secondary"
+                                                                    >
+                                                                        <div className="font-semibold">
+                                                                            {
+                                                                                item.title
+                                                                            }
+                                                                        </div>
+                                                                        <span className="text-sm text-main-secondary-lighter">
+                                                                            {
+                                                                                item.description
+                                                                            }
+                                                                        </span>
+                                                                    </Link>
+                                                                </li>
+                                                            )
+                                                        )}
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     )}
