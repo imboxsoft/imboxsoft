@@ -55,9 +55,9 @@ export default async function Home() {
             <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 lg:py-0 flex items-center bg-main-background">
                 <div className="relative custom-container">
                     <div>
-                        <div className="flex flex-col lg:flex-row gap-x-20 gap-y-10 w-full">
-                            <div className="flex-1">
-                                <div className="relative w-full aspect-square md:h-[500px]">
+                        <div className="flex flex-col md:flex-row gap-x-20 gap-y-10 w-full justify-center items-start md:items-center">
+                            <div className="lg:flex-1">
+                                <div className="relative w-full aspect-square h-[250px] lg:h-[500px]">
                                     <Image
                                         className="object-cover"
                                         src="/images/home/welcome.png"
@@ -68,7 +68,7 @@ export default async function Home() {
                             </div>
 
                             <div className="flex-1">
-                                <div className="scroll-hidden text-center md:text-right mb-10 md:mb-16">
+                                <div className="scroll-hidden text-left md:text-right mb-10 md:mb-16">
                                     <h2 className="mb-4 text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
                                         {t.rich("welcomeSection.title")}
                                     </h2>

@@ -22,7 +22,7 @@ export const HeroSection = async () => {
                         <h1 className="font-bold text-4xl md:text-5xl/tight tracking-wider mb-10 sm:mb-4">
                             {t.rich("title")}
                         </h1>
-                        <p className="text-xl">{t.text("subtitle")}</p>
+                        <p className="text-xl">{t.rich("subtitle")}</p>
                     </div>
                     <div className="hidden sm:block absolute top-0 right-[5%] w-52 translate-y-1/2">
                         <Image

@@ -3,7 +3,7 @@ import { defineRouting } from "next-intl/routing";
 import { ROUTE_KEYS } from "@/constants/routes";
 
 export const locales = ["en", "ro"];
-export const defaultLocale = "en";
+export const defaultLocale = "ro";
 
 export const pathnames = {
     [ROUTE_KEYS.HOME]: {
