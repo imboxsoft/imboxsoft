@@ -38,7 +38,15 @@
             "description": ""
         },
         "itConsulting": {
-            "title": "IT Consulting",
+            "title": "Consultare IT & Mentenanță",
+            "description": ""
+        },
+        "presentationWebsites": {
+            "title": "Site de prezentare",
+            "description": ""
+        },
+        "ecommerce": {
+            "title": "Magazin Online",
             "description": ""
         },
         "seo": {

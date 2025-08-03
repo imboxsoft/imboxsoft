@@ -117,7 +117,19 @@
                 },
                 "software": {
                     "title": "Software Vendor Evaluation",
-                    "description": "Need a CRM, ERP, or payment gateway? We’ll help you choose."
+                    "description": "Need a CRM, ERP, or payment gateway? We'’'ll help you choose."
+                },
+                "administration": {
+                    "title": "Systems Administration Support",
+                    "description": "We help manage and maintain your infrastructure, ensuring reliable operations, performance monitoring, user access control, and security compliance."
+                },
+                "optimization": {
+                    "title": "Process Optimization",
+                    "description": "We analyze your existing workflows and identify inefficiencies to streamline operations, automate repetitive tasks, and improve productivity across departments."
+                },
+                "maintenance": {
+                    "title": "IT Maintenance & Support",
+                    "description": "From routine updates to troubleshooting and ongoing improvements — we keep your systems running smoothly so you can focus on business growth."
                 }
             }
         },

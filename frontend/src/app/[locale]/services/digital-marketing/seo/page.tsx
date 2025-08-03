@@ -1,4 +1,4 @@
-import ScrollToLink from "@/components/ScrollToLink";
+import ScrollToSection from "@/components/ScrollToSection";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
@@ -163,12 +163,12 @@ export default function SEO() {
                     <ul className="services-ul flex flex-wrap lg:flex-nowrap flex-row gap-y-6 gap-x-24 text-white px-4 xs:px-10 justify-center">
                         {whatWeCanDo.map((item, index) => (
                             <li key={index}>
-                                <ScrollToLink id={item.id}>
+                                <ScrollToSection id={item.id} offset={300}>
                                     {item.svgIcon}
                                     <span className="line-clamp-2 text-center">
                                         {item.shortTitle}
                                     </span>
-                                </ScrollToLink>
+                                </ScrollToSection>
                             </li>
                         ))}
                     </ul>

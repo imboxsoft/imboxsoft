@@ -11,8 +11,22 @@ export default function LocaleSwitcher() {
     const pathname = usePathname();
     const currentLocale = useLocale();
 
-    const handleLocaleChange = (newLocale: string) => {
-        router.replace(pathname, { locale: newLocale });
+    const handleLocaleChange = (targetLocale: string) => {
+        const mode = process.env.NEXT_PUBLIC_MODE ?? "development";
+
+        if (mode == "production" || mode == "staging") {
+            const urlMappings = process.env.NEXT_PUBLIC_APP_BASE_URLS?.split(",") ?? [];
+
+            for (const entry of urlMappings) {
+                const [domain, loc] = entry.trim().split("/");
+                if (targetLocale === loc) {
+                    window.location.href = `http://${domain}${pathname}`;
+                    break;
+                }
+            }
+        }else {
+            router.replace(pathname, { locale: targetLocale });
+        }
     };
 
     return (

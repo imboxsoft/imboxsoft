@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getRichTranslations } from "@/i18n/utils";
 import { ROUTE_KEYS as routes } from "@/constants/routes";
 
-import ScrollToLink from "@/components/ScrollToLink";
+import ScrollToSection from "@/components/ScrollToSection";
 import PointsWithIcons from "@/components/PointsWithIcons";
 
 import { Link } from "@/i18n/navigation";
@@ -355,14 +355,17 @@ export default async function SoftwareDevelopment() {
                         <ul className="services-ul relative z-50 flex flex-wrap lg:flex-nowrap flex-row gap-y-6 gap-x-20 lg:gap-x-6 lg:justify-between text-white">
                             {whatWeDo.map((item, index) => (
                                 <li key={index}>
-                                    <ScrollToLink id={`${index}`}>
+                                    <ScrollToSection
+                                        id={`${index}`}
+                                        offset={300}
+                                    >
                                         <div className="flex flex-col items-center gap-2">
                                             <span>{item.svgIcon}</span>
                                             <span className="line-clamp-2 text-center">
                                                 {item.shortTitle}
                                             </span>
                                         </div>
-                                    </ScrollToLink>
+                                    </ScrollToSection>
                                 </li>
                             ))}
                         </ul>

@@ -32,10 +32,13 @@ export default async function ITConsulting() {
                     />
                 </svg>
             ),
-            title: ts.text("itConsulting.whatWeDo.list.digital.title"),
-            description: ts.text(
-                "itConsulting.whatWeDo.list.digital.description"
-            ),
+            title: "WordPress Development", //ts.text("itConsulting.whatWeDo.list.digital.title"),
+            descriptions: [
+                //ts.text("itConsulting.whatWeDo.list.digital.description"),
+                "Rapid deployment using pre-built themes or custom-built designs",
+                "SEO-friendly structure with easy content management",
+                "Ideal for businesses that need a beautiful online presence fast and affordably",
+            ],
         },
         {
             svgIcon: (
@@ -57,10 +60,13 @@ export default async function ITConsulting() {
                     />
                 </svg>
             ),
-            title: ts.text("itConsulting.whatWeDo.list.architecture.title"),
-            description: ts.text(
-                "itConsulting.whatWeDo.list.architecture.description"
-            ),
+            title: "Custom Website Development", //ts.text("itConsulting.whatWeDo.list.architecture.title"),
+            descriptions: [
+                //ts.text("itConsulting.whatWeDo.list.architecture.description"),
+                "Tailored codebases using Next.js, React, or static generators",
+                "Pixel-perfect designs, optimized performance, and advanced scalability",
+                "Freedom to integrate animations, API content, or custom logic",
+            ],
         },
         {
             svgIcon: (
@@ -82,10 +88,11 @@ export default async function ITConsulting() {
                     />
                 </svg>
             ),
-            title: ts.text("itConsulting.whatWeDo.list.cloud.title"),
-            description: ts.text(
-                "itConsulting.whatWeDo.list.cloud.description"
-            ),
+            title: "Design to Code", //ts.text("itConsulting.whatWeDo.list.cloud.title"),
+            descriptions: [
+                //ts.text("itConsulting.whatWeDo.list.cloud.description"),
+                "Got a design in Figma or Adobe? We’ll bring it to life with pixel-perfect implementation",
+            ],
         },
         {
             svgIcon: (
@@ -106,135 +113,12 @@ export default async function ITConsulting() {
                     />
                 </svg>
             ),
-            title: ts.text("itConsulting.whatWeDo.list.automation.title"),
-            description: ts.text(
-                "itConsulting.whatWeDo.list.automation.description"
-            ),
-        },
-        {
-            svgIcon: (
-                <svg
-                    className="w-6 h-6 text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"
-                    />
-                </svg>
-            ),
-            title: ts.text("itConsulting.whatWeDo.list.security.title"),
-            description: ts.text(
-                "itConsulting.whatWeDo.list.security.description"
-            ),
-        },
-        {
-            svgIcon: (
-                <svg
-                    className="w-6 h-6 text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"
-                    />
-                </svg>
-            ),
-            title: ts.text("itConsulting.whatWeDo.list.software.title"),
-            description: ts.text(
-                "itConsulting.whatWeDo.list.software.description"
-            ),
-        },
-        {
-            svgIcon: (
-                <svg
-                    className="w-6 h-6 text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"
-                    />
-                </svg>
-            ),
-            title: ts.text("itConsulting.whatWeDo.list.administration.title"),
-            description: ts.text(
-                "itConsulting.whatWeDo.list.administration.description"
-            ),
-        },
-        {
-            svgIcon: (
-                <svg
-                    className="w-6 h-6 text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"
-                    />
-                </svg>
-            ),
-            title: ts.text("itConsulting.whatWeDo.list.optimization.title"),
-            description: ts.text(
-                "itConsulting.whatWeDo.list.optimization.description"
-            ),
-        },
-        {
-            svgIcon: (
-                <svg
-                    className="w-6 h-6 text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"
-                    />
-                </svg>
-            ),
-            title: ts.text("itConsulting.whatWeDo.list.maintenance.title"),
-            description: ts.text(
-                "itConsulting.whatWeDo.list.maintenance.description"
-            ),
+            title: "Mobile-First & Responsive Design", //ts.text("itConsulting.whatWeDo.list.automation.title"),
+            descriptions: [
+                //ts.text("itConsulting.whatWeDo.list.automation.description"),
+                "Fully optimized across mobile, tablet, and desktop",
+                "Focused on UI/UX principles for user engagement",
+            ],
         },
     ];
 
@@ -248,10 +132,10 @@ export default async function ITConsulting() {
                                 {ts.text("services.shortTitle")}
                             </p>
                             <h1 className="text-5xl font-bold mb-4">
-                                {ts.text("itConsulting.title")}
+                                Presentation Websites
                             </h1>
                             <p className="text-2xl">
-                                {ts.text("itConsulting.description")}
+                                Be Seen. Be Trusted. Be Remembered.
                             </p>
                             <div className="flex mt-6">
                                 <Link
@@ -271,18 +155,34 @@ export default async function ITConsulting() {
                     <div className="flex flex-col md:flex-row gap-6 items-center">
                         <div className="flex-1">
                             <h2 className="text-5xl">
-                                {ts.text("itConsulting.subtitle")}
+                                Your website is your first impression — let’s
+                                make it count.
                             </h2>
                         </div>
                         <div className="flex-1">
                             <ul className="flex flex-col gap-6">
-                                {ts
+                                {/* {ts
                                     .raw("itConsulting.subtitleP")
                                     .map((p: string, i: number) => (
                                         <li key={i}>
                                             <span>{p}</span>
                                         </li>
-                                    ))}
+                                    ))} */}
+                                <li>
+                                    <p>
+                                        At Imboxsoft, we build sleek, fast, and
+                                        scalable presentation websites that
+                                        reflect your brand and deliver real
+                                        business value.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Whether you need a WordPress site or a
+                                        fully custom solution, we tailor every
+                                        detail to your goals.
+                                    </p>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -293,7 +193,7 @@ export default async function ITConsulting() {
                 <div className="custom-container mx-auto pt-16 pb-24">
                     <div>
                         <PointsWithIcons
-                            title={ts.text("itConsulting.whatWeDo.title")}
+                            title="What We Offer"
                             subtitle={ts.text("itConsulting.whatWeDo.subtitle")}
                             description={ts.text(
                                 "itConsulting.whatWeDo.description"
@@ -307,19 +207,12 @@ export default async function ITConsulting() {
             <section className="observe-navbar-intersect w-full bg-main-background">
                 <div className="custom-container mx-auto py-32">
                     <div>
-                        <div className="flex flex-col xl:flex-row gap-y-10 gap-x-20 items-center">
-                            <div>
-                                <h2 className="text-5xl font-semibold mb-6 text-center xl:text-start">
-                                    What Sets Us Apart
+                        <div className="flex flex-col gap-y-10">
+                            <div className="text-center xl:text-start">
+                                <h2 className="text-5xl font-semibold mb-4">
+                                    Who Is It For
                                 </h2>
-                                <p>
-                                    At Imboxsoft, we don&apos;t just write code
-                                    — we craft solutions with purpose. Our team
-                                    blends technical mastery with business
-                                    insight to help you build, scale, and
-                                    succeed in a competitive digital world.
-                                    Here&apos;s why partners choose us:
-                                </p>
+                                <p>Presentation websites are perfect for:</p>
                             </div>
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-12">
                                 <li>
@@ -343,7 +236,8 @@ export default async function ITConsulting() {
                                         </svg>
                                     </div>
                                     <h3 className="text-2xl font-semibold mb-2">
-                                        10+ Years Technical Expertise
+                                        Startups and small businesses building
+                                        credibility
                                     </h3>
                                     <p>
                                         Our developers aren’t just skilled —
@@ -373,7 +267,8 @@ export default async function ITConsulting() {
                                         </svg>
                                     </div>
                                     <h3 className="text-2xl font-semibold mb-2">
-                                        Business-Minded Advice
+                                        Portfolio websites for freelancers and
+                                        creators
                                     </h3>
                                     <p>
                                         We speak your language — not just in
@@ -403,7 +298,8 @@ export default async function ITConsulting() {
                                         </svg>
                                     </div>
                                     <h3 className="text-2xl font-semibold mb-2">
-                                        Scalable Solutions
+                                        Local service providers needing
+                                        visibility
                                     </h3>
                                     <p>
                                         We design systems that grow with you —
@@ -432,7 +328,7 @@ export default async function ITConsulting() {
                                         </svg>
                                     </div>
                                     <h3 className="text-2xl font-semibold mb-2">
-                                        Lean & Actionable
+                                        Event, product, or brand showcases
                                     </h3>
                                     <p>
                                         No fluff. Just practical recommendations
@@ -450,7 +346,7 @@ export default async function ITConsulting() {
                 <div className="custom-container mx-auto py-32">
                     <div>
                         <h2 className="text-5xl font-semibold mb-16 text-center">
-                            {ts.text("itConsulting.whenToReachOut.title")}
+                            Why Choose Imboxsoft?
                         </h2>
                         <div className="flex justify-center gap-20">
                             <ul className="flex flex-col gap-12">
@@ -474,9 +370,9 @@ export default async function ITConsulting() {
                                             </svg>
                                         </div>
                                         <p className="text-2xl">
-                                            {ts.text(
-                                                "itConsulting.whenToReachOut.list.techStack"
-                                            )}
+                                            Strong experience with WordPress and
+                                            modern frameworks like Next.js and
+                                            TailwindCSS
                                         </p>
                                     </div>
                                 </li>
@@ -500,9 +396,8 @@ export default async function ITConsulting() {
                                             </svg>
                                         </div>
                                         <p className="text-2xl">
-                                            {ts.text(
-                                                "itConsulting.whenToReachOut.list.workflows"
-                                            )}
+                                            Custom UI components and interactive
+                                            sections
                                         </p>
                                     </div>
                                 </li>
@@ -526,9 +421,8 @@ export default async function ITConsulting() {
                                             </svg>
                                         </div>
                                         <p className="text-2xl">
-                                            {ts.text(
-                                                "itConsulting.whenToReachOut.list.saas"
-                                            )}
+                                            Clean, maintainable code & SEO
+                                            optimization
                                         </p>
                                     </div>
                                 </li>
@@ -552,9 +446,9 @@ export default async function ITConsulting() {
                                             </svg>
                                         </div>
                                         <p className="text-2xl">
-                                            {ts.text(
-                                                "itConsulting.whenToReachOut.list.guidance"
-                                            )}
+                                            Consulting included – we help define
+                                            structure, layout, and best
+                                            practices
                                         </p>
                                     </div>
                                 </li>
@@ -578,35 +472,7 @@ export default async function ITConsulting() {
                                             </svg>
                                         </div>
                                         <p className="text-2xl">
-                                            {ts.text(
-                                                "itConsulting.whenToReachOut.list.thirdParty"
-                                            )}
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="flex gap-2 items-center">
-                                        <div>
-                                            <svg
-                                                className="w-6 h-6 text-gray-800 dark:text-white"
-                                                aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                fill="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
-                                                    clip-rule="evenodd"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="text-2xl">
-                                            {ts.text(
-                                                "itConsulting.whenToReachOut.list.scaling"
-                                            )}
+                                            Flexible maintenance & upgrade plans
                                         </p>
                                     </div>
                                 </li>
@@ -625,15 +491,128 @@ export default async function ITConsulting() {
                 </div>
             </section>
 
+            <section className="observe-navbar-intersect w-full bg-main-background">
+                <div className="custom-container mx-auto py-32">
+                    <div>
+                        <div className="mb-32">
+                            <h2 className="text-5xl font-semibold mb-4 text-center xl:text-start">
+                                Optional Add-Ons
+                            </h2>
+                            <p>
+                                Want more than just a static page? We offer
+                                integrations and extras to make your site
+                                smarter, faster, and more effective.
+                            </p>
+                        </div>
+
+                        <ul className="flex flex-col gap-24">
+                            <li className="flex flex-col md:flex-row gap-20 even:md:flex-row-reverse">
+                                <div className="flex-1">
+                                    <h3 className="text-4xl font-bold mb-2">
+                                        Contact forms, newsletter integration
+                                    </h3>
+                                    <p>
+                                        Our developers aren’t just skilled —
+                                        they’re strategic thinkers who
+                                        understand scalability, performance, and
+                                        long-term tech value.
+                                    </p>
+                                </div>
+                                <div className="w-fit flex">
+                                    <Image
+                                        className="rounded-3xl"
+                                        src="/images/home/why-us.avif"
+                                        width={500}
+                                        height={500}
+                                        alt="Why Imboxsoft?"
+                                    />
+                                </div>
+                            </li>
+                            <li className="flex flex-col md:flex-row gap-20 even:md:flex-row-reverse">
+                                <div className="flex-1">
+                                    <h3 className="text-4xl font-bold mb-2">
+                                        Blog setup
+                                    </h3>
+                                    <p>
+                                        Our developers aren’t just skilled —
+                                        they’re strategic thinkers who
+                                        understand scalability, performance, and
+                                        long-term tech value.
+                                    </p>
+                                </div>
+                                <div className="w-fit">
+                                    <Image
+                                        className="rounded-3xl"
+                                        src="/images/home/why-us.avif"
+                                        width={500}
+                                        height={500}
+                                        alt="Why Imboxsoft?"
+                                    />
+                                </div>
+                            </li>
+                            <li className="flex flex-col md:flex-row gap-20 even:md:flex-row-reverse">
+                                <div className="flex-1">
+                                    <h3 className="text-4xl font-bold mb-2">
+                                        SEO & performance optimization
+                                    </h3>
+                                    <p>
+                                        Our developers aren’t just skilled —
+                                        they’re strategic thinkers who
+                                        understand scalability, performance, and
+                                        long-term tech value.
+                                    </p>
+                                </div>
+                                <div className="w-fit">
+                                    <Image
+                                        className="rounded-3xl"
+                                        src="/images/home/why-us.avif"
+                                        width={500}
+                                        height={500}
+                                        alt="Why Imboxsoft?"
+                                    />
+                                </div>
+                            </li>
+                            <li className="flex flex-col md:flex-row gap-20 even:md:flex-row-reverse">
+                                <div className="flex-1">
+                                    <h3 className="text-4xl font-bold mb-2">
+                                        Google Analytics, Search Console
+                                    </h3>
+                                    <p>
+                                        Our developers aren’t just skilled —
+                                        they’re strategic thinkers who
+                                        understand scalability, performance, and
+                                        long-term tech value.
+                                    </p>
+                                </div>
+                                <div className="w-fit">
+                                    <Image
+                                        className="rounded-3xl"
+                                        src="/images/home/why-us.avif"
+                                        width={500}
+                                        height={500}
+                                        alt="Why Imboxsoft?"
+                                    />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
             <section className="observe-navbar-intersect w-full bg-main-opacity-black-75">
                 <div className="custom-container py-40 lg:py-72">
                     <div className="max-w-[1000px] mx-auto">
                         <div className="text-center">
                             <h2 className="text-2xl md:text-4xl font-medium pb-10">
-                                {tc.text(
+                                {/* {tc.text(
                                     "common.cta.descriptions.happyToBuild"
-                                )}
+                                )} */}
+                                Let’s build something beautiful together.
                             </h2>
+                            {/* <p>
+                                Whether you need a fast, affordable site or a
+                                bespoke digital experience — we’re ready.
+                            </p> */}
                         </div>
                         <div className="flex flex-col gap-16 items-center">
                             <Link

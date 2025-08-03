@@ -7,7 +7,7 @@ import { Link } from "@/i18n/navigation";
 type PointType = {
     svgIcon: ReactElement;
     title: string;
-    description: string;
+    descriptions: string[];
 };
 
 type PointsWithIconsProps = {
@@ -41,7 +41,11 @@ const PointsWithIcons = ({
                         <span>{item.svgIcon}</span>
                         <h3 className="text-2xl font-semibold">{item.title}</h3>
                     </div>
-                    <p>{item.description}</p>
+                    <div className="flex flex-col gap-3">
+                        {item.descriptions.map((description, index) => (
+                            <p key={index}>{description}</p>
+                        ))}
+                    </div>
                 </div>
             ))}
         </div>

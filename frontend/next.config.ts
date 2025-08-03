@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
         remotePatterns: [
             {
                 protocol: "http",
-                hostname: "localhost",
+                hostname: "localhost", // For Dev
                 port: "1337",
             },
             {
@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
         ],
     },
     typescript: {
-        ignoreBuildErrors: true,
+        ignoreBuildErrors: true, // Only for dev
     },
 };
 

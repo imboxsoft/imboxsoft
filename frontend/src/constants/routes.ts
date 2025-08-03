@@ -3,7 +3,7 @@ export const ROUTE_KEYS = {
 
     SERVICES: "/services",
     SOFTWARE_DEVELOPMENT: "/services/software-development",
-    PRESENTATION_WEBSITES: "/services/presentation_websites",
+    PRESENTATION_WEBSITES: "/services/presentation-websites",
     ECOMMERCE: "/services/ecommerce",
     IT_CONSULTING: "/services/it-consulting",
     SEO: "/services/digital-marketing/seo",
