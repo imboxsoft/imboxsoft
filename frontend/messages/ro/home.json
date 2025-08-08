@@ -1,7 +1,7 @@
 {
     "heroSection": {
         "title": "<primaryHighlight>Aplicații</primaryHighlight> la comandă.<newline></newline>Creare <primaryHighlight>Site Prezentare</primaryHighlight>.<newline></newline>Creare <primaryHighlight>Magazin Online</primaryHighlight>.<newline></newline>Graphic <primaryHighlight>Design</primaryHighlight>.<newline></newline>Optimizare <primaryHighlight>SEO</primaryHighlight>.",
-        "subtitle": "Oferim putere afacerilor prin <secondaryHighlight>Inovație Tehnologică</secondaryHighlight>, de la dezvoltare software la consultanță IT, SEO și design grafic - oferim soluții care îți dezvoltă afacerea.",
+        "subtitle": "Servicii web rapide, personalizate și scalabile pentru afacerea ta.<newline></newline>Oferim putere afacerilor prin <secondaryHighlight>Inovație Tehnologică</secondaryHighlight>, de la dezvoltare software la consultanță IT, SEO și design grafic - oferim soluții care îți dezvoltă afacerea.",
         "typewriters": [
             "De luni până duminică. Suntem la dispoziția ta.",
             "Specializați în dezvoltare software Full Stack. Dăm viață viziunii tale.",
@@ -22,32 +22,69 @@
         "title": "Bine ai venit la <primaryHighlight>Imboxsoft</primaryHighlight>",
         "subtitle": "Partenerul tău de încredere în tehnologie",
         "aboutUs": [
-            "Compania noastră este specializată în livrarea de soluții software personalizate și servicii complete de consultanță IT.",
-            "Realizăm <strong>aplicații la comandă, site-uri de prezentare, magazine online, SEO, email marketing și graphic design (ex: cărți de vizită, cataloage).</strong>",
-            "Navighează pe <servicesLink>pagina noastră de Servicii</servicesLink> și descoperă cum te putem ajuta."
+            "Suntem o echipă de dezvoltatori și designeri pasionați care oferă soluții web complete, consultanță și servicii de design grafic.",
+            "Realizăm cu mare plăcere <strong>aplicații la comandă, site-uri de prezentare, magazine online, SEO, email marketing și graphic design (cărți de vizită, cataloage, logo-uri etc.).</strong>",
+            "Indiferent dacă ești la început de drum sau ai nevoie de scalare, îți oferim sprijin complet, transparent și de încredere. Navighează pe <servicesLink>pagina noastră de Servicii</servicesLink> și descoperă cum te putem ajuta."
         ],
         "checkOurServices": "Vezi Serviciile Noastre",
         "learnMoreAboutUs": "Află mai multe despre noi"
+    },
+    "whyUsSection": {
+        "title": "De ce să lucrezi cu noi?",
+        "description-1": "Livrăm experiențe digitale de înaltă calitate - fără complicații inutile.<newline></newline>Colaborează cu noi și îți vom accelera procesele critice de dezvoltare și lansare, eliminând efortul repetitiv.",
+        "description-2": "Experiența noastră vine dintr-o gamă largă de proiecte și abilități perfecționate de-a lungul anilor. Ne-am înființat afacerea pe aceste fundații, iar acum le punem în slujba ta. Astfel, veți beneficia de:",
+        "gotoOurExpertise": "Expertiza noastră",
+        "bulletPoints": [
+            [
+                {
+                    "no": "01",
+                    "title": "Ani de experiență în IT și software.",
+                    "description": "Am livrat proiecte pentru diverse industrii, de la startup-uri la companii consolidate. Știm ce funcționează și ce să evităm."
+                },
+                {
+                    "no": "02",
+                    "title": "Expertiză full-stack: design & branding - coding - deployment.",
+                    "description": "Acoperim tot procesul: de la idee, identitate vizuală și dezvoltare, până la lansare și mentenanță."
+                },
+                {
+                    "no": "03",
+                    "title": "Carieră extinsă în design grafic.",
+                    "description": "Creativitatea este cheia. Oferim designuri originale, adaptate brandului tău, cu focus pe claritate și impact vizual, de peste 10 ani."
+                }
+            ],
+            [
+                {
+                    "no": "04",
+                    "title": "Suntem mereu la curent cu cele mai noi tendințe din IT.",
+                    "description": "Folosim tehnologii moderne și urmărim constant noutățile din domeniu."
+                },
+                {
+                    "no": "05",
+                    "title": "Abordare orientată către rezultate și soluții inovatoare.",
+                    "description": "Nu livrăm doar cod — livrăm valoare. Optimizăm pentru performanță, SEO, viteză și scalabilitate."
+                },
+                {
+                    "no": "06",
+                    "title": "Suntem disponibili de luni până duminică.",
+                    "description": "Ne adaptăm programului tău și răspundem rapid. Ai întotdeauna un punct de contact direct cu noi."
+                },
+                {
+                    "no": "07",
+                    "title": "Cele mai bune prețuri. Personalizate pentru nevoile afacerii tale.",
+                    "description": "Nu plătești pentru ce nu folosești. Proiectele noastre sunt transparente, fără costuri ascunse."
+                }
+            ]
+        ]
     },
     "ourExpertiseSection": {
         "title": "Expertiza Noastră",
         "subtitle": "Servicii IT complete adaptate afacerii tale",
         "description": "Imboxsoft este specializată într-o gamă variată de tehnologii și sisteme, ceea ce ne permite să rămânem în avangarda inovației și să răspundem nevoilor în continuă schimbare ale clienților noștri.",
-        "ourCoreCompetenciesInclude": "Competențele noastre de bază includ:"
-    },
-    "whyUsSection": {
-        "title": "De ce să ne alegi?",
-        "bulletPoints": [
-            "Ani de experiență în IT și software.",
-            "Expertiză full-stack, de la codare la branding.",
-            "Abordare orientată către rezultate și soluții inovatoare.",
-            "Suntem mereu la curent cu cele mai noi tendințe din IT.",
-            "Carieră extinsă în design grafic.",
-            "Suntem disponibili de luni până duminică."
-        ]
+        "ourCoreCompetenciesInclude": "Competențe și tool-uri favorite:"
     },
     "ctaSection": {
-        "title": "Ești pregătit să începi transformarea digitală?",
-        "letsTalk": "Hai să vorbim"
+        "title": "Găsim împreună cea mai bună soluție",
+        "description": "Trimiteți-ne un mesaj cu ideea dvs. și revenim cu o propunere în cel mai scurt timp.",
+        "letsTalk": "Formular contact"
     }
 }

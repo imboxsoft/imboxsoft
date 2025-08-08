@@ -26,12 +26,6 @@
         ],
         "learnMoreAboutUs": "Learn more about us"
     },
-    "ourExpertiseSection": {
-        "title": "Our Expertise",
-        "subtitle": "Comprehensive IT Services Tailored for Your Business",
-        "description": "Imboxsoft specializes in a diverse array of skills and systems, ensuring that we stay at the forefront of innovation to meet the evolving needs of our clients.",
-        "ourCoreCompetenciesInclude": "Our core competencies include:"
-    },
     "whyUsSection": {
         "title": "So Why Us?",
         "bulletPoints": [
@@ -60,6 +54,12 @@
                 "description": ""
             }
         ]
+    },
+    "ourExpertiseSection": {
+        "title": "Our Expertise",
+        "subtitle": "Comprehensive IT Services Tailored for Your Business",
+        "description": "Imboxsoft specializes in a diverse array of skills and systems, ensuring that we stay at the forefront of innovation to meet the evolving needs of our clients.",
+        "ourCoreCompetenciesInclude": "Our core competencies include:"
     },
     "ctaSection": {
         "title": "Ready to start your digital transformation?",

@@ -1,0 +1,19 @@
+.anim-bounce {
+    animation: bounce 1.75s infinite;
+    transition: transform 0.5s ease;
+}
+
+.anim-bounce:hover {
+    animation: none !important;
+    transform: translateY(0);
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}

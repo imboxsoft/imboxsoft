@@ -2,15 +2,15 @@
 
 import Image from "next/image";
 
+import "swiper/css";
+import "swiper/css/navigation";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 
 import { Link } from "@/i18n/navigation";
 
 import { useServices } from "@/utils/Services";
-
-import "swiper/css";
-import "swiper/css/navigation";
 
 type ServicesCardsSwiperProps = {
     fixedSlidesPerView?: number | null;
@@ -57,7 +57,7 @@ export default function ServicesCardsSwiper({
                 {services.map((service, index) => (
                     <SwiperSlide key={index} className="flex h-full">
                         <div className="w-full max-w-96 md:max-w-full mx-auto border border-gray-600 rounded-xl overflow-hidden flex flex-col h-full">
-                            <div className="relative w-full h-48 mb-2">
+                            <div className="relative w-full h-44 mb-2">
                                 <Image
                                     src={service.image}
                                     className="w-full object-cover"
@@ -66,7 +66,7 @@ export default function ServicesCardsSwiper({
                                 />
                             </div>
                             <div className="flex-1 flex flex-col gap-6 items-center md:items-start p-6 flex-grow">
-                                <h3 className="text-3xl font-semibold text-center md:text-left">
+                                <h3 className="text-2xl font-semibold text-center md:text-left">
                                     {service.title}
                                 </h3>
                                 <div className="text-center md:text-left">
@@ -74,7 +74,7 @@ export default function ServicesCardsSwiper({
                                 </div>
                                 <Link
                                     href={service.route}
-                                    className="bg-main-secondary px-6 py-4 rounded-xl"
+                                    className="bg-main-secondary px-4 py-3 font-semibold rounded-xl"
                                 >
                                     Check out
                                 </Link>

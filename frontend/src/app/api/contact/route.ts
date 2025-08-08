@@ -4,8 +4,7 @@ import sgMail from "@sendgrid/mail";
 const ENV = process.env;
 
 export interface IContactForm {
-    firstName: string;
-    lastName: string;
+    fullName: string;
     email: string;
     phoneNumber?: string;
     company?: string;
@@ -19,24 +18,22 @@ sgMail.setApiKey(ENV.SG_CONTACT_API_KEY as string);
 export async function POST(req: Request) {
     try {
         const {
-            firstName,
-            lastName,
+            fullName,
             email,
             phoneNumber,
             company,
-            websiteURL,
             message,
             agreeToTerms,
         } = (await req.json()) as IContactForm;
 
-        if (!firstName || !lastName || !email || !message || !agreeToTerms) {
+        if (!fullName || !email || !message || !agreeToTerms) {
             return NextResponse.json(
                 { error: "All fields are required" },
                 { status: 400 }
             );
         }
 
-        const clientName = `${firstName} ${lastName}`;
+        const clientName = `${fullName}`;
 
         const msg = {
             personalizations: [

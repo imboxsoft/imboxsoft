@@ -43,3 +43,16 @@
         padding-right: 25px;
     }
 }
+
+.beautiful-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.beautiful-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.beautiful-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 9999px;
+}

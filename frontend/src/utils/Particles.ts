@@ -54,10 +54,10 @@ class Point {
     private minDistance: number = 0.1;
     private maxDistance: number = 1.5;
     private distance: number;
-    private minDiameter: number = 3;
-    private maxDiameter: number = 7;
-    private diameter: number = 7;
-    private originalDiameter: number = 7;
+    private minDiameter: number = 5;
+    private maxDiameter: number = 10;
+    private diameter: number = 10;
+    private originalDiameter: number = 10;
     private positionX: number;
     private positionY: number;
     private numberOfNeighbours: number;

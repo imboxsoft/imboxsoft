@@ -8,12 +8,10 @@ import { Link } from "@/i18n/navigation";
 import { IContactForm } from "@/app/api/contact/route";
 
 const initialFormData: IContactForm = {
-    firstName: "",
-    lastName: "",
+    fullName: "",
+    company: "",
     email: "",
     phoneNumber: "",
-    company: "",
-    websiteURL: "",
     message: "",
     agreeToTerms: false,
 };
@@ -38,10 +36,7 @@ const ContactForm = () => {
     const validateForm = (): boolean => {
         const newErrors: Partial<IContactForm> = {};
 
-        if (!formData.firstName.trim())
-            newErrors.firstName = "First name is missing.";
-        if (!formData.lastName.trim())
-            newErrors.lastName = "Last name is missing.";
+        if (!formData.fullName.trim()) newErrors.fullName = "Name is missing.";
 
         if (!formData.email.trim()) {
             newErrors.email = "Email is missing.";
@@ -94,49 +89,47 @@ const ContactForm = () => {
 
     return (
         <form onSubmit={handleSubmit} className="w-full">
-            <div className="w-full grid grid-cols-2 gap-6 sm:gap-8">
+            <div className="w-full grid grid-cols-2 gap-4 lg:gap-8">
                 <div className="col-span-2 xs:col-span-1">
                     <label
-                        htmlFor="first_name"
+                        htmlFor="full_name"
                         className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
                     >
-                        {t.text("firstName")}
+                        {t.text("fullName")}
                         <span className="text-main-secondary">*</span>
                     </label>
                     <input
                         type="text"
-                        id="firstName"
-                        name="first_name"
-                        value={formData.firstName}
+                        id="fullName"
+                        name="full_name"
+                        value={formData.fullName}
                         onChange={handleChange}
                         className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                        placeholder={t.text("placeholders.firstName")}
+                        placeholder={t.text("placeholders.fullName")}
                         required
                     />
                     <span className="mt-1 text-red-400 text-base">
-                        {errors.firstName}
+                        {errors.fullName}
                     </span>
                 </div>
                 <div className="col-span-2 xs:col-span-1">
                     <label
-                        htmlFor="last_name"
+                        htmlFor="company"
                         className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
                     >
-                        {t.text("lastName")}
-                        <span className="text-main-secondary">*</span>
+                        {t.text("company")}
                     </label>
                     <input
                         type="text"
-                        id="lastName"
-                        name="last_name"
-                        value={formData.lastName}
+                        id="company"
+                        name="company"
+                        value={formData.company}
                         onChange={handleChange}
                         className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                        placeholder={t.text("placeholders.lastName")}
-                        required
+                        placeholder={t.text("placeholders.company")}
                     />
                     <span className="mt-1 text-red-400 text-base">
-                        {errors.lastName}
+                        {errors.company}
                     </span>
                 </div>
                 <div className="col-span-2 xs:col-span-1">
@@ -179,46 +172,6 @@ const ContactForm = () => {
                     />
                     <span className="mt-1 text-red-400 text-base">
                         {errors.phoneNumber}
-                    </span>
-                </div>
-                <div className="col-span-2 xs:col-span-1">
-                    <label
-                        htmlFor="company"
-                        className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
-                    >
-                        {t.text("company")}
-                    </label>
-                    <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                        placeholder={t.text("placeholders.company")}
-                    />
-                    <span className="mt-1 text-red-400 text-base">
-                        {errors.company}
-                    </span>
-                </div>
-                <div className="col-span-2 xs:col-span-1">
-                    <label
-                        htmlFor="website_url"
-                        className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
-                    >
-                        {t.text("website")}
-                    </label>
-                    <input
-                        type="text"
-                        id="websiteURL"
-                        name="website_url"
-                        value={formData.websiteURL}
-                        onChange={handleChange}
-                        className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                        placeholder={t.text("placeholders.website")}
-                    />
-                    <span className="mt-1 text-red-400 text-base">
-                        {errors.websiteURL}
                     </span>
                 </div>
                 <div className="col-span-2">

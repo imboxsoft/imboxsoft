@@ -178,7 +178,7 @@ export default class SlideScrollManager {
     }
 
     public assess() {
-        if (window.innerWidth < 1024) {
+        if (window.innerWidth < 1280) {
             this.paused = true;
         } else {
             this.paused = false;

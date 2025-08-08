@@ -9,12 +9,12 @@ export default function Particles() {
     useEffect(() => {
         if (!canvasRef.current) return;
 
-        let count = 500;
+        let count = 300;
 
         if (window.innerWidth < 640) {
             count = 100;
         } else if (window.innerWidth < 1024) {
-            count = 250;
+            count = 200;
         }
 
         const particles = new ParticlesFunc(canvasRef.current, 30, count);
@@ -26,9 +26,9 @@ export default function Particles() {
             if (window.innerWidth < 640) {
                 particles.setParticles(100);
             } else if (window.innerWidth < 1024) {
-                particles.setParticles(250);
+                particles.setParticles(200);
             } else {
-                particles.setParticles(500);
+                particles.setParticles(300);
             }
             particles.resetParticles();
         };

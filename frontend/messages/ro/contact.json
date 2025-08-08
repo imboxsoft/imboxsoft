@@ -5,6 +5,7 @@
     "contacs": "Contacte",
     "email": "E-mail",
     "phone": "Telefon",
+    "fullName": "Nume",
     "firstName": "Prenume",
     "lastName": "Nume",
     "workEmail": "Email de serviciu",
@@ -15,6 +16,7 @@
     "send": "Trimite mesajul",
     "policy": "Am citit <privacypolicyLink>Politica de Confidențialitate</privacypolicyLink> și înțeleg că datele mele personale vor fi prelucrate în scopul furnizării informațiilor și asistenței necesare.",
     "placeholders": {
+        "fullName": "Introduceți numele",
         "firstName": "Introduceți prenumele",
         "lastName": "Introduceți numele",
         "email": "Introduceți adresa de email",
