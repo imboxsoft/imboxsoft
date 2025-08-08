@@ -16,7 +16,7 @@
     "send": "Trimite mesajul",
     "policy": "Am citit <privacypolicyLink>Politica de Confidențialitate</privacypolicyLink> și înțeleg că datele mele personale vor fi prelucrate în scopul furnizării informațiilor și asistenței necesare.",
     "placeholders": {
-        "fullName": "Introduceți numele",
+        "fullName": "Introduceți numele dvs.",
         "firstName": "Introduceți prenumele",
         "lastName": "Introduceți numele",
         "email": "Introduceți adresa de email",

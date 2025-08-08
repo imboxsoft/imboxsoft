@@ -100,7 +100,7 @@ export default async function Home() {
 
     return (
         <div className="gap-16 font-[family-name:var(--font-geist-sans)]">
-            <section className="dark-before-background pt-32 pb-14 scroll-section current-scroll sm:pb-10 lg:min-h-screen lg:max-h-screen flex-1 flex flex-col justify-center items-center">
+            <section className="dark-before-background pt-32 pb-14 scroll-section current-scroll sm:pb-10 xl:min-h-screen lg:max-h-screen flex-1 flex flex-col justify-center items-center">
                 <div className="custom-container">
                     <div>
                         <HeroSection />
@@ -108,7 +108,7 @@ export default async function Home() {
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect scroll-section shape-steep-section before:!bg-main-secondary lg:min-h-screen py-16 lg:py-0 flex items-center bg-main-background">
+            <section className="observe-navbar-intersect scroll-section shape-steep-section before:!bg-main-secondary xl:min-h-screen py-16 xl:py-0 flex items-center bg-main-background">
                 <div className="relative custom-container">
                     <div>
                         <div className="flex flex-col md:flex-row gap-x-20 gap-y-10 w-full justify-center items-start md:items-center">
@@ -163,7 +163,7 @@ export default async function Home() {
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 lg:py-0 flex items-center bg-main-background">
+            <section className="observe-navbar-intersect scroll-section xl:min-h-screen pb-10 py-16 xl:py-0 flex items-center bg-main-background">
                 <div className="custom-container">
                     <div>
                         <div className="relative flex flex-col lg:flex-row gap-y-10 gap-x-20 items-center">
@@ -189,7 +189,7 @@ export default async function Home() {
 
                                 <hr className="h-px my-6 bg-main-secondary border-0"></hr>
 
-                                <p className="mb-4">
+                                <p className="mb-16 xl:mb-4">
                                     {t.text("whyUsSection.description-2")}
                                 </p>
                                 <ul className="flex flex-col gap-10">
@@ -219,7 +219,7 @@ export default async function Home() {
                 </div>
             </section>
 
-            <section className="relative observe-navbar-intersect scroll-section lg:min-h-screen pt-0 py-16 lg:py-0 flex items-center bg-main-background">
+            <section className="relative observe-navbar-intersect scroll-section xl:min-h-screen pt-0 py-16 xl:py-0 flex items-center bg-main-background">
                 <div className="custom-container pb-20">
                     <div>
                         <ul className="grid gird-cols-1 md:grid-cols-2 gap-10 mb-10">
@@ -227,7 +227,7 @@ export default async function Home() {
                                 .raw("whyUsSection.bulletPoints")[1]
                                 .map((bp: any, i: number) => (
                                     <li key={i}>
-                                        <div className="flex flex-row gap-4 p-10">
+                                        <div className="flex flex-row gap-4 lg:p-10">
                                             <div className="flex bg-main-secondary rounded-full shrink-0 items-center justify-center w-10 h-10">
                                                 <span className="font-semibold leading-5 border-b-2">
                                                     {bp.no}
@@ -277,7 +277,7 @@ export default async function Home() {
 
             <section
                 id="our-expertise"
-                className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 lg:py-0 flex items-center bg-main-background-lighter"
+                className="observe-navbar-intersect scroll-section xl:min-h-screen py-16 xl:py-0 flex items-center bg-main-background-lighter"
             >
                 <div className="custom-container">
                     <div>
@@ -357,7 +357,7 @@ export default async function Home() {
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect scroll-section lg:min-h-screen pt-24 py-16 lg:py-0 flex items-center bg-main-opacity-black-75">
+            <section className="observe-navbar-intersect scroll-section xl:min-h-screen pt-24 py-16 xl:py-0 flex items-center bg-main-opacity-black-75">
                 <div className="custom-container">
                     <div>
                         <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-20 justify-between">

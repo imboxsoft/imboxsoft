@@ -29,9 +29,8 @@ export default function AutomatedCarousel({
                 navigation={false}
                 pagination={false as any}
                 breakpoints={{
-                    0: { slidesPerView: 3 },
-                    640: { slidesPerView: 5 },
-                    1024: { slidesPerView: 10 },
+                    0: { slidesPerView: 6 },
+                    640: { slidesPerView: 10 },
                 }}
             >
                 {elements.map((el, index) => (

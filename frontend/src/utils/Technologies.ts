@@ -32,115 +32,111 @@ export const technologies: string[] = [
 export const technologyLogos = [
     {
         name: "Django",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/django.png"
     },
     {
         name: "Next.js",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/nextjs.png"
     },
     {
         name: "Nodejs",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/nodejs.png"
     },
     {
         name: "Laravel",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/laravel.png"
     },
     {
         name: ".NET",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/dotnet.png"
     },
     {
         name: "Angular",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/angular.png"
     },
     {
         name: "React",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/react.png"
     },
     {
         name: "Alpinejs",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/alpinejs.png"
     },
     {
         name: "Tailwind",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/tailwind.png"
     },
     {
         name: "PostgreSQL",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/postgresql.png"
     },
     {
         name: "MySQL",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/mysql.png"
     },
     {
         name: "MongoDB",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/mongodb.png"
     },
     {
         name: "GIT",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/git.png"
     },
     {
         name: "Docker",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/docker.png"
     },
     {
         name: "Kubernetes",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/kubernetes.png"
     },
     {
         name: "Google Cloud",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/gcp.png"
     },
     {
         name: "AWS",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/aws.png"
     },
     {
         name: "cPanel",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/cpanel.png"
     },
     {
         name: "Wordpress",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/wordpress.png"
     },
     {
         name: "Shopify",
-        src: "/images/services/software-development.jpg"
-    },
-    {
-        name: "Bigcommerce",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/shopify.png"
     },
     {
         name: "Stripe",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/stripe.png"
     },
     {
         name: "Paypal",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/paypal.png"
     },
     {
         name: "Photoshop",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/photoshop.png"
     },
     {
         name: "Illustrator",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/illustrator.png"
     },
     {
         name: "Figma",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/figma.png"
     },
     {
         name: "Brevo",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/brevo.png"
     },
     {
         name: "Sendgrid",
-        src: "/images/services/software-development.jpg"
+        src: "/images/technologies/optimized/sendgrid.png"
     }
 ];
 
