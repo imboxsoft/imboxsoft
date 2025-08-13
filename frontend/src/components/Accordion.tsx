@@ -13,7 +13,7 @@ export default function Accordion({
 }: AccordionProps) {
     return (
         <div>
-            {title && <h2 className="mb-2">{title}</h2>}
+            {title && <h2 className="mb-2 font-semibold">{title}</h2>}
 
             <div id={id} data-accordion="collapse">
                 {elements.map((el, index) => (

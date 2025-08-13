@@ -19,21 +19,12 @@ export const HeroSection = async () => {
             <div className="flex flex-col gap-6 md:gap-10">
                 <div className="relative flex flex-col gap-14 sm:gap-10 flex-1 sm:rounded-2xl sm:pt-14 lg:pt-20 sm:pb-10 md:pb-14">
                     <div className="text-center sm:text-left w-full sm:w-2/3">
-                        <h1 className="font-bold text-4xl md:text-5xl/tight tracking-wider mb-10 sm:mb-4">
+                        <h1 className="font-bold text-4xl lg:text-5xl/tight tracking-wider mb-10 sm:mb-4">
                             {t.rich("title")}
                         </h1>
                         <p className="text-xl">{t.rich("subtitle")}</p>
                     </div>
-                    <div className="hidden sm:block absolute top-0 right-[5%] w-52 translate-y-1/2">
-                        <Image
-                            className="w-full h-auto"
-                            src="/images/home/test-hs-pers.webp"
-                            width={2000}
-                            height={2000}
-                            alt="Imboxsoft Hero Section"
-                        />
-                    </div>
-                    <div className="w-full flex flex-col sm:flex-row gap-2 items-center sm:bg-main-opacity-white-20 rounded-lg px-4">
+                    <div className="relative w-full flex flex-col sm:flex-row gap-2 items-center sm:bg-main-opacity-white-20 rounded-lg px-4">
                         <div className="flex flex-col sm:flex-row gap-2 items-center justify-center sm:justify-start flex-1 w-full">
                             <svg
                                 className="w-10 sm:w-6 h-10 sm:h-6 text-main-secondary-lighter"
@@ -81,6 +72,15 @@ export const HeroSection = async () => {
                                 {t.text("letsBegin")}
                             </Link>
                         </div>
+                        <div className="hidden sm:block absolute right-0 md:right-6 lg:right-10 top-4 w-52 lg:w-64 -translate-y-full">
+                            <Image
+                                className="w-full h-auto"
+                                src="/images/home/hero-section-chair-guy.svg"
+                                width={2000}
+                                height={2000}
+                                alt="Imboxsoft Hero Section"
+                            />
+                        </div>
                     </div>
 
                     <ul className="flex flex-row flex-wrap gap-10">
@@ -102,7 +102,7 @@ export const HeroSection = async () => {
             </div>
             <div className="fixed top-0 left-0 w-full h-full flex-1 bg-main-opacity-black-75 min-h-0 overflow-hidden -z-10">
                 <Image
-                    src="/images/home/hero_section_computer_girl.jpg"
+                    src="/images/home/hero_section_bg.jpg"
                     className="!relative w-full h-full opacity-50 object-cover"
                     fill
                     alt="Empowering Businesses Through Tech Innovation - Software Development"

@@ -15,7 +15,8 @@ export default function LocaleSwitcher() {
         const mode = process.env.NEXT_PUBLIC_MODE ?? "development";
 
         if (mode == "production" || mode == "staging") {
-            const urlMappings = process.env.NEXT_PUBLIC_APP_BASE_URLS?.split(",") ?? [];
+            const urlMappings =
+                process.env.NEXT_PUBLIC_SITE_URL?.split(",") ?? [];
 
             for (const entry of urlMappings) {
                 const [domain, loc] = entry.trim().split("/");
@@ -24,7 +25,7 @@ export default function LocaleSwitcher() {
                     break;
                 }
             }
-        }else {
+        } else {
             router.replace(pathname, { locale: targetLocale });
         }
     };

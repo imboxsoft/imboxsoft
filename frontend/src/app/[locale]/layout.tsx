@@ -1,7 +1,7 @@
 import "@/styles/theme.css";
-import "@/styles/globals.css";
-import "@/styles/section-shapes.css";
-import "@/styles/animations.css";
+import "@/styles/globals.scss";
+import "@/styles/shapes/global-section-shapes.scss";
+import "@/styles/animations/global-animations.scss";
 
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";

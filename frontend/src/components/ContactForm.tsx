@@ -89,7 +89,7 @@ const ContactForm = () => {
 
     return (
         <form onSubmit={handleSubmit} className="w-full">
-            <div className="w-full grid grid-cols-2 gap-4 lg:gap-8">
+            <div className="w-full grid grid-cols-2 gap-4 lg:gap-6 lg:gap-y-4">
                 <div className="col-span-2 xs:col-span-1">
                     <label
                         htmlFor="full_name"

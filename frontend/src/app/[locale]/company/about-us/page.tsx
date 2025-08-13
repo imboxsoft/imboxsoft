@@ -4,6 +4,8 @@ import { getTranslations } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
 import { ROUTE_KEYS as routes } from "@/constants/routes";
+import ContactForm from "@/components/ContactForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default async function AboutUs() {
     const t = await getTranslations("company.aboutUs");
@@ -14,15 +16,20 @@ export default async function AboutUs() {
                 <section className="observe-navbar-intersect pt-32 w-full">
                     <div className="relative max-w-screen-2xl mx-auto px-4 xs:px-10 py-20">
                         <div className="md:w-2/3">
-                            <h1 className="text-main-primary text-sm mb-8 uppercase">
-                                {t("mainTitle")}
-                            </h1>
+                            <div className="mb-8 ">
+                                <Breadcrumbs
+                                    pageTitle={t("mainTitle")}
+                                    baseUrl={process.env.NEXT_PUBLIC_SITE_URL}
+                                    disabledPaths={["companie", "company"]}
+                                    hideLocales={["ro", "en"]}
+                                />
+                            </div>
                             <h2 className="text-3xl font-bold mb-4">
                                 {t("subTitle")}
                             </h2>
                             <p className="text-2xl">{t("description")}</p>
                         </div>
-                        <div className="absolute right-0 bottom-0 translate-y-20">
+                        {/* <div className="absolute right-0 bottom-0 translate-y-20">
                             <Image
                                 src="/images/man.png"
                                 alt="Imboxsoft Logo"
@@ -30,14 +37,14 @@ export default async function AboutUs() {
                                 width={300}
                                 height={50}
                             />
-                        </div>
+                        </div> */}
                     </div>
                 </section>
 
                 <section className="observe-navbar-intersect w-full bg-main-background-lighter">
                     <div className="max-w-screen-2xl mx-auto px-4 xs:px-10 pt-20 pb-20">
-                        <div className="flex flex-row gap-32">
-                            <div className="flex-1">
+                        <div className="flex flex-col lg:flex-row gap-32">
+                            <div className="order-2 lg:order-1 flex-1">
                                 <p className="text-main-primary mb-6 font-semibold">
                                     {t("makeDiff")}
                                 </p>
@@ -62,7 +69,7 @@ export default async function AboutUs() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="">
+                            <div className="order-1 lg:order-2">
                                 <Image
                                     src="/images/blog_news.webp"
                                     alt="Imboxsoft Logo"
@@ -88,8 +95,8 @@ export default async function AboutUs() {
                                 <div className="flex flex-col gap-6">
                                     <div className="relative h-64 min-w-52">
                                         <Image
-                                            src="/images/team/bojan.jpg"
-                                            alt="Picture of CEO & Co-Founder Bojan Alex-Narcis"
+                                            src="/images/about-us/team/person-pic-placeholder.png"
+                                            alt="Picture of CTO & Co-Founder Imbre Jozsef-Jafet"
                                             fill
                                             className="object-cover"
                                         />
@@ -106,7 +113,7 @@ export default async function AboutUs() {
                                 <div className="flex flex-col gap-6">
                                     <div className="relative h-64 min-w-52">
                                         <Image
-                                            src="/images/team/imbre.jpeg"
+                                            src="/images/about-us/team/person-pic-placeholder.png"
                                             alt="Picture of CTO & Co-Founder Imbre Jozsef-Jafet"
                                             fill
                                             className="object-cover"
@@ -131,14 +138,10 @@ export default async function AboutUs() {
                         <h2 className="text-3xl md:text-4xl font-medium px-4 py-2">
                             {t("ctaTitle")}
                         </h2>
+                        <p>{t("ctaDescription")}</p>
                     </div>
-                    <div className="flex flex-col gap-16 items-center">
-                        <Link
-                            href={routes.CONTACT}
-                            className="bg-main-secondary px-6 py-4 font-semibold rounded-md"
-                        >
-                            {t("ctaBtn")}
-                        </Link>
+                    <div className="w-full max-w-[650px] mx-auto">
+                        <ContactForm />
                     </div>
                 </div>
             </section>

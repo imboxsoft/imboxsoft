@@ -7,64 +7,60 @@ export const defaultLocale = "ro";
 
 export const pathnames = {
     [ROUTE_KEYS.HOME]: {
-        en: "/",
         ro: "/",
+        en: "/",
     },
 
     [ROUTE_KEYS.SERVICES]: {
-        en: "/services",
         ro: "/servicii",
+        en: "/services",
     },
     [ROUTE_KEYS.SOFTWARE_DEVELOPMENT]: {
-        en: "/services/software-development",
         ro: "/servicii/dezvoltare-software",
+        en: "/services/software-development",
     },
     [ROUTE_KEYS.IT_CONSULTING]: {
-        en: "/services/it-consulting",
         ro: "/servicii/consultanta-it",
+        en: "/services/it-consulting",
     },
     [ROUTE_KEYS.PRESENTATION_WEBSITES]: {
-        en: "/services/presentation-websites",
         ro: "/servicii/site-de-prezentare",
+        en: "/services/presentation-websites",
     },
     [ROUTE_KEYS.ECOMMERCE]: {
-        en: "/services/ecommerce",
         ro: "/servicii/magazin-online",
+        en: "/services/ecommerce",
     },
     [ROUTE_KEYS.SEO]: {
-        en: "/services/digital-marketing/seo",
         ro: "/servicii/digital-marketing/seo",
+        en: "/services/digital-marketing/seo",
     },
     [ROUTE_KEYS.EMAIL_MARKETING]: {
-        en: "/services/digital-marketing/email-marketing",
         ro: "/servicii/digital-marketing/email-marketing",
+        en: "/services/digital-marketing/email-marketing",
     },
     [ROUTE_KEYS.GRAPHIC_DESIGN]: {
-        en: "/services/graphic-design",
         ro: "/servicii/graphic-design",
+        en: "/services/graphic-design",
     },
 
-    [ROUTE_KEYS.COMPANY]: {
-        en: "/company",
-        ro: "/companie",
-    },
     [ROUTE_KEYS.ABOUT_US]: {
-        en: "/company/about-us",
         ro: "/companie/despre-noi",
+        en: "/company/about-us",
     },
     [ROUTE_KEYS.PORTFOLIO]: {
-        en: "/companyour-work",
         ro: "/companie/proiecte",
+        en: "/companyour-work",
     },
 
     [ROUTE_KEYS.INSIGHTS]: {
-        en: "/blog",
         ro: "/blog",
+        en: "/blog",
     },
 
     [ROUTE_KEYS.CONTACT]: {
-        en: "/contact",
         ro: "/contact",
+        en: "/contact",
     },
 };
 

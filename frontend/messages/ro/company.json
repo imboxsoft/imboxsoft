@@ -1,19 +1,20 @@
 {
     "aboutUs": {
         "mainTitle": "Despre Noi",
-        "subTitle": "Află mai multe despre cine suntem și cum am început",
-        "description": "Progresul este ceea ce ne motivează inițiativa de afaceri. Hai să pornim împreună pe noi corăbii ale inovației tehnologice și să construim o lume mai eficientă.",
-        "makeDiff": "Facem diferența",
+        "subTitle": "Cine suntem și cum am început",
+        "description": "Progresul este motorul activității noastre. Construim soluții tehnologice care aduc eficiență, sustenabilitate și valoare reală pentru partenerii noștri.",
+        "makeDiff": "Ce ne diferențiază",
         "ourStory": "Povestea noastră",
-        "ourStoryP": "Imboxsoft a fost fondată în 2022 de doi tineri dezvoltatori, fiind unul dintre câștigătorii programului de finanțare pentru start-up-uri organizat de JBA, cu o finanțare între 40.000 € – 100.000 €. Misiunea noastră este să aducem îmbunătățiri pentru o lume mai bună și sustenabilă.",
-        "whoWeHelp": "Cui ne adresăm?",
-        "whoWeHelpP": "Oricărei afaceri care se bazează pe tehnologie pentru creștere și sustenabilitate. Clienții noștri ne văd ca pe un partener strategic pe termen lung și un consilier de încredere în ceea ce privește designul, dezvoltarea, implementarea și întreținerea produselor.",
+        "ourStoryP": "Imboxsoft a fost fondată în 2022 de doi dezvoltatori pasionați, fiind una dintre companiile câștigătoare ale programului Junior Business Academy, cu o finanțare de 40.000 €. Misiunea noastră este să contribuim la o lume mai sustenabilă și mai eficientă prin soluții tehnologice adaptate nevoilor reale.",
+        "whoWeHelp": "Cui ne adresăm",
+        "whoWeHelpP": "Ne adresăm companiilor care utilizează tehnologia pentru a crește și a se dezvolta sustenabil. Suntem un partener strategic pe termen lung, oferind expertiză în design, dezvoltare, implementare și întreținere de produse digitale.",
         "ourPhilosophy": "Filozofia noastră",
-        "ourPhilosophyP": "Fă lucrurile cât poți de bine, iar cele mai bune lucruri vor veni spre tine. Tratăm fiecare proiect ca fiind al nostru, pentru că succesul clientului ne alimentează propriul succes.",
+        "ourPhilosophyP": "Fiecare proiect este tratat cu aceeași grijă ca și cum ar fi al nostru. Credem în excelență, transparență și rezultate care aduc valoare pe termen lung. Succesul clienților noștri este și succesul nostru.",
         "meetPartners": "Cunoaște partenerii",
         "coFounders": "Co-fondatori",
-        "ctaTitle": "Hai să colaborăm! Contactează-ne azi.",
-        "ctaBtn": "Ia legătura cu noi!"
+        "ctaTitle": "Hai să construim împreună",
+        "ctaDescription": "Dacă ai un proiect sau cauți soluții tehnologice eficiente, discutăm deschis despre nevoile tale și îți propunem cea mai bună abordare. Completează formularul și te vom contacta în cel mai scurt timp.",
+        "ctaBtn": "Contactează-ne"
     },
     "ourWork": {
         "mainTitle": "Proiectele Noastre",

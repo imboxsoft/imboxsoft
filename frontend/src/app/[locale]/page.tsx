@@ -12,9 +12,11 @@ import { ScrollManagerEvaluator } from "@/components/ScrollManager";
 import { technologies, technologyLogos } from "@/utils/Technologies";
 import ScrollToSection from "@/components/ScrollToSection";
 import AutomatedCarousel from "@/components/AutomatedCarousel";
-import Accordion from "@/components/Accordion";
 import ScrollableWrapper from "@/components/ScrollableWrapper";
 import ContactForm from "@/components/ContactForm";
+import DisplayOnViewport from "@/components/DisplayOnViewport";
+import WhyUsGuy from "@/components/SVGs";
+import { FAQ, FAQItem } from "@/components/FAQ";
 
 // export async function generateMetadata({
 //     params,
@@ -47,56 +49,7 @@ import ContactForm from "@/components/ContactForm";
 export default async function Home() {
     const t = await getRichTranslations("home");
 
-    const faq = [
-        {
-            title: "Ce este?",
-            description: "Accordionul funcționează cu JS pe client.",
-        },
-        {
-            title: "Cum funcționează?",
-            description: "Markup pe server, logică pe client.",
-        },
-        {
-            title: "Cum funcționează?",
-            description: "Markup pe server, logică pe client.",
-        },
-        {
-            title: "Cum funcționează?",
-            description: "Markup pe server, logică pe client.",
-        },
-        {
-            title: "Cum funcționează?",
-            description: "Markup pe server, logică pe client.",
-        },
-        {
-            title: "Cum funcționează?",
-            description: "Markup pe server, logică pe client.",
-        },
-        {
-            title: "Cum funcționează?",
-            description: "Markup pe server, logică pe client.",
-        },
-        {
-            title: "Cum funcționează?",
-            description: "Markup pe server, logică pe client.",
-        },
-        {
-            title: "Cum funcționează?",
-            description: "Markup pe server, logică pe client.",
-        },
-        {
-            title: "Cum funcționează?",
-            description: "Markup pe server, logică pe client.",
-        },
-        {
-            title: "Cum funcționează?",
-            description: "Markup pe server, logică pe client.",
-        },
-        {
-            title: "Cum funcționează?",
-            description: "Markup pe server, logică pe client.",
-        },
-    ];
+    const faqs = t.raw("faq");
 
     return (
         <div className="gap-16 font-[family-name:var(--font-geist-sans)]">
@@ -108,7 +61,7 @@ export default async function Home() {
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect scroll-section shape-steep-section before:!bg-main-secondary xl:min-h-screen py-16 xl:py-0 flex items-center bg-main-background">
+            <section className="observe-navbar-intersect scroll-section shape-steep-section before:!bg-main-secondary xl:min-h-screen pt-16 pb-6 xl:py-0 flex items-center bg-main-background">
                 <div className="relative custom-container">
                     <div>
                         <div className="flex flex-col md:flex-row gap-x-20 gap-y-10 w-full justify-center items-start md:items-center">
@@ -116,7 +69,7 @@ export default async function Home() {
                                 <div className="relative w-full aspect-square h-[250px] lg:h-[500px]">
                                     <Image
                                         className="object-cover"
-                                        src="/images/home/welcome.png"
+                                        src="/images/home/welcome-fuzzy.jpg"
                                         alt="Welcome to Imboxsoft"
                                         fill
                                     />
@@ -168,13 +121,14 @@ export default async function Home() {
                     <div>
                         <div className="relative flex flex-col lg:flex-row gap-y-10 gap-x-20 items-center">
                             <div className="absolute lg:relative right-0 w-full max-w-64 lg:max-w-96">
-                                <Image
+                                {/* <Image
                                     className="rounded-3xl"
                                     src="/images/home/why-us.avif"
                                     width={1000}
                                     height={1000}
                                     alt="Why Imboxsoft?"
-                                />
+                                /> */}
+                                <WhyUsGuy />
                             </div>
 
                             <div className="flex-1 z-10 mt-72 lg:mt-0">
@@ -222,7 +176,7 @@ export default async function Home() {
             <section className="relative observe-navbar-intersect scroll-section xl:min-h-screen pt-0 py-16 xl:py-0 flex items-center bg-main-background">
                 <div className="custom-container pb-20">
                     <div>
-                        <ul className="grid gird-cols-1 md:grid-cols-2 gap-10 mb-10">
+                        <ul className="grid gird-cols-1 md:grid-cols-2 gap-10 mb-6">
                             {t
                                 .raw("whyUsSection.bulletPoints")[1]
                                 .map((bp: any, i: number) => (
@@ -244,34 +198,63 @@ export default async function Home() {
                                 ))}
                         </ul>
 
-                        <div className="w-full mt-4">
-                            <AutomatedCarousel
-                                elements={technologyLogos.map((el, index) => (
-                                    <div
-                                        className="relative w-full aspect-square mb-2"
-                                        key={index}
-                                    >
-                                        <Image
-                                            src={el.src}
-                                            className="object-fit"
-                                            fill
-                                            alt={el.name}
-                                        />
-                                    </div>
-                                ))}
-                            />
+                        <div className="relative w-full">
+                            <div className="">
+                                <h2 className="text-2xl text-main-primary font-medium inline-block whitespace-nowrap mb-1">
+                                    Parteneri
+                                </h2>
+                            </div>
+                            <div className="w-full">
+                                <AutomatedCarousel
+                                    breakpoints={{
+                                        0: {
+                                            spaceBetween: 100,
+                                            slidesPerView: 3,
+                                        },
+                                        640: {
+                                            spaceBetween: 150,
+                                            slidesPerView: 3,
+                                        },
+                                        768: {
+                                            spaceBetween: 100,
+                                            slidesPerView: 5,
+                                        },
+                                        1280: {
+                                            spaceBetween: 200,
+                                            slidesPerView: 5,
+                                        },
+                                    }}
+                                    elements={technologyLogos.map(
+                                        (el, index) => (
+                                            <div
+                                                className="relative w-full aspect-square md:mb-2"
+                                                key={index}
+                                            >
+                                                <Image
+                                                    src={el.src}
+                                                    className="object-fit"
+                                                    fill
+                                                    alt={el.name}
+                                                />
+                                            </div>
+                                        )
+                                    )}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 mb-10">
-                    <div className="anim-bounce shape-arrow-point-bottom after:!border-t-main-secondary bg-main-secondary p-6 font-semibold">
-                        <ScrollToSection id="our-expertise" offset={0}>
-                            <span className="line-clamp-2 text-center">
-                                {t.text("whyUsSection.gotoOurExpertise")}
-                            </span>
-                        </ScrollToSection>
-                    </div>
+                    <DisplayOnViewport>
+                        <div className="anim-bounce shape-arrow-point-bottom after:!border-t-main-secondary bg-main-secondary p-6 font-semibold">
+                            <ScrollToSection id="our-expertise" offset={0}>
+                                <span className="line-clamp-2 text-center">
+                                    {t.text("whyUsSection.gotoOurExpertise")}
+                                </span>
+                            </ScrollToSection>
+                        </div>
+                    </DisplayOnViewport>
                 </div>
             </section>
 
@@ -336,8 +319,26 @@ export default async function Home() {
                             </div>
                         </div>
 
-                        <div className="w-full mt-4">
+                        <div className="w-full mt-6">
                             <AutomatedCarousel
+                                breakpoints={{
+                                    0: {
+                                        spaceBetween: 50,
+                                        slidesPerView: 5,
+                                    },
+                                    640: {
+                                        spaceBetween: 50,
+                                        slidesPerView: 7,
+                                    },
+                                    1024: {
+                                        spaceBetween: 50,
+                                        slidesPerView: 10,
+                                    },
+                                    1280: {
+                                        spaceBetween: 75,
+                                        slidesPerView: 10,
+                                    },
+                                }}
                                 elements={technologyLogos.map((el, index) => (
                                     <div
                                         className="relative w-full aspect-square mb-2"
@@ -362,8 +363,8 @@ export default async function Home() {
                     <div>
                         <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-20 justify-between">
                             <div className="md:min-w-[400px] flex-1 order-1 md:order-2 lg:order-1">
-                                <div className="mb-8 md:mb-16">
-                                    <h2 className="text-5xl md:text-4xl font-bold py-2 mb-6">
+                                <div className="mb-6">
+                                    <h2 className="text-5xl md:text-4xl font-bold py-2 mb-2">
                                         {t.text("ctaSection.title")}
                                     </h2>
                                     <p>{t.text("ctaSection.description")}</p>
@@ -387,11 +388,10 @@ export default async function Home() {
                                         <div className="relative w-full h-full bg-main-background-dark">
                                             <div className="absolute w-full h-full pt-9 lg:pt-4 pb-4 px-4 z-10">
                                                 <ScrollableWrapper className="w-full h-full overflow-y-auto scroll-smooth beautiful-scrollbar">
-                                                    <Accordion
+                                                    <FAQ
                                                         id="home-faq-accordion-flush"
-                                                        title="FAQ"
-                                                        elements={faq}
-                                                    />
+                                                        faqs={faqs}
+                                                    ></FAQ>
                                                 </ScrollableWrapper>
                                             </div>
                                         </div>

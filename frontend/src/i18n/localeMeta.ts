@@ -1,11 +1,11 @@
 export const localeMeta = {
-    en: {
-        label: "English",
-        flag: "🇬🇧",
-    },
     ro: {
         label: "Română",
         flag: "🇷🇴",
+    },
+    en: {
+        label: "English",
+        flag: "🇬🇧",
     },
 } as const;
 
