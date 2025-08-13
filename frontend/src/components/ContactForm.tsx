@@ -222,7 +222,7 @@ const ContactForm = () => {
             <div className="col-span-2 flex justify-end">
                 <button
                     type="submit"
-                    className="py-3 px-5 text-sm font-medium text-center rounded-lg bg-main-secondary sm:w-fit hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-primary-300"
+                    className="py-3 px-5 text-sm font-semibold text-center rounded-lg bg-main-secondary sm:w-fit hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-primary-300"
                 >
                     {t.text("send")}
                 </button>

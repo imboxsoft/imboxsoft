@@ -20,7 +20,7 @@ export default function Breadcrumbs({
     pageTitle,
     baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "",
     disabledPaths = [],
-    hideLocales = [],
+    hideLocales = ["ro", "en"],
 }: BreadcrumbsProps) {
     const t = useTranslations("common.navigation");
     const pathname = usePathname();

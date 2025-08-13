@@ -28,15 +28,10 @@
                 "title": "Aplicații & Website-uri Personalizate",
                 "description": "Stăpânim diverse tehnologii și unelte. De la site-uri de prezentare la aplicații personalizate — construim orice ai nevoie pentru afacerea ta."
             },
-            "ecommerce": {
-                "shortTitle": "E-commerce",
-                "title": "Website-uri E-commerce",
-                "description": "Avem experiență cu platforme precum WordPress, Shopify și BigCommerce. În funcție de obiectivele și bugetul tău, recomandăm soluția ideală."
-            },
-            "seo": {
-                "shortTitle": "SEO",
-                "title": "Optimizare SEO",
-                "description": "Oferim servicii SEO pentru afacerile care pot beneficia de vizibilitate crescută. Află mai multe pe <seoLink>pagina noastră dedicată SEO</seoLink>."
+            "websites": {
+                "shortTitle": "Websites",
+                "title": "Presentation websites & e-commerce",
+                "description": "We have experience with tools like WordPress, Shopify, and BigCommerce. Based on your goals and budget, we'll recommend the best platform with optimal long-term performance."
             },
             "api": {
                 "shortTitle": "Integrare API",
@@ -123,6 +118,18 @@
                 "software": {
                     "title": "Evaluare Furnizori Software",
                     "description": "CRM, ERP sau soluții de plată? Te ajutăm să alegi corect."
+                },
+                "administration": {
+                    "title": "Systems Administration Support",
+                    "description": "We help manage and maintain your infrastructure, ensuring reliable operations, performance monitoring, user access control, and security compliance."
+                },
+                "optimization": {
+                    "title": "Process Optimization",
+                    "description": "We analyze your existing workflows and identify inefficiencies to streamline operations, automate repetitive tasks, and improve productivity across departments."
+                },
+                "maintenance": {
+                    "title": "IT Maintenance & Support",
+                    "description": "From routine updates to troubleshooting and ongoing improvements — we keep your systems running smoothly so you can focus on business growth."
                 }
             }
         },

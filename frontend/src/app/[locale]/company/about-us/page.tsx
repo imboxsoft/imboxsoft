@@ -18,14 +18,12 @@ export default async function AboutUs() {
                         <div className="md:w-2/3">
                             <div className="mb-8 ">
                                 <Breadcrumbs
-                                    pageTitle={t("mainTitle")}
-                                    baseUrl={process.env.NEXT_PUBLIC_SITE_URL}
+                                    pageTitle={t("shortTitle")}
                                     disabledPaths={["companie", "company"]}
-                                    hideLocales={["ro", "en"]}
                                 />
                             </div>
                             <h2 className="text-3xl font-bold mb-4">
-                                {t("subTitle")}
+                                {t("mainTitle")}
                             </h2>
                             <p className="text-2xl">{t("description")}</p>
                         </div>
@@ -132,7 +130,7 @@ export default async function AboutUs() {
                 </section>
             </div>
 
-            <section className="observe-navbar-intersect scroll-section lg:min-h-screen py-16 sm:py-24 lg:py-0 flex items-center bg-main-opacity-black-75">
+            <section className="observe-navbar-intersect scroll-section pt-24 flex items-center bg-main-opacity-black-75">
                 <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16">
                     <div className="text-center mb-8 md:mb-16">
                         <h2 className="text-3xl md:text-4xl font-medium px-4 py-2">

@@ -7,6 +7,8 @@ import ScrollToSection from "@/components/ScrollToSection";
 import PointsWithIcons from "@/components/PointsWithIcons";
 
 import { Link } from "@/i18n/navigation";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import ContactForm from "@/components/ContactForm";
 
 export default async function SoftwareDevelopment() {
     const ts = await getRichTranslations("services");
@@ -320,9 +322,15 @@ export default async function SoftwareDevelopment() {
                             <p className="uppercase text-main-primary text-sm mb-8">
                                 {ts.text("services.shortTitle")}
                             </p>
+                            <div className="mb-8 ">
+                                <Breadcrumbs
+                                    pageTitle={ts.text("services.shortTitle")}
+                                />
+                            </div>
                             <h1 className="text-5xl font-bold mb-4">
                                 {ts.text("softwareDevelopment.title")}
                             </h1>
+
                             <p className="text-2xl">
                                 {ts.text("softwareDevelopment.description")}
                             </p>
@@ -537,20 +545,15 @@ export default async function SoftwareDevelopment() {
             </section>
 
             <section className="observe-navbar-intersect w-full">
-                <div className="custom-container py-40 lg:py-72">
+                <div className="custom-container pt-24">
                     <div>
                         <div className="text-center">
                             <h2 className="text-2xl md:text-4xl font-medium pb-10">
                                 {tc.text("common.cta.descriptions.gotAnIdea")}
                             </h2>
                         </div>
-                        <div className="flex flex-col gap-16 items-center">
-                            <Link
-                                href={routes.CONTACT}
-                                className="bg-main-secondary px-6 py-4 font-semibold rounded-md"
-                            >
-                                {tc.text("common.cta.btn.getInTouch")}
-                            </Link>
+                        <div className="w-full max-w-[650px] mx-auto">
+                            <ContactForm />
                         </div>
                     </div>
                 </div>
