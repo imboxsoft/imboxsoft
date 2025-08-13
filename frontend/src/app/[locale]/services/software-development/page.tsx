@@ -9,6 +9,7 @@ import PointsWithIcons from "@/components/PointsWithIcons";
 import { Link } from "@/i18n/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactForm from "@/components/ContactForm";
+import { ResponsiveFAQ } from "@/components/FAQ";
 
 export default async function SoftwareDevelopment() {
     const ts = await getRichTranslations("services");
@@ -312,6 +313,7 @@ export default async function SoftwareDevelopment() {
             ),
         },
     ];
+    const faqs = ts.raw("softwareDevelopment.faq");
 
     return (
         <div className="bg-main-opacity-black-75">
@@ -552,14 +554,25 @@ export default async function SoftwareDevelopment() {
 
             <section className="observe-navbar-intersect w-full">
                 <div className="custom-container pt-24">
-                    <div>
-                        <div className="text-center">
-                            <h2 className="text-2xl md:text-4xl font-medium pb-10">
-                                {tc.text("common.cta.descriptions.gotAnIdea")}
-                            </h2>
+                    <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-20 justify-between">
+                        <div className="md:min-w-[400px] flex-1 order-1 md:order-2 lg:order-1">
+                            <div className="text-center">
+                                <h2 className="text-2xl md:text-4xl font-medium pb-10">
+                                    {tc.text(
+                                        "common.cta.descriptions.gotAnIdea"
+                                    )}
+                                </h2>
+                            </div>
+                            <div className="w-full max-w-[650px] mx-auto">
+                                <ContactForm />
+                            </div>
                         </div>
-                        <div className="w-full max-w-[650px] mx-auto">
-                            <ContactForm />
+
+                        <div className="flex flex-1 justify-center order-2 md:order-1 lg:order-2">
+                            <ResponsiveFAQ
+                                id="home-faq-accordion-flush"
+                                faqs={faqs}
+                            />
                         </div>
                     </div>
                 </div>

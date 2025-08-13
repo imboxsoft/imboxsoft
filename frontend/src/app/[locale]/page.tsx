@@ -16,7 +16,7 @@ import ScrollableWrapper from "@/components/ScrollableWrapper";
 import ContactForm from "@/components/ContactForm";
 import DisplayOnViewport from "@/components/DisplayOnViewport";
 import WhyUsGuy from "@/components/SVGs";
-import { FAQ, FAQItem } from "@/components/FAQ";
+import { FAQ, FAQItem, ResponsiveFAQ } from "@/components/FAQ";
 
 // export async function generateMetadata({
 //     params,
@@ -383,44 +383,10 @@ export default async function Home() {
                             </div>
 
                             <div className="flex flex-1 justify-center order-2 md:order-1 lg:order-2">
-                                <div className="relative w-64 md:w-full max-w-full">
-                                    <div className="absolute w-full h-full overflow-hidden rounded-[55px] lg:rounded-xl px-1 md:ps-[7%] md:pe-[2%] md:pb-[5%] lg:px-[10%] lg:pb-[4%]">
-                                        <div className="relative w-full h-full bg-main-background-dark">
-                                            <div className="absolute w-full h-full pt-9 lg:pt-4 pb-4 px-4 z-10">
-                                                <ScrollableWrapper className="w-full h-full overflow-y-auto scroll-smooth beautiful-scrollbar">
-                                                    <FAQ
-                                                        id="home-faq-accordion-flush"
-                                                        faqs={faqs}
-                                                    ></FAQ>
-                                                </ScrollableWrapper>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <Image
-                                            className="relative block md:hidden w-full h-auto z-0"
-                                            src="/images/home/cta-phone.png"
-                                            width={500}
-                                            height={500}
-                                            alt="Welcome to Imboxsoft"
-                                        />
-                                        <Image
-                                            className="relative hidden md:block lg:hidden w-full h-auto z-0"
-                                            src="/images/home/cta-tablet.png"
-                                            width={500}
-                                            height={500}
-                                            alt="Welcome to Imboxsoft"
-                                        />
-                                        <Image
-                                            className="relative hidden lg:block w-full h-auto z-0"
-                                            src="/images/home/cta-desktop.png"
-                                            width={500}
-                                            height={500}
-                                            alt="Welcome to Imboxsoft"
-                                        />
-                                    </div>
-                                </div>
+                                <ResponsiveFAQ
+                                    id="home-faq-accordion-flush"
+                                    faqs={faqs}
+                                />
                             </div>
                         </div>
                     </div>

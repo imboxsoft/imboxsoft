@@ -80,7 +80,33 @@
                 "projects": "completed projects in the past <strong>2 years</strong>",
                 "clients": "of our clients chose to <strong>continue</strong> with us"
             }
-        }
+        },
+        "faq": [
+            {
+                "q": "Cum pot solicita o ofertă personalizată?",
+                "a": "Ne poți răspunde direct la acest email sau ne poți contacta la [număr de telefon] pentru o ofertă adaptată proiectului tău."
+            },
+            {
+                "q": "Ce tipuri de lucrări sau produse oferiți?",
+                "a": "Oferim [listează pe scurt produsele/serviciile], adaptate atât pentru proiecte mari, cât și pentru lucrări punctuale."
+            },
+            {
+                "q": "Care este aria de acoperire a serviciilor?",
+                "a": "Livrăm și lucrăm în toată țara, iar pentru proiecte complexe putem asigura deplasare la șantier."
+            },
+            {
+                "q": "Oferiți reduceri pentru cantități mari?",
+                "a": "Da, avem discounturi speciale pentru comenzile de volum sau contracte pe termen lung."
+            },
+            {
+                "q": "În cât timp livrați sau finalizați lucrarea?",
+                "a": "Termenele variază în funcție de complexitate, dar în majoritatea cazurilor livrăm în [X] zile lucrătoare."
+            },
+            {
+                "q": "Cum pot verifica calitatea lucrărilor?",
+                "a": "Putem trimite exemple din proiectele anterioare și referințe de la clienți reali."
+            }
+        ]
     },
     "itConsulting": {
         "title": "IT Consulting",
