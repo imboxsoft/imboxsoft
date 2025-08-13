@@ -510,31 +510,37 @@ export default async function SoftwareDevelopment() {
                             <div className="flex flex-col lg:flex-row">
                                 <div className="flex-1 p-10 pt-32 border border-gray-500">
                                     <h3 className="text-6xl font-semibold mb-4">
-                                        80%
+                                        {ts.text(
+                                            "softwareDevelopment.expertise.metrics.recommendations.accent"
+                                        )}
                                     </h3>
                                     <p className="text-2xl">
                                         {ts.rich(
-                                            "softwareDevelopment.expertise.metrics.recommendations"
+                                            "softwareDevelopment.expertise.metrics.recommendations.suffix"
                                         )}
                                     </p>
                                 </div>
                                 <div className="flex-1 p-10 pt-32 border border-gray-500">
                                     <h3 className="text-6xl font-semibold mb-4">
-                                        10+
+                                        {ts.text(
+                                            "softwareDevelopment.expertise.metrics.projects.accent"
+                                        )}
                                     </h3>
                                     <p className="text-2xl">
                                         {ts.rich(
-                                            "softwareDevelopment.expertise.metrics.projects"
+                                            "softwareDevelopment.expertise.metrics.projects.suffix"
                                         )}
                                     </p>
                                 </div>
                                 <div className="flex-1 p-10 pt-32 border border-gray-500">
                                     <h3 className="text-6xl font-semibold mb-4">
-                                        {tc.text("common.allM")}
+                                        {ts.text(
+                                            "softwareDevelopment.expertise.metrics.clients.accent"
+                                        )}
                                     </h3>
                                     <p className="text-2xl">
                                         {ts.rich(
-                                            "softwareDevelopment.expertise.metrics.clients"
+                                            "softwareDevelopment.expertise.metrics.clients.suffix"
                                         )}
                                     </p>
                                 </div>

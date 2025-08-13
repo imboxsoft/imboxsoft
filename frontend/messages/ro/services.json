@@ -75,10 +75,19 @@
             "title": "Expertiză Tehnologică",
             "description": "Suntem dezvoltatori pasionați și ne menținem la curent cu cele mai noi tendințe tech. Mai jos sunt tehnologiile cu care lucrăm cel mai des.",
             "metrics": {
-                "title": "Succesul tău devine al nostru",
-                "recommendations": "din munca noastră provine din <strong>recomandări</strong>",
-                "projects": "proiecte finalizate în ultimii <strong>2 ani</strong>",
-                "clients": "dintre clienți aleg să <strong>continue</strong> cu noi"
+                "title": "Succesul tău = Succesul nostru",
+                "recommendations": {
+                    "accent": "80%",
+                    "suffix": "din munca noastră provine din <strong>recomandări</strong>"
+                },
+                "projects": {
+                    "accent": "10+",
+                    "suffix": "proiecte finalizate în ultimii <strong>2 ani</strong>"
+                },
+                "clients": {
+                    "accent": "Toți",
+                    "suffix": "clienții noștri aleg să <strong>continue</strong> cu noi"
+                }
             }
         }
     },
