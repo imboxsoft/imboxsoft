@@ -8,11 +8,15 @@ import { Autoplay } from "swiper/modules";
 type AutomatedCarouselProps = {
     breakpoints: any;
     elements?: any[];
+    speed?: number;
+    delay?: number;
 };
 
-export default function AutomatedCarousel({
+export function AutomatedCarousel({
     breakpoints,
     elements = [],
+    speed = 0,
+    delay = 0,
 }: AutomatedCarouselProps) {
     return (
         <div className="w-full pointer-events-none">
@@ -20,12 +24,12 @@ export default function AutomatedCarousel({
                 className="h-full"
                 modules={[Autoplay]}
                 autoplay={{
-                    delay: 0,
+                    delay: delay,
                     disableOnInteraction: false,
                     pauseOnMouseEnter: false,
                 }}
                 loop
-                speed={3000}
+                speed={speed}
                 allowTouchMove={false}
                 navigation={false}
                 pagination={false as any}

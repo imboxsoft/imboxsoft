@@ -1,19 +1,43 @@
 import Image from "next/image";
 
 import { getRichTranslations } from "@/i18n/utils";
-import { ROUTE_KEYS as routes } from "@/constants/routes";
-
-import ScrollToSection from "@/components/ScrollToSection";
-import PointsWithIcons from "@/components/PointsWithIcons";
 
 import { Link } from "@/i18n/navigation";
+
+import { technologies, technologyLogos } from "@/utils/Technologies";
+
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactForm from "@/components/ContactForm";
 import { ResponsiveFAQ } from "@/components/FAQ";
+import ScrollToSection from "@/components/ScrollToSection";
+import PointsWithIcons from "@/components/PointsWithIcons";
+import { AutomatedCarousel } from "@/components/AutomatedCarousel";
+
+type SVGIconProps = {
+    children: React.ReactNode;
+    className?: string;
+};
+
+function SVGIcon({ children, className }: SVGIconProps) {
+    return (
+        <svg
+            className={className}
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+        >
+            {children}
+        </svg>
+    );
+}
 
 export default async function SoftwareDevelopment() {
     const ts = await getRichTranslations("services");
-    const tc = await getRichTranslations("common");
+
+    const whatWeDoSVGIconClassName = "w-6 h-6 text-white";
 
     const whatWeDo = [
         {
@@ -27,15 +51,7 @@ export default async function SoftwareDevelopment() {
                 alternativeText: "",
             },
             svgIcon: (
-                <svg
-                    className="w-8 h-8 text-gray-800 dark:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
+                <SVGIcon className={whatWeDoSVGIconClassName}>
                     <path
                         stroke="currentColor"
                         strokeLinecap="round"
@@ -43,7 +59,7 @@ export default async function SoftwareDevelopment() {
                         strokeWidth="2"
                         d="M12 18.5A2.493 2.493 0 0 1 7.51 20H7.5a2.468 2.468 0 0 1-2.4-3.154 2.98 2.98 0 0 1-.85-5.274 2.468 2.468 0 0 1 .92-3.182 2.477 2.477 0 0 1 1.876-3.344 2.5 2.5 0 0 1 3.41-1.856A2.5 2.5 0 0 1 12 5.5m0 13v-13m0 13a2.493 2.493 0 0 0 4.49 1.5h.01a2.468 2.468 0 0 0 2.403-3.154 2.98 2.98 0 0 0 .847-5.274 2.468 2.468 0 0 0-.921-3.182 2.477 2.477 0 0 0-1.875-3.344A2.5 2.5 0 0 0 14.5 3 2.5 2.5 0 0 0 12 5.5m-8 5a2.5 2.5 0 0 1 3.48-2.3m-.28 8.551a3 3 0 0 1-2.953-5.185M20 10.5a2.5 2.5 0 0 0-3.481-2.3m.28 8.551a3 3 0 0 0 2.954-5.185"
                     />
-                </svg>
+                </SVGIcon>
             ),
         },
         {
@@ -55,15 +71,7 @@ export default async function SoftwareDevelopment() {
                 alternativeText: "",
             },
             svgIcon: (
-                <svg
-                    className="w-8 h-8 text-gray-800 dark:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
+                <SVGIcon className={whatWeDoSVGIconClassName}>
                     <path
                         stroke="currentColor"
                         strokeLinecap="round"
@@ -71,7 +79,7 @@ export default async function SoftwareDevelopment() {
                         strokeWidth="2"
                         d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"
                     />
-                </svg>
+                </SVGIcon>
             ),
         },
         {
@@ -87,15 +95,7 @@ export default async function SoftwareDevelopment() {
                 alternativeText: "",
             },
             svgIcon: (
-                <svg
-                    className="w-8 h-8 text-gray-800 dark:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
+                <SVGIcon className={whatWeDoSVGIconClassName}>
                     <path
                         stroke="currentColor"
                         strokeLinecap="round"
@@ -103,7 +103,7 @@ export default async function SoftwareDevelopment() {
                         strokeWidth="2"
                         d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
                     />
-                </svg>
+                </SVGIcon>
             ),
         },
         {
@@ -115,15 +115,7 @@ export default async function SoftwareDevelopment() {
                 alternativeText: "",
             },
             svgIcon: (
-                <svg
-                    className="w-8 h-8 text-gray-800 dark:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
+                <SVGIcon className={whatWeDoSVGIconClassName}>
                     <path
                         stroke="currentColor"
                         strokeLinecap="round"
@@ -131,7 +123,7 @@ export default async function SoftwareDevelopment() {
                         strokeWidth="2"
                         d="M8 8v8m0-8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm6-2a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm0 0h-1a5 5 0 0 1-5-5v-.5"
                     />
-                </svg>
+                </SVGIcon>
             ),
         },
         {
@@ -147,43 +139,16 @@ export default async function SoftwareDevelopment() {
                 alternativeText: "",
             },
             svgIcon: (
-                <svg
-                    className="w-8 h-8 text-gray-800 dark:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
+                <SVGIcon className={whatWeDoSVGIconClassName}>
                     <path
                         stroke="currentColor"
                         strokeLinejoin="round"
                         strokeWidth="2"
                         d="M7.58209 8.96025 9.8136 11.1917l-1.61782 1.6178c-1.08305-.1811-2.23623.1454-3.07364.9828-1.1208 1.1208-1.32697 2.8069-.62368 4.1363.14842.2806.42122.474.73509.5213.06726.0101.1347.0133.20136.0098-.00351.0666-.00036.1341.00977.2013.04724.3139.24069.5867.52125.7351 1.32944.7033 3.01552.4971 4.13627-.6237.8375-.8374 1.1639-1.9906.9829-3.0736l4.8107-4.8108c1.0831.1811 2.2363-.1454 3.0737-.9828 1.1208-1.1208 1.3269-2.80688.6237-4.13632-.1485-.28056-.4213-.474-.7351-.52125-.0673-.01012-.1347-.01327-.2014-.00977.0035-.06666.0004-.13409-.0098-.20136-.0472-.31386-.2406-.58666-.5212-.73508-1.3294-.70329-3.0155-.49713-4.1363.62367-.8374.83741-1.1639 1.9906-.9828 3.07365l-1.7788 1.77875-2.23152-2.23148-1.41419 1.41424Zm1.31056-3.1394c-.04235-.32684-.24303-.61183-.53647-.76186l-1.98183-1.0133c-.38619-.19746-.85564-.12345-1.16234.18326l-.86321.8632c-.3067.3067-.38072.77616-.18326 1.16235l1.0133 1.98182c.15004.29345.43503.49412.76187.53647l1.1127.14418c.3076.03985.61628-.06528.8356-.28461l.86321-.8632c.21932-.21932.32446-.52801.2846-.83561l-.14417-1.1127ZM19.4448 16.4052l-3.1186-3.1187c-.7811-.781-2.0474-.781-2.8285 0l-.1719.172c-.7811.781-.7811 2.0474 0 2.8284l3.1186 3.1187c.7811.781 2.0474.781 2.8285 0l.1719-.172c.7811-.781.7811-2.0474 0-2.8284Z"
                     />
-                </svg>
+                </SVGIcon>
             ),
         },
-    ];
-    const technologies: string[] = [
-        "Next.js",
-        "Angular",
-        "Django",
-        "Nodejs",
-        "Laravel",
-        ".NET",
-        "Alpinejs",
-        "Tailwind",
-        "Shopify",
-        "Bigcommerce",
-        "PostgreSQL",
-        "MongoDB",
-        "Docker",
-        "Google Cloud",
-        "Photoshop",
-        "Illustrator",
-        "Figma",
     ];
     const benefits = [
         {
@@ -321,9 +286,6 @@ export default async function SoftwareDevelopment() {
                 <div className="relative custom-container pb-16 pt-28">
                     <div>
                         <div className="md:w-2/3">
-                            <p className="uppercase text-main-primary text-sm mb-8">
-                                {ts.text("services.shortTitle")}
-                            </p>
                             <div className="mb-8 ">
                                 <Breadcrumbs
                                     pageTitle={ts.text("services.shortTitle")}
@@ -341,25 +303,57 @@ export default async function SoftwareDevelopment() {
                                     href="/contact"
                                     className="p-4 text-2xl bg-main-secondary rounded-xl font-medium lg:font-semibold"
                                 >
-                                    {tc.text("common.cta.btn.getInTouch")}
+                                    {ts.text(
+                                        "softwareDevelopment.cta.getInTouch"
+                                    )}
                                 </Link>
                             </div>
                         </div>
 
-                        <div className="absolute right-0 bottom-0 translate-y-20 z-20 pointer-events-none">
-                            <Image
-                                src="/images/common/man.png"
-                                alt="SWD Man"
-                                layout="intrinsic"
-                                width={300}
-                                height={50}
-                            />
+                        <div className="absolute right-0 bottom-0 translate-y-3 z-20 pointer-events-none">
+                            <div className="relative w-full">
+                                <div className="absolute w-full left-[9%]">
+                                    <div className="relative w-1/4 aspect-square md:mb-2">
+                                        <AutomatedCarousel
+                                            breakpoints={{
+                                                0: {
+                                                    slidesPerView: 1,
+                                                },
+                                            }}
+                                            speed={10}
+                                            delay={1000}
+                                            elements={technologyLogos.map(
+                                                (el, index) => (
+                                                    <div
+                                                        className="relative w-full aspect-square md:mb-2"
+                                                        key={index}
+                                                    >
+                                                        <Image
+                                                            src={el.src}
+                                                            className="object-fit"
+                                                            fill
+                                                            alt={el.name}
+                                                        />
+                                                    </div>
+                                                )
+                                            )}
+                                        />
+                                    </div>
+                                </div>
+                                <Image
+                                    src="/images/common/guy-hand-up.svg"
+                                    alt="SWD Man"
+                                    layout="intrinsic"
+                                    width={350}
+                                    height={50}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="lg:sticky z-10 lg:top-[92px] bg-main-secondary py-6">
+            <section className="lg:sticky z-10 lg:top-[92px] bg-main-secondary py-2">
                 <div className="relative custom-container">
                     <div>
                         <ul className="services-ul relative z-50 flex flex-wrap lg:flex-nowrap flex-row gap-y-6 gap-x-20 lg:gap-x-6 lg:justify-between text-white">
@@ -369,7 +363,7 @@ export default async function SoftwareDevelopment() {
                                         id={`${index}`}
                                         offset={300}
                                     >
-                                        <div className="flex flex-col items-center gap-2">
+                                        <div className="flex flex-col items-center gap-0">
                                             <span>{item.svgIcon}</span>
                                             <span className="line-clamp-2 text-center">
                                                 {item.shortTitle}
@@ -491,7 +485,7 @@ export default async function SoftwareDevelopment() {
                                         )}
                                     </p>
                                 </div>
-                                <ul className="lg:max-w-[650px] flex flex-row flex-wrap gap-10">
+                                <ul className="lg:max-w-[650px] flex flex-row flex-wrap gap-6">
                                     {technologies.map((technology, index) => (
                                         <li key={index}>
                                             <span className="block bg-main-secondary text-base font-semibold px-4 py-2 rounded-md">
@@ -558,9 +552,7 @@ export default async function SoftwareDevelopment() {
                         <div className="md:min-w-[400px] flex-1 order-1 md:order-2 lg:order-1">
                             <div className="text-center">
                                 <h2 className="text-2xl md:text-4xl font-medium pb-10">
-                                    {tc.text(
-                                        "common.cta.descriptions.gotAnIdea"
-                                    )}
+                                    {ts.text("softwareDevelopment.cta.title")}
                                 </h2>
                             </div>
                             <div className="w-full max-w-[650px] mx-auto">

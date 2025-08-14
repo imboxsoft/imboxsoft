@@ -2,21 +2,20 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
-import { getTranslations } from "next-intl/server";
 import { getRichTranslations } from "@/i18n/utils";
 
 import { ROUTE_KEYS as routes } from "@/constants/routes";
+import { technologies, technologyLogos } from "@/utils/Technologies";
+
 import { HeroSection } from "@/components/HeroSection";
 import ServicesCardsSwiper from "@/components/ServicesCardsSwiper";
 import { ScrollManagerEvaluator } from "@/components/ScrollManager";
-import { technologies, technologyLogos } from "@/utils/Technologies";
 import ScrollToSection from "@/components/ScrollToSection";
-import AutomatedCarousel from "@/components/AutomatedCarousel";
-import ScrollableWrapper from "@/components/ScrollableWrapper";
+import { AutomatedCarousel } from "@/components/AutomatedCarousel";
 import ContactForm from "@/components/ContactForm";
 import DisplayOnViewport from "@/components/DisplayOnViewport";
 import WhyUsGuy from "@/components/SVGs";
-import { FAQ, FAQItem, ResponsiveFAQ } from "@/components/FAQ";
+import { ResponsiveFAQ } from "@/components/FAQ";
 
 // export async function generateMetadata({
 //     params,

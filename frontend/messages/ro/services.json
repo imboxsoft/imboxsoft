@@ -20,60 +20,60 @@
         "offer": {
             "design": {
                 "shortTitle": "Concept & Design",
-                "title": "Design Personalizat",
-                "description": "Fiecare proiect este construit în jurul viziunii tale. Un produs de succes pornește de la o identitate solidă. De aceea începem mereu cu definirea conceptului potrivit."
+                "title": "Design personalizat, centrat pe brand",
+                "description": "Fiecare proiect este construit în jurul identității tale. Un produs de succes începe cu o direcție clară și coerentă. De aceea, începem întotdeauna prin a defini conceptul ideal pentru soluția ta digitală — de la stil vizual, până la UX și structură de conținut."
             },
             "apps": {
-                "shortTitle": "Aplicații Personalizate",
-                "title": "Aplicații & Website-uri Personalizate",
-                "description": "Stăpânim diverse tehnologii și unelte. De la site-uri de prezentare la aplicații personalizate — construim orice ai nevoie pentru afacerea ta."
+                "shortTitle": "Aplicații personalizate",
+                "title": "Aplicații & sisteme personalizate",
+                "description": "Dezvoltăm aplicații full-stack, scalabile și adaptate complet nevoilor afacerii tale. Lucrăm cu o gamă variată de tehnologii moderne pentru a crea: CRM-uri, ERP-uri, sisteme de management intern, platforme B2B, panouri administrative, aplicații SaaS, soluții de e-learning, automatizări personalizate și multe altele."
             },
             "websites": {
-                "shortTitle": "Websites",
-                "title": "Presentation websites & e-commerce",
-                "description": "We have experience with tools like WordPress, Shopify, and BigCommerce. Based on your goals and budget, we'll recommend the best platform with optimal long-term performance."
+                "shortTitle": "Website-uri",
+                "title": "Website-uri de prezentare și e-commerce",
+                "description": "Realizăm site-uri optimizate pentru performanță și conversie, cu administrare ușoară. Lucrăm atât cu platforme consacrate precum WordPress, Shopify sau BigCommerce, cât și cu soluții complet personalizate. Alegem împreună ce se potrivește cel mai bine bugetului și obiectivelor tale."
             },
             "api": {
                 "shortTitle": "Integrare API",
-                "title": "Integrare cu API-uri Terțe",
-                "description": "Ai nevoie să conectezi aplicația ta la servicii precum plăți online, CRM-uri, ERP-uri, sincronizare de date sau fluxuri automate? Ne ocupăm noi."
+                "title": "Integrare eficientă cu servicii externe",
+                "description": "Extindem funcționalitatea aplicațiilor tale prin conectarea la servicii terțe. De la procesatori de plăți (Stripe, Netopia), CRM-uri (Hubspot, Zoho), ERP-uri, servicii de livrare, facturare, sincronizare de date sau email marketing — ne ocupăm de integrarea completă, rapidă și sigură."
             },
             "maintenance": {
                 "shortTitle": "Mentenanță",
-                "title": "Mentenanță & Optimizare",
-                "description": "Dacă produsul tău are nevoie de îmbunătățiri, te ajutăm cu plăcere. Analizăm problemele și venim cu soluții. Fiecare proiect beneficiază de o perioadă GRATUITĂ de mentenanță."
+                "title": "Mentenanță & optimizare continuă",
+                "description": "Asigurăm suport post-lansare și intervenim ori de câte ori este nevoie. Identificăm și rezolvăm problemele de performanță sau securitate, îmbunătățim experiența utilizatorului și venim cu recomandări proactive. Toate proiectele beneficiază de o perioadă de mentenanță gratuită."
             }
         },
         "benefits": {
-            "title": "Beneficii și Utilizări",
-            "subtitle": "Îmbunătățește-ți activitatea cu aplicații personalizate",
-            "description": "Lasă afacerea ta să crească prin soluții digitale, automatizare și organizare logică.",
+            "title": "Beneficii & Aplicații Practice",
+            "subtitle": "Crește eficiența operațională cu soluții digitale adaptate",
+            "description": "Automatizează sarcinile repetitive, optimizează procesele și câștigă control asupra activităților zilnice prin aplicații dezvoltate special pentru nevoile tale.",
             "list": {
                 "results": {
-                    "title": "Rezultate Imediate",
-                    "description": "Adaptăm fluxul tău de lucru într-un timp cât mai scurt."
+                    "title": "Implementare Rapidă",
+                    "description": "Analizăm și adaptăm fluxurile tale interne într-un timp scurt, pentru un impact vizibil din primele săptămâni."
                 },
                 "prices": {
-                    "title": "Prețuri Competitive",
-                    "description": "Ne adaptăm costurile în funcție de obiectivele tale — calitate premium la un preț corect."
+                    "title": "Costuri Adaptabile",
+                    "description": "Prețurile reflectă realitatea proiectului tău: fără pachete rigide, fără taxe ascunse. Investiția rămâne scalabilă și predictibilă."
                 },
                 "meetings": {
-                    "title": "Întâlniri Periodice",
-                    "description": "Ai control total asupra dezvoltării. Programăm întâlniri și te ținem la curent cu progresul și eventualele obstacole."
+                    "title": "Comunicare Transparentă",
+                    "description": "Colaborarea este esențială. Programăm întâlniri regulate pentru a-ți oferi vizibilitate completă asupra progresului și deciziilor tehnice."
                 },
                 "developers": {
-                    "title": "Dezvoltatori Experimentați",
-                    "description": "Firma este nouă, dar echipa noastră nu. Avem peste 10 ani de experiență în programare — proiectul tău e pe mâini bune."
+                    "title": "Experiență Validată",
+                    "description": "Chiar dacă firma e recentă, echipa are peste 10 ani de experiență în dezvoltare software. Proiectul tău beneficiază de know-how solid și decizii tehnice corecte."
                 },
                 "web": {
-                    "title": "Web, Mobile & Desktop",
-                    "description": "Nu știi ce platformă ți se potrivește? Hai să discutăm și alegem direcția potrivită."
+                    "title": "Toate Platformele",
+                    "description": "Construim aplicații web, mobile sau desktop, în funcție de ce se potrivește cel mai bine afacerii tale. Te ajutăm să alegi direcția optimă."
                 }
             }
         },
         "expertise": {
             "title": "Expertiză Tehnologică",
-            "description": "Suntem dezvoltatori pasionați și ne menținem la curent cu cele mai noi tendințe tech. Mai jos sunt tehnologiile cu care lucrăm cel mai des.",
+            "description": "Suntem dezvoltatori pasionați, conectați la cele mai recente tendințe și bune practici din domeniul tech. Alăturat puteți observa tehnologiile și instrumentele pe care le folosim cel mai frecvent în proiectele noastre.",
             "metrics": {
                 "title": "Succesul tău = Succesul nostru",
                 "recommendations": {
@@ -81,14 +81,19 @@
                     "suffix": "din munca noastră provine din <strong>recomandări</strong>"
                 },
                 "projects": {
-                    "accent": "10+",
-                    "suffix": "proiecte finalizate în ultimii <strong>2 ani</strong>"
+                    "accent": "30+",
+                    "suffix": "proiecte finalizate în ultimii <strong>2 ani</strong>, în industrii variate"
                 },
                 "clients": {
                     "accent": "Toți",
                     "suffix": "clienții noștri aleg să <strong>continue</strong> cu noi"
                 }
             }
+        },
+        "cta": {
+            "title": "Ai o idee de proiect? Hai să o transformăm în realitate.",
+            "description": "",
+            "getInTouch": "Ia legătura cu noi"
         },
         "faq": [
             {
