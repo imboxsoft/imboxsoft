@@ -16,7 +16,11 @@ const initialFormData: IContactForm = {
     agreeToTerms: false,
 };
 
-const ContactForm = () => {
+type ContactFormProps = {
+    buttonText?: string | null;
+};
+
+const ContactForm = ({ buttonText = null }: ContactFormProps) => {
     const t = useRichTranslation("contact");
 
     const [formData, setFormData] = useState<IContactForm>(initialFormData);
@@ -224,7 +228,7 @@ const ContactForm = () => {
                     type="submit"
                     className="py-3 px-5 text-sm font-semibold text-center rounded-lg bg-main-secondary sm:w-fit hover:bg-main-secondary-darker focus:ring-4 focus:outline-none focus:ring-primary-300"
                 >
-                    {t.text("send")}
+                    {buttonText ?? t.text("send")}
                 </button>
             </div>
         </form>

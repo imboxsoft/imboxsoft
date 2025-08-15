@@ -24,7 +24,7 @@ const PointsWithIcons = ({
     points,
 }: PointsWithIconsProps) => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 items-end">
             <div className="flex-1 flex flex-col gap-4 items-start">
                 <span className="rounded-3xl p-4 bg-main-secondary text-base font-semibold">
                     {title}
@@ -33,16 +33,13 @@ const PointsWithIcons = ({
                 <p>{description}</p>
             </div>
             {points.map((item, index) => (
-                <div
-                    className="flex-1 flex flex-col gap-4 self-end"
-                    key={index}
-                >
+                <div className="flex-1 flex flex-col gap-4" key={index}>
                     <div className="flex flex-row lg:flex-col gap-2">
                         <span>{item.svgIcon}</span>
                         <h3 className="text-2xl font-semibold">{item.title}</h3>
                     </div>
                     <div className="flex flex-col gap-3">
-                        <p>{description}</p>
+                        <p>{item.description}</p>
                     </div>
                 </div>
             ))}

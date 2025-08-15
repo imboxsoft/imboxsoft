@@ -286,7 +286,7 @@ export default async function SoftwareDevelopment() {
                 <div className="relative custom-container pb-16 pt-28">
                     <div>
                         <div className="md:w-2/3">
-                            <div className="mb-8 ">
+                            <div className="mb-8">
                                 <Breadcrumbs
                                     pageTitle={ts.text("services.shortTitle")}
                                 />

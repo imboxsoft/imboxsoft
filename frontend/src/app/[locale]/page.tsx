@@ -14,7 +14,7 @@ import ScrollToSection from "@/components/ScrollToSection";
 import { AutomatedCarousel } from "@/components/AutomatedCarousel";
 import ContactForm from "@/components/ContactForm";
 import DisplayOnViewport from "@/components/DisplayOnViewport";
-import WhyUsGuy from "@/components/SVGs";
+import { WhyUsGuySVG } from "@/components/SVGs";
 import { ResponsiveFAQ } from "@/components/FAQ";
 
 // export async function generateMetadata({
@@ -127,7 +127,7 @@ export default async function Home() {
                                     height={1000}
                                     alt="Why Imboxsoft?"
                                 /> */}
-                                <WhyUsGuy />
+                                <WhyUsGuySVG />
                             </div>
 
                             <div className="flex-1 z-10 mt-72 lg:mt-0">

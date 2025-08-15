@@ -6,10 +6,16 @@ import { ROUTE_KEYS as routes } from "@/constants/routes";
 import PointsWithIcons from "@/components/PointsWithIcons";
 
 import { Link } from "@/i18n/navigation";
+import { CallUsGuySVG } from "@/components/SVGs";
+import { ResponsiveFAQ } from "@/components/FAQ";
+import ContactForm from "@/components/ContactForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default async function ITConsulting() {
     const ts = await getRichTranslations("services");
     const tc = await getRichTranslations("common");
+
+    const faqs = ts.raw("itConsulting.faq");
 
     const whatWeDo = [
         {
@@ -244,9 +250,11 @@ export default async function ITConsulting() {
                 <div className="relative custom-container py-32">
                     <div>
                         <div className="md:w-2/3">
-                            <p className="text-main-primary text-sm mb-8 uppercase">
-                                {ts.text("services.shortTitle")}
-                            </p>
+                            <div className="mb-8">
+                                <Breadcrumbs
+                                    pageTitle={ts.text("services.shortTitle")}
+                                />
+                            </div>
                             <h1 className="text-5xl font-bold mb-4">
                                 {ts.text("itConsulting.title")}
                             </h1>
@@ -307,140 +315,93 @@ export default async function ITConsulting() {
             <section className="observe-navbar-intersect w-full bg-main-background">
                 <div className="custom-container mx-auto py-32">
                     <div>
-                        <div className="flex flex-col xl:flex-row gap-y-10 gap-x-20 items-center">
-                            <div>
-                                <h2 className="text-5xl font-semibold mb-6 text-center xl:text-start">
-                                    What Sets Us Apart
+                        <div className="flex flex-col xl:flex-row gap-32">
+                            <div className="xl:w-fit">
+                                <h2 className="text-5xl font-semibold mb-16 text-center xl:text-left">
+                                    {ts.text(
+                                        "itConsulting.whoDoWeAddressTo.title"
+                                    )}
                                 </h2>
-                                <p>
-                                    At Imboxsoft, we don&apos;t just write code
-                                    — we craft solutions with purpose. Our team
-                                    blends technical mastery with business
-                                    insight to help you build, scale, and
-                                    succeed in a competitive digital world.
-                                    Here&apos;s why partners choose us:
-                                </p>
+                                <div className="flex gap-20 justify-center xl:justify-start">
+                                    <ul className="flex flex-col gap-12">
+                                        {ts
+                                            .raw(
+                                                "itConsulting.whoDoWeAddressTo.list"
+                                            )
+                                            .map((el: any, index: number) => (
+                                                <li key={index}>
+                                                    <div className="flex gap-2 items-center">
+                                                        <div>
+                                                            <svg
+                                                                className="w-6 h-6 text-gray-800 dark:text-white"
+                                                                aria-hidden="true"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="24"
+                                                                height="24"
+                                                                fill="currentColor"
+                                                                viewBox="0 0 24 24"
+                                                            >
+                                                                <path
+                                                                    fill-rule="evenodd"
+                                                                    d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+                                                                    clip-rule="evenodd"
+                                                                />
+                                                            </svg>
+                                                        </div>
+                                                        <p className="text-base">
+                                                            {el}
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            ))}
+                                    </ul>
+                                </div>
                             </div>
-                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-12">
-                                <li>
-                                    <div className="p-6 bg-main-background-lighter w-fit mb-6">
-                                        <svg
-                                            className="w-8 h-8 text-white"
-                                            aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="24"
-                                            height="24"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                                            />
-                                        </svg>
-                                    </div>
-                                    <h3 className="text-2xl font-semibold mb-2">
-                                        10+ Years Technical Expertise
-                                    </h3>
+
+                            <div className="flex-1">
+                                <div className="mb-10">
+                                    <h2 className="text-5xl font-semibold mb-16 text-center xl:text-start">
+                                        {ts.text("itConsulting.whyUs.title")}
+                                    </h2>
                                     <p>
-                                        Our developers aren’t just skilled —
-                                        they’re strategic thinkers who
-                                        understand scalability, performance, and
-                                        long-term tech value.
+                                        {ts.text(
+                                            "itConsulting.whyUs.description"
+                                        )}
                                     </p>
-                                </li>
-                                <li>
-                                    <div className="p-6 bg-main-background-lighter w-fit mb-6">
-                                        <svg
-                                            className="w-8 h-8 text-white"
-                                            aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="24"
-                                            height="24"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                                            />
-                                        </svg>
-                                    </div>
-                                    <h3 className="text-2xl font-semibold mb-2">
-                                        Business-Minded Advice
-                                    </h3>
-                                    <p>
-                                        We speak your language — not just in
-                                        code, but in goals, revenue, and growth.
-                                        Our advice aligns with your business
-                                        priorities.
-                                    </p>
-                                </li>
-                                <li>
-                                    <div className="p-6 bg-main-background-lighter w-fit mb-6">
-                                        <svg
-                                            className="w-8 h-8 text-white"
-                                            aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="24"
-                                            height="24"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                                            />
-                                        </svg>
-                                    </div>
-                                    <h3 className="text-2xl font-semibold mb-2">
-                                        Scalable Solutions
-                                    </h3>
-                                    <p>
-                                        We design systems that grow with you —
-                                        modular, efficient, and ready for what’s
-                                        next.
-                                    </p>
-                                </li>
-                                <li>
-                                    <div className="p-6 bg-main-background-lighter w-fit mb-6">
-                                        <svg
-                                            className="w-8 h-8 text-white"
-                                            aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="24"
-                                            height="24"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                                            />
-                                        </svg>
-                                    </div>
-                                    <h3 className="text-2xl font-semibold mb-2">
-                                        Lean & Actionable
-                                    </h3>
-                                    <p>
-                                        No fluff. Just practical recommendations
-                                        and fast, focused execution that
-                                        delivers results.
-                                    </p>
-                                </li>
-                            </ul>
+                                </div>
+
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+                                    {ts
+                                        .raw("itConsulting.whyUs.list")
+                                        .map((el: any, index: number) => (
+                                            <li key={index}>
+                                                <div className="p-6 bg-main-background-lighter w-fit mb-6">
+                                                    <svg
+                                                        className="w-8 h-8 text-white"
+                                                        aria-hidden="true"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                    >
+                                                        <path
+                                                            stroke="currentColor"
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            strokeWidth="2"
+                                                            d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                                        />
+                                                    </svg>
+                                                </div>
+                                                <h3 className="text-2xl font-semibold mb-2">
+                                                    {el.title}
+                                                </h3>
+                                                <p>{el.description}</p>
+                                            </li>
+                                        ))}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -452,173 +413,44 @@ export default async function ITConsulting() {
                         <h2 className="text-5xl font-semibold mb-16 text-center">
                             {ts.text("itConsulting.whenToReachOut.title")}
                         </h2>
-                        <div className="flex justify-center gap-20">
+                        <div className="flex justify-center gap-10">
                             <ul className="flex flex-col gap-12">
-                                <li>
-                                    <div className="flex gap-2 items-center">
-                                        <div>
-                                            <svg
-                                                className="w-6 h-6 text-gray-800 dark:text-white"
-                                                aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                fill="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
-                                                    clip-rule="evenodd"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="text-2xl">
-                                            {ts.text(
-                                                "itConsulting.whenToReachOut.list.techStack"
-                                            )}
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="flex gap-2 items-center">
-                                        <div>
-                                            <svg
-                                                className="w-6 h-6 text-gray-800 dark:text-white"
-                                                aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                fill="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
-                                                    clip-rule="evenodd"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="text-2xl">
-                                            {ts.text(
-                                                "itConsulting.whenToReachOut.list.workflows"
-                                            )}
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="flex gap-2 items-center">
-                                        <div>
-                                            <svg
-                                                className="w-6 h-6 text-gray-800 dark:text-white"
-                                                aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                fill="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
-                                                    clip-rule="evenodd"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="text-2xl">
-                                            {ts.text(
-                                                "itConsulting.whenToReachOut.list.saas"
-                                            )}
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="flex gap-2 items-center">
-                                        <div>
-                                            <svg
-                                                className="w-6 h-6 text-gray-800 dark:text-white"
-                                                aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                fill="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
-                                                    clip-rule="evenodd"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="text-2xl">
-                                            {ts.text(
-                                                "itConsulting.whenToReachOut.list.guidance"
-                                            )}
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="flex gap-2 items-center">
-                                        <div>
-                                            <svg
-                                                className="w-6 h-6 text-gray-800 dark:text-white"
-                                                aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                fill="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
-                                                    clip-rule="evenodd"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="text-2xl">
-                                            {ts.text(
-                                                "itConsulting.whenToReachOut.list.thirdParty"
-                                            )}
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="flex gap-2 items-center">
-                                        <div>
-                                            <svg
-                                                className="w-6 h-6 text-gray-800 dark:text-white"
-                                                aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                fill="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
-                                                    clip-rule="evenodd"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="text-2xl">
-                                            {ts.text(
-                                                "itConsulting.whenToReachOut.list.scaling"
-                                            )}
-                                        </p>
-                                    </div>
-                                </li>
+                                {ts
+                                    .raw("itConsulting.whenToReachOut.list")
+                                    .map((el: any, index: number) => (
+                                        <li key={index}>
+                                            <div className="flex gap-2 items-start">
+                                                <div>
+                                                    <svg
+                                                        className="w-6 h-6 text-gray-800 dark:text-white"
+                                                        aria-hidden="true"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        fill="currentColor"
+                                                        viewBox="0 0 24 24"
+                                                    >
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+                                                            clip-rule="evenodd"
+                                                        />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h3 className="text-2xl font-semibold">
+                                                        {el.title}
+                                                    </h3>
+                                                    <p className="text-base">
+                                                        {el.description}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    ))}
                             </ul>
-                            <div className="hidden lg:block">
-                                <Image
-                                    className="rounded-3xl"
-                                    src="/images/home/why-us.avif"
-                                    width={500}
-                                    height={500}
-                                    alt="Why Imboxsoft?"
-                                />
+                            <div className="hidden lg:block w-full max-w-64 lg:max-w-96">
+                                <CallUsGuySVG />
                             </div>
                         </div>
                     </div>
@@ -626,22 +458,29 @@ export default async function ITConsulting() {
             </section>
 
             <section className="observe-navbar-intersect w-full bg-main-opacity-black-75">
-                <div className="custom-container py-40 lg:py-72">
-                    <div className="max-w-[1000px] mx-auto">
-                        <div className="text-center">
-                            <h2 className="text-2xl md:text-4xl font-medium pb-10">
-                                {tc.text(
-                                    "common.cta.descriptions.happyToBuild"
-                                )}
-                            </h2>
+                <div className="custom-container pt-32">
+                    <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-20 justify-between">
+                        <div className="md:min-w-[400px] flex-1 order-1 md:order-2 lg:order-1">
+                            <div className="text-center mb-10">
+                                <h2 className="text-2xl md:text-3xl font-semibold mb-2">
+                                    {ts.text("itConsulting.cta.title")}
+                                </h2>
+                                <p>{ts.text("itConsulting.cta.description")}</p>
+                            </div>
+                            <div className="w-full max-w-[650px] mx-auto">
+                                <ContactForm
+                                    buttonText={ts.text(
+                                        "itConsulting.cta.button"
+                                    )}
+                                />
+                            </div>
                         </div>
-                        <div className="flex flex-col gap-16 items-center">
-                            <Link
-                                href={routes.CONTACT}
-                                className="bg-main-secondary px-6 py-4 font-semibold rounded-md"
-                            >
-                                {tc.text("common.cta.btn.bookConsultaion")}
-                            </Link>
+
+                        <div className="flex flex-1 justify-center order-2 md:order-1 lg:order-2">
+                            <ResponsiveFAQ
+                                id="home-faq-accordion-flush"
+                                faqs={faqs}
+                            />
                         </div>
                     </div>
                 </div>

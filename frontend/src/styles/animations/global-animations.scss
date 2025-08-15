@@ -18,120 +18,122 @@
     }
 }
 
-#question-bubble,
-#bg-circle {
-    transform-box: fill-box;
-    transform-origin: center;
-    will-change: transform;
-}
-
-#question-bubble {
-    animation: floatY 3.5s ease-in-out infinite;
-}
-
-#bg-circle {
-    animation: driftDiag 6s ease-in-out infinite;
-}
-
-@keyframes floatY {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-50px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes driftDiag {
-    0% {
-        transform: translate(0, 0);
-    }
-    50% {
-        transform: translate(-50px, -50px);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
+.animate-svg {
     #question-bubble,
     #bg-circle {
-        animation: none !important;
-        transform: none !important;
-    }
-}
-
-.svg-shrug {
-    #l-arm,
-    #r-arm,
-    #head {
         transform-box: fill-box;
+        transform-origin: center;
         will-change: transform;
     }
 
-    #head {
-        animation: shrug-head 6s ease-in infinite 0.6s;
+    #question-bubble {
+        animation: floatY 3.5s ease-in-out infinite;
     }
 
-    #l-arm {
-        animation: shrug-left 6s ease-in-out infinite 0.6s;
+    #bg-circle {
+        animation: driftDiag 6s ease-in-out infinite;
     }
 
-    #r-arm {
-        animation: shrug-right 6s ease-in-out infinite 0.6s;
-    }
-
-    @keyframes shrug-head {
-        0%,
-        65%,
+    @keyframes floatY {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-50px);
+        }
         100% {
             transform: translateY(0);
         }
-        15% {
-            transform: translateY(10px);
-        }
-        35% {
-            transform: translateY(0);
-        }
     }
 
-    @keyframes shrug-left {
-        0%,
-        65%,
+    @keyframes driftDiag {
+        0% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(-50px, -50px);
+        }
         100% {
-            transform: translateY(0);
-        }
-        15% {
-            transform: translateY(-15px);
-        }
-        35% {
-            transform: translateY(0);
+            transform: translate(0, 0);
         }
     }
 
-    @keyframes shrug-right {
-        0%,
-        65%,
-        100% {
-            transform: translateY(0);
-        }
-        15% {
-            transform: translateY(-15px);
-        }
-        35% {
-            transform: translateY(0);
+    @media (prefers-reduced-motion: reduce) {
+        #question-bubble,
+        #bg-circle {
+            animation: none !important;
+            transform: none !important;
         }
     }
-}
 
-@media (prefers-reduced-motion: reduce) {
-    .svg-shrug #l-arm,
-    .svg-shrug #r-arm {
-        animation: none !important;
-        transform: none !important;
+    .svg-shrug {
+        #l-arm,
+        #r-arm,
+        #head {
+            transform-box: fill-box;
+            will-change: transform;
+        }
+
+        #head {
+            animation: shrug-head 6s ease-in infinite 0.6s;
+        }
+
+        #l-arm {
+            animation: shrug-left 6s ease-in-out infinite 0.6s;
+        }
+
+        #r-arm {
+            animation: shrug-right 6s ease-in-out infinite 0.6s;
+        }
+
+        @keyframes shrug-head {
+            0%,
+            65%,
+            100% {
+                transform: translateY(0);
+            }
+            15% {
+                transform: translateY(10px);
+            }
+            35% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shrug-left {
+            0%,
+            65%,
+            100% {
+                transform: translateY(0);
+            }
+            15% {
+                transform: translateY(-15px);
+            }
+            35% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shrug-right {
+            0%,
+            65%,
+            100% {
+                transform: translateY(0);
+            }
+            15% {
+                transform: translateY(-15px);
+            }
+            35% {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .svg-shrug #l-arm,
+        .svg-shrug #r-arm {
+            animation: none !important;
+            transform: none !important;
+        }
     }
 }

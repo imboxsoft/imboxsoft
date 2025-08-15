@@ -123,13 +123,48 @@
         ]
     },
     "itConsulting": {
-        "title": "Consultanță IT",
-        "description": "De la strategie la execuție — te ajutăm să iei decizii tehnologice sigure și sustenabile.",
+        "title": "Consultanță IT pentru decizii strategice și sustenabile",
+        "description": "De la strategie la execuție — Fie că dezvolți un nou produs digital sau optimizezi procesele interne, îți oferim ghidare strategică și soluții tehnice adaptate obiectivelor tale.",
         "subtitle": "Construiește inteligent, nu doar rapid",
         "subtitleP": [
-            "La Imboxsoft, consultanța IT înseamnă parteneriat, nu doar sfaturi.",
-            "Fie că ești un startup care planifică primul produs sau o companie care vrea să modernizeze sisteme vechi, oferim îndrumare clară și practică pentru a-ți alinia tehnologia cu obiectivele de afaceri."
+            "Consultanța IT de la Imboxsoft înseamnă mai mult decât simple recomandări. Ne implicăm activ ca parteneri de încredere în fiecare etapă a transformării tale digitale.",
+            "Indiferent dacă ești un startup la început de drum sau o companie în plină expansiune, ne asigurăm că deciziile tale tehnologice sunt bine fundamentate, scalabile și durabile."
         ],
+        "whoDoWeAddressTo": {
+            "title": "Cui ne adresăm",
+            "list": [
+                "Startup-uri care au o idee dar nu știu de unde să înceapă",
+                "Companii care vor să-și digitalizeze procesele",
+                "Organizații care au deja sisteme, dar sunt ineficiente",
+                "Firme care au nevoie de integrare între aplicații diferite"
+            ]
+        },
+        "whyUs": {
+            "title": "De ce să lucrezi cu noi?",
+            "description": "Suntem mai mult decât furnizori de servicii – suntem parteneri care pun accent pe colaborare, rezultate clare și comunicare eficientă.",
+            "list": [
+                {
+                    "title": "Comunicare clară, fără jargon tehnic inutil",
+                    "description": "Explicăm lucrurile simplu și pe înțelesul tuturor, astfel încât să iei decizii în cunoștință de cauză, fără confuzii."
+                },
+                {
+                    "title": "Abordare consultativă, nu vânzare forțată",
+                    "description": "Ne concentrăm pe ceea ce ai nevoie cu adevărat, nu pe a vinde cât mai mult. Scopul nostru este să aducem valoare, nu să impunem soluții."
+                },
+                {
+                    "title": "Transparență totală în propuneri și soluții",
+                    "description": "Fiecare recomandare este argumentată, iar costurile și etapele sunt prezentate clar – fără costuri ascunse sau estimări vagi."
+                },
+                {
+                    "title": "Experiență aplicată în industrii diverse",
+                    "description": "Am lucrat cu afaceri din multiple domenii – de la retail și logistică, până la tech și servicii – oferind soluții adaptate fiecărei industrii."
+                },
+                {
+                    "title": "Livrabile concrete: documentație, roadmap, recomandări tehnice",
+                    "description": "Nu ne oprim la discuții. Vei primi materiale clare, planuri de acțiune și documentație completă, utile chiar și după colaborare."
+                }
+            ]
+        },
         "whatWeDo": {
             "title": "Cum te putem ajuta",
             "subtitle": "Maximizează eficiența cu soluții digitale",
@@ -137,53 +172,102 @@
             "list": {
                 "digital": {
                     "title": "Strategie de Transformare Digitală",
-                    "description": "Aliniază obiectivele de afaceri cu cele mai bune soluții tech."
+                    "description": "Îți oferim o viziune clară asupra modului în care tehnologia poate susține și accelera obiectivele afacerii tale — de la digitalizarea proceselor la automatizarea operațiunilor."
                 },
                 "architecture": {
                     "title": "Arhitectură & Tehnologii",
-                    "description": "Alege corect uneltele, framework-urile și platformele."
+                    "description": "Recomandăm cele mai potrivite tehnologii pentru nevoile tale și te ajutăm să definești o arhitectură solidă, flexibilă și scalabilă pentru viitor."
                 },
                 "cloud": {
                     "title": "Migrare & Infrastructură Cloud",
-                    "description": "Treci în siguranță pe platforme scalabile (AWS, GCP, Azure)."
+                    "description": "Facilităm trecerea sigură a sistemelor tale în cloud, pe platforme precum AWS, Google Cloud sau Azure — reducând costurile și crescând performanța."
                 },
                 "automation": {
                     "title": "Automatizări & Optimizări de Flux",
-                    "description": "Identificăm blocajele și îmbunătățim procesele interne."
+                    "description": "Analizăm procesele tale actuale și propunem soluții de automatizare care reduc timpul pierdut, minimizează erorile și cresc productivitatea."
                 },
                 "security": {
                     "title": "Audit Securitate & Conformitate",
-                    "description": "Asigură-te că sistemele tale sunt sigure și respectă normele."
+                    "description": "Evaluăm securitatea sistemelor tale și oferim soluții pentru conformitate cu reglementările (ex: GDPR), protejând datele și operațiunile companiei tale."
                 },
                 "software": {
                     "title": "Evaluare Furnizori Software",
-                    "description": "CRM, ERP sau soluții de plată? Te ajutăm să alegi corect."
+                    "description": "Te ajutăm să alegi cele mai bune soluții software (CRM, ERP, plăți, gestionare proiecte etc.) în funcție de buget, integrare și adaptabilitate."
                 },
                 "administration": {
-                    "title": "Systems Administration Support",
-                    "description": "We help manage and maintain your infrastructure, ensuring reliable operations, performance monitoring, user access control, and security compliance."
+                    "title": "Suport Sisteme de Administrare",
+                    "description": "Gestionăm infrastructura IT: monitorizare performanță, control acces utilizatori, mentenanță și asigurarea conformității de securitate."
                 },
                 "optimization": {
-                    "title": "Process Optimization",
-                    "description": "We analyze your existing workflows and identify inefficiencies to streamline operations, automate repetitive tasks, and improve productivity across departments."
+                    "title": "Optimizarea proceselor",
+                    "description": "Analizăm fluxurile de lucru existente, identificăm blocajele și propunem soluții pentru eficientizarea activității în toate departamentele."
                 },
                 "maintenance": {
-                    "title": "IT Maintenance & Support",
-                    "description": "From routine updates to troubleshooting and ongoing improvements — we keep your systems running smoothly so you can focus on business growth."
+                    "title": "Mentenanță & Suport",
+                    "description": "Oferim suport continuu: actualizări, remedierea erorilor, îmbunătățiri permanente — astfel încât tu să te poți concentra pe dezvoltarea afacerii."
                 }
             }
         },
         "whenToReachOut": {
-            "title": "Când să ne contactezi?",
-            "list": {
-                "techStack": "Nu știi ce tehnologii să alegi",
-                "workflows": "Vrei să îmbunătățești procesele interne",
-                "saas": "Plănuiești să lansezi un produs SaaS",
-                "guidance": "Ai nevoie de expertiză înainte de dezvoltare",
-                "thirdParty": "Integrezi mai multe sisteme externe",
-                "scaling": "Te extinzi și ai nevoie de strategie cloud"
+            "title": "Când să ne contactezi",
+            "list": [
+                {
+                    "title": "Nu știi ce tehnologii să alegi",
+                    "description": "Nu ești sigur ce framework, limbaj sau platformă ți se potrivește? Te ajutăm să iei decizii informate care susțin creșterea pe termen lung."
+                },
+                {
+                    "title": "Vrei să îmbunătățești procesele interne",
+                    "description": "Analizăm fluxurile de lucru și identificăm unde pot fi automatizate sau optimizate pentru eficiență."
+                },
+                {
+                    "title": "Plănuiești să lansezi un produs SaaS",
+                    "description": "Te sprijinim de la idee la lansare cu arhitectură scalabilă, selecția stack-ului tehnologic și roadmap de dezvoltare."
+                },
+                {
+                    "title": "Ai nevoie de expertiză înainte de dezvoltare",
+                    "description": "Înainte să începi programarea, validăm conceptul, riscurile tehnice și estimările de efort."
+                },
+                {
+                    "title": "Integrezi mai multe sisteme externe",
+                    "description": "De la ERP și CRM la plăți și API-uri publice, ne asigurăm că totul funcționează împreună fără bătăi de cap."
+                },
+                {
+                    "title": "Te extinzi și ai nevoie de strategie cloud",
+                    "description": "Scalăm infrastructura ta pe AWS, Azure sau GCP, pentru ca aplicația ta să reziste la trafic mare și să rămână rapidă."
+                }
+            ]
+        },
+        "cta": {
+            "title": "Consultanță IT pe înțelesul tău",
+            "description": "Îți oferim suport strategic și recomandări aplicate, indiferent de nivelul companiei tale.",
+            "button": "Programează consultanță"
+        },
+        "faq": [
+            {
+                "q": "Cum pot solicita o ofertă personalizată?",
+                "a": "Ne poți răspunde direct la acest email sau ne poți contacta la [număr de telefon] pentru o ofertă adaptată proiectului tău."
+            },
+            {
+                "q": "Ce tipuri de lucrări sau produse oferiți?",
+                "a": "Oferim [listează pe scurt produsele/serviciile], adaptate atât pentru proiecte mari, cât și pentru lucrări punctuale."
+            },
+            {
+                "q": "Care este aria de acoperire a serviciilor?",
+                "a": "Livrăm și lucrăm în toată țara, iar pentru proiecte complexe putem asigura deplasare la șantier."
+            },
+            {
+                "q": "Oferiți reduceri pentru cantități mari?",
+                "a": "Da, avem discounturi speciale pentru comenzile de volum sau contracte pe termen lung."
+            },
+            {
+                "q": "În cât timp livrați sau finalizați lucrarea?",
+                "a": "Termenele variază în funcție de complexitate, dar în majoritatea cazurilor livrăm în [X] zile lucrătoare."
+            },
+            {
+                "q": "Cum pot verifica calitatea lucrărilor?",
+                "a": "Putem trimite exemple din proiectele anterioare și referințe de la clienți reali."
             }
-        }
+        ]
     },
     "graphicDesign": {
         "title": "Design Grafic",
