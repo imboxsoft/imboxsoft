@@ -15,7 +15,7 @@ type AutomatedCarouselProps = {
 export function AutomatedCarousel({
     breakpoints,
     elements = [],
-    speed = 0,
+    speed = 3000,
     delay = 0,
 }: AutomatedCarouselProps) {
     return (
