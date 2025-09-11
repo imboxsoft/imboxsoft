@@ -63,11 +63,11 @@
                 },
                 "developers": {
                     "title": "Experiență Validată",
-                    "description": "Chiar dacă firma e recentă, echipa are peste 10 ani de experiență în dezvoltare software. Proiectul tău beneficiază de know-how solid și decizii tehnice corecte."
+                    "description": "Echipă cu peste 10 ani de experiență în dezvoltare software. Proiectul tău beneficiază de know-how solid și decizii tehnice corecte."
                 },
                 "web": {
                     "title": "Toate Platformele",
-                    "description": "Construim aplicații web, mobile sau desktop, în funcție de ce se potrivește cel mai bine afacerii tale. Te ajutăm să alegi direcția optimă."
+                    "description": "Construim aplicații web, mobile și desktop, în funcție de ce se potrivește cel mai bine afacerii tale. Te ajutăm să alegi direcția optimă."
                 }
             }
         },
@@ -122,12 +122,148 @@
             }
         ]
     },
+    "presentationWebsites": {
+        "title": "Site de prezentare rapid, profesional și optimizat",
+        "description": "Fie că ai nevoie de un portofoliu, un website corporate sau o pagină de prezentare a serviciilor, îți livrăm o soluție personalizată, optimizată pentru performanță și ușor de administrat.",
+        "heroCta": "Realizează website-ul tău",
+        "subtitle": "Gata în câteva săptămâni, cu design custom și funcționalități moderne.",
+        "turnaround": "*Durata de realizare a unui site de prezentare variază între 7 și 30 de zile, în funcție de complexitatea proiectului și de disponibilitatea materialelor necesare. Furnizarea din timp a tuturor informațiilor și resurselor relevante permite respectarea termenelor de predare agreate.",
+        "subtitleP": [
+            "Implementare rapidă și fără ambiguități.",
+            "Design echilibrat între estetică și conversie.",
+            "Administrare ușoară pentru utilizatori non-tehnici.",
+            "Experiență în SEO + performanță în încărcare.",
+            "Pachete transparente, fără costuri adiționale."
+        ],
+        "ourProcess": {
+            "title": "Procesul nostru",
+            "list": [
+                {
+                    "step": "Consultanță & briefing",
+                    "description": "Stabilim obiectivele și publicul-țintă pentru proiect."
+                },
+                {
+                    "step": "Concept vizual",
+                    "description": "Propunem un design care reflectă brandul tău."
+                },
+                {
+                    "step": "Dezvoltare",
+                    "description": "Construim site responsive și optimizat pentru motoarele de căutare."
+                },
+                {
+                    "step": "Testare & lansare",
+                    "description": "Verificăm funcționalitatea pe toate dispozitivele înainte de a publica."
+                },
+                {
+                    "step": "Training & suport",
+                    "description": "Îți oferim instruire privind administrarea site-ului și suport post-lansare."
+                }
+            ]
+        },
+        "prices": {
+            "title": "Prețuri transparente și adaptate nevoilor tale",
+            "description": "Fiecare proiect este unic, de aceea oferim estimări personalizate în funcție de obiective, complexitate și resurse disponibile. Primești exact ce ai nevoie — fără costuri ascunse.",
+            "packages": {
+                "basic": {
+                    "title": "Basic",
+                    "price": "500 €",
+                    "features": [
+                        "5 pagini principale",
+                        "Design responsive",
+                        "Formular de contact",
+                        "SEO basic",
+                        "CMS simplu"
+                    ]
+                },
+                "professional": {
+                    "title": "Professional",
+                    "price": "1000 €",
+                    "features": [
+                        "5 pagini principale",
+                        "Design responsive",
+                        "Formular de contact",
+                        "SEO basic",
+                        "CMS simplu"
+                    ]
+                },
+                "beyond": {
+                    "title": "Beyond",
+                    "price": "Personalizat",
+                    "features": [
+                        "Design personalizat",
+                        "Galerie foto/video",
+                        "Multisite / multilanguage",
+                        "Blog / secțiune noutăți",
+                        "Hosting + SSL + suport 1 an",
+                        "Optimizare SEO OnPage"
+                    ]
+                }
+            }
+        },
+        "whyUs": {
+            "title": "De ce să lucrezi cu noi?",
+            "description": "Suntem mai mult decât furnizori de servicii – suntem parteneri care pun accent pe colaborare, rezultate clare și comunicare eficientă.",
+            "list": [
+                {
+                    "title": "Comunicare clară, fără jargon tehnic inutil",
+                    "description": "Explicăm lucrurile simplu și pe înțelesul tuturor, astfel încât să iei decizii în cunoștință de cauză, fără confuzii."
+                },
+                {
+                    "title": "Abordare consultativă, nu vânzare forțată",
+                    "description": "Ne concentrăm pe ceea ce ai nevoie cu adevărat, nu pe a vinde cât mai mult. Scopul nostru este să aducem valoare, nu să impunem soluții."
+                },
+                {
+                    "title": "Transparență totală în propuneri și soluții",
+                    "description": "Fiecare recomandare este argumentată, iar costurile și etapele sunt prezentate clar – fără costuri ascunse sau estimări vagi."
+                },
+                {
+                    "title": "Experiență aplicată în industrii diverse",
+                    "description": "Am lucrat cu afaceri din multiple domenii – de la retail și logistică, până la tech și servicii – oferind soluții adaptate fiecărei industrii."
+                },
+                {
+                    "title": "Livrabile concrete: documentație, roadmap, recomandări tehnice",
+                    "description": "Nu ne oprim la discuții. Vei primi materiale clare, planuri de acțiune și documentație completă, utile chiar și după colaborare."
+                }
+            ]
+        },
+        "footerCta": {
+            "title": "Ești pregătit să lansezi prezența ta online?",
+            "description": "Contactează-ne pentru o ofertă personalizată sau o discuție gratuită despre proiect.",
+            "button": "Solicită ofertă"
+        },
+        "faq": [
+            {
+                "q": "Cum pot solicita o ofertă personalizată?",
+                "a": "Ne poți răspunde direct la acest email sau ne poți contacta la [număr de telefon] pentru o ofertă adaptată proiectului tău."
+            },
+            {
+                "q": "Ce tipuri de lucrări sau produse oferiți?",
+                "a": "Oferim [listează pe scurt produsele/serviciile], adaptate atât pentru proiecte mari, cât și pentru lucrări punctuale."
+            },
+            {
+                "q": "Care este aria de acoperire a serviciilor?",
+                "a": "Livrăm și lucrăm în toată țara, iar pentru proiecte complexe putem asigura deplasare la șantier."
+            },
+            {
+                "q": "Oferiți reduceri pentru cantități mari?",
+                "a": "Da, avem discounturi speciale pentru comenzile de volum sau contracte pe termen lung."
+            },
+            {
+                "q": "În cât timp livrați sau finalizați lucrarea?",
+                "a": "Termenele variază în funcție de complexitate, dar în majoritatea cazurilor livrăm în [X] zile lucrătoare."
+            },
+            {
+                "q": "Cum pot verifica calitatea lucrărilor?",
+                "a": "Putem trimite exemple din proiectele anterioare și referințe de la clienți reali."
+            }
+        ]
+    },
     "itConsulting": {
         "title": "Consultanță IT pentru decizii strategice și sustenabile",
         "description": "De la strategie la execuție — Fie că dezvolți un nou produs digital sau optimizezi procesele interne, îți oferim ghidare strategică și soluții tehnice adaptate obiectivelor tale.",
         "subtitle": "Construiește inteligent, nu doar rapid",
         "subtitleP": [
-            "Consultanța IT de la Imboxsoft înseamnă mai mult decât simple recomandări. Ne implicăm activ ca parteneri de încredere în fiecare etapă a transformării tale digitale.",
+            "Consultanța IT din partea Imboxsoft înseamnă mai mult decât simple recomandări. Ne implicăm activ ca parteneri de încredere în fiecare etapă a transformării tale digitale.",
             "Indiferent dacă ești un startup la început de drum sau o companie în plină expansiune, ne asigurăm că deciziile tale tehnologice sunt bine fundamentate, scalabile și durabile."
         ],
         "whoDoWeAddressTo": {
@@ -193,10 +329,6 @@
                 "software": {
                     "title": "Evaluare Furnizori Software",
                     "description": "Te ajutăm să alegi cele mai bune soluții software (CRM, ERP, plăți, gestionare proiecte etc.) în funcție de buget, integrare și adaptabilitate."
-                },
-                "administration": {
-                    "title": "Suport Sisteme de Administrare",
-                    "description": "Gestionăm infrastructura IT: monitorizare performanță, control acces utilizatori, mentenanță și asigurarea conformității de securitate."
                 },
                 "optimization": {
                     "title": "Optimizarea proceselor",

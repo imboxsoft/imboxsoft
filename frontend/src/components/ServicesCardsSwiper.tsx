@@ -24,7 +24,7 @@ export default function ServicesCardsSwiper({
     const services = useServices();
 
     return (
-        <div className="w-full">
+        <div className="w-full no-select">
             <Swiper
                 className="h-full"
                 modules={[Navigation, Autoplay]}
