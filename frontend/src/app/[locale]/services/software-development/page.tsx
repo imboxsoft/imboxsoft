@@ -353,7 +353,7 @@ export default async function SoftwareDevelopment() {
                 </div>
             </section>
 
-            <section className="lg:sticky z-10 lg:top-[92px] bg-main-secondary py-2">
+            <section className="lg:sticky z-20 lg:top-[92px] bg-main-secondary py-2">
                 <div className="relative custom-container">
                     <div>
                         <ul className="services-ul relative z-50 flex flex-wrap lg:flex-nowrap flex-row gap-y-6 gap-x-20 lg:gap-x-6 lg:justify-between text-white">

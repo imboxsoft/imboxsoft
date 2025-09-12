@@ -26,7 +26,7 @@ export function ResponsiveFAQ({ id, title = "FAQ", faqs = [] }: FAQProps) {
         <div className="relative w-64 md:w-full max-w-full h-fit">
             <div className="absolute w-full h-full overflow-hidden px-1 md:ps-[9%] md:pe-[5%] md:pb-[5%] lg:ps-[10%] lg:pe-[10%] lg:pb-[4%]">
                 <div className="relative w-full h-full bg-main-background-dark rounded-[55px] lg:rounded-3xl">
-                    <div className="absolute w-full h-full pt-[9%] lg:pt-[2%] pb-4 px-4 z-10">
+                    <div className="absolute w-full h-full pt-[9%] lg:pt-[2%] pb-4 px-4 z-[9]">
                         <ScrollableWrapper className="w-full h-full overflow-y-auto scroll-smooth beautiful-scrollbar">
                             <FAQ id={id} faqs={faqs}></FAQ>
                         </ScrollableWrapper>

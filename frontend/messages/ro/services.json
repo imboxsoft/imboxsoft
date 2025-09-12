@@ -163,71 +163,109 @@
         "prices": {
             "title": "Prețuri transparente și adaptate nevoilor tale",
             "description": "Fiecare proiect este unic, de aceea oferim estimări personalizate în funcție de obiective, complexitate și resurse disponibile. Primești exact ce ai nevoie — fără costuri ascunse.",
-            "packages": {
-                "basic": {
+            "recommended": {
+                "id": 1,
+                "tag": "Recomandat",
+                "description": "Majoritatea clienților aleg acest pachet pentru echilibru între preț și funcționalitate"
+            },
+            "packages": [
+                {
                     "title": "Basic",
-                    "price": "500 €",
+                    "description": "Pentru afaceri mici sau la început de drum care au nevoie de o prezență online funcțională, rapidă și estetică.",
+                    "from": "de la",
+                    "price": "500€",
                     "features": [
-                        "5 pagini principale",
-                        "Design responsive",
+                        "Design de bază, modern, responsive (mobil/tabletă/desktop)",
+                        "Până la 5 pagini principale (ex: Acasă, Despre, Servicii, Galerie, Contact)",
+                        "CMS ușor de folosit (WordPress)",
+                        "Galerie foto",
                         "Formular de contact",
-                        "SEO basic",
-                        "CMS simplu"
-                    ]
+                        "Integrare hartă (Google Maps)",
+                        "Configurare Google Search Console",
+                        "Optimizare SEO de bază (on-page)",
+                        "Site securizat"
+                    ],
+                    "idealFor": "Ideal pentru: freelanceri, afaceri locale, start-up-uri",
+                    "cta": "Soluție rapidă"
                 },
-                "professional": {
+                {
                     "title": "Professional",
-                    "price": "1000 €",
+                    "description": "Pentru afaceri mici sau la început de drum care au nevoie de o prezență online funcțională, rapidă și estetică.",
+                    "from": "de la",
+                    "price": "1000€",
                     "features": [
-                        "5 pagini principale",
-                        "Design responsive",
-                        "Formular de contact",
-                        "SEO basic",
-                        "CMS simplu"
-                    ]
+                        "Tot ce oferă pachetul BASIC",
+                        "Design personalizat pe brandul tău",
+                        "Până la 10 pagini și subpagini adiționale",
+                        "CMS avansat (WordPress custom sau headless CMS)",
+                        "Integrare formulare newsletter",
+                        "Integrare cu rețele sociale",
+                        "Blog configurat + editor prietenos",
+                        "Panou de administrare adaptat",
+                        "Integrare Google Analytics 4, Tag Manager",
+                        "Optimizare SEO OnPage completă",
+                        "Optimizare viteză (Lighthouse & Core Web Vitals)",
+                        "Infrastructură GDPR (politici, cookies, consimțământ)",
+                        "Suport tehnic 1 lună"
+                    ],
+                    "idealFor": "Ideal pentru: companii medii, echipe care vor control & marketing",
+                    "cta": "Începe acum"
                 },
-                "beyond": {
+                {
                     "title": "Beyond",
+                    "description": "Pentru proiecte cu nevoi speciale: funcționalități complexe, integrări avansate, aplicații sau multilingv.",
+                    "from": "",
                     "price": "Personalizat",
                     "features": [
-                        "Design personalizat",
-                        "Galerie foto/video",
-                        "Multisite / multilanguage",
-                        "Blog / secțiune noutăți",
-                        "Hosting + SSL + suport 1 an",
-                        "Optimizare SEO OnPage"
-                    ]
+                        "Tot ce oferă pachetul PROFESSIONAL",
+                        "Pagini și subpagini nelimitate",
+                        "Site multi-lingv + SEO specific pe fiecare limbă",
+                        "Integrare CRM / ERP / API-uri externe",
+                        "Arhitectură scalabilă (React, Next.js, Laravel, Django)",
+                        "CMS headless (ex: Strapi)",
+                        "Funcționalități custom: sistem de rezervări, membership, plăți online, blog avansat",
+                        "SEO OnPage & OffPage (strategie completă)",
+                        "Integrare funnel-uri de marketing + analytics avansat",
+                        "Asistență & consultanță tehnică pe termen lung",
+                        "Mentenanță lunară + upgrade-uri"
+                    ],
+                    "idealFor": "Ideal pentru: SaaS, agenții, companii tech, proiecte scalabile",
+                    "cta": "Solicită ofertă personalizată"
                 }
-            }
+            ]
         },
         "whyUs": {
             "title": "De ce să lucrezi cu noi?",
-            "description": "Suntem mai mult decât furnizori de servicii – suntem parteneri care pun accent pe colaborare, rezultate clare și comunicare eficientă.",
+            "description": "Nu oferim doar un site frumos, ci o soluție completă care ajută afacerea ta să crească online.",
             "list": [
                 {
-                    "title": "Comunicare clară, fără jargon tehnic inutil",
-                    "description": "Explicăm lucrurile simplu și pe înțelesul tuturor, astfel încât să iei decizii în cunoștință de cauză, fără confuzii."
+                    "title": "Experiență reală cu proiecte variate",
+                    "description": "Am livrat site-uri de prezentare pentru startup-uri, freelanceri și companii din industrii diverse — știm cum să adaptăm soluția la nevoile tale."
                 },
                 {
-                    "title": "Abordare consultativă, nu vânzare forțată",
-                    "description": "Ne concentrăm pe ceea ce ai nevoie cu adevărat, nu pe a vinde cât mai mult. Scopul nostru este să aducem valoare, nu să impunem soluții."
+                    "title": "Design personalizat, nu șabloane generice",
+                    "description": "Fiecare site este construit de la zero pentru a reflecta identitatea vizuală a brandului tău. Fără teme reciclate."
                 },
                 {
-                    "title": "Transparență totală în propuneri și soluții",
-                    "description": "Fiecare recomandare este argumentată, iar costurile și etapele sunt prezentate clar – fără costuri ascunse sau estimări vagi."
+                    "title": "Optimizare SEO inclusă",
+                    "description": "Structurăm site-ul pentru motoarele de căutare încă din faza de planificare — astfel ai mai multe șanse să fii găsit pe Google."
                 },
                 {
-                    "title": "Experiență aplicată în industrii diverse",
-                    "description": "Am lucrat cu afaceri din multiple domenii – de la retail și logistică, până la tech și servicii – oferind soluții adaptate fiecărei industrii."
+                    "title": "Viteză și performanță garantată",
+                    "description": "Site-urile noastre sunt testate cu Lighthouse & Core Web Vitals — pentru încărcare rapidă și experiență fluidă."
                 },
                 {
-                    "title": "Livrabile concrete: documentație, roadmap, recomandări tehnice",
-                    "description": "Nu ne oprim la discuții. Vei primi materiale clare, planuri de acțiune și documentație completă, utile chiar și după colaborare."
+                    "title": "Consultanță & suport tehnic real",
+                    "description": "Nu doar livrăm un produs și dispărem. Te ghidăm pas cu pas, inclusiv după lansare."
+                },
+                {
+                    "title": "Totul într-un singur loc",
+                    "description": "De la design și dezvoltare până la găzduire, domeniu, e-mailuri și mentenanță — ne ocupăm noi de tot."
                 }
             ]
         },
         "footerCta": {
-            "title": "Ești pregătit să lansezi prezența ta online?",
+            "title": "Hai să discutăm despre cum ar trebui să arate prezența ta online. Primești o ofertă personalizată în cel mult 24h.",
             "description": "Contactează-ne pentru o ofertă personalizată sau o discuție gratuită despre proiect.",
             "button": "Solicită ofertă"
         },
