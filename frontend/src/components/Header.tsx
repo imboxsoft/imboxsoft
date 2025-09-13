@@ -16,6 +16,8 @@ import SlideScrollManager from "@/utils/SlideScroll";
 import LocaleSwitcher from "./LocaleSwitcher";
 
 import { useServices } from "@/utils/Services";
+import { DISABLED_PAGES } from "@/i18n/routing";
+import { ValidRoute } from "@/constants/routes";
 
 const fullConfig = resolveConfig(tailwindConfig);
 
@@ -38,7 +40,21 @@ export default function Header() {
 
     const navbarRef = useRef<HTMLDivElement>(null);
 
-    const navMenu = {
+    type SubMenuItem = {
+        route: ValidRoute;
+        title: string;
+        description: string | null;
+    };
+
+    type NavMenuItem = {
+        route: ValidRoute | null;
+        title: string;
+        subMenu: SubMenuItem[];
+    };
+
+    type NavMenuType = Record<string, NavMenuItem>;
+
+    let navMenu: NavMenuType = {
         services: {
             route: null,
             title: t("services.title"),
@@ -66,6 +82,27 @@ export default function Header() {
             subMenu: [],
         },
     };
+
+    navMenu = Object.entries(navMenu).reduce((acc, [key, value]) => {
+        const filteredSubMenu =
+            value.subMenu?.filter((item) => {
+                const isDisabled = DISABLED_PAGES.includes(item.route);
+                return !isDisabled;
+            }) || [];
+
+        const isDisabled = !!(
+            value.route && DISABLED_PAGES.includes(value.route)
+        );
+
+        if (isDisabled) return acc;
+
+        acc[key as keyof typeof navMenu] = {
+            ...value,
+            subMenu: filteredSubMenu,
+        };
+
+        return acc;
+    }, {} as NavMenuType);
 
     useEffect(() => {
         currentSubmenuKeyRef.current = currentSubmenuKey;

@@ -62,7 +62,38 @@ export const pathnames = {
         ro: "/contact",
         en: "/contact",
     },
+
+    [ROUTE_KEYS.UNAVAILABLE]: {
+        ro: "/indisponibil",
+        en: "/unavailable",
+    },
 };
+
+function getDisabledLocalizedPaths(): string[] {
+    const disabledKeys = [
+        "ECOMMERCE",
+        "SEO",
+        "EMAIL_MARKETING",
+        "INSIGHTS",
+    ] as const;
+
+    const paths: string[] = [];
+
+    disabledKeys.forEach((key) => {
+        const path = pathnames[ROUTE_KEYS[key]];
+        if (path) {
+            if (typeof path === "string") {
+                paths.push(path);
+            } else {
+                paths.push(...Object.values(path));
+            }
+        }
+    });
+
+    return paths;
+}
+
+export const DISABLED_PAGES: string[] = getDisabledLocalizedPaths();
 
 export const routing = defineRouting({
     locales: locales,

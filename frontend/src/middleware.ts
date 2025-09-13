@@ -1,6 +1,7 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import createMiddleware from "next-intl/middleware";
-import { routing } from "./i18n/routing";
+import { DISABLED_PAGES, routing } from "@/i18n/routing";
+import { ROUTE_KEYS } from "@/constants/routes";
 
 export default function middleware(request: NextRequest) {
     const mode = process.env.MODE ?? "development";
@@ -18,6 +19,16 @@ export default function middleware(request: NextRequest) {
                 break;
             }
         }
+    }
+
+    const { pathname } = request.nextUrl;
+
+    const pathWithoutLocale = pathname.replace(/^\/(ro|en)/, "");
+
+    if (DISABLED_PAGES.includes(pathname) || DISABLED_PAGES.includes(pathWithoutLocale)) {
+        const url = request.nextUrl.clone();
+        url.pathname = ROUTE_KEYS["UNAVAILABLE"];
+        return NextResponse.redirect(url, 302);
     }
 
     const intlMiddleware = createMiddleware({

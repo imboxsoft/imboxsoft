@@ -20,7 +20,12 @@
         "allM": "Toți",
         "allF": "Toate",
         "partners": "Parteneri",
-        "ourClients": "Clienții noștri"
+        "ourClients": "Clienții noștri",
+        "pageIsUnavailable": {
+            "title": "Pagină indisponibilă",
+            "description": "Serviciul sau pagina pe care o cauți nu este activă momentan.",
+            "button": "Înapoi la prima pagină"
+        }
     },
     "navigation": {
         "home": {

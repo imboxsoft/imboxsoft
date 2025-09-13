@@ -17,6 +17,10 @@ export const ROUTE_KEYS = {
     INSIGHT_POST: (slug: string) => `/blog/${slug}`,
 
     CONTACT: "/contact",
-} as const;
+
+    UNAVAILABLE: "/unavailable",
+};
 
 export type RouteKey = keyof typeof ROUTE_KEYS;
+type StaticRouteValue = typeof ROUTE_KEYS[keyof typeof ROUTE_KEYS];
+export type ValidRoute = Extract<StaticRouteValue, string>;
