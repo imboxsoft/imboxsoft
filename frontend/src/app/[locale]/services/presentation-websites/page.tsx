@@ -3,133 +3,20 @@ import Image from "next/image";
 import { getRichTranslations } from "@/i18n/utils";
 import { ROUTE_KEYS as routes } from "@/constants/routes";
 
-import PointsWithIcons from "@/components/PointsWithIcons";
-
 import { Link } from "@/i18n/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { ScrollManagerEvaluator } from "@/components/ScrollManager";
-import SlideScrollManager from "@/utils/SlideScroll";
 import { WhyUsGuySVG } from "@/components/SVGs";
+import { technologyLogos } from "@/utils/Technologies";
+import { AutomatedCarousel } from "@/components/AutomatedCarousel";
 
 export default async function ITConsulting() {
     const ts = await getRichTranslations("services");
     const tc = await getRichTranslations("common");
 
-    const whatWeDo = [
-        {
-            svgIcon: (
-                <svg
-                    className="w-6 h-6 text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                    />
-                </svg>
-            ),
-            title: "WordPress Development", //ts.text("itConsulting.whatWeDo.list.digital.title"),
-            descriptions: [
-                //ts.text("itConsulting.whatWeDo.list.digital.description"),
-                "Rapid deployment using pre-built themes or custom-built designs",
-                "SEO-friendly structure with easy content management",
-                "Ideal for businesses that need a beautiful online presence fast and affordably",
-            ],
-        },
-        {
-            svgIcon: (
-                <svg
-                    className="w-6 h-6 text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M15.583 8.445h.01M10.86 19.71l-6.573-6.63a.993.993 0 0 1 0-1.4l7.329-7.394A.98.98 0 0 1 12.31 4l5.734.007A1.968 1.968 0 0 1 20 5.983v5.5a.992.992 0 0 1-.316.727l-7.44 7.5a.974.974 0 0 1-1.384.001Z"
-                    />
-                </svg>
-            ),
-            title: "Custom Website Development", //ts.text("itConsulting.whatWeDo.list.architecture.title"),
-            descriptions: [
-                //ts.text("itConsulting.whatWeDo.list.architecture.description"),
-                "Tailored codebases using Next.js, React, or static generators",
-                "Pixel-perfect designs, optimized performance, and advanced scalability",
-                "Freedom to integrate animations, API content, or custom logic",
-            ],
-        },
-        {
-            svgIcon: (
-                <svg
-                    className="w-6 h-6 text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="m8.032 12 1.984 1.984 4.96-4.96m4.55 5.272.893-.893a1.984 1.984 0 0 0 0-2.806l-.893-.893a1.984 1.984 0 0 1-.581-1.403V7.04a1.984 1.984 0 0 0-1.984-1.984h-1.262a1.983 1.983 0 0 1-1.403-.581l-.893-.893a1.984 1.984 0 0 0-2.806 0l-.893.893a1.984 1.984 0 0 1-1.403.581H7.04A1.984 1.984 0 0 0 5.055 7.04v1.262c0 .527-.209 1.031-.581 1.403l-.893.893a1.984 1.984 0 0 0 0 2.806l.893.893c.372.372.581.876.581 1.403v1.262a1.984 1.984 0 0 0 1.984 1.984h1.262c.527 0 1.031.209 1.403.581l.893.893a1.984 1.984 0 0 0 2.806 0l.893-.893a1.985 1.985 0 0 1 1.403-.581h1.262a1.984 1.984 0 0 0 1.984-1.984V15.7c0-.527.209-1.031.581-1.403Z"
-                    />
-                </svg>
-            ),
-            title: "Design to Code", //ts.text("itConsulting.whatWeDo.list.cloud.title"),
-            descriptions: [
-                //ts.text("itConsulting.whatWeDo.list.cloud.description"),
-                "Got a design in Figma or Adobe? We’ll bring it to life with pixel-perfect implementation",
-            ],
-        },
-        {
-            svgIcon: (
-                <svg
-                    className="w-6 h-6 text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeWidth="2"
-                        d="M16 19h4a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-2m-2.236-4a3 3 0 1 0 0-4M3 18v-1a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Zm8-10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                    />
-                </svg>
-            ),
-            title: "Mobile-First & Responsive Design", //ts.text("itConsulting.whatWeDo.list.automation.title"),
-            descriptions: [
-                //ts.text("itConsulting.whatWeDo.list.automation.description"),
-                "Fully optimized across mobile, tablet, and desktop",
-                "Focused on UI/UX principles for user engagement",
-            ],
-        },
-    ];
-
     return (
         <div>
             <section className="observe-navbar-intersect pt-32 w-full bg-main-opacity-black-75">
-                <div className="relative custom-container py-32">
+                <div className="relative custom-container py-24">
                     <div>
                         <div className="md:w-2/3">
                             <div className="mb-8">
@@ -156,8 +43,8 @@ export default async function ITConsulting() {
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect w-full bg-main-background-lighter lg:pt-20 lg:pb-20">
-                <div className="custom-container lg:rounded-3xl mx-auto pt-16 md:pt-24 bg-main-background md:px-4">
+            <section className="observe-navbar-intersect w-full bg-main-background-dark lg:pt-20 lg:pb-10">
+                <div className="custom-container lg:rounded-3xl mx-auto pt-24 bg-main-background-darker md:px-4">
                     <div>
                         <div className="flex flex-col md:flex-row gap-6 md:items-center">
                             <div className="flex-1">
@@ -184,8 +71,8 @@ export default async function ITConsulting() {
                 </div>
             </section>
 
-            {/* <section className="observe-navbar-intersect w-full bg-main-background-darker py-32">
-                <div className="custom-container lg:rounded-3xl mx-auto">
+            <section className="observe-navbar-intersect w-full bg-main-background-dark py-20 md:py-24 pb-6">
+                <div className="custom-container lg:rounded-3xl">
                     <div>
                         <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
@@ -197,23 +84,27 @@ export default async function ITConsulting() {
                                 )}
                             </p>
                         </div>
-                        <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+                        <div className="space-y-8 lg:grid lg:grid-cols-2 xl:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 justify-center">
                             {ts
                                 .raw("presentationWebsites.prices.packages")
                                 .map((p: any, i: number) => (
                                     <div
-                                        className="relative flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
+                                        className={`${
+                                            i === 2
+                                                ? "lg:col-span-2 xl:col-span-1"
+                                                : ""
+                                        } relative flex flex-col pt-8 p-6 mx-auto max-w-lg text-center bg-main-background-darker text-white rounded-lg border border-main-secondary shadow xl:p-8`}
                                         key={i}
                                     >
                                         {i ==
                                             ts.raw(
                                                 "presentationWebsites.prices.recommended.id"
                                             ) && (
-                                            <>
+                                            <div className="w-full overflow-visible">
                                                 <button
                                                     data-tooltip-target="tooltip-recommended"
                                                     type="button"
-                                                    className="absolute top-4 right-4 bg-amber-500 text-xs font-semibold px-2 py-1 rounded"
+                                                    className="absolute top-2 right-2 bg-main-secondary-darker text-xs font-semibold px-2 py-1 rounded"
                                                 >
                                                     {ts.raw(
                                                         "presentationWebsites.prices.recommended.tag"
@@ -222,7 +113,7 @@ export default async function ITConsulting() {
                                                 <div
                                                     id="tooltip-recommended"
                                                     role="tooltip"
-                                                    className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700"
+                                                    className="absolute z-10 left-0 -translate-x-1/2 mt-2 max-w-[240px] px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow opacity-0 invisible group-hover:visible group-hover:opacity-100"
                                                 >
                                                     {ts.raw(
                                                         "presentationWebsites.prices.recommended.description"
@@ -232,10 +123,10 @@ export default async function ITConsulting() {
                                                         data-popper-arrow
                                                     ></div>
                                                 </div>
-                                            </>
+                                            </div>
                                         )}
 
-                                        <h3 className="mb-4 text-2xl font-semibold">
+                                        <h3 className="mb-4 text-2xl font-semibold text-main-primary">
                                             {p.title}
                                         </h3>
                                         <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
@@ -245,7 +136,7 @@ export default async function ITConsulting() {
                                             <span className="text-gray-500 dark:text-gray-400">
                                                 {p.from}
                                             </span>
-                                            <span className="ms-4 text-5xl font-extrabold">
+                                            <span className="ms-4 text-5xl font-extrabold text-yellow-400">
                                                 {p.price}
                                             </span>
                                         </div>
@@ -276,67 +167,99 @@ export default async function ITConsulting() {
                                                 )
                                             )}
                                         </ul>
-                                        <p className="mb-10 text-main-primary">
-                                            {p.idealFor}
-                                        </p>
                                         <Link
                                             href={routes.CONTACT}
-                                            className="bg-main-secondary px-6 py-4 font-semibold rounded-md"
+                                            className="mt-2 bg-main-secondary px-6 py-4 font-semibold rounded-md"
                                         >
                                             {p.cta}
                                         </Link>
+                                        <p className="mt-2 mb-10 text-main-primary">
+                                            {p.idealFor}
+                                        </p>
                                     </div>
                                 ))}
                         </div>
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <div className="window-self-contained-showcase">
+            <div className="window-self-contained-showcase">
                 {ts
                     .raw("presentationWebsites.ourProcess.list")
                     .map((p: any, i: number) => (
                         <section
-                            className={`observe-navbar-intersect w-full bg-main-background-lighter ${
+                            className={`observe-navbar-intersect w-full pt-10  bg-main-background-lighter even:bg-main-background ${
                                 i === 0 ? "current-scroll" : ""
                             }`}
                             key={i}
                         >
-                            <div className="custom-container mx-auto h-full">
-                                <div className="h-full flex items-center">
-                                    {p.step}
+                            <div className="custom-container mx-auto h-full flex flex-col justify-center items-center">
+                                <div
+                                    className={`h-fit lg:h-full flex flex-col lg:flex-row ${
+                                        i % 2 != 0 ? "lg:flex-row-reverse" : ""
+                                    } items-center lg:justify-between gap-x-20`}
+                                >
+                                    <div className="w-fit flex -mb-24">
+                                        <Image
+                                            className="rounded-3xl"
+                                            src="/images/home/why-us.avif"
+                                            width={500}
+                                            height={500}
+                                            alt="Formulare și newsletter"
+                                        />
+                                    </div>
+                                    <div className="sm:max-w-[500px] lg:sm:max-w-[750px] lg:w-1/2">
+                                        <div className="w-full">
+                                            <div className="flex gap-10 md:gap-16 items-center -mb-16">
+                                                <div className="font-semibold rounded-full p-10 bg-main-secondary w-24 h-24 mb-6 -ms-2">
+                                                    <div className="w-fit text-6xl border-b-[12px] border-main-primary">
+                                                        <p className="text-6xl">
+                                                            {p.no}.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <h3
+                                                    className="relative inline-block text-4xl md:text-5xl font-semibold mb-2 
+                                                        before:content-[''] 
+                                                        before:absolute 
+                                                        before:-inset-y-2 
+                                                        before:-left-4 
+                                                        before:w-[400px]
+                                                        before:bg-main-background-darker 
+                                                        before:opacity-90 
+                                                        before:rounded 
+                                                        before:z-0
+                                                        before:min-w-full"
+                                                >
+                                                    <span className="relative z-[1]">
+                                                        {p.step}
+                                                    </span>
+                                                </h3>
+                                            </div>
+                                            <div className="p-10 md:p-20 bg-main-background-dark">
+                                                <p className="mt-10 md:mt-6">
+                                                    {p.description}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </section>
                     ))}
-            </div> */}
+            </div>
 
-            {/* <section className="observe-navbar-intersect w-full bg-main-background-lighter">
-                <div className="custom-container mx-auto pt-16 pb-24">
+            <section className="observe-navbar-intersect w-full bg-main-background">
+                <div className="custom-container mx-auto py-24">
                     <div>
-                        <PointsWithIcons
-                            title="What We Offer"
-                            subtitle={ts.text("itConsulting.whatWeDo.subtitle")}
-                            description={ts.text(
-                                "itConsulting.whatWeDo.description"
-                            )}
-                            points={whatWeDo}
-                        />
-                    </div>
-                </div>
-            </section> */}
-
-            <section className="observe-navbar-intersect w-full bg-main-background-lighter">
-                <div className="custom-container mx-auto py-32">
-                    <div>
-                        <h2 className="text-5xl font-semibold mb-6 text-center">
+                        <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-center">
                             {ts.text("presentationWebsites.whyUs.title")}
                         </h2>
-                        <p className="py-20">
+                        <p className="mb-10">
                             {ts.text("presentationWebsites.whyUs.description")}
                         </p>
-                        <div className="relative flex justify-center gap-20">
-                            <ul className="flex flex-col gap-12 flex-1">
+                        <div className="relative flex justify-center gap-6">
+                            <ul className="flex flex-col gap-12 flex-1 z-10">
                                 {ts
                                     .raw("presentationWebsites.whyUs.list")
                                     .map((r: any, i: number) => (
@@ -360,7 +283,7 @@ export default async function ITConsulting() {
                                                     </svg>
                                                 </div>
                                                 <div>
-                                                    <p className="text-2xl font-semibold">
+                                                    <p className="text-2xl font-semibold mb-4">
                                                         {r.title}
                                                     </p>
                                                     <p className="text-2xl">
@@ -371,260 +294,61 @@ export default async function ITConsulting() {
                                         </li>
                                     ))}
                             </ul>
-                            {/* <div className="flex-1 absolute z-0 lg:relative">
+                            <div className="opacity-30 lg:opacity-100 w-[750px] lg:max-w-[350px] xl:max-w-[500px] flex-1 absolute z-0 lg:relative">
                                 <WhyUsGuySVG />
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="observe-navbar-intersect w-full bg-main-background">
-                <div className="custom-container mx-auto py-32">
+            <section className="observe-navbar-intersect w-full bg-main-background-dark">
+                <div className="custom-container mx-auto pt-24 pb-16">
                     <div>
-                        <div className="mb-32">
-                            <h2 className="text-5xl font-semibold mb-4 text-center xl:text-start">
-                                Opțiuni Suplimentare
+                        <div className="mb-16">
+                            <h2 className="text-5xl font-semibold mb-10 text-center xl:text-start">
+                                {ts.text(
+                                    "presentationWebsites.extraOptions.title"
+                                )}
                             </h2>
                             <p>
-                                Vrei mai mult decât un simplu site de
-                                prezentare? Îți oferim integrări și
-                                funcționalități extra care fac site-ul mai
-                                inteligent, mai rapid și mai eficient.
+                                {ts.text(
+                                    "presentationWebsites.extraOptions.description"
+                                )}
                             </p>
                         </div>
 
                         <ul className="flex flex-col gap-24">
-                            <li className="flex flex-col md:flex-row gap-20 even:md:flex-row-reverse">
-                                <div className="flex-1">
-                                    <h3 className="text-4xl font-bold mb-2">
-                                        Formulare de contact & integrare
-                                        newsletter
-                                    </h3>
-                                    <p>
-                                        Simplifică procesul de comunicare cu
-                                        vizitatorii și colectează lead-uri prin
-                                        formulare interactive sau abonări la
-                                        newsletter integrate direct în site.
-                                    </p>
-                                </div>
-                                <div className="w-fit flex">
-                                    <Image
-                                        className="rounded-3xl"
-                                        src="/images/home/why-us.avif"
-                                        width={500}
-                                        height={500}
-                                        alt="Formulare și newsletter"
-                                    />
-                                </div>
-                            </li>
-
-                            <li className="flex flex-col md:flex-row gap-20 even:md:flex-row-reverse">
-                                <div className="flex-1">
-                                    <h3 className="text-4xl font-bold mb-2">
-                                        Secțiune Blog
-                                    </h3>
-                                    <p>
-                                        Îți oferim posibilitatea de a publica
-                                        articole, noutăți sau ghiduri pentru
-                                        clienți, crescând vizibilitatea
-                                        brandului și autoritatea online.
-                                    </p>
-                                </div>
-                                <div className="w-fit">
-                                    <Image
-                                        className="rounded-3xl"
-                                        src="/images/home/why-us.avif"
-                                        width={500}
-                                        height={500}
-                                        alt="Blog setup"
-                                    />
-                                </div>
-                            </li>
-
-                            <li className="flex flex-col md:flex-row gap-20 even:md:flex-row-reverse">
-                                <div className="flex-1">
-                                    <h3 className="text-4xl font-bold mb-2">
-                                        Optimizare SEO & Performanță
-                                    </h3>
-                                    <p>
-                                        Ne asigurăm că site-ul tău se încarcă
-                                        rapid, respectă bunele practici SEO și
-                                        este ușor de găsit de către clienți în
-                                        Google.
-                                    </p>
-                                </div>
-                                <div className="w-fit">
-                                    <Image
-                                        className="rounded-3xl"
-                                        src="/images/home/why-us.avif"
-                                        width={500}
-                                        height={500}
-                                        alt="Optimizare SEO"
-                                    />
-                                </div>
-                            </li>
-
-                            <li className="flex flex-col md:flex-row gap-20 even:md:flex-row-reverse">
-                                <div className="flex-1">
-                                    <h3 className="text-4xl font-bold mb-2">
-                                        Google Analytics & Search Console
-                                    </h3>
-                                    <p>
-                                        Primești acces la instrumente
-                                        profesionale de monitorizare a
-                                        traficului și performanței site-ului,
-                                        pentru a înțelege mai bine
-                                        comportamentul vizitatorilor.
-                                    </p>
-                                </div>
-                                <div className="w-fit">
-                                    <Image
-                                        className="rounded-3xl"
-                                        src="/images/home/why-us.avif"
-                                        width={500}
-                                        height={500}
-                                        alt="Google Analytics"
-                                    />
-                                </div>
-                            </li>
-
-                            <li className="flex flex-col md:flex-row gap-20 even:md:flex-row-reverse">
-                                <div className="flex-1">
-                                    <h3 className="text-4xl font-bold mb-2">
-                                        Multilingual / Site în mai multe limbi
-                                    </h3>
-                                    <p>
-                                        Oferim suport pentru site-uri
-                                        multilingve, cu sistem de traduceri ușor
-                                        de gestionat și optimizat pentru SEO
-                                        internațional.
-                                    </p>
-                                    <p>
-                                        *Ajută la extinderea pieței și
-                                        îmbunătățirea experienței utilizatorului
-                                        internațional.
-                                    </p>
-                                </div>
-                                <div className="w-fit">
-                                    <Image
-                                        className="rounded-3xl"
-                                        src="/images/home/why-us.avif"
-                                        width={500}
-                                        height={500}
-                                        alt="Google Analytics"
-                                    />
-                                </div>
-                            </li>
-
-                            <li className="flex flex-col md:flex-row gap-20 even:md:flex-row-reverse">
-                                <div className="flex-1">
-                                    <h3 className="text-4xl font-bold mb-2">
-                                        Panou de administrare personalizat (CMS)
-                                    </h3>
-                                    <p>
-                                        Îți livrăm un panou intuitiv, complet
-                                        adaptat conținutului tău — fără funcții
-                                        inutile și fără bătăi de cap.
-                                    </p>
-                                    <p>
-                                        *Pentru clienți care vor control complet
-                                        fără să depindă de dezvoltatori.
-                                    </p>
-                                </div>
-                                <div className="w-fit">
-                                    <Image
-                                        className="rounded-3xl"
-                                        src="/images/home/why-us.avif"
-                                        width={500}
-                                        height={500}
-                                        alt="Google Analytics"
-                                    />
-                                </div>
-                            </li>
-
-                            <li className="flex flex-col md:flex-row gap-20 even:md:flex-row-reverse">
-                                <div className="flex-1">
-                                    <h3 className="text-4xl font-bold mb-2">
-                                        Pagini dinamice sau catalog produse /
-                                        servicii
-                                    </h3>
-                                    <p>
-                                        Configurăm template-uri dinamice pentru
-                                        adăugare rapidă de produse, servicii sau
-                                        portofolii, fără a modifica codul.
-                                    </p>
-                                    <p>
-                                        *Pentru site-uri care trebuie să scaleze
-                                        rapid fără refactor.
-                                    </p>
-                                </div>
-                                <div className="w-fit">
-                                    <Image
-                                        className="rounded-3xl"
-                                        src="/images/home/why-us.avif"
-                                        width={500}
-                                        height={500}
-                                        alt="Google Analytics"
-                                    />
-                                </div>
-                            </li>
-
-                            <li className="flex flex-col md:flex-row gap-20 even:md:flex-row-reverse">
-                                <div className="flex-1">
-                                    <h3 className="text-4xl font-bold mb-2">
-                                        Securitate & GDPR
-                                    </h3>
-                                    <p>
-                                        Implementăm măsuri de securitate și
-                                        module GDPR-compliant: cookie banner,
-                                        politici de confidențialitate, protecție
-                                        date.
-                                    </p>
-                                    <p>*Un must-have pentru companii.</p>
-                                </div>
-                                <div className="w-fit">
-                                    <Image
-                                        className="rounded-3xl"
-                                        src="/images/home/why-us.avif"
-                                        width={500}
-                                        height={500}
-                                        alt="Google Analytics"
-                                    />
-                                </div>
-                            </li>
-
-                            <li className="flex flex-col md:flex-row gap-20 even:md:flex-row-reverse">
-                                <div className="flex-1">
-                                    <h3 className="text-4xl font-bold mb-2">
-                                        Backup automat & mentenanță tehnică
-                                    </h3>
-                                    <p>
-                                        Ne ocupăm de mentenanță periodică,
-                                        actualizări și backup-uri automate
-                                        pentru ca tu să te concentrezi pe
-                                        afacere.
-                                    </p>
-                                    <p>
-                                        *Ideal pentru clienți care vor liniște
-                                        pe termen lung.
-                                    </p>
-                                </div>
-                                <div className="w-fit">
-                                    <Image
-                                        className="rounded-3xl"
-                                        src="/images/home/why-us.avif"
-                                        width={500}
-                                        height={500}
-                                        alt="Google Analytics"
-                                    />
-                                </div>
-                            </li>
+                            {ts
+                                .raw("presentationWebsites.extraOptions.list")
+                                .map((o: any, i: number) => (
+                                    <li
+                                        className="flex flex-col md:flex-row gap-y-10 gap-x-20 even:md:flex-row-reverse items-center"
+                                        key={i}
+                                    >
+                                        <div className="flex-1">
+                                            <h3 className="text-4xl font-bold mb-2">
+                                                {o.title}
+                                            </h3>
+                                            <p>{o.description}</p>
+                                        </div>
+                                        <div className="w-fit flex">
+                                            <Image
+                                                className="rounded-3xl"
+                                                src="/images/home/why-us.avif"
+                                                width={500}
+                                                height={500}
+                                                alt="Formulare și newsletter"
+                                            />
+                                        </div>
+                                    </li>
+                                ))}
                         </ul>
 
-                        <h3 className="text-5xl font-medium text-center mt-32">
-                            Ai nevoie de ceva mai specific? Spune-ne ce îți
-                            dorești, iar noi venim cu soluția potrivită.
+                        <h3 className="text-4xl font-semibold text-center mt-32">
+                            {ts.rich(
+                                "presentationWebsites.extraOptions.needSpecifics"
+                            )}
                         </h3>
                     </div>
                 </div>
@@ -633,31 +357,85 @@ export default async function ITConsulting() {
             <section className="observe-navbar-intersect w-full bg-main-opacity-black-75">
                 <div className="custom-container py-40 lg:py-72">
                     <div className="max-w-[1000px] mx-auto">
+                        <div className="relative w-full mb-16">
+                            <div className="text-center mb-6">
+                                <h2 className="text-2xl text-main-primary font-medium inline-block whitespace-nowrap mb-1">
+                                    {tc.text("common.ourClients")}
+                                </h2>
+                            </div>
+                            <div className="w-full">
+                                <AutomatedCarousel
+                                    breakpoints={{
+                                        0: {
+                                            spaceBetween: 100,
+                                            slidesPerView: 3,
+                                        },
+                                        640: {
+                                            spaceBetween: 150,
+                                            slidesPerView: 3,
+                                        },
+                                        768: {
+                                            spaceBetween: 100,
+                                            slidesPerView: 5,
+                                        },
+                                        1280: {
+                                            spaceBetween: 150,
+                                            slidesPerView: 5,
+                                        },
+                                    }}
+                                    elements={technologyLogos.map(
+                                        (el, index) => (
+                                            <div
+                                                className="relative w-full aspect-square md:mb-2"
+                                                key={index}
+                                            >
+                                                <Image
+                                                    src={el.src}
+                                                    className="object-fit"
+                                                    fill
+                                                    alt={el.name}
+                                                />
+                                            </div>
+                                        )
+                                    )}
+                                />
+                            </div>
+                        </div>
+
                         <div className="text-center">
                             <h2 className="text-2xl md:text-4xl font-medium pb-10">
-                                {/* {tc.text(
-                                    "common.cta.descriptions.happyToBuild"
-                                )} */}
-                                Pregătit să îți crești vizibilitatea online?
+                                {ts.rich(
+                                    "presentationWebsites.footerCta.title"
+                                )}
                             </h2>
                             <p className="mb-10">
-                                Contactează-ne pentru o ofertă personalizată.
-                                Fără obligații, doar soluții clare.
+                                {ts.rich(
+                                    "presentationWebsites.footerCta.description"
+                                )}
                             </p>
                         </div>
-                        <div className="flex flex-col gap-16 items-center">
+
+                        <div className="flex flex-row gap-10 justify-center">
                             <Link
                                 href={routes.CONTACT}
                                 className="bg-main-secondary px-6 py-4 font-semibold rounded-md"
                             >
-                                {tc.text("common.cta.btn.bookConsultaion")}
+                                {ts.rich(
+                                    "presentationWebsites.footerCta.button"
+                                )}
+                            </Link>
+                            <Link
+                                href={routes.PORTFOLIO}
+                                className="bg-main-primary-dark px-6 py-4 font-semibold rounded-md"
+                            >
+                                {ts.rich(
+                                    "presentationWebsites.footerCta.protfolio"
+                                )}
                             </Link>
                         </div>
                     </div>
                 </div>
             </section>
-
-            {/* <ScrollManagerEvaluator /> */}
         </div>
     );
 }

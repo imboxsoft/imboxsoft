@@ -24,6 +24,7 @@ export default {
                     },
                     primary: {
                         DEFAULT: "var(--primary)",
+                        dark: "var(--primary-dark)",
                     },
                     secondary: {
                         DEFAULT: "var(--secondary)",

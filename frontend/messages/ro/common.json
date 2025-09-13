@@ -18,7 +18,9 @@
             }
         },
         "allM": "Toți",
-        "allF": "Toate"
+        "allF": "Toate",
+        "partners": "Parteneri",
+        "ourClients": "Clienții noștri"
     },
     "navigation": {
         "home": {

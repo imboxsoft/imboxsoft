@@ -135,31 +135,6 @@
             "Experiență în SEO + performanță în încărcare.",
             "Pachete transparente, fără costuri adiționale."
         ],
-        "ourProcess": {
-            "title": "Procesul nostru",
-            "list": [
-                {
-                    "step": "Consultanță & briefing",
-                    "description": "Stabilim obiectivele și publicul-țintă pentru proiect."
-                },
-                {
-                    "step": "Concept vizual",
-                    "description": "Propunem un design care reflectă brandul tău."
-                },
-                {
-                    "step": "Dezvoltare",
-                    "description": "Construim site responsive și optimizat pentru motoarele de căutare."
-                },
-                {
-                    "step": "Testare & lansare",
-                    "description": "Verificăm funcționalitatea pe toate dispozitivele înainte de a publica."
-                },
-                {
-                    "step": "Training & suport",
-                    "description": "Îți oferim instruire privind administrarea site-ului și suport post-lansare."
-                }
-            ]
-        },
         "prices": {
             "title": "Prețuri transparente și adaptate nevoilor tale",
             "description": "Fiecare proiect este unic, de aceea oferim estimări personalizate în funcție de obiective, complexitate și resurse disponibile. Primești exact ce ai nevoie — fără costuri ascunse.",
@@ -234,6 +209,37 @@
                 }
             ]
         },
+        "ourProcess": {
+            "title": "Procesul nostru",
+            "description": "Fiecare proiect urmează o abordare clară, colaborativă și eficientă. Nu lăsăm nimic la voia întâmplării.",
+            "list": [
+                {
+                    "no": "01",
+                    "step": "Consultanță & briefing",
+                    "description": "Începem cu o sesiune de consultanță în care analizăm obiectivele de business, publicul-țintă, funcționalitățile necesare și eventualele provocări. Acesta este momentul în care înțelegem exact ce ai nevoie — pentru a putea livra ceea ce ai cu adevărat nevoie, nu doar ce ceri."
+                },
+                {
+                    "no": "02",
+                    "step": "Concept vizual",
+                    "description": "Pe baza discuției inițiale, conturăm direcția vizuală a proiectului. Propunem designuri care reflectă valorile brandului tău, combinând estetica modernă cu o experiență de utilizator intuitivă. Totul este adaptat publicului tău și specificului industriei."
+                },
+                {
+                    "no": "03",
+                    "step": "Dezvoltare",
+                    "description": "Trecem la implementare: folosim tehnologii moderne pentru a construi un site rapid, responsive, optimizat SEO și ușor de administrat. Fie că folosim WordPress, Next.js sau alte soluții — totul este personalizat pentru tine."
+                },
+                {
+                    "no": "04",
+                    "step": "Testare & lansare",
+                    "description": "Verificăm atent fiecare detaliu: compatibilitate pe toate browserele și dispozitivele, viteza de încărcare, SEO, formulare, animații, link-uri, și funcționalități. După ce totul este perfect funcțional și aprobat, lansăm site-ul live."
+                },
+                {
+                    "no": "05",
+                    "step": "Training & suport",
+                    "description": "După lansare, îți oferim instruire despre cum să administrezi conținutul site-ului. Ai inclus și o perioadă de mentenanță gratuită, iar dacă dorești suport extins — putem rămâne partenerul tău tehnic pe termen lung."
+                }
+            ]
+        },
         "whyUs": {
             "title": "De ce să lucrezi cu noi?",
             "description": "Nu oferim doar un site frumos, ci o soluție completă care ajută afacerea ta să crească online.",
@@ -264,10 +270,68 @@
                 }
             ]
         },
+        "extraOptions": {
+            "title": "Opțiuni Suplimentare",
+            "description": "Vrei mai mult decât un simplu site de prezentare? Îți oferim integrări și funcționalități extra care fac site-ul mai inteligent, mai rapid și mai eficient.",
+            "list": [
+                {
+                    "title": "Formulare de contact & integrare newsletter",
+                    "description": "Simplifică procesul de comunicare cu vizitatorii și colectează lead-uri prin formulare interactive sau abonări la newsletter integrate direct în site.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Secțiune Blog",
+                    "description": "Îți oferim posibilitatea de a publica articole, noutăți sau ghiduri pentru clienți, crescând vizibilitatea brandului și autoritatea online.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Optimizare SEO & Performanță",
+                    "description": "Ne asigurăm că site-ul tău se încarcă rapid, respectă bunele practici SEO și este ușor de găsit de către clienți în Google.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Google Analytics & Search Console",
+                    "description": "Primești acces la instrumente profesionale de monitorizare a traficului și performanței site-ului, pentru a înțelege mai bine comportamentul vizitatorilor.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Multilingual / Site în mai multe limbi",
+                    "description": "Oferim suport pentru site-uri multilingve, cu sistem de traduceri ușor de gestionat și optimizat pentru SEO internațional.",
+                    "extra": "*Ajută la extinderea pieței și îmbunătățirea experienței utilizatorului internațional.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Panou de administrare personalizat (CMS)",
+                    "description": "Îți livrăm un panou intuitiv, complet adaptat conținutului tău — fără funcții inutile și fără bătăi de cap.",
+                    "extra": "*Pentru clienți care vor control complet fără să depindă de dezvoltatori.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Pagini dinamice sau catalog produse / servicii",
+                    "description": "Configurăm template-uri dinamice pentru adăugare rapidă de produse, servicii sau portofolii, fără a modifica codul.",
+                    "extra": "*Pentru site-uri care trebuie să scaleze rapid fără refactor.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Securitate & GDPR",
+                    "description": "Implementăm măsuri de securitate și module GDPR-compliant: cookie banner, politici de confidențialitate, protecție date.",
+                    "extra": "*Un must-have pentru companii.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Backup automat & mentenanță tehnică",
+                    "description": "Ne ocupăm de mentenanță periodică, actualizări și backup-uri automate pentru ca tu să te concentrezi pe afacere.",
+                    "extra": "*Ideal pentru clienți care vor liniște pe termen lung.",
+                    "imageID": ""
+                }
+            ],
+            "needSpecifics": "Ai nevoie de ceva mai specific? Spune-ne ce îți dorești, iar noi venim cu soluția potrivită."
+        },
         "footerCta": {
             "title": "Hai să discutăm despre cum ar trebui să arate prezența ta online. Primești o ofertă personalizată în cel mult 24h.",
             "description": "Contactează-ne pentru o ofertă personalizată sau o discuție gratuită despre proiect.",
-            "button": "Solicită ofertă"
+            "button": "Solicită ofertă",
+            "protfolio": "Vezi portofoliul nostru"
         },
         "faq": [
             {
