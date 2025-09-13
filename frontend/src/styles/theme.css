@@ -10,9 +10,11 @@
     --background-darker: #08121a;
     --primary: #1ad8c6;
     --primary-dark: #1fbfc7;
+    --primary-darker: #1faec7;
     --secondary: #f45b69;
     --secondary-light: #ff6c6c;
     --secondary-lighter: #ff6565;
+    --secondary-dark: #e85864;
     --secondary-darker: #cc3d49;
     --black-o-75: rgba(0, 0, 0, 0.75);
     --black-o-50: rgba(0, 0, 0, 0.6);

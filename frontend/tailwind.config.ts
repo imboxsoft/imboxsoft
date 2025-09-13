@@ -25,11 +25,13 @@ export default {
                     primary: {
                         DEFAULT: "var(--primary)",
                         dark: "var(--primary-dark)",
+                        darker: "var(--primary-darker)",
                     },
                     secondary: {
                         DEFAULT: "var(--secondary)",
                         light: "var(--secondary-light)",
                         lighter: "var(--secondary-lighter)",
+                        dark: "var(--secondary-dark)",
                         darker: "var(--secondary-darker)",
                     },
                     opacity: {

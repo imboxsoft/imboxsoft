@@ -418,7 +418,7 @@ export default async function ITConsulting() {
                         <div className="flex flex-row gap-10 justify-center">
                             <Link
                                 href={routes.CONTACT}
-                                className="bg-main-secondary px-6 py-4 font-semibold rounded-md"
+                                className="bg-main-secondary hover:bg-main-secondary-dark px-6 py-4 font-semibold rounded-md"
                             >
                                 {ts.rich(
                                     "presentationWebsites.footerCta.button"
@@ -426,7 +426,7 @@ export default async function ITConsulting() {
                             </Link>
                             <Link
                                 href={routes.PORTFOLIO}
-                                className="bg-main-primary-dark px-6 py-4 font-semibold rounded-md"
+                                className="bg-main-primary-dark hover:bg-main-primary-darker px-6 py-4 font-semibold rounded-md"
                             >
                                 {ts.rich(
                                     "presentationWebsites.footerCta.protfolio"
