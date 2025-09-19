@@ -165,7 +165,7 @@
                 },
                 {
                     "title": "Professional",
-                    "description": "Pentru afaceri mici sau la început de drum care au nevoie de o prezență online funcțională, rapidă și estetică.",
+                    "description": "Pentru afaceri în creștere care doresc să-și consolideze prezența online și să atragă mai mulți clienți.",
                     "from": "de la",
                     "price": "1000€",
                     "features": [
@@ -179,7 +179,7 @@
                         "Panou de administrare adaptat",
                         "Integrare Google Analytics 4, Tag Manager",
                         "Optimizare SEO OnPage completă",
-                        "Optimizare viteză (Lighthouse & Core Web Vitals)",
+                        "Optimizare viteză",
                         "Infrastructură GDPR (politici, cookies, consimțământ)",
                         "Suport tehnic 1 lună"
                     ],
@@ -188,7 +188,7 @@
                 },
                 {
                     "title": "Beyond",
-                    "description": "Pentru proiecte cu nevoi speciale: funcționalități complexe, integrări avansate, aplicații sau multilingv.",
+                    "description": "Creat pentru proiecte care depășesc standardul: funcționalități complexe, aplicații personalizate, integrări avansate și suport multilingv complet.",
                     "from": "",
                     "price": "Personalizat",
                     "features": [
@@ -204,7 +204,7 @@
                         "Asistență & consultanță tehnică pe termen lung",
                         "Mentenanță lunară + upgrade-uri"
                     ],
-                    "idealFor": "Ideal pentru: SaaS, agenții, companii tech, proiecte scalabile",
+                    "idealFor": "Ideal pentru: startup-uri SaaS, agenții digitale, companii tech și proiecte care necesită arhitecturi scalabile.",
                     "cta": "Solicită ofertă personalizată"
                 }
             ]
@@ -504,53 +504,58 @@
         ]
     },
     "graphicDesign": {
-        "title": "Design Grafic",
-        "description": "De la logo-uri la sisteme vizuale complete — creăm designuri clare, scalabile și memorabile.",
-        "subtitle": "Un design excelent face brandul de neuitat",
+        "title": "Design Grafic Profesionist pentru Branduri Care Vor Să Iasă în Evidență",
+        "description": "De la identitate vizuală până la materiale promoționale. — creăm designuri clare, scalabile și memorabile. Un design excelent face brandul de neuitat",
+        "subtitle": "Logo-uri, materiale promoționale, design web și mai mult.",
         "subtitleP": [
             "Creăm sisteme vizuale care reflectă obiectivele afacerii tale, consolidează brandul și atrag publicul potrivit.",
             "Fie că lansezi un brand nou sau vrei să-ți actualizezi identitatea, tratăm designul ca parte strategică, nu doar decor.",
             "Lucrăm cu startup-uri, branduri personale, afaceri consolidate și platforme SaaS — fie că vrei un refresh sau un partener pe termen lung."
         ],
+        "intro": {
+            "title": "Imaginea ta spune o poveste",
+            "description": "Fiecare brand are o poveste. Noi o transformăm în imagine. De la identitate vizuală până la cele mai mici detalii grafice, oferim soluții complete pentru un design coerent și memorabil. Designul nu este doar estetică, este funcționalitate, mesaj și strategie. Iar brandingul este firul roșu care leagă toate acestea într-o singură direcție clară."
+        },
         "whatWeOffer": {
             "title": "Cum te putem ajuta",
-            "subtitle": "Construiește-ți imaginea cu design personalizat",
+            "subtitle": "Construim imaginea afacerii tale cu designuri adaptate scopului, canalului și audienței:",
             "description": "Lasă designul să îți spună povestea, cu claritate și impact.",
             "list": {
                 "logo": {
                     "title": "Logo & Identitate Vizuală",
-                    "description": "Un logo puternic și atemporal + ghiduri vizuale de brand."
+                    "description": "Un logo puternic, memorabil și scalabil, însoțit de un sistem vizual coerent pentru toate mediile."
+                },
+                "business_cards": {
+                    "title": "Cărți de vizită & papetărie personalizată",
+                    "description": "Design curat pentru elemente de brand care inspiră profesionalism: anteturi, semnături email, cărți de vizită."
+                },
+                "promotional": {
+                    "title": "Materiale promoționale & publicitare",
+                    "description": "Flyere, pliante, cataloage, meniuri, afișe, bannere stradale, roll-up-uri, steaguri și multe altele — toate adaptate scopului tău."
                 },
                 "web": {
-                    "title": "Design UI pentru Web & Aplicații",
-                    "description": "Interfețe frumoase, intuitive și pregătite pentru dezvoltare."
+                    "title": "Design pentru web & aplicații",
+                    "description": "Interfețe UI/UX moderne, clare și pregătite de dezvoltare: site-uri, dashboard-uri, aplicații mobile."
                 },
-                "marketing": {
-                    "title": "Materiale de Marketing",
-                    "description": "Broșuri, cărți de vizită, bannere, pitch decks, vizuale social media."
-                },
-                "brand": {
-                    "title": "Rebranding & Actualizare de Identitate",
-                    "description": "Actualizează-ți imaginea într-un stil curat, modern și memorabil."
-                },
-                "design": {
-                    "title": "Design de Produs & Ambalaj",
-                    "description": "Design atractiv pentru produse fizice sau digitale."
-                },
-                "guides": {
-                    "title": "Sisteme de Design & Ghiduri de Stil",
-                    "description": "Frameworkuri scalabile pentru coerență vizuală în toate mediile."
+                "print": {
+                    "title": "Suport pentru print",
+                    "description": "Colaborăm cu parteneri de încredere pentru printul materialelor tale. Dacă nu ai deja un furnizor, ne ocupăm noi — complet, de la design la livrare."
                 }
             }
         },
         "whyUs": {
-            "title": "De ce să alegi Imboxsoft",
+            "title": "De ce să lucrezi cu Imboxsoft?",
             "list": {
-                "synergy": "<strong>Design + Tech</strong> — Înțelegem și implementăm ce funcționează.",
-                "results": "<strong>Design fără compromisuri</strong> — Atent la detalii, layout și claritate.",
-                "thinking": "<strong>Gândire orientată spre business</strong> — Fiecare alegere susține obiectivele tale.",
-                "collaborative": "<strong>Proces colaborativ</strong> — Ești parte din fiecare etapă, nu doar la final."
+                "synergy": "<strong>Design + Tehnologie</strong> — Ne diferențiem prin sinergia dintre gândirea creativă și implementarea tehnică. Tot ce desenăm, funcționează și se poate scală.",
+                "results": "<strong>Design fără compromisuri</strong> — Fiecare linie, font sau layout are un scop: să comunice eficient și să vândă imaginea ta.",
+                "thinking": "<strong>Gândire orientată spre business</strong> — Nu lucrăm doar pentru design frumos, ci pentru design care împinge afacerea ta înainte.",
+                "collaborative": "<strong>Proces colaborativ</strong> — Tu faci parte din proces. De la brainstorming la livrare, colaborăm constant pentru cele mai bune rezultate."
             }
+        },
+        "cta": {
+            "title": "Ai nevoie de design grafic profesionist?",
+            "description": "Contactează-ne pentru o ofertă personalizată sau solicită un pachet complet cu design + print + livrare. Ne adaptăm proiectului tău, indiferent de dimensiune sau industrie.",
+            "button": "Solicită o ofertă personalizată"
         }
     }
 }

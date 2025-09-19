@@ -183,7 +183,7 @@ export default async function ITConsulting() {
                 </div>
             </section>
 
-            <div className="window-self-contained-showcase">
+            <div className="window-self-contained-showcase overflow-hidden">
                 {ts
                     .raw("presentationWebsites.ourProcess.list")
                     .map((p: any, i: number) => (
@@ -218,22 +218,23 @@ export default async function ITConsulting() {
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <h3
-                                                    className="relative inline-block text-4xl md:text-5xl font-semibold mb-2 
-                                                        before:content-[''] 
+                                                <h3 className=" inline-block text-4xl md:text-5xl font-semibold mb-2">
+                                                    <div
+                                                        className="relative before:content-[''] 
                                                         before:absolute 
                                                         before:-inset-y-2 
                                                         before:-left-4 
-                                                        before:w-[400px]
+                                                        before:w-[600px]
                                                         before:bg-main-background-darker 
                                                         before:opacity-90 
                                                         before:rounded 
                                                         before:z-0
                                                         before:min-w-full"
-                                                >
-                                                    <span className="relative z-[1]">
-                                                        {p.step}
-                                                    </span>
+                                                    >
+                                                        <span className="relative z-[1]">
+                                                            {p.step}
+                                                        </span>
+                                                    </div>
                                                 </h3>
                                             </div>
                                             <div className="p-10 md:p-20 bg-main-background-dark">
@@ -294,7 +295,7 @@ export default async function ITConsulting() {
                                         </li>
                                     ))}
                             </ul>
-                            <div className="opacity-30 lg:opacity-100 w-[750px] lg:max-w-[350px] xl:max-w-[500px] flex-1 absolute z-0 lg:relative">
+                            <div className="opacity-30 lg:opacity-100 w-full lg:max-w-[350px] xl:max-w-[500px] flex-1 absolute z-0 lg:relative">
                                 <WhyUsGuySVG />
                             </div>
                         </div>
@@ -415,7 +416,7 @@ export default async function ITConsulting() {
                             </p>
                         </div>
 
-                        <div className="flex flex-row gap-10 justify-center">
+                        <div className="flex flex-col sm:flex-row gap-10 justify-center items-center">
                             <Link
                                 href={routes.CONTACT}
                                 className="bg-main-secondary hover:bg-main-secondary-dark px-6 py-4 font-semibold rounded-md"
