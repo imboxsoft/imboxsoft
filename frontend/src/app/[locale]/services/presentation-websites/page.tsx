@@ -8,10 +8,64 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { WhyUsGuySVG } from "@/components/SVGs";
 import { technologyLogos } from "@/utils/Technologies";
 import { AutomatedCarousel } from "@/components/AutomatedCarousel";
+import { OurClients } from "@/components/OurClients";
+import { generateWPAPIURL } from "@/utils/URLGenerators";
 
-export default async function ITConsulting() {
+export default async function PresentationWebsites() {
     const ts = await getRichTranslations("services");
     const tc = await getRichTranslations("common");
+
+    const stepsImages: {
+        src: string;
+    }[] = [
+        {
+            src: "/images/services/presentation_websites/consultanta&briefing.jpg",
+        },
+        {
+            src: "/images/services/presentation_websites/visual_concept.jpg",
+        },
+        {
+            src: "/images/services/presentation_websites/development.jpg",
+        },
+        {
+            src: "/images/services/presentation_websites/deployment.jpg",
+        },
+        {
+            src: "/images/services/presentation_websites/support.jpg",
+        },
+    ];
+
+    const additionalImages: {
+        src: string;
+    }[] = [
+        {
+            src: "/images/services/presentation_websites/contact_forms.jpg",
+        },
+        {
+            src: "/images/services/presentation_websites/blogs.jpg",
+        },
+        {
+            src: "/images/services/presentation_websites/development.jpg",
+        },
+        {
+            src: "/images/services/presentation_websites/seo.jpg",
+        },
+        {
+            src: "/images/services/presentation_websites/multilingual.jpg",
+        },
+        {
+            src: "/images/services/presentation_websites/multilingual.jpg",
+        },
+        {
+            src: "/images/services/presentation_websites/multilingual.jpg",
+        },
+        {
+            src: "/images/services/presentation_websites/multilingual.jpg",
+        },
+        {
+            src: "/images/services/presentation_websites/multilingual.jpg",
+        },
+    ];
 
     return (
         <div>
@@ -202,10 +256,10 @@ export default async function ITConsulting() {
                                     <div className="w-fit flex -mb-24">
                                         <Image
                                             className="rounded-3xl"
-                                            src="/images/home/why-us.avif"
+                                            src={stepsImages[i]?.src}
                                             width={500}
                                             height={500}
-                                            alt="Formulare și newsletter"
+                                            alt={p.step}
                                         />
                                     </div>
                                     <div className="sm:max-w-[500px] lg:sm:max-w-[750px] lg:w-1/2">
@@ -336,10 +390,10 @@ export default async function ITConsulting() {
                                         <div className="w-fit flex">
                                             <Image
                                                 className="rounded-3xl"
-                                                src="/images/home/why-us.avif"
+                                                src={additionalImages[i]?.src}
                                                 width={500}
                                                 height={500}
-                                                alt="Formulare și newsletter"
+                                                alt={o.title}
                                             />
                                         </div>
                                     </li>
@@ -364,7 +418,7 @@ export default async function ITConsulting() {
                                     {tc.text("common.ourClients")}
                                 </h2>
                             </div>
-                            <div className="w-full">
+                            {/* <div className="w-full">
                                 <AutomatedCarousel
                                     breakpoints={{
                                         0: {
@@ -400,7 +454,12 @@ export default async function ITConsulting() {
                                         )
                                     )}
                                 />
-                            </div>
+                            </div> */}
+                            <OurClients
+                                cmsAPIBaseURL={generateWPAPIURL(
+                                    "/our-clients?_fields=acf&acf_format=standard"
+                                )}
+                            />
                         </div>
 
                         <div className="text-center">
