@@ -54,16 +54,16 @@ export default async function PresentationWebsites() {
             src: "/images/services/presentation_websites/multilingual.jpg",
         },
         {
-            src: "/images/services/presentation_websites/multilingual.jpg",
+            src: "/images/services/presentation_websites/cms.jpg",
         },
         {
-            src: "/images/services/presentation_websites/multilingual.jpg",
+            src: "/images/services/presentation_websites/products.jpg",
         },
         {
-            src: "/images/services/presentation_websites/multilingual.jpg",
+            src: "/images/services/presentation_websites/gdpr.jpg",
         },
         {
-            src: "/images/services/presentation_websites/multilingual.jpg",
+            src: "/images/services/presentation_websites/backup.jpg",
         },
     ];
 
@@ -418,43 +418,6 @@ export default async function PresentationWebsites() {
                                     {tc.text("common.ourClients")}
                                 </h2>
                             </div>
-                            {/* <div className="w-full">
-                                <AutomatedCarousel
-                                    breakpoints={{
-                                        0: {
-                                            spaceBetween: 100,
-                                            slidesPerView: 3,
-                                        },
-                                        640: {
-                                            spaceBetween: 150,
-                                            slidesPerView: 3,
-                                        },
-                                        768: {
-                                            spaceBetween: 100,
-                                            slidesPerView: 5,
-                                        },
-                                        1280: {
-                                            spaceBetween: 150,
-                                            slidesPerView: 5,
-                                        },
-                                    }}
-                                    elements={technologyLogos.map(
-                                        (el, index) => (
-                                            <div
-                                                className="relative w-full aspect-square md:mb-2"
-                                                key={index}
-                                            >
-                                                <Image
-                                                    src={el.src}
-                                                    className="object-fit"
-                                                    fill
-                                                    alt={el.name}
-                                                />
-                                            </div>
-                                        )
-                                    )}
-                                />
-                            </div> */}
                             <OurClients
                                 cmsAPIBaseURL={generateWPAPIURL(
                                     "/our-clients?_fields=acf&acf_format=standard"

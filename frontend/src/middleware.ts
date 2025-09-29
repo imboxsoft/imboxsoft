@@ -3,22 +3,21 @@ import createMiddleware from "next-intl/middleware";
 import { DISABLED_PAGES, routing } from "@/i18n/routing";
 import { ROUTE_KEYS } from "@/constants/routes";
 
+function localeFromHost(hostnameRaw: string): "en" | "ro" | undefined {
+    const hostname = (hostnameRaw || "").split(":")[0].toLowerCase();
+    if (hostname.endsWith("imboxsoft.com")) return "en";
+    if (hostname.endsWith("imboxsoft.ro")) return "ro";
+    return undefined;
+}
+
 export default function middleware(request: NextRequest) {
     const mode = process.env.MODE ?? "development";
 
-    let locale = routing.defaultLocale;
+    let locale = routing.defaultLocale as "en" | "ro";
 
-    if (mode == "staging" || mode == "production") {
-        const hostname = request.headers.get("host") ?? "";
-        const urlMappings = process.env.APP_BASE_URLS?.split(",") ?? [];
-
-        for (const entry of urlMappings) {
-            const [domain, loc] = entry.trim().split("/");
-            if (hostname.includes(domain)) {
-                locale = loc as typeof locale;
-                break;
-            }
-        }
+    if (mode === "staging" || mode === "production") {
+    const host = request.headers.get("host") ?? "";
+        locale = localeFromHost(host) ?? locale;
     }
 
     const { pathname } = request.nextUrl;

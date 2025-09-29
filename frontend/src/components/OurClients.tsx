@@ -71,14 +71,15 @@ export const OurClients = ({ cmsAPIBaseURL }: OurClientsProps) => {
                 }}
                 elements={clients.map((el, index) => (
                     <div
-                        className="relative w-full h-[100px] md:mb-2"
+                        className="relative w-full h-[100px] flex items-center justify-center"
                         key={index}
                     >
                         <Image
                             src={el.logo.src}
-                            className="object-fit"
-                            fill
                             alt={el.name}
+                            className="object-contain"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
                         />
                     </div>
                 ))}

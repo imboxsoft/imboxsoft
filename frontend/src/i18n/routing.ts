@@ -99,4 +99,8 @@ export const routing = defineRouting({
     locales: locales,
     defaultLocale: defaultLocale,
     pathnames: pathnames,
+    domains: [
+        { domain: 'imboxsoft.com', defaultLocale: 'en', locales: ['en'] },
+        { domain: 'imboxsoft.ro', defaultLocale: 'ro', locales: ['ro'] }
+    ]
 });

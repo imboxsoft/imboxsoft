@@ -3,222 +3,559 @@
         "title": "Our Services",
         "shortTitle": "Services",
         "descriptions": [
-            "Discover the full spectrum of digital services designed to help your business thrive. At Imboxsoft, we combine software development expertise with creative design thinking to deliver solutions that are both technically powerful and visually compelling.",
-            "Whether you're launching a new platform, streamlining internal operations, enhancing your online visibility, or building a brand from the ground up — our team is here to make it happen.",
-            "Explore our services below and find out how we turn ideas into impactful results."
+            "Discover the full range of digital services designed to grow your business. At Imboxsoft, we combine software development expertise with creative design thinking to deliver powerful and attractive solutions.",
+            "Whether you are launching a new platform, optimizing your internal processes, improving your online visibility, or building a brand from scratch — our team is here to help.",
+            "Explore our services below and see how we turn ideas into impactful results."
         ]
     },
     "softwareDevelopment": {
         "title": "Software Development",
-        "description": "Boost your business through digital solutions with high development velocity and a skilled agile team — at the best possible costs.",
+        "description": "Accelerate your business with digital solutions, fast implementation, and an agile team — at the best costs.",
         "subtitle": "Software solutions for your business",
         "subtitleP": [
-            "Support and consultancy in every stage of the project.",
-            "Team of skilled developers with 10+ years of coding experience.",
-            "Swift implementation for immediate results."
+            "Support and consulting at every stage of the project.",
+            "Development team with over 10 years of experience.",
+            "Fast implementation for immediate results."
         ],
         "offer": {
             "design": {
                 "shortTitle": "Concept & Design",
-                "title": "Personalized Design",
-                "description": "Every project is built around your vision. A great product comes from a strong identity. That's why we always begin by defining the best concept for your digital solution."
+                "title": "Custom design, brand-focused",
+                "description": "Every project is built around your identity. A successful product starts with a clear and consistent direction. That’s why we always begin by defining the ideal concept for your digital solution — from visual style to UX and content structure."
             },
             "apps": {
-                "shortTitle": "Custom Apps",
-                "title": "Custom Full Stack Apps",
-                "description": "We are proficient in several technologies and tools. From presentation websites to fully customized apps — we can build anything tailored to your business needs."
+                "shortTitle": "Custom Applications",
+                "title": "Custom apps & systems",
+                "description": "We develop full-stack, scalable applications fully tailored to your business needs. We work with a wide range of modern technologies to create: CRMs, ERPs, internal management systems, B2B platforms, admin panels, SaaS apps, e-learning solutions, custom automations, and much more."
             },
             "websites": {
                 "shortTitle": "Websites",
-                "title": "Presentation websites & e-commerce",
-                "description": "We have experience with tools like WordPress, Shopify, and BigCommerce. Based on your goals and budget, we'll recommend the best platform with optimal long-term performance."
+                "title": "Presentation & e-commerce websites",
+                "description": "We build websites optimized for performance and conversion, with easy administration. We work with both established platforms like WordPress, Shopify, or BigCommerce, and fully custom solutions. Together, we choose what best fits your budget and goals."
             },
             "api": {
                 "shortTitle": "API Integration",
-                "title": "Seamless integration with third-party APIs",
-                "description": "If you need to extend your app by connecting to services like payment gateways, CRMs, ERPs, real-time data sync, or automated workflows (invoicing, emailing, delivery tracking), we're ready to help."
+                "title": "Efficient integration with external services",
+                "description": "We extend your apps’ functionality by connecting them to third-party services. From payment processors (Stripe, Netopia), CRMs (Hubspot, Zoho), ERPs, delivery services, invoicing, data synchronization, or email marketing — we handle the complete, fast, and secure integration."
             },
             "maintenance": {
                 "shortTitle": "Maintenance",
-                "title": "Maintenance & Optimization",
-                "description": "If your product needs improvements, we've got you covered. We'll diagnose any issues and provide optimal solutions. Every project includes a FREE maintenance period — take full advantage of it."
+                "title": "Continuous maintenance & optimization",
+                "description": "We provide post-launch support and intervene whenever needed. We identify and fix performance or security issues, improve user experience, and provide proactive recommendations. All projects come with a free maintenance period."
             }
         },
         "benefits": {
-            "title": "Benefits and uses",
-            "subtitle": "Enhance your work with personalized apps",
-            "description": "Let your business thrive through digital solutions, process automation, and logical organization.",
+            "title": "Benefits & Practical Applications",
+            "subtitle": "Increase operational efficiency with tailored digital solutions",
+            "description": "Automate repetitive tasks, optimize processes, and gain control over daily operations through applications developed specifically for your needs.",
             "list": {
                 "results": {
-                    "title": "Immediate results",
-                    "description": "We customize your business workflow in the shortest possible time."
+                    "title": "Fast Implementation",
+                    "description": "We analyze and adapt your internal workflows quickly, for visible impact within the first weeks."
                 },
                 "prices": {
-                    "title": "Lowest possible price",
-                    "description": "We adapt pricing based on your goals — premium quality at a fair price."
+                    "title": "Flexible Costs",
+                    "description": "Pricing reflects your project’s reality: no rigid packages, no hidden fees. The investment remains scalable and predictable."
                 },
                 "meetings": {
-                    "title": "Periodic meetings",
-                    "description": "You have full control during development. We schedule check-ins and notify you of milestones hit, and also when issues arise."
+                    "title": "Transparent Communication",
+                    "description": "Collaboration is essential. We schedule regular meetings to give you full visibility on progress and technical decisions."
                 },
                 "developers": {
-                    "title": "Skilled developers",
-                    "description": "Our company is new, but our team isn't. We bring over 10 years of coding experience — your project is in good hands."
+                    "title": "Proven Experience",
+                    "description": "A team with over 10 years of software development experience. Your project benefits from solid know-how and sound technical decisions."
                 },
                 "web": {
-                    "title": "Web, Mobile & Desktop",
-                    "description": "Not sure which platform suits your needs? Let's talk and choose the best direction for your project."
+                    "title": "All Platforms",
+                    "description": "We build web, mobile, and desktop applications, depending on what best suits your business. We help you choose the optimal direction."
                 }
             }
         },
         "expertise": {
-            "title": "Technology expertise",
-            "description": "As passionate developers, we strive to stay up-to-date with the latest tech trends. Below are the technologies we're most proficient in.",
+            "title": "Technological Expertise",
+            "description": "We are passionate developers, connected to the latest trends and best practices in tech. On the side, you can see the technologies and tools we most frequently use in our projects.",
             "metrics": {
-                "title": "Your success metrics become ours",
-                "recommendations": "of our work comes from <strong>recommendations</strong>",
-                "projects": "completed projects in the past <strong>2 years</strong>",
-                "clients": "of our clients chose to <strong>continue</strong> with us"
+                "title": "Your success = Our success",
+                "recommendations": {
+                    "accent": "80%",
+                    "suffix": "of our work comes from <strong>recommendations</strong>"
+                },
+                "projects": {
+                    "accent": "30+",
+                    "suffix": "projects delivered in the last <strong>2 years</strong>, across various industries"
+                },
+                "clients": {
+                    "accent": "All",
+                    "suffix": "our clients choose to <strong>continue</strong> working with us"
+                }
             }
+        },
+        "cta": {
+            "title": "Got a project idea? Let’s turn it into reality.",
+            "description": "",
+            "getInTouch": "Get in touch with us"
         },
         "faq": [
             {
-                "q": "Cum pot solicita o ofertă personalizată?",
-                "a": "Ne poți răspunde direct la acest email sau ne poți contacta la [număr de telefon] pentru o ofertă adaptată proiectului tău."
+                "q": "How can I request a custom quote?",
+                "a": "You can reply directly to this email or contact us at [phone number] for a quote tailored to your project."
             },
             {
-                "q": "Ce tipuri de lucrări sau produse oferiți?",
-                "a": "Oferim [listează pe scurt produsele/serviciile], adaptate atât pentru proiecte mari, cât și pentru lucrări punctuale."
+                "q": "What types of work or products do you offer?",
+                "a": "We offer [briefly list products/services], adapted for both large projects and one-off jobs."
             },
             {
-                "q": "Care este aria de acoperire a serviciilor?",
-                "a": "Livrăm și lucrăm în toată țara, iar pentru proiecte complexe putem asigura deplasare la șantier."
+                "q": "What is your service coverage area?",
+                "a": "We deliver and work nationwide, and for complex projects, we can ensure on-site visits."
             },
             {
-                "q": "Oferiți reduceri pentru cantități mari?",
-                "a": "Da, avem discounturi speciale pentru comenzile de volum sau contracte pe termen lung."
+                "q": "Do you offer discounts for bulk orders?",
+                "a": "Yes, we provide special discounts for large volume orders or long-term contracts."
             },
             {
-                "q": "În cât timp livrați sau finalizați lucrarea?",
-                "a": "Termenele variază în funcție de complexitate, dar în majoritatea cazurilor livrăm în [X] zile lucrătoare."
+                "q": "How long does delivery or completion take?",
+                "a": "Timelines vary depending on complexity, but in most cases, we deliver within [X] business days."
             },
             {
-                "q": "Cum pot verifica calitatea lucrărilor?",
-                "a": "Putem trimite exemple din proiectele anterioare și referințe de la clienți reali."
+                "q": "How can I verify the quality of your work?",
+                "a": "We can provide examples of past projects and references from real clients."
+            }
+        ]
+    },
+    "presentationWebsites": {
+        "title": "Professional, fast, and optimized presentation websites",
+        "description": "Whether you need a portfolio, a corporate website, or a service presentation page, we deliver a personalized solution optimized for performance and easy to manage.",
+        "heroCta": "Build your website",
+        "subtitle": "Ready in just a few weeks, with custom design and modern features.",
+        "turnaround": "*The time needed to complete a presentation website varies between 7 and 30 days, depending on project complexity and availability of necessary materials. Providing all relevant information and resources in time allows us to meet agreed deadlines.",
+        "subtitleP": [
+            "Fast implementation with no ambiguity.",
+            "Balanced design between aesthetics and conversion.",
+            "Easy administration for non-technical users.",
+            "SEO expertise + fast loading performance.",
+            "Transparent packages, no hidden costs."
+        ],
+        "prices": {
+            "title": "Transparent pricing tailored to your needs",
+            "description": "Each project is unique, which is why we provide personalized estimates based on objectives, complexity, and available resources. You get exactly what you need — with no hidden costs.",
+            "recommended": {
+                "id": 1,
+                "tag": "Recommended",
+                "description": "Most clients choose this package for the best balance between price and functionality"
+            },
+            "packages": [
+                {
+                    "title": "Basic",
+                    "description": "For small businesses or startups that need a functional, fast, and aesthetic online presence.",
+                    "from": "from",
+                    "price": "€500",
+                    "features": [
+                        "Basic, modern, responsive design (mobile/tablet/desktop)",
+                        "Up to 5 main pages (e.g. Home, About, Services, Gallery, Contact)",
+                        "Easy-to-use CMS (WordPress)",
+                        "Photo gallery",
+                        "Contact form",
+                        "Map integration (Google Maps)",
+                        "Google Search Console setup",
+                        "Basic SEO optimization (on-page)",
+                        "Secure site"
+                    ],
+                    "idealFor": "Ideal for: freelancers, local businesses, startups",
+                    "cta": "Quick solution"
+                },
+                {
+                    "title": "Professional",
+                    "description": "For growing businesses looking to strengthen their online presence and attract more clients.",
+                    "from": "from",
+                    "price": "€1000",
+                    "features": [
+                        "Everything from the BASIC package",
+                        "Custom design based on your brand",
+                        "Up to 10 additional pages and subpages",
+                        "Advanced CMS (custom WordPress or headless CMS)",
+                        "Newsletter form integration",
+                        "Social media integration",
+                        "Configured blog + friendly editor",
+                        "Custom admin panel",
+                        "Google Analytics 4, Tag Manager integration",
+                        "Complete OnPage SEO optimization",
+                        "Speed optimization",
+                        "GDPR setup (policies, cookies, consent)",
+                        "1-month technical support"
+                    ],
+                    "idealFor": "Ideal for: medium companies, teams seeking control & marketing",
+                    "cta": "Start now"
+                },
+                {
+                    "title": "Beyond",
+                    "description": "Built for projects that go beyond the standard: complex functionalities, custom applications, advanced integrations, and full multilingual support.",
+                    "from": "",
+                    "price": "Custom",
+                    "features": [
+                        "Everything from the PROFESSIONAL package",
+                        "Unlimited pages and subpages",
+                        "Multilingual site + SEO tailored to each language",
+                        "CRM / ERP / external API integrations",
+                        "Scalable architecture (React, Next.js, Laravel, Django)",
+                        "Headless CMS (e.g. Strapi)",
+                        "Custom features: booking system, memberships, online payments, advanced blog",
+                        "Complete SEO OnPage & OffPage strategy",
+                        "Marketing funnels + advanced analytics integration",
+                        "Long-term technical assistance & consultancy",
+                        "Monthly maintenance + upgrades"
+                    ],
+                    "idealFor": "Ideal for: SaaS startups, digital agencies, tech companies, and projects requiring scalable architectures.",
+                    "cta": "Request a custom quote"
+                }
+            ]
+        },
+        "ourProcess": {
+            "title": "Our Process",
+            "description": "Each project follows a clear, collaborative, and efficient approach. We don’t leave anything to chance.",
+            "list": [
+                {
+                    "no": "01",
+                    "step": "Consulting & briefing",
+                    "description": "We start with a consulting session to analyze business goals, target audience, required features, and potential challenges. This is the moment when we understand exactly what you need — so we can deliver what truly helps, not just what you ask for."
+                },
+                {
+                    "no": "02",
+                    "step": "Visual concept",
+                    "description": "Based on the initial discussion, we outline the project’s visual direction. We propose designs that reflect your brand’s values, combining modern aesthetics with an intuitive user experience — all adapted to your audience and industry."
+                },
+                {
+                    "no": "03",
+                    "step": "Development",
+                    "description": "We move to implementation: using modern technologies to build a fast, responsive, SEO-optimized, and easy-to-manage website. Whether it’s WordPress, Next.js, or other solutions — everything is customized for you."
+                },
+                {
+                    "no": "04",
+                    "step": "Testing & launch",
+                    "description": "We carefully check every detail: browser and device compatibility, loading speed, SEO, forms, animations, links, and functionalities. Once everything is fully functional and approved, we launch the site live."
+                },
+                {
+                    "no": "05",
+                    "step": "Training & support",
+                    "description": "After launch, we train you on how to manage the website content. A free maintenance period is also included, and if you want extended support — we can remain your long-term technical partner."
+                }
+            ]
+        },
+        "whyUs": {
+            "title": "Why work with us?",
+            "description": "We don’t just deliver a pretty website — we provide a complete solution that helps your business grow online.",
+            "list": [
+                {
+                    "title": "Real experience with diverse projects",
+                    "description": "We’ve delivered presentation websites for startups, freelancers, and companies in various industries — we know how to adapt the solution to your needs."
+                },
+                {
+                    "title": "Custom design, not generic templates",
+                    "description": "Each site is built from scratch to reflect your brand identity. No recycled themes."
+                },
+                {
+                    "title": "SEO optimization included",
+                    "description": "We structure your website for search engines from the planning stage — giving you more chances to be found on Google."
+                },
+                {
+                    "title": "Guaranteed speed & performance",
+                    "description": "Our websites are tested with Lighthouse & Core Web Vitals — for fast loading and smooth experience."
+                },
+                {
+                    "title": "Real consulting & technical support",
+                    "description": "We don’t just deliver and disappear. We guide you step by step, even after launch."
+                },
+                {
+                    "title": "Everything in one place",
+                    "description": "From design and development to hosting, domain, emails, and maintenance — we handle everything."
+                }
+            ]
+        },
+        "extraOptions": {
+            "title": "Extra Options",
+            "description": "Want more than a simple presentation site? We offer integrations and extra features that make your site smarter, faster, and more efficient.",
+            "list": [
+                {
+                    "title": "Contact forms & newsletter integration",
+                    "description": "Simplify communication with visitors and collect leads through interactive forms or newsletter subscriptions integrated directly into the site.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Blog Section",
+                    "description": "We give you the option to publish articles, news, or guides for clients — boosting brand visibility and online authority.",
+                    "imageID": ""
+                },
+                {
+                    "title": "SEO & Performance Optimization",
+                    "description": "We make sure your website loads quickly, follows SEO best practices, and is easy for clients to find on Google.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Google Analytics & Search Console",
+                    "description": "You get access to professional tools for monitoring traffic and site performance — helping you better understand visitor behavior.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Multilingual / Multi-language websites",
+                    "description": "We offer support for multilingual sites with an easy-to-manage translation system, optimized for international SEO.",
+                    "extra": "*Helps expand your market and improve international user experience.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Custom Admin Panel (CMS)",
+                    "description": "We deliver an intuitive panel, fully adapted to your content — no unnecessary functions and no headaches.",
+                    "extra": "*For clients who want full control without depending on developers.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Dynamic pages or product/service catalogs",
+                    "description": "We configure dynamic templates for quickly adding products, services, or portfolios — without changing the code.",
+                    "extra": "*For sites that need to scale quickly without refactor.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Security & GDPR",
+                    "description": "We implement security measures and GDPR-compliant modules: cookie banners, privacy policies, data protection.",
+                    "extra": "*A must-have for companies.",
+                    "imageID": ""
+                },
+                {
+                    "title": "Automatic Backup & Technical Maintenance",
+                    "description": "We handle periodic maintenance, updates, and automatic backups so you can focus on your business.",
+                    "extra": "*Ideal for clients who want peace of mind long-term.",
+                    "imageID": ""
+                }
+            ],
+            "needSpecifics": "Need something more specific? Tell us what you want and we’ll come up with the right solution."
+        },
+        "footerCta": {
+            "title": "Let’s talk about what your online presence should look like. Get a personalized offer within 24h.",
+            "description": "Contact us for a personalized offer or a free discussion about your project.",
+            "button": "Request an offer",
+            "protfolio": "See our portfolio"
+        },
+        "faq": [
+            {
+                "q": "How can I request a custom quote?",
+                "a": "You can reply directly to this email or contact us at [phone number] for a quote tailored to your project."
+            },
+            {
+                "q": "What types of work or products do you offer?",
+                "a": "We offer [briefly list products/services], adapted for both large projects and one-off jobs."
+            },
+            {
+                "q": "What is your service coverage area?",
+                "a": "We deliver and work nationwide, and for complex projects, we can ensure on-site visits."
+            },
+            {
+                "q": "Do you offer discounts for bulk orders?",
+                "a": "Yes, we provide special discounts for large volume orders or long-term contracts."
+            },
+            {
+                "q": "How long does delivery or completion take?",
+                "a": "Timelines vary depending on complexity, but in most cases, we deliver within [X] business days."
+            },
+            {
+                "q": "How can I verify the quality of your work?",
+                "a": "We can provide examples of past projects and references from real clients."
             }
         ]
     },
     "itConsulting": {
-        "title": "IT Consulting",
-        "description": "From strategy to execution — we help you make confident, future-proof technology choices.",
-        "subtitle": "Build Smarter, Not Just Faster",
+        "title": "IT Consulting for Strategic and Sustainable Decisions",
+        "description": "From strategy to execution — Whether you’re developing a new digital product or optimizing internal processes, we provide strategic guidance and technical solutions tailored to your goals.",
+        "subtitle": "Build smart, not just fast",
         "subtitleP": [
-            "At Imboxsoft, IT consulting is more than just advice — it's partnership.",
-            "Whether you're a startup planning your first product or a company modernizing legacy systems, we provide clear, actionable guidance to align technology with your business goals."
+            "IT consulting from Imboxsoft means more than simple recommendations. We actively engage as trusted partners in every stage of your digital transformation.",
+            "Whether you’re a startup just starting out or a company in full expansion, we ensure your technology decisions are well-founded, scalable, and sustainable."
         ],
+        "whoDoWeAddressTo": {
+            "title": "Who we address",
+            "list": [
+                "Startups that have an idea but don’t know where to begin",
+                "Companies looking to digitize their processes",
+                "Organizations that already have systems, but they’re inefficient",
+                "Firms needing integration between different applications"
+            ]
+        },
+        "whyUs": {
+            "title": "Why work with us?",
+            "description": "We are more than service providers – we are partners who focus on collaboration, clear results, and effective communication.",
+            "list": [
+                {
+                    "title": "Clear communication, without unnecessary technical jargon",
+                    "description": "We explain things simply and in plain language so you can make informed decisions without confusion."
+                },
+                {
+                    "title": "Consultative approach, not hard selling",
+                    "description": "We focus on what you truly need, not on selling as much as possible. Our goal is to bring value, not to push solutions."
+                },
+                {
+                    "title": "Total transparency in proposals and solutions",
+                    "description": "Every recommendation is justified, and costs and phases are presented clearly — with no hidden fees or vague estimates."
+                },
+                {
+                    "title": "Hands-on experience across diverse industries",
+                    "description": "We’ve worked with businesses from multiple fields — from retail and logistics to tech and services — delivering solutions tailored to each industry."
+                },
+                {
+                    "title": "Concrete deliverables: documentation, roadmap, technical recommendations",
+                    "description": "We don’t stop at discussions. You’ll receive clear materials, action plans, and complete documentation, useful even after the collaboration."
+                }
+            ]
+        },
         "whatWeDo": {
-            "title": "What We Can Help You With",
-            "subtitle": "Enhance your work with personalized apps",
-            "description": "Let your business thrive through digital solutions, process automation, and logical organization.",
+            "title": "How we can help",
+            "subtitle": "Maximize efficiency with digital solutions",
+            "description": "Let technology work for you — through automation, integration, and logical structure.",
             "list": {
                 "digital": {
                     "title": "Digital Transformation Strategy",
-                    "description": "Align business objectives with modern tech solutions."
+                    "description": "We provide a clear vision of how technology can support and accelerate your business objectives — from digitizing processes to automating operations."
                 },
                 "architecture": {
-                    "title": "Architecture & Tech Stack Planning",
-                    "description": "Choose the right tools, frameworks, and platforms."
+                    "title": "Architecture & Technologies",
+                    "description": "We recommend the most suitable technologies for your needs and help you define a solid, flexible, and scalable architecture for the future."
                 },
                 "cloud": {
                     "title": "Cloud Migration & Infrastructure",
-                    "description": "Move safely to scalable cloud platforms (AWS, GCP, Azure)."
+                    "description": "We ensure a safe migration of your systems to the cloud, on platforms such as AWS, Google Cloud, or Azure — reducing costs and increasing performance."
                 },
                 "automation": {
-                    "title": "Automation & Workflow Optimization",
-                    "description": "Identify bottlenecks and improve internal processes."
+                    "title": "Automations & Workflow Optimization",
+                    "description": "We analyze your current processes and propose automation solutions that reduce wasted time, minimize errors, and increase productivity."
                 },
                 "security": {
-                    "title": "Security & Data Compliance Audits",
-                    "description": "Ensure your systems are safe and regulation-compliant."
+                    "title": "Security & Compliance Audit",
+                    "description": "We assess the security of your systems and provide solutions for regulatory compliance (e.g., GDPR), protecting your company’s data and operations."
                 },
                 "software": {
                     "title": "Software Vendor Evaluation",
-                    "description": "Need a CRM, ERP, or payment gateway? We'’'ll help you choose."
-                },
-                "administration": {
-                    "title": "Systems Administration Support",
-                    "description": "We help manage and maintain your infrastructure, ensuring reliable operations, performance monitoring, user access control, and security compliance."
+                    "description": "We help you choose the best software solutions (CRM, ERP, payments, project management, etc.) based on budget, integration, and adaptability."
                 },
                 "optimization": {
                     "title": "Process Optimization",
-                    "description": "We analyze your existing workflows and identify inefficiencies to streamline operations, automate repetitive tasks, and improve productivity across departments."
+                    "description": "We analyze existing workflows, identify bottlenecks, and propose solutions to streamline activity across all departments."
                 },
                 "maintenance": {
-                    "title": "IT Maintenance & Support",
-                    "description": "From routine updates to troubleshooting and ongoing improvements — we keep your systems running smoothly so you can focus on business growth."
+                    "title": "Maintenance & Support",
+                    "description": "We provide continuous support: updates, bug fixes, ongoing improvements — so you can focus on growing your business."
                 }
             }
         },
         "whenToReachOut": {
-            "title": "When Should You Reach Out?",
-            "list": {
-                "techStack": "You're unsure what tech stack to use",
-                "workflows": "You want to improve internal tools or workflows",
-                "saas": "You're planning a new SaaS product",
-                "guidance": "Your team needs expert guidance before development",
-                "thirdParty": "You're integrating multiple third-party systems",
-                "scaling": "You're scaling and need cloud strategy"
+            "title": "When to contact us",
+            "list": [
+                {
+                    "title": "You don’t know which technologies to choose",
+                    "description": "Not sure which framework, language, or platform fits you? We help you make informed decisions that support long-term growth."
+                },
+                {
+                    "title": "You want to improve internal processes",
+                    "description": "We analyze workflows and identify where they can be automated or optimized for efficiency."
+                },
+                {
+                    "title": "You’re planning to launch a SaaS product",
+                    "description": "We support you from idea to launch with scalable architecture, tech stack selection, and a development roadmap."
+                },
+                {
+                    "title": "You need expertise before development",
+                    "description": "Before you start coding, we validate the concept, technical risks, and effort estimates."
+                },
+                {
+                    "title": "You’re integrating multiple external systems",
+                    "description": "From ERP and CRM to payments and public APIs, we make sure everything works together seamlessly."
+                },
+                {
+                    "title": "You’re scaling and need a cloud strategy",
+                    "description": "We scale your infrastructure on AWS, Azure, or GCP so your application can handle high traffic and remain fast."
+                }
+            ]
+        },
+        "cta": {
+            "title": "IT consulting in plain language",
+            "description": "We provide strategic support and practical recommendations, regardless of your company’s stage.",
+            "button": "Schedule a consultation"
+        },
+        "faq": [
+            {
+                "q": "How can I request a custom quote?",
+                "a": "You can reply directly to this email or contact us at [phone number] for a quote tailored to your project."
+            },
+            {
+                "q": "What types of work or products do you offer?",
+                "a": "We offer [briefly list products/services], adapted for both large projects and one-off jobs."
+            },
+            {
+                "q": "What is your service coverage area?",
+                "a": "We deliver and work nationwide, and for complex projects we can arrange on-site visits."
+            },
+            {
+                "q": "Do you offer discounts for large quantities?",
+                "a": "Yes, we provide special discounts for volume orders or long-term contracts."
+            },
+            {
+                "q": "How long does delivery or completion take?",
+                "a": "Timelines vary depending on complexity, but in most cases we deliver within [X] business days."
+            },
+            {
+                "q": "How can I verify the quality of the work?",
+                "a": "We can send examples from previous projects and references from real clients."
             }
-        }
+        ]
     },
     "graphicDesign": {
-        "title": "Graphic Design",
-        "description": "From logos to full visual systems — we create sharp, scalable designs that resonate.",
-        "subtitle": "Great Design Makes Brands Unforgettable",
+        "title": "Professional Graphic Design for Brands That Want to Stand Out",
+        "description": "From visual identity to promotional materials — we create clear, scalable, and memorable designs. Excellent design makes your brand unforgettable.",
+        "subtitle": "Logos, promotional materials, web design, and more.",
         "subtitleP": [
-            "We create design systems that align with your business goals, strengthen your brand, and help you connect with the right audience.",
-            "Whether you're building a new brand or upgrading an old one, we treat design as a core part of your strategy — not just decoration.",
-            "We work with startups, established businesses, personal brands, SaaS platforms, and more. Whether you need a new look or a design partner long-term — we're here."
+            "We create visual systems that reflect your business goals, strengthen your brand, and attract the right audience.",
+            "Whether you’re launching a new brand or updating your identity, we treat design as a strategic element, not just decoration.",
+            "We work with startups, personal brands, established businesses, and SaaS platforms — whether you want a refresh or a long-term partner."
         ],
+        "intro": {
+            "title": "Your image tells a story",
+            "description": "Every brand has a story. We turn it into an image. From visual identity to the smallest graphic details, we provide complete solutions for coherent and memorable design. Design is not just aesthetics — it’s functionality, message, and strategy. Branding is the red thread that ties them all together into one clear direction."
+        },
         "whatWeOffer": {
-            "title": "What We Can Help You With",
-            "subtitle": "Enhance your work with personalized apps",
-            "description": "Let your business thrive through digital solutions, process automation, and logical organization.",
+            "title": "How we can help",
+            "subtitle": "We build your business image with designs tailored to purpose, channel, and audience:",
+            "description": "Let design tell your story — with clarity and impact.",
             "list": {
                 "logo": {
-                    "title": "Logo & Visual Identity Design",
-                    "description": "A strong, timeless logo and matching brand guidelines."
+                    "title": "Logo & Visual Identity",
+                    "description": "A strong, memorable, and scalable logo, accompanied by a coherent visual system across all media."
+                },
+                "business_cards": {
+                    "title": "Business Cards & Custom Stationery",
+                    "description": "Clean design for brand elements that inspire professionalism: letterheads, email signatures, business cards."
+                },
+                "promotional": {
+                    "title": "Promotional & Advertising Materials",
+                    "description": "Flyers, brochures, catalogs, menus, posters, street banners, roll-ups, flags, and more — all tailored to your purpose."
                 },
                 "web": {
-                    "title": "Web & App UI Design",
-                    "description": "Beautiful, intuitive interfaces — responsive and ready to hand off to developers."
+                    "title": "Web & App Design",
+                    "description": "Modern, clear UI/UX interfaces, ready for development: websites, dashboards, mobile applications."
                 },
-                "marketing": {
-                    "title": "Marketing Materials",
-                    "description": "Brochures, business cards, banners, pitch decks, and social media visuals."
-                },
-                "brand": {
-                    "title": "Brand Refresh & Redesign",
-                    "description": "Evolve your outdated look into something clean, bold, and modern."
-                },
-                "design": {
-                    "title": "Packaging & Product Design",
-                    "description": "For physical products or digital assets — eye-catching and professional."
-                },
-                "guides": {
-                    "title": "Design Systems & Style Guides",
-                    "description": "Scalable frameworks for consistent brand execution across platforms."
+                "print": {
+                    "title": "Print Support",
+                    "description": "We collaborate with trusted partners for printing your materials. If you don’t already have a supplier, we handle everything — from design to delivery."
                 }
             }
         },
         "whyUs": {
-            "title": "Why Choose Imboxsoft",
+            "title": "Why work with Imboxsoft?",
             "list": {
-                "synergy": "<strong>Tech + Design Synergy</strong> — We understand development, so we design what works.",
-                "results": "<strong>Pixel-Perfect Results</strong> — We obsess over detail, layout, and polish.",
-                "thinking": "<strong>Business-Driven Thinking</strong> — Every visual choice supports your brand goals.",
-                "collaborative": "<strong>Collaborative Process</strong> — You're part of the journey, not just the brief."
+                "synergy": "<strong>Design + Technology</strong> — We stand out through the synergy between creative thinking and technical implementation. Everything we design works and scales.",
+                "results": "<strong>Design without compromise</strong> — Every line, font, or layout has a purpose: to communicate effectively and sell your image.",
+                "thinking": "<strong>Business-oriented thinking</strong> — We don’t just create beautiful designs; we create designs that push your business forward.",
+                "collaborative": "<strong>Collaborative process</strong> — You are part of the process. From brainstorming to delivery, we collaborate constantly for the best results."
             }
+        },
+        "cta": {
+            "title": "Do you need professional graphic design?",
+            "description": "Contact us for a personalized offer or request a complete package with design + print + delivery. We adapt to your project, regardless of size or industry.",
+            "button": "Request a personalized offer"
         }
     }
 }
