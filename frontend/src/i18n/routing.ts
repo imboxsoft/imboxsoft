@@ -75,6 +75,7 @@ function getDisabledLocalizedPaths(): string[] {
         "SEO",
         "EMAIL_MARKETING",
         "INSIGHTS",
+        "GRAPHIC_DESIGN",
     ] as const;
 
     const paths: string[] = [];

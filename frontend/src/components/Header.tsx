@@ -219,7 +219,6 @@ export default function Header() {
                                 <Image
                                     src="/images/logo/logo_light.svg"
                                     alt="Imboxsoft Logo"
-                                    layout="intrinsic"
                                     width={300}
                                     height={50}
                                     className="w-48"

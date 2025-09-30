@@ -32,111 +32,111 @@ export const technologies: string[] = [
 export const technologyLogos = [
     {
         name: "Django",
-        src: "/images/technologies/optimized/django.png"
+        src: "/images/technologies/django.png"
     },
     {
         name: "Next.js",
-        src: "/images/technologies/optimized/nextjs.png"
+        src: "/images/technologies/nextjs.png"
     },
     {
         name: "Nodejs",
-        src: "/images/technologies/optimized/nodejs.png"
+        src: "/images/technologies/nodejs.png"
     },
     {
         name: "Laravel",
-        src: "/images/technologies/optimized/laravel.png"
+        src: "/images/technologies/laravel.png"
     },
     {
         name: ".NET",
-        src: "/images/technologies/optimized/dotnet.png"
+        src: "/images/technologies/dotnet.png"
     },
     {
         name: "Angular",
-        src: "/images/technologies/optimized/angular.png"
+        src: "/images/technologies/angular.png"
     },
     {
         name: "React",
-        src: "/images/technologies/optimized/react.png"
+        src: "/images/technologies/react.png"
     },
     {
         name: "Alpinejs",
-        src: "/images/technologies/optimized/alpinejs.png"
+        src: "/images/technologies/alpinejs.png"
     },
     {
         name: "Tailwind",
-        src: "/images/technologies/optimized/tailwind.png"
+        src: "/images/technologies/tailwind.png"
     },
     {
         name: "PostgreSQL",
-        src: "/images/technologies/optimized/postgresql.png"
+        src: "/images/technologies/postgresql.png"
     },
     {
         name: "MySQL",
-        src: "/images/technologies/optimized/mysql.png"
+        src: "/images/technologies/mysql.png"
     },
     {
         name: "MongoDB",
-        src: "/images/technologies/optimized/mongodb.png"
+        src: "/images/technologies/mongodb.png"
     },
     {
         name: "GIT",
-        src: "/images/technologies/optimized/git.png"
+        src: "/images/technologies/git.png"
     },
     {
         name: "Docker",
-        src: "/images/technologies/optimized/docker.png"
+        src: "/images/technologies/docker.png"
     },
     {
         name: "Kubernetes",
-        src: "/images/technologies/optimized/kubernetes.png"
+        src: "/images/technologies/kubernetes.png"
     },
     {
         name: "Google Cloud",
-        src: "/images/technologies/optimized/gcp.png"
+        src: "/images/technologies/gcp.png"
     },
     {
         name: "AWS",
-        src: "/images/technologies/optimized/aws.png"
+        src: "/images/technologies/aws.png"
     },
     {
         name: "cPanel",
-        src: "/images/technologies/optimized/cpanel.png"
+        src: "/images/technologies/cpanel.png"
     },
     {
         name: "Wordpress",
-        src: "/images/technologies/optimized/wordpress.png"
+        src: "/images/technologies/wordpress.png"
     },
     {
         name: "Shopify",
-        src: "/images/technologies/optimized/shopify.png"
+        src: "/images/technologies/shopify.png"
     },
     {
         name: "Stripe",
-        src: "/images/technologies/optimized/stripe.png"
+        src: "/images/technologies/stripe.png"
     },
     {
         name: "Paypal",
-        src: "/images/technologies/optimized/paypal.png"
+        src: "/images/technologies/paypal.png"
     },
     {
         name: "Photoshop",
-        src: "/images/technologies/optimized/photoshop.png"
+        src: "/images/technologies/photoshop.png"
     },
     {
         name: "Illustrator",
-        src: "/images/technologies/optimized/illustrator.png"
+        src: "/images/technologies/illustrator.png"
     },
     {
         name: "Figma",
-        src: "/images/technologies/optimized/figma.png"
+        src: "/images/technologies/figma.png"
     },
     {
         name: "Brevo",
-        src: "/images/technologies/optimized/brevo.png"
+        src: "/images/technologies/brevo.png"
     },
     {
         name: "Sendgrid",
-        src: "/images/technologies/optimized/sendgrid.png"
+        src: "/images/technologies/sendgrid.png"
     }
 ];
 

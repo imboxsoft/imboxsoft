@@ -16,6 +16,8 @@ import ContactForm from "@/components/ContactForm";
 import DisplayOnViewport from "@/components/DisplayOnViewport";
 import { WhyUsGuySVG } from "@/components/SVGs";
 import { ResponsiveFAQ } from "@/components/FAQ";
+import { generateWPAPIURL } from "@/utils/URLGenerators";
+import { OurClients } from "@/components/OurClients";
 
 // export async function generateMetadata({
 //     params,
@@ -197,49 +199,15 @@ export default async function Home() {
                                 ))}
                         </ul>
 
-                        <div className="relative w-full">
-                            <div className="">
-                                <h2 className="text-2xl text-main-primary font-medium inline-block whitespace-nowrap mb-1">
-                                    Parteneri
-                                </h2>
-                            </div>
-                            <div className="w-full">
-                                <AutomatedCarousel
-                                    breakpoints={{
-                                        0: {
-                                            spaceBetween: 100,
-                                            slidesPerView: 3,
-                                        },
-                                        640: {
-                                            spaceBetween: 150,
-                                            slidesPerView: 3,
-                                        },
-                                        768: {
-                                            spaceBetween: 100,
-                                            slidesPerView: 5,
-                                        },
-                                        1280: {
-                                            spaceBetween: 200,
-                                            slidesPerView: 5,
-                                        },
-                                    }}
-                                    elements={technologyLogos.map(
-                                        (el, index) => (
-                                            <div
-                                                className="relative w-full aspect-square md:mb-2"
-                                                key={index}
-                                            >
-                                                <Image
-                                                    src={el.src}
-                                                    className="object-fit"
-                                                    fill
-                                                    alt={el.name}
-                                                />
-                                            </div>
-                                        )
-                                    )}
-                                />
-                            </div>
+                        <div className="relative w-full text-center mt-16">
+                            <h2 className="text-4xl text-main-primary font-medium inline-block whitespace-nowrap mb-4">
+                                {t.text("partners")}
+                            </h2>
+                            <OurClients
+                                cmsAPIBaseURL={generateWPAPIURL(
+                                    "/our-clients?_fields=acf&acf_format=standard"
+                                )}
+                            />
                         </div>
                     </div>
                 </div>

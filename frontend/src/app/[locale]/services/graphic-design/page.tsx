@@ -193,7 +193,6 @@ export default async function GraphicDesign() {
                             <Image
                                 src="/images/common/man.png"
                                 alt="Imboxsoft Logo"
-                                layout="intrinsic"
                                 width={300}
                                 height={50}
                             />

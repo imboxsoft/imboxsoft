@@ -46,7 +46,6 @@ export default async function Footer() {
                                 <Image
                                     src="/images/logo/logo_light.svg"
                                     className="h-8 mr-3"
-                                    layout="intrinsic"
                                     width={300}
                                     height={50}
                                     alt="Imboxsoft Logo"

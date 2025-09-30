@@ -47,7 +47,7 @@ export default async function SoftwareDevelopment() {
                 "softwareDevelopment.offer.design.description"
             ),
             thumbnail: {
-                src: "/images/our-work/design.png",
+                src: "/images/services/software_development/custom_design.jpg",
                 alternativeText: "",
             },
             svgIcon: (
@@ -67,7 +67,7 @@ export default async function SoftwareDevelopment() {
             title: ts.text("softwareDevelopment.offer.apps.title"),
             description: ts.text("softwareDevelopment.offer.apps.description"),
             thumbnail: {
-                src: "/images/our-work/custom_apps.png",
+                src: "/images/services/software_development/custom_apps.jpg",
                 alternativeText: "",
             },
             svgIcon: (
@@ -91,7 +91,7 @@ export default async function SoftwareDevelopment() {
                 "softwareDevelopment.offer.websites.description"
             ),
             thumbnail: {
-                src: "/images/our-work/ecommerce.png",
+                src: "/images/services/software_development/websites.jpg",
                 alternativeText: "",
             },
             svgIcon: (
@@ -111,7 +111,7 @@ export default async function SoftwareDevelopment() {
             title: ts.text("softwareDevelopment.offer.api.title"),
             description: ts.text("softwareDevelopment.offer.api.description"),
             thumbnail: {
-                src: "/images/our-work/api.webp",
+                src: "/images/services/software_development/api_integration.jpg",
                 alternativeText: "",
             },
             svgIcon: (
@@ -135,7 +135,7 @@ export default async function SoftwareDevelopment() {
                 "softwareDevelopment.offer.maintenance.description"
             ),
             thumbnail: {
-                src: "/images/our-work/maintenance.webp",
+                src: "/images/services/software_development/maintenance.jpg",
                 alternativeText: "",
             },
             svgIcon: (
@@ -312,7 +312,7 @@ export default async function SoftwareDevelopment() {
 
                         <div className="absolute right-0 bottom-0 translate-y-3 z-20 pointer-events-none">
                             <div className="relative w-full">
-                                <div className="absolute w-full left-[9%]">
+                                <div className="animate-[bounce_3s_infinite] absolute w-full left-[9%]">
                                     <div className="relative w-1/4 aspect-square md:mb-2">
                                         <AutomatedCarousel
                                             breakpoints={{
@@ -321,7 +321,7 @@ export default async function SoftwareDevelopment() {
                                                 },
                                             }}
                                             speed={10}
-                                            delay={1000}
+                                            delay={3000}
                                             elements={technologyLogos.map(
                                                 (el, index) => (
                                                     <div
@@ -343,7 +343,6 @@ export default async function SoftwareDevelopment() {
                                 <Image
                                     src="/images/common/guy-hand-up.svg"
                                     alt="SWD Man"
-                                    layout="intrinsic"
                                     width={350}
                                     height={50}
                                 />

@@ -2,6 +2,7 @@
 
 import "swiper/css";
 
+import { useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
@@ -36,7 +37,7 @@ export function AutomatedCarousel({
                 breakpoints={breakpoints}
             >
                 {elements.map((el, index) => (
-                    <SwiperSlide key={index} className="flex h-full">
+                    <SwiperSlide key={`sw-${index}`} className="flex h-full">
                         {el}
                     </SwiperSlide>
                 ))}

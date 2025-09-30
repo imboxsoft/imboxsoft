@@ -6,7 +6,6 @@ import "swiper/css/navigation";
 import { ImageType } from "@/types/strapi";
 import Image from "next/image";
 import { AutomatedCarousel } from "@/components/AutomatedCarousel";
-import { generateWPAPIURL } from "@/utils/URLGenerators";
 
 interface ClientType {
     name: string;
@@ -46,44 +45,46 @@ export const OurClients = ({ cmsAPIBaseURL }: OurClientsProps) => {
                 console.log(e);
             }
         })();
-    }, []);
+    }, [cmsAPIBaseURL]);
 
     return (
         <div className="w-full">
-            <AutomatedCarousel
-                breakpoints={{
-                    0: {
-                        spaceBetween: 100,
-                        slidesPerView: 1,
-                    },
-                    640: {
-                        spaceBetween: 150,
-                        slidesPerView: 1,
-                    },
-                    768: {
-                        spaceBetween: 100,
-                        slidesPerView: 3,
-                    },
-                    1280: {
-                        spaceBetween: 150,
-                        slidesPerView: 3,
-                    },
-                }}
-                elements={clients.map((el, index) => (
-                    <div
-                        className="relative w-full h-[100px] flex items-center justify-center"
-                        key={index}
-                    >
-                        <Image
-                            src={el.logo.src}
-                            alt={el.name}
-                            className="object-contain"
-                            fill
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                    </div>
-                ))}
-            />
+            {clients.length > 0 && (
+                <AutomatedCarousel
+                    breakpoints={{
+                        0: {
+                            spaceBetween: 100,
+                            slidesPerView: 1,
+                        },
+                        640: {
+                            spaceBetween: 150,
+                            slidesPerView: 1,
+                        },
+                        768: {
+                            spaceBetween: 100,
+                            slidesPerView: 3,
+                        },
+                        1280: {
+                            spaceBetween: 150,
+                            slidesPerView: 3,
+                        },
+                    }}
+                    elements={clients.map((el, index) => (
+                        <div
+                            className="relative w-full h-[100px] flex items-center justify-center"
+                            key={index}
+                        >
+                            <Image
+                                src={el.logo.src}
+                                alt={el.name}
+                                className="object-contain"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                            />
+                        </div>
+                    ))}
+                />
+            )}
         </div>
     );
 };

@@ -31,7 +31,7 @@ export default async function AboutUs() {
                             <Image
                                 src="/images/man.png"
                                 alt="Imboxsoft Logo"
-                                layout="intrinsic"
+                                
                                 width={300}
                                 height={50}
                             />
@@ -71,7 +71,6 @@ export default async function AboutUs() {
                                 <Image
                                     src="/images/blog_news.webp"
                                     alt="Imboxsoft Logo"
-                                    layout="intrinsic"
                                     width={300}
                                     height={50}
                                 />
